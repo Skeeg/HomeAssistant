@@ -1,0 +1,68 @@
+{
+    "data": {
+        "devices": [
+            {
+                "area_id": null,
+                "config_entries": [
+                    "f5901aef93cd40859ef845cb5ad21681"
+                ],
+                "connections": [],
+                "id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "identifiers": [
+                    [
+                        "mobile_app",
+                        "c8e76a2cb31d45789ab5938fa5a0767b"
+                    ]
+                ],
+                "manufacturer": "Apple",
+                "model": "iPhone Xs Max",
+                "name": "IPXSPX",
+                "name_by_user": null,
+                "sw_version": "13.3",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "3573b8bcc8d94ba38e6eaf2f51f509a1"
+                ],
+                "connections": [],
+                "id": "bfe3a70a8740489ca706cc2a7eb052b9",
+                "identifiers": [
+                    [
+                        "mobile_app",
+                        "6de798e4e98e48ba96a1fb41daddf819"
+                    ]
+                ],
+                "manufacturer": "Apple",
+                "model": "iPhone 8",
+                "name": "Lesley\u2019s iPhone 8",
+                "name_by_user": null,
+                "sw_version": "13.3",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "412a6a63e0724082be64ccc21697402d"
+                ],
+                "connections": [],
+                "id": "133d14386bf843d58ebb084cdab138d4",
+                "identifiers": [
+                    [
+                        "mobile_app",
+                        "6da832dd26cc40c5935374a629be26fd"
+                    ]
+                ],
+                "manufacturer": "Apple",
+                "model": "iPhone 8",
+                "name": "Lesley\u2019s iPhone 8",
+                "name_by_user": null,
+                "sw_version": "13.3",
+                "via_device_id": null
+            }
+        ]
+    },
+    "key": "core.device_registry",
+    "version": 1
+}

@@ -1,0 +1,16 @@
+{
+    "data": {
+        "users": [
+            {
+                "password": "***REMOVED***",
+                "username": "ryanpeay"
+            },
+            {
+                "password": "***REMOVED***",
+                "username": "lesleypeay"
+            }
+        ]
+    },
+    "key": "auth_provider.homeassistant",
+    "version": 1
+}

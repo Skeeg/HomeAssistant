@@ -1,0 +1,1187 @@
+{
+    "data": {
+        "entities": [
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.updater",
+                "name": null,
+                "platform": "updater",
+                "unique_id": "updater"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "person.ryanpeay",
+                "name": null,
+                "platform": "person",
+                "unique_id": "dd6ad76fdf1e41d086517d3fb8a16b26"
+            },
+            {
+                "config_entry_id": "1433b5ea5bce4f2481f471bc83d6c616",
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "weather.home",
+                "name": null,
+                "platform": "met",
+                "unique_id": "home"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.l9yaalyi2s7oz30v",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.L9yaalYi2s7Oz30v"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.gylwrkyegwgpj7x9",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.gylwrkYegWGPj7X9"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.4kccukiy8ff5zunj",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.4KCCuKIy8ff5ZUNJ"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.e8g1ctuhoe9rsyqn",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.e8g1cTuHOe9RSyqn"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.g10amfqkaa8onwu2",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.G10amfQkAA8oNWU2"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.w4xdei3q0dhqwbew",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.W4xdEI3Q0DhqWbEw"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.gcvgnfgvhtxw87mx",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.gcVgNfGVHtXw87mx"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.07otnmhla1fo7vek",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.07OTNmHla1fo7vek"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.eoralbfnwwl5eloe",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.EorALbFNwwl5ELoE"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.bsswphuogaldskmd",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.BssWphUoGaLDsKmD"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.czzm8ozfezavuanu",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.czZm8OzFeZAVuaNu"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.q4ppjpdzyplxqgns",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.q4ppjPdZyPlxQGNs"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.acvjfuu5baqdvjep",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.ACvjfUu5BAqdVJep"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.esarazu2rwetsnoz",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.esARaZu2rwetSNoz"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.jwjo6kaxkkpemlfr",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.jWjo6kAxkKpEmLfr"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.hf2d7gaiflfmkgen",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.HF2d7gAiFLFmKgEN"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.c74zaeiwlxnvggyp",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.C74zAeiwLxnVGGYP"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.kusa3fmejrbvvv1n",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.KUsa3fmEJRBVVv1N"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f22229035",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f22229035"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.047555462cf432a189ba",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.047555462cf432a189ba"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f22229553",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f22229553"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f22229075",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f22229075"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.04200161ecfabc94a05a",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.04200161ecfabc94a05a"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.802378622cf432a7032f",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.802378622cf432a7032f"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.388374852cf432a1e7fb",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.388374852cf432a1e7fb"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f222336de",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f222336de"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f2222980c",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f2222980c"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.020202312cf432a6f216",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.020202312cf432a6f216"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.78074020600194d9f42d",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.78074020600194d9f42d"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.04200161ecfabc949882",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.04200161ecfabc949882"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f22233d9c",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f22233d9c"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.02200010ecfabc896bca",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.02200010ecfabc896bca"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.04200161ecfabc94940f",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.04200161ecfabc94940f"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.04200161ecfabc949315",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.04200161ecfabc949315"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f2222937d",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f2222937d"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.780740202cf432ca1c70",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.780740202cf432ca1c70"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.388374852cf432a1db68",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.388374852cf432a1db68"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f2222957e",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f2222957e"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.38837485c44f33a530cb",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.38837485c44f33a530cb"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f2222925e",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f2222925e"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.78074020600194d9f0f3",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.78074020600194d9f0f3"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f22229153",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f22229153"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.38837485c44f33a9dd7b",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.38837485c44f33a9dd7b"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.78074020600194d9ea84",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.78074020600194d9ea84"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.780740202cf432ca13c6",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.780740202cf432ca13c6"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f22233c1f",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f22233c1f"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.780740202cf432ca424e",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.780740202cf432ca424e"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.04200161ecfabc9491d9",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.04200161ecfabc9491d9"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.780740202cf432ca407a",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.780740202cf432ca407a"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.780740202cf432ca1ed8",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.780740202cf432ca1ed8"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.06200181b4e62d1833c9",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.06200181b4e62d1833c9"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f22233661",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f22233661"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.02200010ecfabc89a8b3",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.02200010ecfabc89a8b3"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f22233be2",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f22233be2"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.802378622cf432a6e3f2",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.802378622cf432a6e3f2"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.04200161ecfabc949fe8",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.04200161ecfabc949fe8"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.02200010ecfabc89aa43",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.02200010ecfabc89aa43"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.780740202cf432ca1c2a",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.780740202cf432ca1c2a"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.04200161ecfabc949179",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.04200161ecfabc949179"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.06200180bcddc2e5e01d",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.06200180bcddc2e5e01d"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.032002565ccf7f739f6f",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.032002565ccf7f739f6f"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.780740202cf432ca4a96",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.780740202cf432ca4a96"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f22233d50",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f22233d50"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.04200161ecfabc949393",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.04200161ecfabc949393"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f22233d43",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f22233d43"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.06200181b4e62d183b7a",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.06200181b4e62d183b7a"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.06200180bcddc2e5dde0",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.06200180bcddc2e5dde0"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f222334c2",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f222334c2"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f22233473",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f22233473"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.020202312cf432a6b258",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.020202312cf432a6b258"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.780740202cf432ca37c2",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.780740202cf432ca37c2"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.06200181b4e62d1832bb",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.06200181b4e62d1832bb"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f22233dae",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f22233dae"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.78074020600194d9e426",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.78074020600194d9e426"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f222297ed",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f222297ed"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.01200092600194560fdd",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.01200092600194560fdd"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.780740202cf432ca3b84",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.780740202cf432ca3b84"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.780740202cf432ca41b0",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.780740202cf432ca41b0"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.04200161ecfabc949bde",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.04200161ecfabc949bde"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "cover.main_garage",
+                "name": null,
+                "platform": "myq",
+                "unique_id": "CG080065A3C6"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "cover.3rd_car_garage",
+                "name": null,
+                "platform": "myq",
+                "unique_id": "CG080065A3C8"
+            },
+            {
+                "config_entry_id": "aa9011797f1f45d9911efbd5d4955ce8",
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.plex_media_pc",
+                "name": null,
+                "platform": "plex",
+                "unique_id": "sensor-c1e1e5d13535fef89a237970d414079dc5a256cb"
+            },
+            {
+                "config_entry_id": "aa9011797f1f45d9911efbd5d4955ce8",
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "media_player.plex_chrome",
+                "name": null,
+                "platform": "plex",
+                "unique_id": "c1e1e5d13535fef89a237970d414079dc5a256cb:wft0p961ogkmdw8803987kwu"
+            },
+            {
+                "config_entry_id": "aa9011797f1f45d9911efbd5d4955ce8",
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "media_player.plex_great_room_4k",
+                "name": null,
+                "platform": "plex",
+                "unique_id": "c1e1e5d13535fef89a237970d414079dc5a256cb:8DE1D25B-0C28-4B26-BD48-82CE3BA02B79"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.main_dimmer",
+                "name": null,
+                "platform": "wemo",
+                "unique_id": "241802K1501890"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.lilys_lights",
+                "name": null,
+                "platform": "wemo",
+                "unique_id": "241803K1500472"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "light.austins_room",
+                "name": null,
+                "platform": "wemo",
+                "unique_id": "241802K1501817"
+            },
+            {
+                "config_entry_id": "f5901aef93cd40859ef845cb5ad21681",
+                "device_id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "disabled_by": null,
+                "entity_id": "device_tracker.ipxspx",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "c8e76a2cb31d45789ab5938fa5a0767b"
+            },
+            {
+                "config_entry_id": "f5901aef93cd40859ef845cb5ad21681",
+                "device_id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "disabled_by": null,
+                "entity_id": "sensor.activity",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_activity"
+            },
+            {
+                "config_entry_id": "f5901aef93cd40859ef845cb5ad21681",
+                "device_id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "disabled_by": null,
+                "entity_id": "sensor.battery_level",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_battery_level"
+            },
+            {
+                "config_entry_id": "f5901aef93cd40859ef845cb5ad21681",
+                "device_id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "disabled_by": null,
+                "entity_id": "sensor.battery_state",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_battery_state"
+            },
+            {
+                "config_entry_id": "f5901aef93cd40859ef845cb5ad21681",
+                "device_id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "disabled_by": null,
+                "entity_id": "sensor.average_active_pace",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_pedometer_avg_active_pace"
+            },
+            {
+                "config_entry_id": "f5901aef93cd40859ef845cb5ad21681",
+                "device_id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "disabled_by": null,
+                "entity_id": "sensor.distance",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_pedometer_distance"
+            },
+            {
+                "config_entry_id": "f5901aef93cd40859ef845cb5ad21681",
+                "device_id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "disabled_by": null,
+                "entity_id": "sensor.floors_ascended",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_pedometer_floors_ascended"
+            },
+            {
+                "config_entry_id": "f5901aef93cd40859ef845cb5ad21681",
+                "device_id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "disabled_by": null,
+                "entity_id": "sensor.floors_descended",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_pedometer_floors_descended"
+            },
+            {
+                "config_entry_id": "f5901aef93cd40859ef845cb5ad21681",
+                "device_id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "disabled_by": null,
+                "entity_id": "sensor.steps",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_pedometer_steps"
+            },
+            {
+                "config_entry_id": "f5901aef93cd40859ef845cb5ad21681",
+                "device_id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "disabled_by": null,
+                "entity_id": "sensor.bssid",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_connectivity_bssid"
+            },
+            {
+                "config_entry_id": "f5901aef93cd40859ef845cb5ad21681",
+                "device_id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "disabled_by": null,
+                "entity_id": "sensor.connection_type",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_connectivity_connection_type"
+            },
+            {
+                "config_entry_id": "f5901aef93cd40859ef845cb5ad21681",
+                "device_id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "disabled_by": null,
+                "entity_id": "sensor.ssid",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_connectivity_ssid"
+            },
+            {
+                "config_entry_id": "f5901aef93cd40859ef845cb5ad21681",
+                "device_id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "disabled_by": null,
+                "entity_id": "sensor.sim_1",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_connectivity_sim_1"
+            },
+            {
+                "config_entry_id": "f5901aef93cd40859ef845cb5ad21681",
+                "device_id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "disabled_by": null,
+                "entity_id": "sensor.last_update_trigger",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_last_update_trigger"
+            },
+            {
+                "config_entry_id": "f5901aef93cd40859ef845cb5ad21681",
+                "device_id": "4b50fd681c5f42b7a5a89a6dbaf5e925",
+                "disabled_by": null,
+                "entity_id": "sensor.geocoded_location",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_geocoded_location"
+            },
+            {
+                "config_entry_id": "3573b8bcc8d94ba38e6eaf2f51f509a1",
+                "device_id": "bfe3a70a8740489ca706cc2a7eb052b9",
+                "disabled_by": null,
+                "entity_id": "device_tracker.lesleys_iphone_8",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "6de798e4e98e48ba96a1fb41daddf819"
+            },
+            {
+                "config_entry_id": "3573b8bcc8d94ba38e6eaf2f51f509a1",
+                "device_id": "bfe3a70a8740489ca706cc2a7eb052b9",
+                "disabled_by": null,
+                "entity_id": "sensor.battery_level_2",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "4788d0f5a4b8fc3f7d4d968210fb00b3fb10b9e50a1b355e931584eba9bf3aa1_battery_level"
+            },
+            {
+                "config_entry_id": "3573b8bcc8d94ba38e6eaf2f51f509a1",
+                "device_id": "bfe3a70a8740489ca706cc2a7eb052b9",
+                "disabled_by": null,
+                "entity_id": "sensor.bssid_2",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "4788d0f5a4b8fc3f7d4d968210fb00b3fb10b9e50a1b355e931584eba9bf3aa1_connectivity_bssid"
+            },
+            {
+                "config_entry_id": "3573b8bcc8d94ba38e6eaf2f51f509a1",
+                "device_id": "bfe3a70a8740489ca706cc2a7eb052b9",
+                "disabled_by": null,
+                "entity_id": "sensor.battery_state_2",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "4788d0f5a4b8fc3f7d4d968210fb00b3fb10b9e50a1b355e931584eba9bf3aa1_battery_state"
+            },
+            {
+                "config_entry_id": "3573b8bcc8d94ba38e6eaf2f51f509a1",
+                "device_id": "bfe3a70a8740489ca706cc2a7eb052b9",
+                "disabled_by": null,
+                "entity_id": "sensor.connection_type_2",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "4788d0f5a4b8fc3f7d4d968210fb00b3fb10b9e50a1b355e931584eba9bf3aa1_connectivity_connection_type"
+            },
+            {
+                "config_entry_id": "3573b8bcc8d94ba38e6eaf2f51f509a1",
+                "device_id": "bfe3a70a8740489ca706cc2a7eb052b9",
+                "disabled_by": null,
+                "entity_id": "sensor.ssid_2",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "4788d0f5a4b8fc3f7d4d968210fb00b3fb10b9e50a1b355e931584eba9bf3aa1_connectivity_ssid"
+            },
+            {
+                "config_entry_id": "3573b8bcc8d94ba38e6eaf2f51f509a1",
+                "device_id": "bfe3a70a8740489ca706cc2a7eb052b9",
+                "disabled_by": null,
+                "entity_id": "sensor.last_update_trigger_2",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "4788d0f5a4b8fc3f7d4d968210fb00b3fb10b9e50a1b355e931584eba9bf3aa1_last_update_trigger"
+            },
+            {
+                "config_entry_id": "3573b8bcc8d94ba38e6eaf2f51f509a1",
+                "device_id": "bfe3a70a8740489ca706cc2a7eb052b9",
+                "disabled_by": null,
+                "entity_id": "sensor.sim_1_2",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "4788d0f5a4b8fc3f7d4d968210fb00b3fb10b9e50a1b355e931584eba9bf3aa1_connectivity_sim_1"
+            },
+            {
+                "config_entry_id": "3573b8bcc8d94ba38e6eaf2f51f509a1",
+                "device_id": "bfe3a70a8740489ca706cc2a7eb052b9",
+                "disabled_by": null,
+                "entity_id": "sensor.geocoded_location_2",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "4788d0f5a4b8fc3f7d4d968210fb00b3fb10b9e50a1b355e931584eba9bf3aa1_geocoded_location"
+            },
+            {
+                "config_entry_id": "412a6a63e0724082be64ccc21697402d",
+                "device_id": "133d14386bf843d58ebb084cdab138d4",
+                "disabled_by": null,
+                "entity_id": "device_tracker.lesleys_iphone_8_2",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "6da832dd26cc40c5935374a629be26fd"
+            },
+            {
+                "config_entry_id": "412a6a63e0724082be64ccc21697402d",
+                "device_id": "133d14386bf843d58ebb084cdab138d4",
+                "disabled_by": null,
+                "entity_id": "sensor.activity_2",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_activity"
+            },
+            {
+                "config_entry_id": "412a6a63e0724082be64ccc21697402d",
+                "device_id": "133d14386bf843d58ebb084cdab138d4",
+                "disabled_by": null,
+                "entity_id": "sensor.battery_state_3",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_battery_state"
+            },
+            {
+                "config_entry_id": "412a6a63e0724082be64ccc21697402d",
+                "device_id": "133d14386bf843d58ebb084cdab138d4",
+                "disabled_by": null,
+                "entity_id": "sensor.battery_level_3",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_battery_level"
+            },
+            {
+                "config_entry_id": "412a6a63e0724082be64ccc21697402d",
+                "device_id": "133d14386bf843d58ebb084cdab138d4",
+                "disabled_by": null,
+                "entity_id": "sensor.average_active_pace_2",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_pedometer_avg_active_pace"
+            },
+            {
+                "config_entry_id": "412a6a63e0724082be64ccc21697402d",
+                "device_id": "133d14386bf843d58ebb084cdab138d4",
+                "disabled_by": null,
+                "entity_id": "sensor.distance_2",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_pedometer_distance"
+            },
+            {
+                "config_entry_id": "412a6a63e0724082be64ccc21697402d",
+                "device_id": "133d14386bf843d58ebb084cdab138d4",
+                "disabled_by": null,
+                "entity_id": "sensor.floors_descended_2",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_pedometer_floors_descended"
+            },
+            {
+                "config_entry_id": "412a6a63e0724082be64ccc21697402d",
+                "device_id": "133d14386bf843d58ebb084cdab138d4",
+                "disabled_by": null,
+                "entity_id": "sensor.floors_ascended_2",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_pedometer_floors_ascended"
+            },
+            {
+                "config_entry_id": "412a6a63e0724082be64ccc21697402d",
+                "device_id": "133d14386bf843d58ebb084cdab138d4",
+                "disabled_by": null,
+                "entity_id": "sensor.steps_2",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_pedometer_steps"
+            },
+            {
+                "config_entry_id": "412a6a63e0724082be64ccc21697402d",
+                "device_id": "133d14386bf843d58ebb084cdab138d4",
+                "disabled_by": null,
+                "entity_id": "sensor.bssid_3",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_connectivity_bssid"
+            },
+            {
+                "config_entry_id": "412a6a63e0724082be64ccc21697402d",
+                "device_id": "133d14386bf843d58ebb084cdab138d4",
+                "disabled_by": null,
+                "entity_id": "sensor.connection_type_3",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_connectivity_connection_type"
+            },
+            {
+                "config_entry_id": "412a6a63e0724082be64ccc21697402d",
+                "device_id": "133d14386bf843d58ebb084cdab138d4",
+                "disabled_by": null,
+                "entity_id": "sensor.ssid_3",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_connectivity_ssid"
+            },
+            {
+                "config_entry_id": "412a6a63e0724082be64ccc21697402d",
+                "device_id": "133d14386bf843d58ebb084cdab138d4",
+                "disabled_by": null,
+                "entity_id": "sensor.sim_1_3",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_connectivity_sim_1"
+            },
+            {
+                "config_entry_id": "412a6a63e0724082be64ccc21697402d",
+                "device_id": "133d14386bf843d58ebb084cdab138d4",
+                "disabled_by": null,
+                "entity_id": "sensor.last_update_trigger_3",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_last_update_trigger"
+            },
+            {
+                "config_entry_id": "412a6a63e0724082be64ccc21697402d",
+                "device_id": "133d14386bf843d58ebb084cdab138d4",
+                "disabled_by": null,
+                "entity_id": "sensor.geocoded_location_3",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_geocoded_location"
+            },
+            {
+                "config_entry_id": "aa9011797f1f45d9911efbd5d4955ce8",
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "media_player.plex_ipxspx",
+                "name": null,
+                "platform": "plex",
+                "unique_id": "c1e1e5d13535fef89a237970d414079dc5a256cb:2D43FBD5-7A30-4C17-8BC4-D58281F2FE65"
+            },
+            {
+                "config_entry_id": "aa9011797f1f45d9911efbd5d4955ce8",
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "media_player.plex_lilys_room",
+                "name": null,
+                "platform": "plex",
+                "unique_id": "c1e1e5d13535fef89a237970d414079dc5a256cb:948E02B3-07CE-4B73-88A7-1D8F50AB3002"
+            }
+        ]
+    },
+    "key": "core.entity_registry",
+    "version": 1
+}

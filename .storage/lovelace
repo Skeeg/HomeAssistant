@@ -1,0 +1,448 @@
+{
+    "data": {
+        "config": {
+            "title": "Home",
+            "views": [
+                {
+                    "badges": [
+                        {
+                            "entity": "binary_sensor.updater"
+                        },
+                        {
+                            "entity": "person.ryanpeay"
+                        },
+                        {
+                            "entity": "sensor.plex_media_pc"
+                        },
+                        {
+                            "entity": "sun.sun"
+                        }
+                    ],
+                    "cards": [
+                        {
+                            "entity": "media_player.plex_great_room_4k",
+                            "type": "media-control"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "cover.main_garage"
+                                },
+                                {
+                                    "entity": "cover.3rd_car_garage"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.02200010ecfabc89a8b3"
+                                },
+                                {
+                                    "entity": "switch.01200092600194560fdd"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f222334c2"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f22233d50"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Comfort",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.02200010ecfabc89aa43"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f22233d43"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f22229553"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f2222925e"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f22233d9c"
+                                },
+                                {
+                                    "entity": "switch.06200180bcddc2e5e01d"
+                                }
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Decorations",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.04200161ecfabc949bde"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc949315"
+                                },
+                                {
+                                    "entity": "switch.388374852cf432a1e7fb"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc94940f"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc9491d9"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc94a05a"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Bathrooms",
+                            "type": "entities"
+                        }
+                    ],
+                    "path": "default_view",
+                    "title": "Home"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.06200181b4e62d1833c9"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Downstairs Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.047555462cf432a189ba"
+                                },
+                                {
+                                    "entity": "switch.38837485c44f33a9dd7b"
+                                },
+                                {
+                                    "entity": "light.main_dimmer"
+                                },
+                                {
+                                    "entity": "switch.06200180bcddc2e5dde0"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc949fe8"
+                                },
+                                {
+                                    "entity": "switch.780740202cf432ca1c2a"
+                                },
+                                {
+                                    "entity": "switch.78074020600194d9f42d"
+                                },
+                                {
+                                    "entity": "switch.780740202cf432ca3b84"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc949179"
+                                },
+                                {
+                                    "entity": "switch.780740202cf432ca4a96"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f2222980c"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "theme": "default",
+                            "title": "Main Floor Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.020202312cf432a6f216"
+                                },
+                                {
+                                    "entity": "switch.020202312cf432a6b258"
+                                },
+                                {
+                                    "entity": "light.austins_room"
+                                },
+                                {
+                                    "entity": "light.lilys_lights"
+                                },
+                                {
+                                    "entity": "switch.78074020600194d9ea84"
+                                },
+                                {
+                                    "entity": "switch.02200010ecfabc896bca"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Upstairs Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.780740202cf432ca407a"
+                                },
+                                {
+                                    "entity": "switch.06200181b4e62d183b7a"
+                                },
+                                {
+                                    "entity": "switch.032002565ccf7f739f6f"
+                                },
+                                {
+                                    "entity": "switch.802378622cf432a7032f"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc949393"
+                                }
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Exterior Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.780740202cf432ca424e"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "type": "entities"
+                        }
+                    ],
+                    "path": "lighting",
+                    "title": "Lighting"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.03200076dc4f22229075"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f22233be2"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Extras",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.03200076dc4f22233c1f"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Safety",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.03200076dc4f2222957e"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f22233661"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Pets",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.03200076dc4f222336de"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f22229035"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f22229153"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Plugs",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.03200076dc4f22233dae"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f222297ed"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f2222937d"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f22233473"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Computers",
+                            "type": "entities"
+                        }
+                    ],
+                    "path": "other",
+                    "title": "Other"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entity": "weather.home",
+                            "type": "weather-forecast"
+                        }
+                    ],
+                    "panel": true,
+                    "path": "weather",
+                    "title": "Weather"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.02200010ecfabc89a8b3"
+                                },
+                                {
+                                    "entity": "switch.01200092600194560fdd"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f222334c2"
+                                },
+                                {
+                                    "entity": "switch.02200010ecfabc89aa43"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f22233d43"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f22229553"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f2222925e"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f22233d9c"
+                                },
+                                {
+                                    "entity": "switch.06200180bcddc2e5e01d"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc949bde"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc949315"
+                                },
+                                {
+                                    "entity": "switch.388374852cf432a1e7fb"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc94940f"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc9491d9"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc94a05a"
+                                },
+                                {
+                                    "entity": "switch.06200181b4e62d1833c9"
+                                },
+                                {
+                                    "entity": "switch.047555462cf432a189ba"
+                                },
+                                {
+                                    "entity": "switch.38837485c44f33a9dd7b"
+                                },
+                                {
+                                    "entity": "switch.06200180bcddc2e5dde0"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc949fe8"
+                                },
+                                {
+                                    "entity": "switch.78074020600194d9f42d"
+                                },
+                                {
+                                    "entity": "switch.780740202cf432ca3b84"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc949179"
+                                },
+                                {
+                                    "entity": "switch.780740202cf432ca1c2a"
+                                },
+                                {
+                                    "entity": "switch.780740202cf432ca4a96"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f2222980c"
+                                },
+                                {
+                                    "entity": "switch.020202312cf432a6f216"
+                                },
+                                {
+                                    "entity": "switch.020202312cf432a6b258"
+                                },
+                                {
+                                    "entity": "light.austins_room"
+                                },
+                                {
+                                    "entity": "light.lilys_lights"
+                                },
+                                {
+                                    "entity": "switch.78074020600194d9ea84"
+                                },
+                                {
+                                    "entity": "switch.02200010ecfabc896bca"
+                                },
+                                {
+                                    "entity": "switch.780740202cf432ca407a"
+                                },
+                                {
+                                    "entity": "switch.06200181b4e62d183b7a"
+                                },
+                                {
+                                    "entity": "switch.032002565ccf7f739f6f"
+                                },
+                                {
+                                    "entity": "switch.802378622cf432a7032f"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc949393"
+                                },
+                                {
+                                    "entity": "switch.780740202cf432ca424e"
+                                }
+                            ],
+                            "show_header_toggle": true,
+                            "title": "BedTimeGroup",
+                            "type": "entities"
+                        }
+                    ],
+                    "panel": false,
+                    "path": "major-groups",
+                    "title": "Bedtime Check"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}

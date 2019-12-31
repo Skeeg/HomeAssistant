@@ -1,0 +1,86 @@
+{
+    "data": [
+        {
+            "last_seen": "2019-12-31T19:09:25.003726+00:00",
+            "state": {
+                "attributes": {
+                    "editable": true,
+                    "friendly_name": "ryanpeay",
+                    "id": "dd6ad76fdf1e41d086517d3fb8a16b26",
+                    "user_id": "e209297cdec44455856b6aab46832759"
+                },
+                "context": {
+                    "id": "b9c047a2dba34d4cbcdf9f33f7b137da",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "person.ryanpeay",
+                "last_changed": "2019-12-28T19:19:30.970191+00:00",
+                "last_updated": "2019-12-28T19:19:35.752106+00:00",
+                "state": "unknown"
+            }
+        },
+        {
+            "last_seen": "2019-12-31T19:09:25.003726+00:00",
+            "state": {
+                "attributes": {
+                    "altitude": 1442.600830078125,
+                    "battery_level": 37,
+                    "friendly_name": "IPXSPX",
+                    "gps_accuracy": 65,
+                    "latitude": 40.32861328125,
+                    "longitude": -111.71268261897616,
+                    "source_type": "gps",
+                    "vertical_accuracy": 20
+                },
+                "context": {
+                    "id": "be09a7b59d584236912d42f433b13dd8",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "device_tracker.ipxspx",
+                "last_changed": "2019-12-29T23:56:10.414728+00:00",
+                "last_updated": "2019-12-29T23:56:10.414728+00:00",
+                "state": "not_home"
+            }
+        },
+        {
+            "last_seen": "2019-12-31T19:09:25.003726+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Lesley\u2019s iPhone 8",
+                    "source_type": "gps"
+                },
+                "context": {
+                    "id": "f86193e5342f4bef8d228d4912cd405a",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "device_tracker.lesleys_iphone_8",
+                "last_changed": "2019-12-28T22:12:06.655561+00:00",
+                "last_updated": "2019-12-28T22:12:06.655561+00:00",
+                "state": "unknown"
+            }
+        },
+        {
+            "last_seen": "2019-12-31T19:09:25.003726+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Lesley\u2019s iPhone 8",
+                    "source_type": "gps"
+                },
+                "context": {
+                    "id": "add268b37db74667a05b54fbcdf76068",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "device_tracker.lesleys_iphone_8_2",
+                "last_changed": "2019-12-28T22:14:59.727952+00:00",
+                "last_updated": "2019-12-28T22:14:59.727952+00:00",
+                "state": "unknown"
+            }
+        }
+    ],
+    "key": "core.restore_state",
+    "version": 1
+}
