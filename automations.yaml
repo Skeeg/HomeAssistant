@@ -1,0 +1,8 @@
+  - alias: 'Sunset Christmas Package'
+    trigger:
+      platform: sun
+      event: sunset
+      offset: "-00:15:00"
+    action:
+      service: switch.turn_on
+      entity_id: switch.06200180bcddc2e5e01d
