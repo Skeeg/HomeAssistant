@@ -14,10 +14,11 @@
     service: switch.turn_on
   - entity_id: switch.03200076dc4f2222980c
     service: switch.turn_on
-'bedtimescript':
+'1578540832705':
   alias: Bedtime Script
   sequence:
-  - entity_id: switch.02200010ecfabc89a8b3
+  - data: {}
+    entity_id: switch.02200010ecfabc89a8b3
     service: switch.turn_off
   - entity_id: switch.01200092600194560fdd
     service: switch.turn_off
