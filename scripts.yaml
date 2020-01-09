@@ -14,7 +14,7 @@
     service: switch.turn_on
   - entity_id: switch.03200076dc4f2222980c
     service: switch.turn_on
-'1578540832705':
+'bedtime_script':
   alias: Bedtime Script
   sequence:
   - data: {}
