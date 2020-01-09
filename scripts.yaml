@@ -1,4 +1,4 @@
-'1578465559707':
+'dad_alarm_script':
   alias: Dad Alarm
   sequence:
   - data: {}
@@ -6,7 +6,7 @@
     service: switch.turn_on
   - entity_id: switch.78074020600194d9ea84
     service: switch.turn_on
-'1578540832402':
+'master_movies_script':
   alias: Master Movies
   sequence:
   - data: {}
