@@ -15,8 +15,7 @@
     webhook_id: bedtime_shutdown
   condition: []
   action:
-  - entity_id: switch.06200180bcddc2e5e01d
-    service: switch.turn_off
+  - service: script.bedtime_script
 - id: '1578018875696'
   alias: GarageDoorOpening
   description: ''
@@ -87,4 +86,4 @@
     platform: time
   condition: []
   action:
-  - service: script.1578465559707
+  - service: script.dad_alarm_script

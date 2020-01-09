@@ -26,7 +26,10 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "script.1578540832402"
+                                    "entity": "script.master_movies_script"
+                                },
+                                {
+                                    "entity": "script.bedtime_script"
                                 }
                             ],
                             "show_header_toggle": false,
