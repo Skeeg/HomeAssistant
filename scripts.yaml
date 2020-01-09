@@ -93,3 +93,4 @@
   - entity_id: switch.04200161ecfabc949393
     service: switch.turn_off
   - entity_id: switch.780740202cf432ca424e
+    service: switch.turn_off
