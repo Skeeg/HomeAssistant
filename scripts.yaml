@@ -17,8 +17,7 @@
 'bedtimescript':
   alias: Bedtime Script
   sequence:
-  - data: {}
-    entity_id: switch.02200010ecfabc89a8b3
+  - entity_id: switch.02200010ecfabc89a8b3
     service: switch.turn_off
   - entity_id: switch.01200092600194560fdd
     service: switch.turn_off
