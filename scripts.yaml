@@ -1,0 +1,16 @@
+'1578465559707':
+  alias: Dad Alarm
+  sequence:
+  - data: {}
+    entity_id: switch.02200010ecfabc896bca
+    service: switch.turn_on
+  - entity_id: switch.78074020600194d9ea84
+    service: switch.turn_on
+'1578540832402':
+  alias: Master Movies
+  sequence:
+  - data: {}
+    entity_id: switch.03200076dc4f222334c2
+    service: switch.turn_on
+  - entity_id: switch.03200076dc4f2222980c
+    service: switch.turn_on

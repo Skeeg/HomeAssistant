@@ -1,8 +1,90 @@
-  - alias: 'Sunset Christmas Package'
-    trigger:
-      platform: sun
-      event: sunset
-      offset: "-00:15:00"
-    action:
-      service: switch.turn_on
-      entity_id: switch.06200180bcddc2e5e01d
+- id: bbaf12086dc04123bb7a6f9c91b3b1cb
+  alias: Sunset -15mins
+  trigger:
+  - event: sunset
+    offset: -00:15:00
+    platform: sun
+  action:
+  - entity_id: switch.06200180bcddc2e5e01d
+    service: switch.turn_on
+- id: '1577820851677'
+  alias: Bedtime Webhook
+  description: ''
+  trigger:
+  - platform: webhook
+    webhook_id: bedtime_shutdown
+  condition: []
+  action:
+  - entity_id: switch.06200180bcddc2e5e01d
+    service: switch.turn_off
+- id: '1578018875696'
+  alias: GarageDoorOpening
+  description: ''
+  trigger:
+  - entity_id: cover.main_garage
+    platform: state
+    to: open
+  - entity_id: cover.main_garage
+    platform: state
+    to: opening
+  - entity_id: cover.3rd_car_garage
+    platform: state
+    to: open
+  - entity_id: cover.3rd_car_garage
+    platform: state
+    to: opening
+  condition: []
+  action:
+  - alias: ''
+    data: {}
+    entity_id: switch.780740202cf432ca424e
+    service: switch.turn_on
+- id: '1578191248043'
+  alias: GarageClosing
+  description: ''
+  trigger:
+  - entity_id: cover.main_garage
+    platform: state
+    to: closing
+  - entity_id: cover.main_garage
+    platform: state
+    to: closed
+  - entity_id: cover.3rd_car_garage
+    platform: state
+    to: closing
+  - entity_id: cover.3rd_car_garage
+    platform: state
+    to: closed
+  condition: []
+  action:
+  - entity_id: switch.780740202cf432ca424e
+    service: switch.turn_off
+- id: '1578464273699'
+  alias: Austin Bedtime
+  description: ''
+  trigger:
+  - at: '22:45'
+    platform: time
+  condition: []
+  action:
+  - entity_id: switch.03200076dc4f2222957e
+    service: switch.turn_off
+- id: '1578464361506'
+  alias: Austin Weekday Morning
+  description: ''
+  trigger:
+  - at: 07:00
+    platform: time
+  condition: []
+  action:
+  - entity_id: switch.03200076dc4f2222957e
+    service: switch.turn_on
+- id: '1578465674789'
+  alias: Dad Alarm
+  description: ''
+  trigger:
+  - at: 07:00
+    platform: time
+  condition: []
+  action:
+  - service: script.1578465559707

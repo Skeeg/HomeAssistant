@@ -1,7 +1,7 @@
 {
     "data": [
         {
-            "last_seen": "2019-12-31T19:09:25.003726+00:00",
+            "last_seen": "2020-01-09T03:50:51.005166+00:00",
             "state": {
                 "attributes": {
                     "editable": true,
@@ -21,31 +21,29 @@
             }
         },
         {
-            "last_seen": "2019-12-31T19:09:25.003726+00:00",
+            "last_seen": "2020-01-09T03:50:51.005166+00:00",
             "state": {
                 "attributes": {
-                    "altitude": 1442.600830078125,
-                    "battery_level": 37,
+                    "battery_level": 46,
                     "friendly_name": "IPXSPX",
-                    "gps_accuracy": 65,
-                    "latitude": 40.32861328125,
-                    "longitude": -111.71268261897616,
-                    "source_type": "gps",
-                    "vertical_accuracy": 20
+                    "gps_accuracy": 100,
+                    "latitude": 40.297352247684096,
+                    "longitude": -111.87776556238533,
+                    "source_type": "gps"
                 },
                 "context": {
-                    "id": "be09a7b59d584236912d42f433b13dd8",
+                    "id": "7a7776b2e4a041d4aa960c2952a79f21",
                     "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "device_tracker.ipxspx",
-                "last_changed": "2019-12-29T23:56:10.414728+00:00",
-                "last_updated": "2019-12-29T23:56:10.414728+00:00",
-                "state": "not_home"
+                "last_changed": "2020-01-09T03:44:43.648898+00:00",
+                "last_updated": "2020-01-09T03:44:43.648898+00:00",
+                "state": "home"
             }
         },
         {
-            "last_seen": "2019-12-31T19:09:25.003726+00:00",
+            "last_seen": "2020-01-09T03:50:51.005166+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Lesley\u2019s iPhone 8",
@@ -63,7 +61,7 @@
             }
         },
         {
-            "last_seen": "2019-12-31T19:09:25.003726+00:00",
+            "last_seen": "2020-01-09T03:50:51.005166+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Lesley\u2019s iPhone 8",
@@ -78,6 +76,158 @@
                 "last_changed": "2019-12-28T22:14:59.727952+00:00",
                 "last_updated": "2019-12-28T22:14:59.727952+00:00",
                 "state": "unknown"
+            }
+        },
+        {
+            "last_seen": "2020-01-09T03:50:51.005166+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Dad Alarm",
+                    "id": "1578465674789",
+                    "last_triggered": "2020-01-08T14:00:00.559611+00:00"
+                },
+                "context": {
+                    "id": "07ab53ae5db048f8ac76c4beb5990e5d",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.dad_alarm",
+                "last_changed": "2020-01-08T06:43:07.617504+00:00",
+                "last_updated": "2020-01-08T14:00:00.559833+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-01-09T03:50:51.005166+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Bedtime Webhook",
+                    "id": "1577820851677",
+                    "last_triggered": "2019-12-31T19:38:18.115096+00:00"
+                },
+                "context": {
+                    "id": "4c267bde10f94eb08b60e9d935202c0d",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.bedtime_webhook",
+                "last_changed": "2020-01-09T03:41:18.009758+00:00",
+                "last_updated": "2020-01-09T03:41:18.009758+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-01-09T03:50:51.005166+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Sunset -15mins",
+                    "id": "bbaf12086dc04123bb7a6f9c91b3b1cb",
+                    "last_triggered": "2020-01-09T00:05:48.172616+00:00"
+                },
+                "context": {
+                    "id": "f0be38a625e049079e72ed68431e3e4c",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.sunset_15mins",
+                "last_changed": "2020-01-08T06:43:07.620579+00:00",
+                "last_updated": "2020-01-09T00:05:48.173147+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-01-09T03:50:51.005166+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Austin Bedtime",
+                    "id": "1578464273699",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "984ea99b689340f984af29396e2f1a2d",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.austin_bedtime",
+                "last_changed": "2020-01-08T06:43:07.621809+00:00",
+                "last_updated": "2020-01-08T06:43:07.621809+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-01-09T03:50:51.005166+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Austin Weekday Morning",
+                    "id": "1578464361506",
+                    "last_triggered": "2020-01-08T14:00:00.367660+00:00"
+                },
+                "context": {
+                    "id": "632f2b3a11884c79aeec7062817adf97",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.austin_weekday_morning",
+                "last_changed": "2020-01-08T06:43:07.623387+00:00",
+                "last_updated": "2020-01-08T14:00:00.367928+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-01-09T03:50:51.005166+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "GarageClosing",
+                    "id": "1578191248043",
+                    "last_triggered": "2020-01-09T00:37:39.862230+00:00"
+                },
+                "context": {
+                    "id": "ab576d6abd61491698ea1d6ddcb921ab",
+                    "parent_id": "8571d44b93d34e32b91623d2e316cb0b",
+                    "user_id": null
+                },
+                "entity_id": "automation.garageclosing",
+                "last_changed": "2020-01-08T06:43:07.626427+00:00",
+                "last_updated": "2020-01-09T00:37:39.862461+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-01-09T03:50:51.005166+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "GarageDoorOpening",
+                    "id": "1578018875696",
+                    "last_triggered": "2020-01-09T00:37:05.627053+00:00"
+                },
+                "context": {
+                    "id": "f368a337c05643fc9fabf372fc434427",
+                    "parent_id": "2bbd18ecc6424bb6861aff2cd790ad33",
+                    "user_id": null
+                },
+                "entity_id": "automation.garagedooropening",
+                "last_changed": "2020-01-08T06:43:07.629275+00:00",
+                "last_updated": "2020-01-09T00:37:05.627306+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-01-08T06:19:53.051108+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Sunrise -45mins",
+                    "id": "1577820689990",
+                    "last_triggered": "2020-01-07T14:01:52.327820+00:00"
+                },
+                "context": {
+                    "id": "794deac7b6f24330bb295a78c0e9f2ac",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.sunrise_45mins",
+                "last_changed": "2020-01-08T06:19:38.872393+00:00",
+                "last_updated": "2020-01-08T06:19:38.872393+00:00",
+                "state": "off"
             }
         }
     ],

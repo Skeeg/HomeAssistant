@@ -31,7 +31,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.l9yaalyi2s7oz30v",
                 "name": null,
                 "platform": "tuya",
@@ -40,7 +40,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.gylwrkyegwgpj7x9",
                 "name": null,
                 "platform": "tuya",
@@ -49,7 +49,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.4kccukiy8ff5zunj",
                 "name": null,
                 "platform": "tuya",
@@ -58,7 +58,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.e8g1ctuhoe9rsyqn",
                 "name": null,
                 "platform": "tuya",
@@ -67,7 +67,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.g10amfqkaa8onwu2",
                 "name": null,
                 "platform": "tuya",
@@ -76,7 +76,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.w4xdei3q0dhqwbew",
                 "name": null,
                 "platform": "tuya",
@@ -85,7 +85,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.gcvgnfgvhtxw87mx",
                 "name": null,
                 "platform": "tuya",
@@ -94,7 +94,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.07otnmhla1fo7vek",
                 "name": null,
                 "platform": "tuya",
@@ -103,7 +103,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.eoralbfnwwl5eloe",
                 "name": null,
                 "platform": "tuya",
@@ -112,7 +112,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.bsswphuogaldskmd",
                 "name": null,
                 "platform": "tuya",
@@ -121,7 +121,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.czzm8ozfezavuanu",
                 "name": null,
                 "platform": "tuya",
@@ -130,7 +130,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.q4ppjpdzyplxqgns",
                 "name": null,
                 "platform": "tuya",
@@ -139,7 +139,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.acvjfuu5baqdvjep",
                 "name": null,
                 "platform": "tuya",
@@ -148,7 +148,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.esarazu2rwetsnoz",
                 "name": null,
                 "platform": "tuya",
@@ -157,7 +157,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.jwjo6kaxkkpemlfr",
                 "name": null,
                 "platform": "tuya",
@@ -166,7 +166,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.hf2d7gaiflfmkgen",
                 "name": null,
                 "platform": "tuya",
@@ -175,7 +175,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.c74zaeiwlxnvggyp",
                 "name": null,
                 "platform": "tuya",
@@ -184,7 +184,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "scene.kusa3fmejrbvvv1n",
                 "name": null,
                 "platform": "tuya",
@@ -346,7 +346,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "switch.780740202cf432ca1c70",
                 "name": null,
                 "platform": "tuya",
@@ -355,7 +355,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "switch.388374852cf432a1db68",
                 "name": null,
                 "platform": "tuya",
@@ -373,7 +373,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "switch.38837485c44f33a530cb",
                 "name": null,
                 "platform": "tuya",
@@ -391,7 +391,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "switch.78074020600194d9f0f3",
                 "name": null,
                 "platform": "tuya",
@@ -427,7 +427,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "switch.780740202cf432ca13c6",
                 "name": null,
                 "platform": "tuya",
@@ -472,7 +472,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "switch.780740202cf432ca1ed8",
                 "name": null,
                 "platform": "tuya",
@@ -517,7 +517,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "switch.802378622cf432a6e3f2",
                 "name": null,
                 "platform": "tuya",
@@ -661,7 +661,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "switch.780740202cf432ca37c2",
                 "name": null,
                 "platform": "tuya",
@@ -688,7 +688,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "switch.78074020600194d9e426",
                 "name": null,
                 "platform": "tuya",
@@ -724,7 +724,7 @@
             {
                 "config_entry_id": null,
                 "device_id": null,
-                "disabled_by": null,
+                "disabled_by": "user",
                 "entity_id": "switch.780740202cf432ca41b0",
                 "name": null,
                 "platform": "tuya",
@@ -1179,6 +1179,24 @@
                 "name": null,
                 "platform": "plex",
                 "unique_id": "c1e1e5d13535fef89a237970d414079dc5a256cb:948E02B3-07CE-4B73-88A7-1D8F50AB3002"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": "user",
+                "entity_id": "scene.l9sie2f5b5fxerzg",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.l9siE2f5B5FXerzG"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": "user",
+                "entity_id": "scene.kunlfwyga7f2bdcm",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.kuNlFWyGA7f2BDcM"
             }
         ]
     },

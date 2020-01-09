@@ -8,12 +8,12 @@
                 "attributes": {
                     "Confidence": "High",
                     "Types": [
-                        "Stationary"
+                        "Unknown"
                     ]
                 },
-                "icon": "mdi:human-male",
+                "icon": "mdi:help-circle",
                 "name": "Activity",
-                "state": "Stationary",
+                "state": "Unknown",
                 "type": "sensor",
                 "unique_id": "activity",
                 "webhook_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a"
@@ -26,7 +26,7 @@
                 "device_class": "battery",
                 "icon": "mdi:battery-50",
                 "name": "Battery Level",
-                "state": 51,
+                "state": 55,
                 "type": "sensor",
                 "unique_id": "battery_level",
                 "unit_of_measurement": "%",
@@ -35,7 +35,7 @@
             "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_battery_state": {
                 "added": true,
                 "attributes": {
-                    "Battery Level": 51
+                    "Battery Level": 55
                 },
                 "device_class": "battery",
                 "icon": "mdi:battery-50",
@@ -129,7 +129,7 @@
                 "attributes": {},
                 "icon": "mdi:hiking",
                 "name": "Distance",
-                "state": 1487,
+                "state": 1936,
                 "type": "sensor",
                 "unique_id": "pedometer_distance",
                 "unit_of_measurement": "m",
@@ -140,7 +140,7 @@
                 "attributes": {},
                 "icon": "mdi:slope-uphill",
                 "name": "Floors Ascended",
-                "state": 0,
+                "state": 2,
                 "type": "sensor",
                 "unique_id": "pedometer_floors_ascended",
                 "unit_of_measurement": "floors",
@@ -151,7 +151,7 @@
                 "attributes": {},
                 "icon": "mdi:slope-downhill",
                 "name": "Floors Descended",
-                "state": 0,
+                "state": 2,
                 "type": "sensor",
                 "unique_id": "pedometer_floors_descended",
                 "unit_of_measurement": "floors",
@@ -162,7 +162,7 @@
                 "attributes": {},
                 "icon": "mdi:walk",
                 "name": "Steps",
-                "state": 2490,
+                "state": 3237,
                 "type": "sensor",
                 "unique_id": "pedometer_steps",
                 "unit_of_measurement": "steps",
@@ -270,12 +270,12 @@
                 "attributes": {
                     "Confidence": "High",
                     "Types": [
-                        "Stationary"
+                        "Unknown"
                     ]
                 },
-                "icon": "mdi:human-male",
+                "icon": "mdi:help-circle",
                 "name": "Activity",
-                "state": "Stationary",
+                "state": "Unknown",
                 "type": "sensor",
                 "unique_id": "activity",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -283,12 +283,12 @@
             "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_battery_level": {
                 "added": true,
                 "attributes": {
-                    "Battery State": "Full"
+                    "Battery State": "Not Charging"
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery",
+                "icon": "mdi:battery-40",
                 "name": "Battery Level",
-                "state": 100,
+                "state": 46,
                 "type": "sensor",
                 "unique_id": "battery_level",
                 "unit_of_measurement": "%",
@@ -297,12 +297,12 @@
             "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_battery_state": {
                 "added": true,
                 "attributes": {
-                    "Battery Level": 100
+                    "Battery Level": 46
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery",
+                "icon": "mdi:battery-40",
                 "name": "Battery State",
-                "state": "Full",
+                "state": "Not Charging",
                 "type": "sensor",
                 "unique_id": "battery_state",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -310,9 +310,9 @@
             "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_connectivity_bssid": {
                 "added": true,
                 "attributes": {},
-                "icon": "mdi:wifi-off",
+                "icon": "mdi:wifi-star",
                 "name": "BSSID",
-                "state": "Not Connected",
+                "state": "f0:9f:c2:a7:96:df",
                 "type": "sensor",
                 "unique_id": "connectivity_bssid",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -333,7 +333,7 @@
                     "Allows VoIP": true,
                     "Carrier ID": "0000000100000001",
                     "Carrier Name": "AT&T",
-                    "Current Radio Technology": "Long-Term Evolution (LTE)",
+                    "Current Radio Technology": "High Speed Downlink Packet Access (HSDPA)",
                     "ISO Country Code": "us",
                     "Mobile Country Code": "310",
                     "Mobile Network Code": "410"
@@ -348,9 +348,9 @@
             "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_connectivity_ssid": {
                 "added": true,
                 "attributes": {},
-                "icon": "mdi:wifi-off",
+                "icon": "mdi:wifi",
                 "name": "SSID",
-                "state": "Not Connected",
+                "state": "SKG-UniFi",
                 "type": "sensor",
                 "unique_id": "connectivity_ssid",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -363,23 +363,23 @@
                     "Country": "United States",
                     "ISO Country Code": "US",
                     "Inland Water": "N/A",
-                    "Locality": "Orem",
+                    "Locality": "Saratoga Springs",
                     "Location": [
-                        40.32861328125,
-                        -111.71268261897616
+                        40.29693603515625,
+                        -111.8784229667175
                     ],
-                    "Name": "1711 N 680 W St",
+                    "Name": "153 E Lake Cove Cir",
                     "Ocean": "N/A",
-                    "Postal Code": "84057",
+                    "Postal Code": "84045",
                     "Sub Administrative Area": "Utah",
-                    "Sub Locality": "Aspen",
-                    "Sub Thoroughfare": "1711",
-                    "Thoroughfare": "N 680 W St",
+                    "Sub Locality": "N/A",
+                    "Sub Thoroughfare": "153",
+                    "Thoroughfare": "E Lake Cove Cir",
                     "Time Zone": "America/Denver"
                 },
                 "icon": "mdi:map",
                 "name": "Geocoded Location",
-                "state": "1711 N 680 W St\nOrem UT 84057\nUnited States",
+                "state": "153 E Lake Cove Cir\nSaratoga Springs UT 84045\nUnited States",
                 "type": "sensor",
                 "unique_id": "geocoded_location",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -389,7 +389,7 @@
                 "attributes": {},
                 "icon": "mdi:cellphone-wireless",
                 "name": "Last Update Trigger",
-                "state": "Background Fetch",
+                "state": "Geographic Region Entered",
                 "type": "sensor",
                 "unique_id": "last_update_trigger",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -410,7 +410,7 @@
                 "attributes": {},
                 "icon": "mdi:hiking",
                 "name": "Distance",
-                "state": 246,
+                "state": 3462,
                 "type": "sensor",
                 "unique_id": "pedometer_distance",
                 "unit_of_measurement": "m",
@@ -421,7 +421,7 @@
                 "attributes": {},
                 "icon": "mdi:slope-uphill",
                 "name": "Floors Ascended",
-                "state": 0,
+                "state": 7,
                 "type": "sensor",
                 "unique_id": "pedometer_floors_ascended",
                 "unit_of_measurement": "floors",
@@ -432,7 +432,7 @@
                 "attributes": {},
                 "icon": "mdi:slope-downhill",
                 "name": "Floors Descended",
-                "state": 1,
+                "state": 8,
                 "type": "sensor",
                 "unique_id": "pedometer_floors_descended",
                 "unit_of_measurement": "floors",
@@ -443,7 +443,7 @@
                 "attributes": {},
                 "icon": "mdi:walk",
                 "name": "Steps",
-                "state": 358,
+                "state": 5290,
                 "type": "sensor",
                 "unique_id": "pedometer_steps",
                 "unit_of_measurement": "steps",

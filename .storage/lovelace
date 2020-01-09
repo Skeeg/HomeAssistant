@@ -26,6 +26,16 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "script.1578540832402"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Scripts",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
                                     "entity": "cover.main_garage"
                                 },
                                 {
