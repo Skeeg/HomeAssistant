@@ -8,12 +8,12 @@
                 "attributes": {
                     "Confidence": "High",
                     "Types": [
-                        "Unknown"
+                        "Stationary"
                     ]
                 },
-                "icon": "mdi:help-circle",
+                "icon": "mdi:human-male",
                 "name": "Activity",
-                "state": "Unknown",
+                "state": "Stationary",
                 "type": "sensor",
                 "unique_id": "activity",
                 "webhook_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a"
@@ -24,9 +24,9 @@
                     "Battery State": "Not Charging"
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery-50",
+                "icon": "mdi:battery-30",
                 "name": "Battery Level",
-                "state": 55,
+                "state": 39,
                 "type": "sensor",
                 "unique_id": "battery_level",
                 "unit_of_measurement": "%",
@@ -35,10 +35,10 @@
             "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_battery_state": {
                 "added": true,
                 "attributes": {
-                    "Battery Level": 55
+                    "Battery Level": 39
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery-50",
+                "icon": "mdi:battery-30",
                 "name": "Battery State",
                 "state": "Not Charging",
                 "type": "sensor",
@@ -108,7 +108,7 @@
                 "attributes": {},
                 "icon": "mdi:cellphone-wireless",
                 "name": "Last Update Trigger",
-                "state": "Background Fetch",
+                "state": "Initial",
                 "type": "sensor",
                 "unique_id": "last_update_trigger",
                 "webhook_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a"
@@ -129,7 +129,7 @@
                 "attributes": {},
                 "icon": "mdi:hiking",
                 "name": "Distance",
-                "state": 1936,
+                "state": 766,
                 "type": "sensor",
                 "unique_id": "pedometer_distance",
                 "unit_of_measurement": "m",
@@ -162,7 +162,7 @@
                 "attributes": {},
                 "icon": "mdi:walk",
                 "name": "Steps",
-                "state": 3237,
+                "state": 1232,
                 "type": "sensor",
                 "unique_id": "pedometer_steps",
                 "unit_of_measurement": "steps",
@@ -286,9 +286,9 @@
                     "Battery State": "Not Charging"
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery-40",
+                "icon": "mdi:battery-70",
                 "name": "Battery Level",
-                "state": 46,
+                "state": 76,
                 "type": "sensor",
                 "unique_id": "battery_level",
                 "unit_of_measurement": "%",
@@ -297,10 +297,10 @@
             "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_battery_state": {
                 "added": true,
                 "attributes": {
-                    "Battery Level": 46
+                    "Battery Level": 76
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery-40",
+                "icon": "mdi:battery-70",
                 "name": "Battery State",
                 "state": "Not Charging",
                 "type": "sensor",
@@ -310,9 +310,9 @@
             "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_connectivity_bssid": {
                 "added": true,
                 "attributes": {},
-                "icon": "mdi:wifi-star",
+                "icon": "mdi:wifi-off",
                 "name": "BSSID",
-                "state": "f0:9f:c2:a7:96:df",
+                "state": "Not Connected",
                 "type": "sensor",
                 "unique_id": "connectivity_bssid",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -333,7 +333,7 @@
                     "Allows VoIP": true,
                     "Carrier ID": "0000000100000001",
                     "Carrier Name": "AT&T",
-                    "Current Radio Technology": "High Speed Downlink Packet Access (HSDPA)",
+                    "Current Radio Technology": "Long-Term Evolution (LTE)",
                     "ISO Country Code": "us",
                     "Mobile Country Code": "310",
                     "Mobile Network Code": "410"
@@ -348,9 +348,9 @@
             "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_connectivity_ssid": {
                 "added": true,
                 "attributes": {},
-                "icon": "mdi:wifi",
+                "icon": "mdi:wifi-off",
                 "name": "SSID",
-                "state": "SKG-UniFi",
+                "state": "Not Connected",
                 "type": "sensor",
                 "unique_id": "connectivity_ssid",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -365,21 +365,21 @@
                     "Inland Water": "N/A",
                     "Locality": "Saratoga Springs",
                     "Location": [
-                        40.29693603515625,
-                        -111.8784229667175
+                        40.296417236328125,
+                        -111.87856838246633
                     ],
-                    "Name": "153 E Lake Cove Cir",
+                    "Name": "168 E Wayside Dr",
                     "Ocean": "N/A",
                     "Postal Code": "84045",
                     "Sub Administrative Area": "Utah",
                     "Sub Locality": "N/A",
-                    "Sub Thoroughfare": "153",
-                    "Thoroughfare": "E Lake Cove Cir",
+                    "Sub Thoroughfare": "168",
+                    "Thoroughfare": "E Wayside Dr",
                     "Time Zone": "America/Denver"
                 },
                 "icon": "mdi:map",
                 "name": "Geocoded Location",
-                "state": "153 E Lake Cove Cir\nSaratoga Springs UT 84045\nUnited States",
+                "state": "168 E Wayside Dr\nSaratoga Springs UT 84045\nUnited States",
                 "type": "sensor",
                 "unique_id": "geocoded_location",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -389,7 +389,7 @@
                 "attributes": {},
                 "icon": "mdi:cellphone-wireless",
                 "name": "Last Update Trigger",
-                "state": "Geographic Region Entered",
+                "state": "Background Fetch",
                 "type": "sensor",
                 "unique_id": "last_update_trigger",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -410,7 +410,7 @@
                 "attributes": {},
                 "icon": "mdi:hiking",
                 "name": "Distance",
-                "state": 3462,
+                "state": 2431,
                 "type": "sensor",
                 "unique_id": "pedometer_distance",
                 "unit_of_measurement": "m",
@@ -421,7 +421,7 @@
                 "attributes": {},
                 "icon": "mdi:slope-uphill",
                 "name": "Floors Ascended",
-                "state": 7,
+                "state": 3,
                 "type": "sensor",
                 "unique_id": "pedometer_floors_ascended",
                 "unit_of_measurement": "floors",
@@ -432,7 +432,7 @@
                 "attributes": {},
                 "icon": "mdi:slope-downhill",
                 "name": "Floors Descended",
-                "state": 8,
+                "state": 3,
                 "type": "sensor",
                 "unique_id": "pedometer_floors_descended",
                 "unit_of_measurement": "floors",
@@ -443,7 +443,7 @@
                 "attributes": {},
                 "icon": "mdi:walk",
                 "name": "Steps",
-                "state": 5290,
+                "state": 3936,
                 "type": "sensor",
                 "unique_id": "pedometer_steps",
                 "unit_of_measurement": "steps",

@@ -1197,6 +1197,33 @@
                 "name": null,
                 "platform": "tuya",
                 "unique_id": "tuya.kuNlFWyGA7f2BDcM"
+            },
+            {
+                "config_entry_id": "aa9011797f1f45d9911efbd5d4955ce8",
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "media_player.plex_austins_bedroom",
+                "name": null,
+                "platform": "plex",
+                "unique_id": "c1e1e5d13535fef89a237970d414079dc5a256cb:FF9E9ED0-DF20-4EA3-8E65-3E784F757BFA"
+            },
+            {
+                "config_entry_id": "aa9011797f1f45d9911efbd5d4955ce8",
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "media_player.plex_safari",
+                "name": null,
+                "platform": "plex",
+                "unique_id": "c1e1e5d13535fef89a237970d414079dc5a256cb:frtyarqp0hcidrvtufzv4oig"
+            },
+            {
+                "config_entry_id": "aa9011797f1f45d9911efbd5d4955ce8",
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "media_player.plex_master_bedroom",
+                "name": null,
+                "platform": "plex",
+                "unique_id": "c1e1e5d13535fef89a237970d414079dc5a256cb:B11D1AB0-35DB-4350-8D45-F06D0E82BCAF"
             }
         ]
     },
