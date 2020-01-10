@@ -279,7 +279,7 @@
                                     "entity": "switch.03200076dc4f222336de"
                                 },
                                 {
-                                    "entity": "lilys_fan.switch"
+                                    "entity": "switch.lilys_fan"
                                 },
                                 {
                                     "entity": "switch.03200076dc4f22229153"
