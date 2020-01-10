@@ -1224,6 +1224,15 @@
                 "name": null,
                 "platform": "plex",
                 "unique_id": "c1e1e5d13535fef89a237970d414079dc5a256cb:B11D1AB0-35DB-4350-8D45-F06D0E82BCAF"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.03200076dc4f22229035",
+                "name": "Lily's Fan",
+                "platform": "tuya",
+                "unique_id": "tuya.03200076dc4f22229035"
             }
         ]
     },
