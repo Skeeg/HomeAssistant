@@ -194,7 +194,7 @@
                 "config_entry_id": null,
                 "device_id": null,
                 "disabled_by": null,
-                "entity_id": "fireplace.switch",
+                "entity_id": "lilys_fan.switch",
                 "name": null,
                 "platform": "tuya",
                 "unique_id": "tuya.03200076dc4f22229035"
