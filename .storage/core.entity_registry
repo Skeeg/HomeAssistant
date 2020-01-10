@@ -194,7 +194,7 @@
                 "config_entry_id": null,
                 "device_id": null,
                 "disabled_by": null,
-                "entity_id": "lilys_fan.switch",
+                "entity_id": "switch.lilys_fan",
                 "name": null,
                 "platform": "tuya",
                 "unique_id": "tuya.03200076dc4f22229035"
