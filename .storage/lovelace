@@ -279,11 +279,7 @@
                                     "entity": "switch.03200076dc4f222336de"
                                 },
                                 {
-<<<<<<< Updated upstream
-                                    "entity": "switch.lilys_fan"
-=======
                                     "entity": "switch.03200076dc4f22229035"
->>>>>>> Stashed changes
                                 },
                                 {
                                     "entity": "switch.03200076dc4f22229153"
