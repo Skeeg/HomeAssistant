@@ -8,12 +8,12 @@
                 "attributes": {
                     "Confidence": "High",
                     "Types": [
-                        "Stationary"
+                        "Automotive"
                     ]
                 },
-                "icon": "mdi:human-male",
+                "icon": "mdi:car",
                 "name": "Activity",
-                "state": "Stationary",
+                "state": "Automotive",
                 "type": "sensor",
                 "unique_id": "activity",
                 "webhook_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a"
@@ -24,9 +24,9 @@
                     "Battery State": "Not Charging"
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery-30",
+                "icon": "mdi:battery-50",
                 "name": "Battery Level",
-                "state": 39,
+                "state": 52,
                 "type": "sensor",
                 "unique_id": "battery_level",
                 "unit_of_measurement": "%",
@@ -35,10 +35,10 @@
             "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_battery_state": {
                 "added": true,
                 "attributes": {
-                    "Battery Level": 39
+                    "Battery Level": 52
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery-30",
+                "icon": "mdi:battery-50",
                 "name": "Battery State",
                 "state": "Not Charging",
                 "type": "sensor",
@@ -57,10 +57,12 @@
             },
             "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a_connectivity_connection_type": {
                 "added": true,
-                "attributes": {},
-                "icon": "mdi:wifi",
+                "attributes": {
+                    "Cellular Technology": "4G"
+                },
+                "icon": "mdi:signal",
                 "name": "Connection Type",
-                "state": "Wi-Fi",
+                "state": "Cellular",
                 "type": "sensor",
                 "unique_id": "connectivity_connection_type",
                 "webhook_id": "349feced1c51a7a6ef58b87f2cb3512736f7868b331d25f5e3e4148232677d3a"
@@ -129,7 +131,7 @@
                 "attributes": {},
                 "icon": "mdi:hiking",
                 "name": "Distance",
-                "state": 766,
+                "state": 1616,
                 "type": "sensor",
                 "unique_id": "pedometer_distance",
                 "unit_of_measurement": "m",
@@ -140,7 +142,7 @@
                 "attributes": {},
                 "icon": "mdi:slope-uphill",
                 "name": "Floors Ascended",
-                "state": 2,
+                "state": 3,
                 "type": "sensor",
                 "unique_id": "pedometer_floors_ascended",
                 "unit_of_measurement": "floors",
@@ -151,7 +153,7 @@
                 "attributes": {},
                 "icon": "mdi:slope-downhill",
                 "name": "Floors Descended",
-                "state": 2,
+                "state": 3,
                 "type": "sensor",
                 "unique_id": "pedometer_floors_descended",
                 "unit_of_measurement": "floors",
@@ -162,7 +164,7 @@
                 "attributes": {},
                 "icon": "mdi:walk",
                 "name": "Steps",
-                "state": 1232,
+                "state": 2740,
                 "type": "sensor",
                 "unique_id": "pedometer_steps",
                 "unit_of_measurement": "steps",
@@ -270,12 +272,12 @@
                 "attributes": {
                     "Confidence": "High",
                     "Types": [
-                        "Unknown"
+                        "Walking"
                     ]
                 },
-                "icon": "mdi:help-circle",
+                "icon": "mdi:walk",
                 "name": "Activity",
-                "state": "Unknown",
+                "state": "Walking",
                 "type": "sensor",
                 "unique_id": "activity",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -286,9 +288,9 @@
                     "Battery State": "Not Charging"
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery-70",
+                "icon": "mdi:battery",
                 "name": "Battery Level",
-                "state": 76,
+                "state": 100,
                 "type": "sensor",
                 "unique_id": "battery_level",
                 "unit_of_measurement": "%",
@@ -297,10 +299,10 @@
             "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_battery_state": {
                 "added": true,
                 "attributes": {
-                    "Battery Level": 76
+                    "Battery Level": 100
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery-70",
+                "icon": "mdi:battery",
                 "name": "Battery State",
                 "state": "Not Charging",
                 "type": "sensor",
@@ -410,7 +412,7 @@
                 "attributes": {},
                 "icon": "mdi:hiking",
                 "name": "Distance",
-                "state": 2431,
+                "state": 163,
                 "type": "sensor",
                 "unique_id": "pedometer_distance",
                 "unit_of_measurement": "m",
@@ -421,7 +423,7 @@
                 "attributes": {},
                 "icon": "mdi:slope-uphill",
                 "name": "Floors Ascended",
-                "state": 3,
+                "state": 0,
                 "type": "sensor",
                 "unique_id": "pedometer_floors_ascended",
                 "unit_of_measurement": "floors",
@@ -432,7 +434,7 @@
                 "attributes": {},
                 "icon": "mdi:slope-downhill",
                 "name": "Floors Descended",
-                "state": 3,
+                "state": 1,
                 "type": "sensor",
                 "unique_id": "pedometer_floors_descended",
                 "unit_of_measurement": "floors",
@@ -443,7 +445,7 @@
                 "attributes": {},
                 "icon": "mdi:walk",
                 "name": "Steps",
-                "state": 3936,
+                "state": 268,
                 "type": "sensor",
                 "unique_id": "pedometer_steps",
                 "unit_of_measurement": "steps",
