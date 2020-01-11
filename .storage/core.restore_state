@@ -1,7 +1,7 @@
 {
     "data": [
         {
-            "last_seen": "2020-01-11T14:51:16.004895+00:00",
+            "last_seen": "2020-01-11T16:09:03.009890+00:00",
             "state": {
                 "attributes": {
                     "editable": true,
@@ -10,94 +10,18 @@
                     "user_id": "e209297cdec44455856b6aab46832759"
                 },
                 "context": {
-                    "id": "20e04c464c8340daaa44683fd013582a",
+                    "id": "4417de49574a472fbc5e9be3b9723208",
                     "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "person.ryanpeay",
-                "last_changed": "2020-01-10T05:34:27.632132+00:00",
-                "last_updated": "2020-01-10T05:34:32.615724+00:00",
+                "last_changed": "2020-01-11T15:08:54.981710+00:00",
+                "last_updated": "2020-01-11T15:08:59.915294+00:00",
                 "state": "unknown"
             }
         },
         {
-            "last_seen": "2020-01-11T14:51:16.004895+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Bedtime Webhook",
-                    "id": "1577820851677",
-                    "last_triggered": "2019-12-31T19:38:18.115096+00:00"
-                },
-                "context": {
-                    "id": "0bf67249617e49b39017100019744cbf",
-                    "parent_id": null,
-                    "user_id": null
-                },
-                "entity_id": "automation.bedtime_webhook",
-                "last_changed": "2020-01-10T05:34:27.632653+00:00",
-                "last_updated": "2020-01-10T05:34:27.632653+00:00",
-                "state": "on"
-            }
-        },
-        {
-            "last_seen": "2020-01-11T14:51:16.004895+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "GarageDoorOpening",
-                    "id": "1578018875696",
-                    "last_triggered": "2020-01-11T00:45:27.657699+00:00"
-                },
-                "context": {
-                    "id": "87366957315d49379e2d0ddbe5f23571",
-                    "parent_id": "e7ab4863361046299be554665442fce9",
-                    "user_id": null
-                },
-                "entity_id": "automation.garagedooropening",
-                "last_changed": "2020-01-10T05:34:27.633366+00:00",
-                "last_updated": "2020-01-11T00:45:27.657945+00:00",
-                "state": "on"
-            }
-        },
-        {
-            "last_seen": "2020-01-11T14:51:16.004895+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "GarageClosing",
-                    "id": "1578191248043",
-                    "last_triggered": "2020-01-11T00:46:15.666844+00:00"
-                },
-                "context": {
-                    "id": "9ae5f03368ca4297adb3bc3155c6e126",
-                    "parent_id": "5252810fd78e44469ab16c44d2ea3af0",
-                    "user_id": null
-                },
-                "entity_id": "automation.garageclosing",
-                "last_changed": "2020-01-10T05:34:27.634195+00:00",
-                "last_updated": "2020-01-11T00:46:15.667091+00:00",
-                "state": "on"
-            }
-        },
-        {
-            "last_seen": "2020-01-11T14:51:16.004895+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Austin Bedtime",
-                    "id": "1578464273699",
-                    "last_triggered": "2020-01-11T05:45:10.012753+00:00"
-                },
-                "context": {
-                    "id": "39d2626350864a1dbbd55bb27758947d",
-                    "parent_id": null,
-                    "user_id": null
-                },
-                "entity_id": "automation.austin_bedtime",
-                "last_changed": "2020-01-10T05:34:27.634715+00:00",
-                "last_updated": "2020-01-11T05:45:10.013085+00:00",
-                "state": "on"
-            }
-        },
-        {
-            "last_seen": "2020-01-11T14:51:16.004895+00:00",
+            "last_seen": "2020-01-11T16:09:03.009890+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Austin Weekday Morning",
@@ -105,18 +29,18 @@
                     "last_triggered": "2020-01-11T14:00:00.239728+00:00"
                 },
                 "context": {
-                    "id": "a0580a399a2f4920bba0b4685691fc19",
+                    "id": "42128bca6043471db25a169a7c147f05",
                     "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "automation.austin_weekday_morning",
-                "last_changed": "2020-01-10T05:34:27.635182+00:00",
-                "last_updated": "2020-01-11T14:00:00.239990+00:00",
+                "last_changed": "2020-01-11T15:08:54.982220+00:00",
+                "last_updated": "2020-01-11T15:08:54.982220+00:00",
                 "state": "on"
             }
         },
         {
-            "last_seen": "2020-01-11T14:51:16.004895+00:00",
+            "last_seen": "2020-01-11T16:09:03.009890+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Dad Alarm",
@@ -124,18 +48,18 @@
                     "last_triggered": "2020-01-11T14:00:10.009357+00:00"
                 },
                 "context": {
-                    "id": "d740f62d22f34040be34b2b7364465c4",
+                    "id": "a0a55b42ad174b628f0b07b932ebf45e",
                     "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "automation.dad_alarm",
-                "last_changed": "2020-01-10T05:34:27.635628+00:00",
-                "last_updated": "2020-01-11T14:00:10.009678+00:00",
+                "last_changed": "2020-01-11T15:08:54.982677+00:00",
+                "last_updated": "2020-01-11T15:08:54.982677+00:00",
                 "state": "on"
             }
         },
         {
-            "last_seen": "2020-01-11T14:51:16.004895+00:00",
+            "last_seen": "2020-01-11T16:09:03.009890+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Sunset -15mins",
@@ -143,71 +67,149 @@
                     "last_triggered": "2020-01-11T00:07:45.220257+00:00"
                 },
                 "context": {
-                    "id": "a99d9ae6b4b6407e9d04e3af2c894190",
+                    "id": "63ce2145852c4efca86fde3f8598aa56",
                     "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "automation.sunset_15mins",
-                "last_changed": "2020-01-10T05:34:27.636074+00:00",
-                "last_updated": "2020-01-11T00:07:45.220508+00:00",
+                "last_changed": "2020-01-11T15:08:54.983670+00:00",
+                "last_updated": "2020-01-11T15:08:54.983670+00:00",
                 "state": "on"
             }
         },
         {
-            "last_seen": "2020-01-11T14:51:16.004895+00:00",
+            "last_seen": "2020-01-11T16:09:03.009890+00:00",
             "state": {
                 "attributes": {
-                    "battery_level": 85,
-                    "friendly_name": "IPXSPX",
-                    "gps_accuracy": 100,
-                    "latitude": 40.297352247684096,
-                    "longitude": -111.87776556238533,
-                    "source_type": "gps"
+                    "friendly_name": "Bedtime Webhook",
+                    "id": "1577820851677",
+                    "last_triggered": "2019-12-31T19:38:18.115096+00:00"
                 },
                 "context": {
-                    "id": "ad270c032ba6495cac7ebd3e550defae",
+                    "id": "47979d263cd4480e82f7f20b4c9dbc23",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.bedtime_webhook",
+                "last_changed": "2020-01-11T15:08:54.984208+00:00",
+                "last_updated": "2020-01-11T15:08:54.984208+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-01-11T16:09:03.009890+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "GarageDoorOpening",
+                    "id": "1578018875696",
+                    "last_triggered": "2020-01-11T00:45:27.657699+00:00"
+                },
+                "context": {
+                    "id": "958a83a9d51d434a83f3c343712a3928",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.garagedooropening",
+                "last_changed": "2020-01-11T15:08:54.984658+00:00",
+                "last_updated": "2020-01-11T15:08:54.984658+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-01-11T16:09:03.009890+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "GarageClosing",
+                    "id": "1578191248043",
+                    "last_triggered": "2020-01-11T00:46:15.666844+00:00"
+                },
+                "context": {
+                    "id": "8c490ad2a47949f093f67f8dbb1024eb",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.garageclosing",
+                "last_changed": "2020-01-11T15:08:54.985089+00:00",
+                "last_updated": "2020-01-11T15:08:54.985089+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-01-11T16:09:03.009890+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Austin Bedtime",
+                    "id": "1578464273699",
+                    "last_triggered": "2020-01-11T05:45:10.012753+00:00"
+                },
+                "context": {
+                    "id": "3d485124bab343718580304510efec5f",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.austin_bedtime",
+                "last_changed": "2020-01-11T15:08:54.985523+00:00",
+                "last_updated": "2020-01-11T15:08:54.985523+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-01-11T16:09:03.009890+00:00",
+            "state": {
+                "attributes": {
+                    "altitude": 1375.0677490234375,
+                    "battery_level": 98,
+                    "friendly_name": "IPXSPX",
+                    "gps_accuracy": 65,
+                    "latitude": 40.35845947265625,
+                    "longitude": -111.90985104894263,
+                    "source_type": "gps",
+                    "vertical_accuracy": 10
+                },
+                "context": {
+                    "id": "755f2ba4bd6c451f883dbf4fd47b2037",
                     "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "device_tracker.ipxspx",
-                "last_changed": "2020-01-10T05:34:28.163115+00:00",
-                "last_updated": "2020-01-10T05:34:28.163115+00:00",
-                "state": "home"
+                "last_changed": "2020-01-11T15:08:55.743422+00:00",
+                "last_updated": "2020-01-11T15:08:55.743422+00:00",
+                "state": "not_home"
             }
         },
         {
-            "last_seen": "2020-01-11T14:51:16.004895+00:00",
+            "last_seen": "2020-01-11T16:09:03.009890+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Lesley\u2019s iPhone 8",
                     "source_type": "gps"
                 },
                 "context": {
-                    "id": "69c5f840411d47e08107f11fcbfca299",
+                    "id": "b975709a7c834c45811a621228854e5b",
                     "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "device_tracker.lesleys_iphone_8",
-                "last_changed": "2020-01-10T05:34:28.163618+00:00",
-                "last_updated": "2020-01-10T05:34:28.163618+00:00",
+                "last_changed": "2020-01-11T15:08:55.743986+00:00",
+                "last_updated": "2020-01-11T15:08:55.743986+00:00",
                 "state": "unknown"
             }
         },
         {
-            "last_seen": "2020-01-11T14:51:16.004895+00:00",
+            "last_seen": "2020-01-11T16:09:03.009890+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Lesley\u2019s iPhone 8",
                     "source_type": "gps"
                 },
                 "context": {
-                    "id": "549f078feb264f08b5e369928b8aabcd",
+                    "id": "9868cd680bed48c58534e8f435fa8870",
                     "parent_id": null,
                     "user_id": null
                 },
                 "entity_id": "device_tracker.lesleys_iphone_8_2",
-                "last_changed": "2020-01-10T05:34:28.164072+00:00",
-                "last_updated": "2020-01-10T05:34:28.164072+00:00",
+                "last_changed": "2020-01-11T15:08:55.744463+00:00",
+                "last_updated": "2020-01-11T15:08:55.744463+00:00",
                 "state": "unknown"
             }
         },

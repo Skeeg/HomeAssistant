@@ -272,12 +272,12 @@
                 "attributes": {
                     "Confidence": "High",
                     "Types": [
-                        "Walking"
+                        "Automotive"
                     ]
                 },
-                "icon": "mdi:walk",
+                "icon": "mdi:car",
                 "name": "Activity",
-                "state": "Walking",
+                "state": "Automotive",
                 "type": "sensor",
                 "unique_id": "activity",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -285,12 +285,12 @@
             "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_battery_level": {
                 "added": true,
                 "attributes": {
-                    "Battery State": "Not Charging"
+                    "Battery State": "Charging"
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery",
+                "icon": "mdi:battery-charging-80",
                 "name": "Battery Level",
-                "state": 100,
+                "state": 95,
                 "type": "sensor",
                 "unique_id": "battery_level",
                 "unit_of_measurement": "%",
@@ -299,12 +299,12 @@
             "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_battery_state": {
                 "added": true,
                 "attributes": {
-                    "Battery Level": 100
+                    "Battery Level": 95
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery",
+                "icon": "mdi:battery-charging-80",
                 "name": "Battery State",
-                "state": "Not Charging",
+                "state": "Charging",
                 "type": "sensor",
                 "unique_id": "battery_state",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -321,10 +321,12 @@
             },
             "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_connectivity_connection_type": {
                 "added": true,
-                "attributes": {},
-                "icon": "mdi:wifi",
+                "attributes": {
+                    "Cellular Technology": "4G"
+                },
+                "icon": "mdi:signal",
                 "name": "Connection Type",
-                "state": "Wi-Fi",
+                "state": "Cellular",
                 "type": "sensor",
                 "unique_id": "connectivity_connection_type",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -367,21 +369,21 @@
                     "Inland Water": "N/A",
                     "Locality": "Saratoga Springs",
                     "Location": [
-                        40.296417236328125,
-                        -111.87856838246633
+                        40.35845947265625,
+                        -111.90985104894263
                     ],
-                    "Name": "168 E Wayside Dr",
+                    "Name": "391 S Saratoga Dr",
                     "Ocean": "N/A",
                     "Postal Code": "84045",
                     "Sub Administrative Area": "Utah",
                     "Sub Locality": "N/A",
-                    "Sub Thoroughfare": "168",
-                    "Thoroughfare": "E Wayside Dr",
+                    "Sub Thoroughfare": "391",
+                    "Thoroughfare": "S Saratoga Dr",
                     "Time Zone": "America/Denver"
                 },
                 "icon": "mdi:map",
                 "name": "Geocoded Location",
-                "state": "168 E Wayside Dr\nSaratoga Springs UT 84045\nUnited States",
+                "state": "391 S Saratoga Dr\nSaratoga Springs UT 84045\nUnited States",
                 "type": "sensor",
                 "unique_id": "geocoded_location",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -412,7 +414,7 @@
                 "attributes": {},
                 "icon": "mdi:hiking",
                 "name": "Distance",
-                "state": 163,
+                "state": 257,
                 "type": "sensor",
                 "unique_id": "pedometer_distance",
                 "unit_of_measurement": "m",
@@ -445,7 +447,7 @@
                 "attributes": {},
                 "icon": "mdi:walk",
                 "name": "Steps",
-                "state": 268,
+                "state": 425,
                 "type": "sensor",
                 "unique_id": "pedometer_steps",
                 "unit_of_measurement": "steps",
