@@ -108,6 +108,20 @@
             {
                 "access_token_expiration": 1800.0,
                 "client_icon": null,
+                "client_id": "http://10.2.2.4:8123/",
+                "client_name": null,
+                "created_at": "2020-01-11T18:15:03.252368+00:00",
+                "id": "aa3ffa4ff56547b981b191a39e3828f4",
+                "jwt_key": "***REMOVED***",
+                "last_used_at": "2020-01-11T18:15:03.252531+00:00",
+                "last_used_ip": "10.2.2.9",
+                "token": "***REMOVED***",
+                "token_type": "normal",
+                "user_id": "e209297cdec44455856b6aab46832759"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
                 "client_id": "https://home-assistant.io/iOS",
                 "client_name": null,
                 "created_at": "2019-12-28T22:12:03.292618+00:00",

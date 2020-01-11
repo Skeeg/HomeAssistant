@@ -285,12 +285,12 @@
             "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_battery_level": {
                 "added": true,
                 "attributes": {
-                    "Battery State": "Charging"
+                    "Battery State": "Not Charging"
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery-charging-80",
+                "icon": "mdi:battery",
                 "name": "Battery Level",
-                "state": 95,
+                "state": 98,
                 "type": "sensor",
                 "unique_id": "battery_level",
                 "unit_of_measurement": "%",
@@ -299,12 +299,12 @@
             "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_battery_state": {
                 "added": true,
                 "attributes": {
-                    "Battery Level": 95
+                    "Battery Level": 98
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery-charging-80",
+                "icon": "mdi:battery",
                 "name": "Battery State",
-                "state": "Charging",
+                "state": "Not Charging",
                 "type": "sensor",
                 "unique_id": "battery_state",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -414,7 +414,7 @@
                 "attributes": {},
                 "icon": "mdi:hiking",
                 "name": "Distance",
-                "state": 257,
+                "state": 452,
                 "type": "sensor",
                 "unique_id": "pedometer_distance",
                 "unit_of_measurement": "m",
@@ -447,7 +447,7 @@
                 "attributes": {},
                 "icon": "mdi:walk",
                 "name": "Steps",
-                "state": 425,
+                "state": 711,
                 "type": "sensor",
                 "unique_id": "pedometer_steps",
                 "unit_of_measurement": "steps",
