@@ -9,10 +9,7 @@
                             "entity": "binary_sensor.updater"
                         },
                         {
-                            "entity": "person.ryanpeay"
-                        },
-                        {
-                            "entity": "sensor.plex_media_pc"
+                            "entity": "binary_sensor.workday_sensor"
                         },
                         {
                             "entity": "sun.sun"
