@@ -74,7 +74,10 @@
   trigger:
   - at: 07:00
     platform: time
-  condition: []
+  condition:
+    condition: state
+    entity_id: 'binary_sensor.workday_sensor'
+    state: 'on'
   action:
   - entity_id: switch.03200076dc4f2222957e
     service: switch.turn_on
@@ -84,6 +87,9 @@
   trigger:
   - at: 07:00
     platform: time
-  condition: []
+  condition:
+    condition: state
+    entity_id: 'binary_sensor.workday_sensor'
+    state: 'on'
   action:
   - service: script.dad_alarm_script
