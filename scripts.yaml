@@ -17,8 +17,7 @@ master_movies_script:
 bedtime_script:
   alias: Bedtime Script
   sequence:
-  - data: {}
-    entity_id: switch.03200076dc4f2222980c
+  - entity_id: switch.03200076dc4f2222980c
     service: switch.turn_off
   - entity_id: switch.03200076dc4f222334c2
     service: switch.turn_off
