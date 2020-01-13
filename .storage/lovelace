@@ -9,9 +9,6 @@
                             "entity": "binary_sensor.updater"
                         },
                         {
-                            "entity": "binary_sensor.workday_sensor"
-                        },
-                        {
                             "entity": "sun.sun"
                         }
                     ],
@@ -132,6 +129,12 @@
                         },
                         {
                             "entities": [
+                                {
+                                    "entity": "switch.780740202cf432ca1c91"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc949882"
+                                },
                                 {
                                     "entity": "switch.047555462cf432a189ba"
                                 },
@@ -352,6 +355,12 @@
                                 },
                                 {
                                     "entity": "switch.06200180bcddc2e5e01d"
+                                },
+                                {
+                                    "entity": "switch.780740202cf432ca1c91"
+                                },
+                                {
+                                    "entity": "switch.04200161ecfabc949882"
                                 },
                                 {
                                     "entity": "switch.04200161ecfabc949bde"
