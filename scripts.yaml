@@ -36,8 +36,7 @@ bedtime_script:
     service: switch.turn_off
   - entity_id: switch.020202312cf432a6b258
     service: switch.turn_off
-  - entity_id: light.main_dimmer
-    service: switch.turn_off
+  - service: light.turn_off
   - entity_id: switch.03200076dc4f22233d43
     service: switch.turn_off
   - entity_id: switch.38837485c44f33a9dd7b
