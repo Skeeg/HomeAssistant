@@ -272,12 +272,12 @@
                 "attributes": {
                     "Confidence": "High",
                     "Types": [
-                        "Stationary"
+                        "Unknown"
                     ]
                 },
-                "icon": "mdi:human-male",
+                "icon": "mdi:help-circle",
                 "name": "Activity",
-                "state": "Stationary",
+                "state": "Unknown",
                 "type": "sensor",
                 "unique_id": "activity",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -288,9 +288,9 @@
                     "Battery State": "Not Charging"
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery-30",
+                "icon": "mdi:battery-40",
                 "name": "Battery Level",
-                "state": 36,
+                "state": 42,
                 "type": "sensor",
                 "unique_id": "battery_level",
                 "unit_of_measurement": "%",
@@ -299,10 +299,10 @@
             "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_battery_state": {
                 "added": true,
                 "attributes": {
-                    "Battery Level": 36
+                    "Battery Level": 42
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery-30",
+                "icon": "mdi:battery-40",
                 "name": "Battery State",
                 "state": "Not Charging",
                 "type": "sensor",
@@ -367,8 +367,8 @@
                     "Inland Water": "N/A",
                     "Locality": "Saratoga Springs",
                     "Location": [
-                        40.297119140625,
-                        -111.8786047609623
+                        40.297149658203125,
+                        -111.87852889524635
                     ],
                     "Name": "158 E Lake Cove Cir",
                     "Ocean": "N/A",
@@ -412,7 +412,7 @@
                 "attributes": {},
                 "icon": "mdi:hiking",
                 "name": "Distance",
-                "state": 3649,
+                "state": 1919,
                 "type": "sensor",
                 "unique_id": "pedometer_distance",
                 "unit_of_measurement": "m",
@@ -423,7 +423,7 @@
                 "attributes": {},
                 "icon": "mdi:slope-uphill",
                 "name": "Floors Ascended",
-                "state": 3,
+                "state": 5,
                 "type": "sensor",
                 "unique_id": "pedometer_floors_ascended",
                 "unit_of_measurement": "floors",
@@ -434,7 +434,7 @@
                 "attributes": {},
                 "icon": "mdi:slope-downhill",
                 "name": "Floors Descended",
-                "state": 3,
+                "state": 6,
                 "type": "sensor",
                 "unique_id": "pedometer_floors_descended",
                 "unit_of_measurement": "floors",
@@ -445,7 +445,7 @@
                 "attributes": {},
                 "icon": "mdi:walk",
                 "name": "Steps",
-                "state": 5973,
+                "state": 3181,
                 "type": "sensor",
                 "unique_id": "pedometer_steps",
                 "unit_of_measurement": "steps",

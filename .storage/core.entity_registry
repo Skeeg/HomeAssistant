@@ -195,7 +195,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.047555462cf432a189ba",
-                "name": null,
+                "name": "Entry Chandelier",
                 "platform": "tuya",
                 "unique_id": "tuya.047555462cf432a189ba"
             },
@@ -204,7 +204,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.03200076dc4f22229553",
-                "name": null,
+                "name": "Buffet Set",
                 "platform": "tuya",
                 "unique_id": "tuya.03200076dc4f22229553"
             },
@@ -222,7 +222,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.04200161ecfabc94a05a",
-                "name": null,
+                "name": "Kids Fan",
                 "platform": "tuya",
                 "unique_id": "tuya.04200161ecfabc94a05a"
             },
@@ -231,7 +231,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.802378622cf432a7032f",
-                "name": null,
+                "name": "Exterior Side",
                 "platform": "tuya",
                 "unique_id": "tuya.802378622cf432a7032f"
             },
@@ -240,7 +240,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.388374852cf432a1e7fb",
-                "name": null,
+                "name": "Kids Sink",
                 "platform": "tuya",
                 "unique_id": "tuya.388374852cf432a1e7fb"
             },
@@ -258,7 +258,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.03200076dc4f2222980c",
-                "name": null,
+                "name": "Master Bedroom Lamp",
                 "platform": "tuya",
                 "unique_id": "tuya.03200076dc4f2222980c"
             },
@@ -267,7 +267,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.020202312cf432a6f216",
-                "name": null,
+                "name": "Austin Hall",
                 "platform": "tuya",
                 "unique_id": "tuya.020202312cf432a6f216"
             },
@@ -276,7 +276,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.78074020600194d9f42d",
-                "name": null,
+                "name": "Kitchen Cans",
                 "platform": "tuya",
                 "unique_id": "tuya.78074020600194d9f42d"
             },
@@ -285,7 +285,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.04200161ecfabc949882",
-                "name": null,
+                "name": "Study Lights",
                 "platform": "tuya",
                 "unique_id": "tuya.04200161ecfabc949882"
             },
@@ -294,7 +294,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.03200076dc4f22233d9c",
-                "name": null,
+                "name": "Entry Decor",
                 "platform": "tuya",
                 "unique_id": "tuya.03200076dc4f22233d9c"
             },
@@ -303,7 +303,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.02200010ecfabc896bca",
-                "name": null,
+                "name": "Dads Lamp",
                 "platform": "tuya",
                 "unique_id": "tuya.02200010ecfabc896bca"
             },
@@ -312,7 +312,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.04200161ecfabc94940f",
-                "name": null,
+                "name": "Kids Toilet",
                 "platform": "tuya",
                 "unique_id": "tuya.04200161ecfabc94940f"
             },
@@ -321,7 +321,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.04200161ecfabc949315",
-                "name": null,
+                "name": "Powder Fan",
                 "platform": "tuya",
                 "unique_id": "tuya.04200161ecfabc949315"
             },
@@ -375,7 +375,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.03200076dc4f2222925e",
-                "name": null,
+                "name": "Left Mantle Decorations",
                 "platform": "tuya",
                 "unique_id": "tuya.03200076dc4f2222925e"
             },
@@ -402,7 +402,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.38837485c44f33a9dd7b",
-                "name": null,
+                "name": "Entry Can Lights",
                 "platform": "tuya",
                 "unique_id": "tuya.38837485c44f33a9dd7b"
             },
@@ -411,7 +411,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.78074020600194d9ea84",
-                "name": null,
+                "name": "Dads Room",
                 "platform": "tuya",
                 "unique_id": "tuya.78074020600194d9ea84"
             },
@@ -438,7 +438,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.780740202cf432ca424e",
-                "name": null,
+                "name": "Garage Interior",
                 "platform": "tuya",
                 "unique_id": "tuya.780740202cf432ca424e"
             },
@@ -447,7 +447,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.04200161ecfabc9491d9",
-                "name": null,
+                "name": "Kids Shower",
                 "platform": "tuya",
                 "unique_id": "tuya.04200161ecfabc9491d9"
             },
@@ -456,7 +456,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.780740202cf432ca407a",
-                "name": null,
+                "name": "Front Porch Lights",
                 "platform": "tuya",
                 "unique_id": "tuya.780740202cf432ca407a"
             },
@@ -474,7 +474,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.06200181b4e62d1833c9",
-                "name": null,
+                "name": "Basement Lights",
                 "platform": "tuya",
                 "unique_id": "tuya.06200181b4e62d1833c9"
             },
@@ -492,7 +492,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.02200010ecfabc89a8b3",
-                "name": null,
+                "name": "Fireplace",
                 "platform": "tuya",
                 "unique_id": "tuya.02200010ecfabc89a8b3"
             },
@@ -519,7 +519,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.04200161ecfabc949fe8",
-                "name": null,
+                "name": "Main Fan",
                 "platform": "tuya",
                 "unique_id": "tuya.04200161ecfabc949fe8"
             },
@@ -528,7 +528,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.02200010ecfabc89aa43",
-                "name": null,
+                "name": "Railing Lights",
                 "platform": "tuya",
                 "unique_id": "tuya.02200010ecfabc89aa43"
             },
@@ -537,7 +537,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.780740202cf432ca1c2a",
-                "name": null,
+                "name": "Main Hall",
                 "platform": "tuya",
                 "unique_id": "tuya.780740202cf432ca1c2a"
             },
@@ -546,7 +546,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.04200161ecfabc949179",
-                "name": null,
+                "name": "Dining Light",
                 "platform": "tuya",
                 "unique_id": "tuya.04200161ecfabc949179"
             },
@@ -555,7 +555,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.06200180bcddc2e5e01d",
-                "name": null,
+                "name": "Christmas Package",
                 "platform": "tuya",
                 "unique_id": "tuya.06200180bcddc2e5e01d"
             },
@@ -564,7 +564,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.032002565ccf7f739f6f",
-                "name": null,
+                "name": "Exterior Garage Lights",
                 "platform": "tuya",
                 "unique_id": "tuya.032002565ccf7f739f6f"
             },
@@ -573,7 +573,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.780740202cf432ca4a96",
-                "name": null,
+                "name": "Powder Hall",
                 "platform": "tuya",
                 "unique_id": "tuya.780740202cf432ca4a96"
             },
@@ -591,7 +591,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.04200161ecfabc949393",
-                "name": null,
+                "name": "Back Porch Light",
                 "platform": "tuya",
                 "unique_id": "tuya.04200161ecfabc949393"
             },
@@ -600,7 +600,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.03200076dc4f22233d43",
-                "name": null,
+                "name": "Mantle Lights",
                 "platform": "tuya",
                 "unique_id": "tuya.03200076dc4f22233d43"
             },
@@ -609,7 +609,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.06200181b4e62d183b7a",
-                "name": null,
+                "name": "Eve Lights",
                 "platform": "tuya",
                 "unique_id": "tuya.06200181b4e62d183b7a"
             },
@@ -618,7 +618,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.06200180bcddc2e5dde0",
-                "name": null,
+                "name": "Main Lights",
                 "platform": "tuya",
                 "unique_id": "tuya.06200180bcddc2e5dde0"
             },
@@ -627,7 +627,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.03200076dc4f222334c2",
-                "name": null,
+                "name": "Master TV",
                 "platform": "tuya",
                 "unique_id": "tuya.03200076dc4f222334c2"
             },
@@ -645,7 +645,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.020202312cf432a6b258",
-                "name": null,
+                "name": "Lily Hall",
                 "platform": "tuya",
                 "unique_id": "tuya.020202312cf432a6b258"
             },
@@ -699,7 +699,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.01200092600194560fdd",
-                "name": null,
+                "name": "Blower",
                 "platform": "tuya",
                 "unique_id": "tuya.01200092600194560fdd"
             },
@@ -708,7 +708,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.780740202cf432ca3b84",
-                "name": null,
+                "name": "Kitchen Sink",
                 "platform": "tuya",
                 "unique_id": "tuya.780740202cf432ca3b84"
             },
@@ -726,7 +726,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "switch.04200161ecfabc949bde",
-                "name": null,
+                "name": "Powder Light",
                 "platform": "tuya",
                 "unique_id": "tuya.04200161ecfabc949bde"
             },
@@ -789,7 +789,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "light.lilys_lights",
-                "name": null,
+                "name": "Lilys Lights",
                 "platform": "wemo",
                 "unique_id": "241803K1500472"
             },
@@ -798,7 +798,7 @@
                 "device_id": null,
                 "disabled_by": null,
                 "entity_id": "light.austins_room",
-                "name": null,
+                "name": "Austins Room",
                 "platform": "wemo",
                 "unique_id": "241802K1501817"
             },
@@ -1224,6 +1224,24 @@
                 "name": "Lily's Fan",
                 "platform": "tuya",
                 "unique_id": "tuya.03200076dc4f22229035"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "switch.780740202cf432ca1c91",
+                "name": "Library",
+                "platform": "tuya",
+                "unique_id": "tuya.780740202cf432ca1c91"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "scene.hqk3ansgtcjcu7f3",
+                "name": null,
+                "platform": "tuya",
+                "unique_id": "tuya.HQK3ANSGTCjCU7f3"
             }
         ]
     },
