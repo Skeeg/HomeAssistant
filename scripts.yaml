@@ -1,4 +1,4 @@
-'dad_alarm_script':
+dad_alarm_script:
   alias: Dad Alarm
   sequence:
   - data: {}
@@ -6,7 +6,7 @@
     service: switch.turn_on
   - entity_id: switch.78074020600194d9ea84
     service: switch.turn_on
-'master_movies_script':
+master_movies_script:
   alias: Master Movies
   sequence:
   - data: {}
@@ -14,7 +14,7 @@
     service: switch.turn_on
   - entity_id: switch.03200076dc4f2222980c
     service: switch.turn_on
-'bedtime_script':
+bedtime_script:
   alias: Bedtime Script
   sequence:
   - data: {}
@@ -76,11 +76,11 @@
     service: switch.turn_off
   - entity_id: light.austins_room
     service: switch.turn_off
+  - entity_id: switch.02200010ecfabc896bca
+    service: switch.turn_on
   - entity_id: light.lilys_lights
     service: switch.turn_off
   - entity_id: switch.78074020600194d9ea84
-    service: switch.turn_off
-  - entity_id: switch.02200010ecfabc896bca
     service: switch.turn_off
   - entity_id: switch.780740202cf432ca407a
     service: switch.turn_off
@@ -93,4 +93,8 @@
   - entity_id: switch.04200161ecfabc949393
     service: switch.turn_off
   - entity_id: switch.780740202cf432ca424e
+    service: switch.turn_off
+  - entity_id: switch.04200161ecfabc949882
+    service: switch.turn_off
+  - entity_id: switch.780740202cf432ca1c91
     service: switch.turn_off
