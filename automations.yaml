@@ -76,7 +76,7 @@
     platform: time
   condition:
     condition: state
-    entity_id: 'binary_sensor.workday_sensor'
+    entity_id: binary_sensor.workday_sensor
     state: 'on'
   action:
   - entity_id: switch.03200076dc4f2222957e
@@ -89,7 +89,16 @@
     platform: time
   condition:
     condition: state
-    entity_id: 'binary_sensor.workday_sensor'
+    entity_id: binary_sensor.workday_sensor
     state: 'on'
   action:
   - service: script.dad_alarm_script
+- id: '1578887318476'
+  alias: Webhook - Master Movies
+  description: ''
+  trigger:
+  - platform: webhook
+    webhook_id: master_movies
+  condition: []
+  action:
+  - service: script.master_movies_script
