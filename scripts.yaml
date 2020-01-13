@@ -48,7 +48,7 @@ bedtime_script:
     service: switch.turn_off
   - entity_id: switch.02200010ecfabc89aa43
     service: switch.turn_off
-  - entity_id: light.placeholder_review
+  - entity_id: switch.780740202cf432ca1c91
     service: switch.turn_off
   - entity_id: switch.01200092600194560fdd
     service: switch.turn_off
