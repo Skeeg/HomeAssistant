@@ -42,3 +42,31 @@ binary_sensor:
     add_holidays:
       - '2018-12-26'
       - '2018-12-31'
+
+ring:
+  username: !secret ring_username
+  password: !secret ring_password
+
+camera:
+  platform: ring
+
+media_player:
+  - platform: songpal
+    name: soundbar
+    endpoint: http://10.2.3.115:10000/sony
+
+homekit:
+  filter:
+    include_domains:
+      - cover
+      - light
+      - switch
+    exclude_entities:
+      - switch.03200076dc4f22233dae
+      - switch.03200076dc4f222297ed
+      - switch.03200076dc4f2222937d
+      - switch.03200076dc4f22233473
+      - switch.03200076dc4f22229075
+      - switch.03200076dc4f22233c1f
+      - switch.03200076dc4f22233be2
+      - switch.03200076dc4f22233d50
