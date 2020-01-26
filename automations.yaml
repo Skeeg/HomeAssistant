@@ -1,5 +1,5 @@
 - id: bbaf12086dc04123bb7a6f9c91b3b1cb
-  alias: Sunset -15mins
+  alias: Sunset - 15 minutes before
   trigger:
   - event: sunset
     offset: -00:15:00
@@ -8,7 +8,7 @@
   - entity_id: switch.06200180bcddc2e5e01d
     service: switch.turn_on
 - id: '1577820851677'
-  alias: Bedtime Webhook
+  alias: Webhook - Bedtime Shutdown
   description: ''
   trigger:
   - platform: webhook
@@ -59,7 +59,7 @@
   - entity_id: switch.780740202cf432ca424e
     service: switch.turn_off
 - id: '1578464273699'
-  alias: Austin Bedtime
+  alias: Bedtime - Austin
   description: ''
   trigger:
   - at: '22:45'
@@ -69,26 +69,26 @@
   - entity_id: switch.03200076dc4f2222957e
     service: switch.turn_off
 - id: '1578464361506'
-  alias: Austin Weekday Morning
+  alias: Weekday - Austin Triggers
   description: ''
   trigger:
   - at: 07:00
     platform: time
   condition:
-    condition: state
+  - condition: state
     entity_id: binary_sensor.workday_sensor
     state: 'on'
   action:
   - entity_id: switch.03200076dc4f2222957e
     service: switch.turn_on
 - id: '1578465674789'
-  alias: Dad Alarm
+  alias: Weekday - Dad Triggers
   description: ''
   trigger:
   - at: 07:00
     platform: time
   condition:
-    condition: state
+  - condition: state
     entity_id: binary_sensor.workday_sensor
     state: 'on'
   action:
@@ -102,3 +102,46 @@
   condition: []
   action:
   - service: script.master_movies_script
+- id: '1578925869490'
+  alias: Sunrise - 1 hour before
+  description: ''
+  trigger:
+  - event: sunrise
+    offset: -01:00:00
+    platform: sun
+  condition: []
+  action:
+  - entity_id: switch.03200076dc4f22233661
+    service: switch.turn_on
+  - entity_id: switch.02200010ecfabc89aa43
+    service: switch.turn_on
+- id: '1578926216800'
+  alias: Weekend - Austin Triggers
+  description: ''
+  trigger:
+  - at: '9:30'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'off'
+  action:
+  - entity_id: switch.03200076dc4f2222957e
+    service: switch.turn_on
+- id: '1578953820334'
+  alias: Ring - Button Pushed
+  description: ''
+  trigger:
+  - device_id: 2469248b20bf42a48c0e5993d50d668d
+    domain: binary_sensor
+    entity_id: binary_sensor.front_door_ding
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+    platform: device
+    type: occupied
+  condition: []
+  action:
+  - entity_id: switch.047555462cf432a189ba
+    service: switch.turn_on
