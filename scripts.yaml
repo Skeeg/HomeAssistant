@@ -4,7 +4,7 @@ dad_alarm_script:
   - data: {}
     entity_id: switch.02200010ecfabc896bca
     service: switch.turn_on
-  - entity_id: switch.78074020600194d9ea84
+  - entity_id: switch.03200076dc4f22229075
     service: switch.turn_on
 master_movies_script:
   alias: Master Movies
@@ -93,3 +93,30 @@ bedtime_script:
     service: switch.turn_off
   - entity_id: switch.03200076dc4f22233661
     service: switch.turn_off
+  - data: {}
+    entity_id: switch.03200076dc4f22229075
+    service: switch.turn_off
+'1582169197516':
+  alias: Holiday Lighting
+  sequence:
+  - data: {}
+    entity_id: switch.06200180bcddc2e5e01d
+    service: switch.turn_on
+  - data: {}
+    entity_id: switch.03200076dc4f22233d43
+    service: switch.turn_on
+  - data: {}
+    entity_id: switch.03200076dc4f22229553
+    service: switch.turn_on
+'1583846065286':
+  alias: Austin Alarm
+  sequence:
+  - data: {}
+    entity_id: switch.03200076dc4f222336de
+    service: switch.turn_off
+  - data: {}
+    entity_id: light.austins_room
+    service: light.turn_on
+  - data: {}
+    entity_id: switch.03200076dc4f2222957e
+    service: switch.turn_on

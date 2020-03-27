@@ -6,7 +6,7 @@
     platform: sun
   action:
   - entity_id: switch.06200180bcddc2e5e01d
-    service: switch.turn_on
+    service: script.1582169197516
 - id: '1577820851677'
   alias: Webhook - Bedtime Shutdown
   description: ''
@@ -80,7 +80,7 @@
     state: 'on'
   action:
   - entity_id: switch.03200076dc4f2222957e
-    service: switch.turn_on
+    service: script.1583846065286
 - id: '1578465674789'
   alias: Weekday - Dad Triggers
   description: ''
@@ -111,8 +111,6 @@
     platform: sun
   condition: []
   action:
-  - entity_id: switch.03200076dc4f22233661
-    service: switch.turn_on
   - entity_id: switch.02200010ecfabc89aa43
     service: switch.turn_on
 - id: '1578926216800'
@@ -127,7 +125,7 @@
     state: 'off'
   action:
   - entity_id: switch.03200076dc4f2222957e
-    service: switch.turn_on
+    service: script.1583846065286
 - id: '1578953820334'
   alias: Ring - Button Pushed
   description: ''
@@ -143,5 +141,4 @@
     type: occupied
   condition: []
   action:
-  - entity_id: switch.047555462cf432a189ba
-    service: switch.turn_on
+  - delay: ''
