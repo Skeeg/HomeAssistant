@@ -18,6 +18,10 @@
                             "type": "media-control"
                         },
                         {
+                            "entity": "media_player.soundbar",
+                            "type": "media-control"
+                        },
+                        {
                             "entities": [
                                 {
                                     "entity": "script.master_movies_script"
@@ -79,6 +83,9 @@
                                 },
                                 {
                                     "entity": "switch.06200180bcddc2e5e01d"
+                                },
+                                {
+                                    "entity": "switch.03200076dc4f22229075"
                                 }
                             ],
                             "show_header_toggle": true,
@@ -239,9 +246,6 @@
                     "cards": [
                         {
                             "entities": [
-                                {
-                                    "entity": "switch.03200076dc4f22229075"
-                                },
                                 {
                                     "entity": "switch.03200076dc4f22233be2"
                                 }
