@@ -18,7 +18,7 @@
                 "model": "iPhone Xs Max",
                 "name": "IPXSPX",
                 "name_by_user": null,
-                "sw_version": "13.3",
+                "sw_version": "13.4.1",
                 "via_device_id": null
             },
             {
@@ -60,6 +60,326 @@
                 "name_by_user": null,
                 "sw_version": "13.3",
                 "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "7c2bd71f326449eda9669d90700b2a07"
+                ],
+                "connections": [],
+                "id": "2469248b20bf42a48c0e5993d50d668d",
+                "identifiers": [
+                    [
+                        "ring",
+                        "e04f4349e8c8"
+                    ]
+                ],
+                "manufacturer": "Ring",
+                "model": "Doorbell Pro",
+                "name": "Front Door",
+                "name_by_user": null,
+                "sw_version": "2.1.01005",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "1fdd6b991e504b1c8d1423b1819397bb"
+                ],
+                "connections": [],
+                "id": "66e91b1d41e84659bfdb7750cbc2c1aa",
+                "identifiers": [
+                    [
+                        "mobile_app",
+                        "387b81e7c3cad10c"
+                    ]
+                ],
+                "manufacturer": "Google",
+                "model": "Pixel 2 XL",
+                "name": "Pixel 2 XL",
+                "name_by_user": null,
+                "sw_version": "29",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "aa9011797f1f45d9911efbd5d4955ce8"
+                ],
+                "connections": [],
+                "id": "2dcfb31b00f24fe6a3b1080d2e570855",
+                "identifiers": [
+                    [
+                        "plex",
+                        "c1e1e5d13535fef89a237970d414079dc5a256cb"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex Media Server",
+                "name": "Activity Sensor",
+                "name_by_user": null,
+                "sw_version": "1.19.3.2831-181d9145d",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "aa9011797f1f45d9911efbd5d4955ce8"
+                ],
+                "connections": [],
+                "id": "5d798d6ad5e34c9ca58aceb006c40be9",
+                "identifiers": [
+                    [
+                        "plex",
+                        "8DE1D25B-0C28-4B26-BD48-82CE3BA02B79"
+                    ]
+                ],
+                "manufacturer": "tvOS",
+                "model": "Plex for Apple TV",
+                "name": "Plex (Family - Plex for Apple TV - Great Room 4k)",
+                "name_by_user": null,
+                "sw_version": "2.17",
+                "via_device_id": "2dcfb31b00f24fe6a3b1080d2e570855"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "aa9011797f1f45d9911efbd5d4955ce8"
+                ],
+                "connections": [],
+                "id": "9e253435f0d84fc5b1dcceb47186bfd6",
+                "identifiers": [
+                    [
+                        "plex",
+                        "B11D1AB0-35DB-4350-8D45-F06D0E82BCAF"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex for Apple TV",
+                "name": "Plex (Plex for Apple TV - Master)",
+                "name_by_user": null,
+                "sw_version": "2.15",
+                "via_device_id": "2dcfb31b00f24fe6a3b1080d2e570855"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "aa9011797f1f45d9911efbd5d4955ce8"
+                ],
+                "connections": [],
+                "id": "3aca9aa7970e443c9b249c2bf3d76d13",
+                "identifiers": [
+                    [
+                        "plex",
+                        "948E02B3-07CE-4B73-88A7-1D8F50AB3002"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex for Apple TV",
+                "name": "Plex (Plex for Apple TV - Lily\u2019s Room)",
+                "name_by_user": null,
+                "sw_version": "2.15",
+                "via_device_id": "2dcfb31b00f24fe6a3b1080d2e570855"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "aa9011797f1f45d9911efbd5d4955ce8"
+                ],
+                "connections": [],
+                "id": "9926eeb4fcab4c848ce6dd5ccef85f84",
+                "identifiers": [
+                    [
+                        "plex",
+                        "69D4DCAB-6D4E-47D8-B611-D4F7034B2144"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex for iOS",
+                "name": "Plex (Plex for iOS - Ryan\u2019s iPad)",
+                "name_by_user": null,
+                "sw_version": "6.8",
+                "via_device_id": "2dcfb31b00f24fe6a3b1080d2e570855"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "aa9011797f1f45d9911efbd5d4955ce8"
+                ],
+                "connections": [],
+                "id": "57f6820e3e1c4684a5f022fefac74b53",
+                "identifiers": [
+                    [
+                        "plex",
+                        "2krhr1gtuuhhbdiyzbk8pbi6"
+                    ]
+                ],
+                "manufacturer": "Chrome",
+                "model": "Plex Web",
+                "name": "Plex (Plex Web - Chrome - OSX)",
+                "name_by_user": null,
+                "sw_version": "4.22.2",
+                "via_device_id": "2dcfb31b00f24fe6a3b1080d2e570855"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "aa9011797f1f45d9911efbd5d4955ce8"
+                ],
+                "connections": [],
+                "id": "07fb3040a3ee4db08f5250ac3a39035b",
+                "identifiers": [
+                    [
+                        "plex",
+                        "FF9E9ED0-DF20-4EA3-8E65-3E784F757BFA"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex for Apple TV",
+                "name": "Plex (Plex for Apple TV - Austin\u2019s Bedroom)",
+                "name_by_user": null,
+                "sw_version": "2.16",
+                "via_device_id": "2dcfb31b00f24fe6a3b1080d2e570855"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "aa9011797f1f45d9911efbd5d4955ce8"
+                ],
+                "connections": [],
+                "id": "51576a4c29444c72950cadf28c5f934c",
+                "identifiers": [
+                    [
+                        "plex",
+                        "2D43FBD5-7A30-4C17-8BC4-D58281F2FE65"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex for iOS",
+                "name": "Plex (Plex for iOS - IPXSPX)",
+                "name_by_user": null,
+                "sw_version": "6.10.1",
+                "via_device_id": "2dcfb31b00f24fe6a3b1080d2e570855"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "aa9011797f1f45d9911efbd5d4955ce8"
+                ],
+                "connections": [],
+                "id": "4b9276de9c704406a463191770d99b8d",
+                "identifiers": [
+                    [
+                        "plex",
+                        "l278dalxsd4gkr8u683ddxgh"
+                    ]
+                ],
+                "manufacturer": "Chrome",
+                "model": "Plex Web",
+                "name": "Plex (Plex Web - Chrome - OSX)",
+                "name_by_user": null,
+                "sw_version": "4.34.1",
+                "via_device_id": "2dcfb31b00f24fe6a3b1080d2e570855"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "aa9011797f1f45d9911efbd5d4955ce8"
+                ],
+                "connections": [],
+                "id": "aaf918fdebbc4ad4a0fc69f248fee394",
+                "identifiers": [
+                    [
+                        "plex",
+                        "B1D4FFAF-9F7F-4446-B1FC-C3AED75C1E69"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex for Apple TV",
+                "name": "Plex (Plex for Apple TV - Lily\u2019s Room)",
+                "name_by_user": null,
+                "sw_version": "2.16",
+                "via_device_id": "2dcfb31b00f24fe6a3b1080d2e570855"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "aa9011797f1f45d9911efbd5d4955ce8"
+                ],
+                "connections": [],
+                "id": "2c9dbac67dd044eea50944536c3d3d03",
+                "identifiers": [
+                    [
+                        "plex",
+                        "053244008441fba8-com-plexapp-android"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex for Android (TV)",
+                "name": "Plex (Plex for Android (TV) - AFTR)",
+                "name_by_user": null,
+                "sw_version": "7.30.2.16712",
+                "via_device_id": "2dcfb31b00f24fe6a3b1080d2e570855"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "b7eb57a9dbbe4d5dbcc646bb93469387"
+                ],
+                "connections": [],
+                "id": "f67a89c47ba44b83a0ae2c7bb4892843",
+                "identifiers": [
+                    [
+                        "myq",
+                        "CG080065A3C6"
+                    ]
+                ],
+                "manufacturer": "The Chamberlain Group Inc.",
+                "model": "LiftMaster Wi-Fi GDO DC w/Battery Backup",
+                "name": "Main Garage",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "0d6db93f13884de2b900a669cafb077b"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "b7eb57a9dbbe4d5dbcc646bb93469387"
+                ],
+                "connections": [],
+                "id": "0d6db93f13884de2b900a669cafb077b",
+                "identifiers": [
+                    [
+                        "myq",
+                        "GW01000B8AD1"
+                    ]
+                ],
+                "manufacturer": "The Chamberlain Group Inc.",
+                "model": "LiftMaster Ethernet Gateway",
+                "name": "Lake Cove Hub MyQ Gateway",
+                "name_by_user": null,
+                "sw_version": "4.2",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "b7eb57a9dbbe4d5dbcc646bb93469387"
+                ],
+                "connections": [],
+                "id": "9a4bdf6ea2d24c8bb079a26aeaadbe68",
+                "identifiers": [
+                    [
+                        "myq",
+                        "CG080065A3C8"
+                    ]
+                ],
+                "manufacturer": "The Chamberlain Group Inc.",
+                "model": "LiftMaster Wi-Fi GDO DC w/Battery Backup",
+                "name": "3rd Car Garage",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "0d6db93f13884de2b900a669cafb077b"
             }
         ]
     },

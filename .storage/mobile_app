@@ -272,12 +272,12 @@
                 "attributes": {
                     "Confidence": "High",
                     "Types": [
-                        "Unknown"
+                        "Stationary"
                     ]
                 },
-                "icon": "mdi:help-circle",
+                "icon": "mdi:human-male",
                 "name": "Activity",
-                "state": "Unknown",
+                "state": "Stationary",
                 "type": "sensor",
                 "unique_id": "activity",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -288,9 +288,9 @@
                     "Battery State": "Not Charging"
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery-30",
+                "icon": "mdi:battery-70",
                 "name": "Battery Level",
-                "state": 37,
+                "state": 72,
                 "type": "sensor",
                 "unique_id": "battery_level",
                 "unit_of_measurement": "%",
@@ -299,10 +299,10 @@
             "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890_battery_state": {
                 "added": true,
                 "attributes": {
-                    "Battery Level": 37
+                    "Battery Level": 72
                 },
                 "device_class": "battery",
-                "icon": "mdi:battery-30",
+                "icon": "mdi:battery-70",
                 "name": "Battery State",
                 "state": "Not Charging",
                 "type": "sensor",
@@ -334,15 +334,15 @@
                 "attributes": {
                     "Allows VoIP": true,
                     "Carrier ID": "0000000100000001",
-                    "Carrier Name": "AT&T",
-                    "Current Radio Technology": "Long-Term Evolution (LTE)",
+                    "Carrier Name": "Ultra/Mint Mobile",
+                    "Current Radio Technology": "High Speed Downlink Packet Access (HSDPA)",
                     "ISO Country Code": "us",
                     "Mobile Country Code": "310",
-                    "Mobile Network Code": "410"
+                    "Mobile Network Code": "260"
                 },
                 "icon": "mdi:sim",
                 "name": "SIM 1",
-                "state": "AT&T",
+                "state": "Ultra/Mint Mobile",
                 "type": "sensor",
                 "unique_id": "connectivity_sim_1",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -367,21 +367,21 @@
                     "Inland Water": "N/A",
                     "Locality": "Saratoga Springs",
                     "Location": [
-                        40.297149658203125,
-                        -111.87852889524635
+                        40.2967529296875,
+                        -111.8789699554437
                     ],
-                    "Name": "158 E Lake Cove Cir",
+                    "Name": "153 E Lake Cove Cir",
                     "Ocean": "N/A",
                     "Postal Code": "84045",
                     "Sub Administrative Area": "Utah",
                     "Sub Locality": "N/A",
-                    "Sub Thoroughfare": "158",
+                    "Sub Thoroughfare": "153",
                     "Thoroughfare": "E Lake Cove Cir",
                     "Time Zone": "America/Denver"
                 },
                 "icon": "mdi:map",
                 "name": "Geocoded Location",
-                "state": "158 E Lake Cove Cir\nSaratoga Springs UT 84045\nUnited States",
+                "state": "153 E Lake Cove Cir\nSaratoga Springs UT 84045\nUnited States",
                 "type": "sensor",
                 "unique_id": "geocoded_location",
                 "webhook_id": "c8d2dee20980993b71b55e6264d0694164bc30479dbc5dd2da5303e7e4f7b890"
@@ -412,7 +412,7 @@
                 "attributes": {},
                 "icon": "mdi:hiking",
                 "name": "Distance",
-                "state": 1955,
+                "state": 1643,
                 "type": "sensor",
                 "unique_id": "pedometer_distance",
                 "unit_of_measurement": "m",
@@ -434,7 +434,7 @@
                 "attributes": {},
                 "icon": "mdi:slope-downhill",
                 "name": "Floors Descended",
-                "state": 6,
+                "state": 5,
                 "type": "sensor",
                 "unique_id": "pedometer_floors_descended",
                 "unit_of_measurement": "floors",
@@ -445,7 +445,7 @@
                 "attributes": {},
                 "icon": "mdi:walk",
                 "name": "Steps",
-                "state": 3242,
+                "state": 2709,
                 "type": "sensor",
                 "unique_id": "pedometer_steps",
                 "unit_of_measurement": "steps",

@@ -85,7 +85,7 @@
   alias: Weekday - Dad Triggers
   description: ''
   trigger:
-  - at: 07:00
+  - at: 08:00
     platform: time
   condition:
   - condition: state
@@ -142,3 +142,42 @@
   condition: []
   action:
   - delay: ''
+- id: '1589857939537'
+  alias: Timer-BathroomFan-Powder
+  description: ''
+  trigger:
+  - entity_id: switch.04200161ecfabc949315
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - delay: 0:30
+  - data: {}
+    entity_id: switch.04200161ecfabc949315
+    service: switch.turn_off
+- id: '1589858375869'
+  alias: Timer-BathroomFan-Kids
+  description: ''
+  trigger:
+  - entity_id: switch.04200161ecfabc94a05a
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - delay: 0:30
+  - data: {}
+    entity_id: switch.04200161ecfabc94a05a
+    service: switch.turn_off
+- id: '1589861669170'
+  alias: Timer-DadRoom-Lamp
+  description: ''
+  trigger:
+  - entity_id: switch.02200010ecfabc896bca
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - delay: '1:30'
+  - data: {}
+    entity_id: switch.02200010ecfabc896bca
+    service: switch.turn_off
