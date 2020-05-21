@@ -69,3 +69,33 @@ homekit:
       - switch.03200076dc4f22233c1f
       - switch.03200076dc4f22233be2
       - switch.03200076dc4f22233d50
+
+mqtt:
+  broker: 10.2.2.4
+    port: 1883
+    client_id: skg-home-assistant
+    keepalive: 60
+    username: admin
+    password: admin
+    protocol: 3.1
+    birth_message:
+      topic: "tele/hass1/LWT"
+      payload: "Online"
+      qos: 1
+      retain: true
+    will_message:
+      topic: "tele/hass1/LWT"
+      payload: "Offline"
+      qos: 1
+      retain: true
+
+switch:
+  - platform: mqtt
+    name: "Demo Tasmota Switch"
+    state_topic: "homeassistant/tele/demo_unit/STATE"
+    command_topic: "homeassistant/cmnd/demo_unit/POWER"
+    qos: 0
+    payload_on: "on"
+    payload_off: "off"
+    optimistic: false
+    retain: true
