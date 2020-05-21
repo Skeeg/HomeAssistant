@@ -92,7 +92,7 @@ mqtt:
 switch:
   - platform: mqtt
     name: "Demo Tasmota Switch"
-    state_topic: "homeassistant/tele/demo_unit/STATE"
+    state_topic: "homeassistant/stat/demo_unit/POWER"
     command_topic: "homeassistant/cmnd/demo_unit/POWER"
     qos: 0
     payload_on: "on"
