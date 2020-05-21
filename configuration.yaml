@@ -72,22 +72,22 @@ homekit:
 
 mqtt:
   broker: 10.2.2.4
-    port: 1883
-    client_id: skg-home-assistant
-    keepalive: 60
-    username: admin
-    password: admin
-    protocol: 3.1
-    birth_message:
-      topic: "tele/hass1/LWT"
-      payload: "Online"
-      qos: 1
-      retain: true
-    will_message:
-      topic: "tele/hass1/LWT"
-      payload: "Offline"
-      qos: 1
-      retain: true
+  port: 1883
+  client_id: skg-home-assistant
+  keepalive: 60
+  username: admin
+  password: admin
+  protocol: 3.1
+  birth_message:
+    topic: "homeassistant/tele/hass1/LWT"
+    payload: "Online"
+    qos: 1
+    retain: true
+  will_message:
+    topic: "homeassistant/tele/hass1/LWT"
+    payload: "Offline"
+    qos: 1
+    retain: true
 
 switch:
   - platform: mqtt
