@@ -139,13 +139,15 @@ switch:
 
 light:
   - platform: mqtt
+    schema: json
     name: "Family Lights"
     availability_topic: "homeassistant/tele/FamilyLights/LWT"
-    state_topic: "homeassistant/stat/FamilyLights/POWER"
+    state_topic: "homeassistant/tele/FamilyLights/STATE"
     command_topic: "homeassistant/cmnd/FamilyLights/POWER"
     qos: 0
-    state_on: "ON"
-    state_off: "OFF"
+    brightness: false
+    effect: false
+    rgb: false
     payload_on: "ON"
     payload_off: "OFF"
     payload_available: "Online"
@@ -153,13 +155,15 @@ light:
     optimistic: false
     retain: true
   - platform: mqtt
+    schema: json
     name: "Entry Cans"
     availability_topic: "homeassistant/tele/EntryCans/LWT"
-    state_topic: "homeassistant/stat/EntryCans/POWER"
+    state_topic: "homeassistant/tele/EntryCans/STATE"
     command_topic: "homeassistant/cmnd/EntryCansGroup/POWER"
     qos: 0
-    state_on: "ON"
-    state_off: "OFF"
+    brightness: false
+    effect: false
+    rgb: false
     payload_on: "ON"
     payload_off: "OFF"
     payload_available: "Online"
