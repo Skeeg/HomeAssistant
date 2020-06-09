@@ -141,27 +141,17 @@ light:
   - platform: mqtt
     name: "Family Lights"
     availability_topic: "homeassistant/tele/FamilyLights/LWT"
-    state_topic: "homeassistant/tele/FamilyLights/STATE"
-    state_value_template: '{{ value_json['POWER'] }}'
+    state_topic: "homeassistant/stat/FamilyLights/POWER"
     command_topic: "homeassistant/cmnd/FamilyLights/POWER"
     qos: 0
-    payload_on: "ON"
-    payload_off: "OFF"
-    payload_available: "Online"
-    payload_not_available: "Offline"
     optimistic: false
     retain: true
   - platform: mqtt
     name: "Entry Cans"
     availability_topic: "homeassistant/tele/EntryCans/LWT"
-    state_topic: "homeassistant/tele/EntryCans/STATE"
-    state_value_template: '{{ value_json['POWER'] }}'
+    state_topic: "homeassistant/stat/EntryCans/POWER"
     command_topic: "homeassistant/cmnd/EntryCansGroup/POWER"
     qos: 0
-    payload_on: "ON"
-    payload_off: "OFF"
-    payload_available: "Online"
-    payload_not_available: "Offline"
     optimistic: false
     retain: true
 
