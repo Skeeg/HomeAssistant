@@ -42,6 +42,11 @@ binary_sensor:
     add_holidays:
       - '2018-12-26'
       - '2018-12-31'
+      - '2020-07-06'
+      - '2020-07-07'
+      - '2020-07-08'
+      - '2020-07-09'
+      - '2020-07-10'
 
 ring:
   username: !secret ring_username
@@ -89,6 +94,19 @@ mqtt:
     qos: 1
     retain: true
 
+group:
+  lights:
+    name: AllLights
+    entities:
+      - light.family_lights
+      - light.entry_cans
+  bedtime:
+    name: BedTime
+    entities:
+      - switch.demo_tasmota_switch
+      - light.family_lights
+      - light.entry_cans
+
 switch:
   - platform: mqtt
     name: "Demo Tasmota Switch"
@@ -105,10 +123,10 @@ switch:
     optimistic: false
     retain: true
   - platform: mqtt
-    name: "Family Lights"
-    availability_topic: "homeassistant/tele/FamilyLights/LWT"
-    state_topic: "homeassistant/stat/FamilyLights/POWER"
-    command_topic: "homeassistant/cmnd/FamilyLights/POWER"
+    name: "Family Fan"
+    availability_topic: "homeassistant/tele/FamilyFan/LWT"
+    state_topic: "homeassistant/stat/FamilyFan/POWER"
+    command_topic: "homeassistant/cmnd/FamilyFan/POWER"
     qos: 0
     state_on: "ON"
     state_off: "OFF"
@@ -118,11 +136,13 @@ switch:
     payload_not_available: "Offline"
     optimistic: false
     retain: true
+
+light:
   - platform: mqtt
-    name: "Family Fan"
-    availability_topic: "homeassistant/tele/FamilyFan/LWT"
-    state_topic: "homeassistant/stat/FamilyFan/POWER"
-    command_topic: "homeassistant/cmnd/FamilyFan/POWER"
+    name: "Family Lights"
+    availability_topic: "homeassistant/tele/FamilyLights/LWT"
+    state_topic: "homeassistant/stat/FamilyLights/POWER"
+    command_topic: "homeassistant/cmnd/FamilyLights/POWER"
     qos: 0
     state_on: "ON"
     state_off: "OFF"
