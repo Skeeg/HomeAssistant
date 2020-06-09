@@ -145,9 +145,6 @@ light:
     state_value_template: '{{ value_json['POWER'] }}'
     command_topic: "homeassistant/cmnd/FamilyLights/POWER"
     qos: 0
-    brightness: false
-    effect: false
-    rgb: false
     payload_on: "ON"
     payload_off: "OFF"
     payload_available: "Online"
@@ -161,9 +158,6 @@ light:
     state_value_template: '{{ value_json['POWER'] }}'
     command_topic: "homeassistant/cmnd/EntryCansGroup/POWER"
     qos: 0
-    brightness: false
-    effect: false
-    rgb: false
     payload_on: "ON"
     payload_off: "OFF"
     payload_available: "Online"
