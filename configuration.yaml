@@ -132,4 +132,18 @@ switch:
     payload_not_available: "Offline"
     optimistic: false
     retain: true
+  - platform: mqtt
+    name: "Entry Cans"
+    availability_topic: "homeassistant/tele/EntryCans/LWT"
+    state_topic: "homeassistant/stat/EntryCans/POWER"
+    command_topic: "homeassistant/cmnd/EntryCansGroup/POWER"
+    qos: 0
+    state_on: "ON"
+    state_off: "OFF"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
 
