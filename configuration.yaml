@@ -139,10 +139,10 @@ switch:
 
 light:
   - platform: mqtt
-    schema: json
     name: "Family Lights"
     availability_topic: "homeassistant/tele/FamilyLights/LWT"
     state_topic: "homeassistant/tele/FamilyLights/STATE"
+    state_value_template: '{{ value_json['POWER'] }}'
     command_topic: "homeassistant/cmnd/FamilyLights/POWER"
     qos: 0
     brightness: false
@@ -155,10 +155,10 @@ light:
     optimistic: false
     retain: true
   - platform: mqtt
-    schema: json
     name: "Entry Cans"
     availability_topic: "homeassistant/tele/EntryCans/LWT"
     state_topic: "homeassistant/tele/EntryCans/STATE"
+    state_value_template: '{{ value_json['POWER'] }}'
     command_topic: "homeassistant/cmnd/EntryCansGroup/POWER"
     qos: 0
     brightness: false
