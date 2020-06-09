@@ -104,3 +104,18 @@ switch:
     payload_not_available: "Offline"
     optimistic: false
     retain: true
+  - platform: mqtt
+    name: "Family Lights"
+    availability_topic: "homeassistant/tele/FamilyLight/LWT"
+    state_topic: "homeassistant/stat/FamilyLight/POWER"
+    command_topic: "homeassistant/cmnd/FamilyLight/POWER"
+    qos: 0
+    state_on: "ON"
+    state_off: "OFF"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+
