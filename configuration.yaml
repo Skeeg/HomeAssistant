@@ -144,6 +144,8 @@ light:
     state_topic: "homeassistant/stat/FamilyLights/POWER"
     command_topic: "homeassistant/cmnd/FamilyLights/POWER"
     qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
     optimistic: false
     retain: true
   - platform: mqtt
@@ -152,6 +154,8 @@ light:
     state_topic: "homeassistant/stat/EntryCans/POWER"
     command_topic: "homeassistant/cmnd/EntryCansGroup/POWER"
     qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
     optimistic: false
     retain: true
 
