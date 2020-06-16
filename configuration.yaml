@@ -157,7 +157,7 @@ sensor:
   state_topic: "homeassistant/tele/CurtainLights/SENSOR"
   value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
   scan_interval: 300
-  unit_of_measurement: V
+  unit_of_measurement: W
 
 light:
   - platform: mqtt
