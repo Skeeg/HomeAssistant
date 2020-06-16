@@ -136,6 +136,34 @@ switch:
     payload_not_available: "Offline"
     optimistic: false
     retain: true
+  - platform: mqtt
+    name: "Curtain Lights"
+    availability_topic: "homeassistant/tele/CurtainLights/LWT"
+    state_topic: "homeassistant/stat/CurtainLights/POWER"
+    command_topic: "homeassistant/cmnd/CurtainLights/POWER"
+    qos: 0
+    state_on: "ON"
+    state_off: "OFF"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+
+sensor:
+- platform: mqtt
+  name: Curtain Light Energy Today
+  state_topic: "homeassistant/stat/CurtainLights/SENSOR"
+  value_template: '{{ value_json.ENERGY.Today }}' 
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Curtain Light Watts
+  state_topic: "homeassistant/stat/CurtainLights/SENSOR"
+  value_template: '{{ value_json.ENERGY.ApparentPower }}' 
+  scan_interval: 300
+  unit_of_measurement: V
 
 light:
   - platform: mqtt
