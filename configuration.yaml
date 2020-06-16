@@ -143,19 +143,19 @@ sensor:
 - platform: mqtt
   name: Curtain Light Energy Yesterday
   state_topic: "homeassistant/tele/CurtainLights/SENSOR"
-  value_template: '{{ value_json["ENERGY"].["Yesterday"] }}'
+  value_template: '{{ value_json["ENERGY"]["Yesterday"] }}'
   scan_interval: 300
   unit_of_measurement: kWh
 - platform: mqtt
   name: Curtain Light Energy Today
   state_topic: "homeassistant/tele/CurtainLights/SENSOR"
-  value_template: '{{ value_json["ENERGY"].Today }}'
+  value_template: '{{ value_json["ENERGY"]["Today"] }}'
   scan_interval: 300
   unit_of_measurement: kWh
 - platform: mqtt
   name: Curtain Light Watts
   state_topic: "homeassistant/tele/CurtainLights/SENSOR"
-  value_template: '{{ value_json["ENERGY"].ApparentPower }}'
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
   scan_interval: 300
   unit_of_measurement: V
 
