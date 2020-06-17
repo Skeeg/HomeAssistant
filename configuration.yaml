@@ -221,3 +221,6 @@ light:
     optimistic: false
     retain: true
 
+timer:
+  powder_fan:
+    duration: '00:45:00'
