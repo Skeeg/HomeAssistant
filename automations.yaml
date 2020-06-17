@@ -113,6 +113,9 @@
   action:
   - entity_id: switch.02200010ecfabc89aa43
     service: switch.turn_on
+  - data: {}
+    entity_id: switch.curtain_lights
+    service: switch.turn_on
 - id: '1578926216800'
   alias: Weekend - Austin Triggers
   description: ''
