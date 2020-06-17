@@ -148,6 +148,16 @@ switch:
     payload_not_available: "Offline"
     optimistic: false
     retain: true
+  - platform: mqtt
+    name: "Christmas Package"
+    availability_topic: "homeassistant/tele/ChristmasPackage/LWT"
+    state_topic: "homeassistant/stat/ChristmasPackage/POWER"
+    command_topic: "homeassistant/cmnd/ChristmasPackage/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
 
 sensor:
 - platform: mqtt
@@ -185,16 +195,6 @@ light:
     availability_topic: "homeassistant/tele/PowderLights/LWT"
     state_topic: "homeassistant/stat/PowderLights/POWER"
     command_topic: "homeassistant/cmnd/PowderLights/POWER"
-    qos: 0
-    payload_available: "Online"
-    payload_not_available: "Offline"
-    optimistic: false
-    retain: true
-  - platform: mqtt
-    name: "Christmas Package"
-    availability_topic: "homeassistant/tele/ChristmasPackage/LWT"
-    state_topic: "homeassistant/stat/ChristmasPackage/POWER"
-    command_topic: "homeassistant/cmnd/ChristmasPackage/POWER"
     qos: 0
     payload_available: "Online"
     payload_not_available: "Offline"
