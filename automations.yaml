@@ -145,19 +145,6 @@
   condition: []
   action:
   - delay: ''
-- id: '1589857939537'
-  alias: Timer-BathroomFan-Powder
-  description: ''
-  trigger:
-  - entity_id: switch.04200161ecfabc949315
-    platform: state
-    to: 'on'
-  condition: []
-  action:
-  - delay: 0:30
-  - data: {}
-    entity_id: switch.04200161ecfabc949315
-    service: switch.turn_off
 - id: '1589858375869'
   alias: Timer-BathroomFan-Kids
   description: ''
@@ -184,3 +171,30 @@
   - data: {}
     entity_id: switch.02200010ecfabc896bca
     service: switch.turn_off
+- id: '1592367346375'
+  alias: Timer-BathroomFan-Powder-End
+  description: ''
+  trigger:
+  - entity_id: timer.powder_fan
+    platform: state
+    to: finished
+  - entity_id: timer.powder_fan
+    platform: state
+    to: idle
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.powder_fan
+    service: switch.turn_off
+- id: '1592367573810'
+  alias: Timer-BathroomFan-Powder-Start
+  description: ''
+  trigger:
+  - entity_id: switch.powder_fan
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data: {}
+    entity_id: timer.powder_fan
+    service: timer.start
