@@ -184,8 +184,8 @@
 - id: 'timer_powder_fan_start'
   alias: Timer-Powder-Fan-Start
     trigger:
-      - platform: state
-        entity_id: switch.powder_fan
+      - entity_id: switch.powder_fan
+        platform: state
         to: 'on'
     action:
       - service: timer.start
@@ -196,10 +196,8 @@
   alias: Timer-Powder-Fan-End
   description: ''
   trigger:
-  - event_data:
-      entity_id: timer.powder_fan
-    event_type: 'timer.finished'
-    platform: event
+    - entity_id: timer.powder_fan
+      event_type: 'timer.finished'
   action:
   - entity_id: switch.powder_fan
     service: switch.turn_off
