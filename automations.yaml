@@ -184,3 +184,25 @@
   - data: {}
     entity_id: switch.02200010ecfabc896bca
     service: switch.turn_off
+- id: 'timer_powder_fan_start'
+  alias: Timer-Powder-Fan-Start
+    trigger:
+      - platform: state
+        entity_id: switch.powder_fan
+        to: 'on'
+    action:
+      - service: timer.start
+        data:
+          entity_id: timer.powder_fan
+          duration: '00:45:00'
+- id: 'timer_powder_fan_end'
+  alias: Timer-Powder-Fan-End
+  description: ''
+  trigger:
+  - event_data:
+      entity_id: timer.powder_fan
+    event_type: 'timer.finished'
+    platform: event
+  action:
+  - entity_id: switch.powder_fan
+    service: switch.turn_off
