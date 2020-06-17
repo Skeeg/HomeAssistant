@@ -192,10 +192,10 @@
     platform: state
     to: 'on'
   action:
-  - service: timer.start
-    data: {}
-      entity_id: timer.powder_fan
-      duration: '00:45:00'
+  - delay: '1:30'
+  - data: {}
+    entity_id: switch.02200010ecfabc896bca
+    service: switch.turn_off
 
 - id: 'timer_powder_fan_end'
   alias: Timer-Powder-Fan-End
