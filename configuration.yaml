@@ -129,6 +129,16 @@ switch:
     optimistic: false
     retain: true
   - platform: mqtt
+    name: "Powder Fan"
+    availability_topic: "homeassistant/tele/PowderFan/LWT"
+    state_topic: "homeassistant/stat/PowderFan/POWER"
+    command_topic: "homeassistant/cmnd/PowderFan/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
     name: "Curtain Lights"
     availability_topic: "homeassistant/tele/CurtainLights/LWT"
     state_topic: "homeassistant/stat/CurtainLights/POWER"
@@ -171,10 +181,40 @@ light:
     optimistic: false
     retain: true
   - platform: mqtt
+    name: "Powder Lights"
+    availability_topic: "homeassistant/tele/PowderLights/LWT"
+    state_topic: "homeassistant/stat/PowderLights/POWER"
+    command_topic: "homeassistant/cmnd/PowderLights/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Christmas Package"
+    availability_topic: "homeassistant/tele/ChristmasPackage/LWT"
+    state_topic: "homeassistant/stat/ChristmasPackage/POWER"
+    command_topic: "homeassistant/cmnd/ChristmasPackage/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
     name: "Entry Cans"
     availability_topic: "homeassistant/tele/EntryCans/LWT"
     state_topic: "homeassistant/stat/EntryCans/POWER"
     command_topic: "homeassistant/cmnd/EntryCansGroup/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Study Lights"
+    availability_topic: "homeassistant/tele/StudyLights/LWT"
+    state_topic: "homeassistant/stat/StudyLights/POWER"
+    command_topic: "homeassistant/cmnd/StudyLightsGroup/POWER"
     qos: 0
     payload_available: "Online"
     payload_not_available: "Offline"
