@@ -78,8 +78,24 @@ do
     echo -e '\r'
 done
 
+#Check inline data without IP Address
+for n in $(cat ./iplist.txt)
+do
+    curl "http://$n/cm?cmnd=topic"
+    echo -e '\r'
+done
+
 rm -f iplist.txt
 ```
+
+Temp Config Maxcio
+
+Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/TempConfig/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 1;
+
+Temp Config Gosund
+
+Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/TempConfig/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;
+
 
 10.2.4.11
 #TestTuya - Needs to be programmed
@@ -105,6 +121,10 @@ rm -f iplist.txt
 10.2.4.19
 {"Hostname":"EntryCans_C2"}
 `Backlog hostname EntryCans_C2; DeviceName EntryCans_C2; topic EntryCans_C2; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 EntryCansGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/EntryCansGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+
+10.2.4.24
+{"Hostname":"DadsLights"}
+`Backlog hostname DadsLights; DeviceName DadsLights; topic DadsLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/DadsLights/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
 
 10.2.4.24
 {"Hostname":"PorchLights"}

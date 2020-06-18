@@ -139,6 +139,16 @@ switch:
     optimistic: false
     retain: true
   - platform: mqtt
+    name: "Railing Lights"
+    availability_topic: "homeassistant/tele/RailingLights/LWT"
+    state_topic: "homeassistant/stat/RailingLights/POWER"
+    command_topic: "homeassistant/cmnd/RailingLights/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
     name: "Curtain Lights"
     availability_topic: "homeassistant/tele/CurtainLights/LWT"
     state_topic: "homeassistant/stat/CurtainLights/POWER"
@@ -220,7 +230,102 @@ light:
     payload_not_available: "Offline"
     optimistic: false
     retain: true
+  - platform: mqtt
+    name: "Main Hall Lights"
+    availability_topic: "homeassistant/tele/MainHall/LWT"
+    state_topic: "homeassistant/stat/MainHall/POWER"
+    command_topic: "homeassistant/cmnd/MainHallGroup/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Kitchen Cans"
+    availability_topic: "homeassistant/tele/KitchenCans/LWT"
+    state_topic: "homeassistant/stat/KitchenCans/POWER"
+    command_topic: "homeassistant/cmnd/KitchenCansGroup/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Kitchen Sink Lights"
+    availability_topic: "homeassistant/tele/KitchenSink/LWT"
+    state_topic: "homeassistant/stat/KitchenSink/POWER"
+    command_topic: "homeassistant/cmnd/KitchenSinkGroup/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Powder Hall Lights"
+    availability_topic: "homeassistant/tele/PowderHall/LWT"
+    state_topic: "homeassistant/stat/PowderHall/POWER"
+    command_topic: "homeassistant/cmnd/PowderHall/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Study Lights"
+    availability_topic: "homeassistant/tele/StudyLights/LWT"
+    state_topic: "homeassistant/stat/StudyLights/POWER"
+    command_topic: "homeassistant/cmnd/StudyLightsGroup/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Library Lights"
+    availability_topic: "homeassistant/tele/LibraryLights/LWT"
+    state_topic: "homeassistant/stat/LibraryLights/POWER"
+    command_topic: "homeassistant/cmnd/LibraryLights/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Eve Lights"
+    availability_topic: "homeassistant/tele/EveLights/LWT"
+    state_topic: "homeassistant/stat/EveLights/POWER"
+    command_topic: "homeassistant/cmnd/EveLights/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Porch Lights"
+    availability_topic: "homeassistant/tele/PorchLights/LWT"
+    state_topic: "homeassistant/stat/PorchLights/POWER"
+    command_topic: "homeassistant/cmnd/PorchLights/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Basement Lights"
+    availability_topic: "homeassistant/tele/BasementLights/LWT"
+    state_topic: "homeassistant/stat/BasementLights/POWER"
+    command_topic: "homeassistant/cmnd/BasementLights/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+    
 
 timer:
-  powder_fan:
-    duration: '00:45:00'
+  powder_bathroom_fan:
+    duration: '00:30:00'
+  kids_bathroom_fan:
+    duration: '00:30:00'
+  dads_lamp:
+    duration: '01:00:00'
