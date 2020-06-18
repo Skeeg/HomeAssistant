@@ -171,30 +171,84 @@
   - data: {}
     entity_id: switch.02200010ecfabc896bca
     service: switch.turn_off
-- id: '1592367346375'
+- id: 'timer_bathroomfan_powder-end'
   alias: Timer-BathroomFan-Powder-End
   description: ''
   trigger:
-  - entity_id: timer.powder_fan
+  - entity_id: timer.powder_bathroom_fan
     platform: state
     to: finished
-  - entity_id: timer.powder_fan
+  - entity_id: timer.powder_bathroom_fan
     platform: state
     to: idle
   condition: []
   action:
   - data: {}
-    entity_id: switch.powder_fan
+    entity_id: switch.powder_bathroom_fan
     service: switch.turn_off
-- id: '1592367573810'
+- id: 'timer_bathroomfan_powder-start'
   alias: Timer-BathroomFan-Powder-Start
   description: ''
   trigger:
-  - entity_id: switch.powder_fan
+  - entity_id: switch.powder_bathroom_fan
     platform: state
     to: 'on'
   condition: []
   action:
   - data: {}
-    entity_id: timer.powder_fan
+    entity_id: timer.powder_bathroom_fan
+    service: timer.start
+- id: 'timer_bathroomfan_kids-end'
+  alias: Timer-BathroomFan-Kids-End
+  description: ''
+  trigger:
+  - entity_id: timer.kids_bathroom_fan
+    platform: state
+    to: finished
+  - entity_id: timer.kids_bathroom_fan
+    platform: state
+    to: idle
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.kids_bathroom_fan
+    service: switch.turn_off
+- id: 'timer_bathroomfan_kids-start'
+  alias: Timer-BathroomFan-Kids-Start
+  description: ''
+  trigger:
+  - entity_id: switch.kids_bathroom_fan
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data: {}
+    entity_id: timer.kids_bathroom_fan
+    service: timer.start
+- id: 'timer_dadslamp-end'
+  alias: Timer-Dads-Lamp-End
+  description: ''
+  trigger:
+  - entity_id: timer.dads_lamp
+    platform: state
+    to: finished
+  - entity_id: timer.dads_lamp
+    platform: state
+    to: idle
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.dads_lamp
+    service: switch.turn_off
+- id: 'timer_dadslamp-start'
+  alias: Timer-Dads-Lamp-Start
+  description: ''
+  trigger:
+  - entity_id: switch.dads_lamp
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data: {}
+    entity_id: timer.dads_lamp
     service: timer.start
