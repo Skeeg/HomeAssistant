@@ -181,20 +181,38 @@ switch:
 
 sensor:
 - platform: mqtt
-  name: Curtain Light Energy Yesterday
+  name: Curtain Lights Energy Total
   state_topic: "homeassistant/tele/CurtainLights/SENSOR"
-  value_template: '{{ value_json["ENERGY"]["Yesterday"] }}'
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
   scan_interval: 300
   unit_of_measurement: kWh
 - platform: mqtt
-  name: Curtain Light Energy Today
+  name: Curtain Lights Watts
   state_topic: "homeassistant/tele/CurtainLights/SENSOR"
-  value_template: '{{ value_json["ENERGY"]["Today"] }}'
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Dads Lamp Energy Total
+  state_topic: "homeassistant/tele/DadsLamp/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
   scan_interval: 300
   unit_of_measurement: kWh
 - platform: mqtt
-  name: Curtain Light Watts
-  state_topic: "homeassistant/tele/CurtainLights/SENSOR"
+  name: Dads Lamp Watts
+  state_topic: "homeassistant/tele/DadsLamp/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Railing Lights Energy Total
+  state_topic: "homeassistant/tele/RailingLights/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Railing Light Watts
+  state_topic: "homeassistant/tele/RailingLights/SENSOR"
   value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
   scan_interval: 300
   unit_of_measurement: W
