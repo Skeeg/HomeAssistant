@@ -37,6 +37,7 @@ cat << EOF > ./iplist.txt
 10.2.4.17
 10.2.4.18
 10.2.4.19
+10.2.4.22
 10.2.4.24
 10.2.4.28
 10.2.4.29
@@ -54,6 +55,7 @@ cat << EOF > ./iplist.txt
 10.2.4.43
 10.2.4.44
 10.2.4.45
+10.2.4.46
 10.2.4.47
 10.2.4.48
 EOF
@@ -85,126 +87,155 @@ do
     echo -e '\r'
 done
 
+
+for n in $(cat ./iplist.txt)
+do
+    curl "http://$n/cm?cmnd=sleep%20200"
+    curl "http://$n/cm?cmnd=powerretain%200"
+    printf '{"IPAddress":"'$n'"}'
+    curl "http://$n/cm?cmnd=hostname";
+    echo -e '\r'
+done
+
 rm -f iplist.txt
 ```
 
 Temp Config Maxcio
 
-Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/TempConfig/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 1;
+Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/TempConfig/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0;
 
 Temp Config Gosund
 
-Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/TempConfig/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;
+Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/TempConfig/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;
 
 
 10.2.4.11
 #TestTuya - Needs to be programmed
-`Backlog hostname TestTuya; DeviceName TestTuya; topic TestTuya; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/TestTuya/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname TestTuya; DeviceName TestTuya; topic TestTuya; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/TestTuya/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 
 10.2.4.13
 {"Hostname":"FamilyLights"}
-`Backlog hostname FamilyLights; DeviceName FamilyLights; topic FamilyLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/FamilyLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18} module 0; powerretain 1;`
+`Backlog hostname FamilyLights; DeviceName FamilyLights; topic FamilyLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/FamilyLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18} module 0; powerretain 0;`
 
 10.2.4.14
 {"Hostname":"FamilyFan"}
-`Backlog hostname CurtainLights; DeviceName CurtainLights; topic CurtainLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorFans; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/CurtainLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18} module 0; powerretain 1;`
+`Backlog hostname FamilyFan; DeviceName FamilyFan; topic FamilyFan; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorFans; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/FamilyFan/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18} module 0; powerretain 0;`
 
 10.2.4.17
 {"Hostname":"EntryCans_C1"}
-`Backlog hostname EntryCans_C1; DeviceName EntryCans_C1; topic EntryCans_C1; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 EntryCansGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/EntryCansGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname EntryCans_C1; DeviceName EntryCans_C1; topic EntryCans_C1; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 EntryCansGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/EntryCansGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.18
 {"Hostname":"EntryCans"}
-`Backlog hostname EntryCans; DeviceName EntryCans; topic EntryCans; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 EntryCansGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/EntryCansGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname EntryCans; DeviceName EntryCans; topic EntryCans; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 EntryCansGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/EntryCansGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.19
 {"Hostname":"EntryCans_C2"}
-`Backlog hostname EntryCans_C2; DeviceName EntryCans_C2; topic EntryCans_C2; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 EntryCansGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/EntryCansGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname EntryCans_C2; DeviceName EntryCans_C2; topic EntryCans_C2; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 EntryCansGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/EntryCansGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.24
 {"Hostname":"DadsLights"}
-`Backlog hostname DadsLights; DeviceName DadsLights; topic DadsLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/DadsLights/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname DadsLights; DeviceName DadsLights; topic DadsLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/DadsLights/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.24
 {"Hostname":"PorchLights"}
-`Backlog hostname PorchLights; DeviceName PorchLights; topic PorchLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 ExteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/PorchLights/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname PorchLights; DeviceName PorchLights; topic PorchLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 ExteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/PorchLights/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.28
 {"Hostname":"MainHall_C1"}
-`Backlog hostname MainHall_C1; DeviceName MainHall_C1; topic MainHall_C1; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 MainHallGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/MainHallGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname MainHall_C1; DeviceName MainHall_C1; topic MainHall_C1; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 MainHallGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/MainHallGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.29
 {"Hostname":"MainHall"}
-`Backlog hostname MainHall; DeviceName MainHall; topic MainHall; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 MainHallGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/MainHallGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname MainHall; DeviceName MainHall; topic MainHall; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 MainHallGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/MainHallGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.30
 {"Hostname":"MainHall_C2"}
-`Backlog hostname MainHall_C2; DeviceName MainHall_C2; topic MainHall_C2; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 MainHallGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/MainHallGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname MainHall_C2; DeviceName MainHall_C2; topic MainHall_C2; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 MainHallGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/MainHallGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.31
 {"Hostname":"KitchenCans"}
-`Backlog hostname KitchenCans; DeviceName KitchenCans; topic KitchenCans; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 KitchenCansGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/KitchenCansGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname KitchenCans; DeviceName KitchenCans; topic KitchenCans; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 KitchenCansGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/KitchenCansGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.32
 {"Hostname":"KitchenSink"}
-`Backlog hostname KitchenSink; DeviceName KitchenSink; topic KitchenSink; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 KitchenSinkGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/KitchenSinkGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname KitchenSink; DeviceName KitchenSink; topic KitchenSink; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 KitchenSinkGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/KitchenSinkGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.33
 {"Hostname":"KitchenSink_C1"}
-`Backlog hostname KitchenSink_C1; DeviceName KitchenSink_C1; topic KitchenSink_C1; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 KitchenSinkGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/KitchenSinkGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname KitchenSink_C1; DeviceName KitchenSink_C1; topic KitchenSink_C1; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 KitchenSinkGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/KitchenSinkGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.34
 {"Hostname":"KitchenCans_C1"}
-`Backlog hostname KitchenCans_C1; DeviceName KitchenCans_C1; topic KitchenCans_C1; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 KitchenCansGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/KitchenCansGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname KitchenCans_C1; DeviceName KitchenCans_C1; topic KitchenCans_C1; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 KitchenCansGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/KitchenCansGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.35
 {"Hostname":"PowderHall"}
-`Backlog hostname PowderHall; DeviceName PowderHall; topic PowderHall; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/PowderHall/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname PowderHall; DeviceName PowderHall; topic PowderHall; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/PowderHall/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.36
 {"Hostname":"StudyLights"}
-`Backlog hostname StudyLights; DeviceName StudyLights; topic StudyLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 StudyLightsGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/StudyLightsGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname StudyLights; DeviceName StudyLights; topic StudyLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 StudyLightsGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/StudyLightsGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.37
 {"Hostname":"LibraryLights"}
-`Backlog hostname LibraryLights; DeviceName LibraryLights; topic LibraryLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/LibraryLights/POWER %value% endon; Rule1 1; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname LibraryLights; DeviceName LibraryLights; topic LibraryLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/LibraryLights/POWER %value% endon; Rule1 1; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.40
 {"Hostname":"CurtainLights"}
-`Backlog hostname CurtainLights; DeviceName CurtainLights; topic CurtainLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/CurtainLights/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45} module 0; powerretain 1; sensorretain 1;`
+`Backlog hostname CurtainLights; DeviceName CurtainLights; topic CurtainLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/CurtainLights/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45} module 0; powerretain 0; sensorretain 1;`
 
 10.2.4.41
 {"Hostname":"EveLights"}
-`Backlog hostname EveLights; DeviceName EveLights; topic EveLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 ExteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/EveLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname EveLights; DeviceName EveLights; topic EveLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 ExteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/EveLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.42
 {"Hostname":"PowderFan"}
-`Backlog hostname PowderFan; DeviceName PowderFan; topic PowderFan; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorFans; grouptopic3 BathroomFans; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/PowderFan/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname PowderFan; DeviceName PowderFan; topic PowderFan; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorFans; grouptopic3 BathroomFans; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/PowderFan/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.43
 {"Hostname":"StudyFan"}
-`Backlog hostname StudyFan; DeviceName StudyFan; topic StudyFan; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 StudyLightsGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/StudyLightsGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Control","GPIO":[9,0,0,0,0,0,0,0,0,56,0,0,21],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname StudyFan; DeviceName StudyFan; topic StudyFan; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 StudyLightsGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/StudyLightsGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Control","GPIO":[9,0,0,0,0,0,0,0,0,56,0,0,21],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 
 10.2.4.44
 {"Hostname":"PowderLights"}
-`Backlog hostname PowderLights; DeviceName PowderLights; topic PowderLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/PowderLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname PowderLights; DeviceName PowderLights; topic PowderLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/PowderLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.45
 {"Hostname":"RailingLights"}
-`Backlog hostname RailingLights; DeviceName RailingLights; topic RailingLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/RailingLights/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 1; sensorretain 1`
+`Backlog hostname RailingLights; DeviceName RailingLights; topic RailingLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/RailingLights/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1`
 
 
 10.2.4.46
 #DadsLamp
-`Backlog hostname DadsLamp; DeviceName DadsLamp; topic DadsLamp; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/DadsLamp/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 1;`
+`Backlog hostname DadsLamp; DeviceName DadsLamp; topic DadsLamp; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/DadsLamp/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0;`
 
 
 10.2.4.47
 {"Hostname":"ChristmasPackage"}
-`Backlog hostname ChristmasPackage; DeviceName ChristmasPackage; topic ChristmasPackage; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 ExteriorDecorations; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/ChristmasPackage/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname ChristmasPackage; DeviceName ChristmasPackage; topic ChristmasPackage; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 ExteriorDecorations; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/ChristmasPackage/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
 10.2.4.48
 {"Hostname":"BasementLights"}
-`Backlog hostname BasementLights; DeviceName BasementLights; topic BasementLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/BasementLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 1;`
+`Backlog hostname BasementLights; DeviceName BasementLights; topic BasementLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/BasementLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
+
+#GarageLamp
+10.2.4.49
+`Backlog hostname GarageLamp; DeviceName GarageLamp; topic GarageLamp; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 GarageLightsGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/GarageLamp/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sleep 75;`
+
+10.2.4.50
+`Backlog hostname DiningLights; DeviceName DiningLights; topic DiningLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/DiningLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18} module 0; powerretain 0; sleep 75;`
+
+10.2.4.51
+`Backlog hostname PatioLights; DeviceName PatioLights; topic PatioLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 ExteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/PatioLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18} module 0; powerretain 0; sleep 75;`
+
+10.2.4.52
+`Backlog hostname GarageLights; DeviceName GarageLights; topic GarageLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 GarageLightsGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/GarageLightsGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0; sleep 75;`
+
+10.2.4.53
+`Backlog hostname ExteriorGarageLights; DeviceName ExteriorGarageLights; topic ExteriorGarageLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 ExteriorFrontLights; grouptopic3 ExteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/ExteriorFrontLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18} module 0; powerretain 0; sleep 75;`
+
+10.2.4.54
+`Backlog hostname KidsBathroomFan; DeviceName KidsBathroomFan; topic KidsBathroomFan; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorFans; grouptopic3 BathroomFans; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/KidsBathroomFan/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0;`

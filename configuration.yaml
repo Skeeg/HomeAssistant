@@ -139,6 +139,16 @@ switch:
     optimistic: false
     retain: true
   - platform: mqtt
+    name: "Kids Bathroom Fan"
+    availability_topic: "homeassistant/tele/KidsBathroomFan/LWT"
+    state_topic: "homeassistant/stat/KidsBathroomFan/POWER"
+    command_topic: "homeassistant/cmnd/KidsBathroomFan/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
     name: "Railing Lights"
     availability_topic: "homeassistant/tele/RailingLights/LWT"
     state_topic: "homeassistant/stat/RailingLights/POWER"
@@ -188,6 +198,18 @@ sensor:
   value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
   scan_interval: 300
   unit_of_measurement: W
+- platform: mqtt
+  name: Curtain Light Processing
+  state_topic: "homeassistant/tele/CurtainLights/STATE"
+  value_template: '{{ value_json["LoadAvg"] }}'
+  scan_interval: 300
+  unit_of_measurement: '%'
+- platform: mqtt
+  name: MainHall_C2 Processing
+  state_topic: "homeassistant/tele/MainHall_C2/STATE"
+  value_template: '{{ value_json["LoadAvg"] }}'
+  scan_interval: 300
+  unit_of_measurement: '%'
 
 light:
   - platform: mqtt
@@ -271,16 +293,6 @@ light:
     optimistic: false
     retain: true
   - platform: mqtt
-    name: "Study Lights"
-    availability_topic: "homeassistant/tele/StudyLights/LWT"
-    state_topic: "homeassistant/stat/StudyLights/POWER"
-    command_topic: "homeassistant/cmnd/StudyLightsGroup/POWER"
-    qos: 0
-    payload_available: "Online"
-    payload_not_available: "Offline"
-    optimistic: false
-    retain: true
-  - platform: mqtt
     name: "Library Lights"
     availability_topic: "homeassistant/tele/LibraryLights/LWT"
     state_topic: "homeassistant/stat/LibraryLights/POWER"
@@ -315,6 +327,76 @@ light:
     availability_topic: "homeassistant/tele/BasementLights/LWT"
     state_topic: "homeassistant/stat/BasementLights/POWER"
     command_topic: "homeassistant/cmnd/BasementLights/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Dads Lamp"
+    availability_topic: "homeassistant/tele/DadsLamp/LWT"
+    state_topic: "homeassistant/stat/DadsLamp/POWER"
+    command_topic: "homeassistant/cmnd/DadsLamp/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Dads Lights"
+    availability_topic: "homeassistant/tele/DadsLights/LWT"
+    state_topic: "homeassistant/stat/DadsLights/POWER"
+    command_topic: "homeassistant/cmnd/DadsLights/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Garage Lamp"
+    availability_topic: "homeassistant/tele/GarageLamp/LWT"
+    state_topic: "homeassistant/stat/GarageLamp/POWER"
+    command_topic: "homeassistant/cmnd/GarageLamp/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Garage Lights"
+    availability_topic: "homeassistant/tele/GarageLights/LWT"
+    state_topic: "homeassistant/stat/GarageLights/POWER"
+    command_topic: "homeassistant/cmnd/GarageLights/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Dining Lights"
+    availability_topic: "homeassistant/tele/DiningLights/LWT"
+    state_topic: "homeassistant/stat/DiningLights/POWER"
+    command_topic: "homeassistant/cmnd/DiningLights/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Patio Lights"
+    availability_topic: "homeassistant/tele/PatioLights/LWT"
+    state_topic: "homeassistant/stat/PatioLights/POWER"
+    command_topic: "homeassistant/cmnd/PatioLights/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Exterior Garage Lights"
+    availability_topic: "homeassistant/tele/ExteriorGarageLights/LWT"
+    state_topic: "homeassistant/stat/ExteriorGarageLights/POWER"
+    command_topic: "homeassistant/cmnd/ExteriorGarageLights/POWER"
     qos: 0
     payload_available: "Online"
     payload_not_available: "Offline"
