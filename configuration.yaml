@@ -217,7 +217,7 @@ sensor:
   scan_interval: 300
   unit_of_measurement: W
 - platform: mqtt
-  name: Curtain Light Processing
+  name: Curtain Lights Processing
   state_topic: "homeassistant/tele/CurtainLights/STATE"
   value_template: '{{ value_json["LoadAvg"] }}'
   scan_interval: 300
