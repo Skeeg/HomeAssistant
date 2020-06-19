@@ -217,6 +217,18 @@ sensor:
   scan_interval: 300
   unit_of_measurement: W
 - platform: mqtt
+  name: Garage Lamp Energy Total
+  state_topic: "homeassistant/tele/GarageLamp/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Garage Lamp Watts
+  state_topic: "homeassistant/tele/GarageLamp/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
   name: Curtain Lights Processing
   state_topic: "homeassistant/tele/CurtainLights/STATE"
   value_template: '{{ value_json["LoadAvg"] }}'
