@@ -1,13 +1,4 @@
-- id: bbaf12086dc04123bb7a6f9c91b3b1cb
-  alias: Sunset - 15 minutes before
-  trigger:
-  - event: sunset
-    offset: -00:15:00
-    platform: sun
-  action:
-  - entity_id: switch.06200180bcddc2e5e01d
-    service: script.1582169197516
-- id: '1577820851677'
+- id: WebHook_BedtimeShutdown
   alias: Webhook - Bedtime Shutdown
   description: ''
   trigger:
@@ -16,7 +7,16 @@
   condition: []
   action:
   - service: script.bedtime_script
-- id: '1578018875696'
+- id: WebHook_MasterMovies
+  alias: Webhook - Master Movies
+  description: ''
+  trigger:
+  - platform: webhook
+    webhook_id: master_movies
+  condition: []
+  action:
+  - service: script.master_movies_script
+- id: GarageOpening
   alias: GarageDoorOpening
   description: ''
   trigger:
@@ -38,7 +38,7 @@
     data: {}
     entity_id: switch.780740202cf432ca424e
     service: switch.turn_on
-- id: '1578191248043'
+- id: GarageClosing
   alias: GarageClosing
   description: ''
   trigger:
@@ -58,51 +58,7 @@
   action:
   - entity_id: switch.780740202cf432ca424e
     service: switch.turn_off
-- id: '1578464273699'
-  alias: Bedtime - Austin
-  description: ''
-  trigger:
-  - at: '22:45'
-    platform: time
-  condition: []
-  action:
-  - entity_id: switch.03200076dc4f2222957e
-    service: switch.turn_off
-- id: '1578464361506'
-  alias: Weekday - Austin Triggers
-  description: ''
-  trigger:
-  - at: 07:00
-    platform: time
-  condition:
-  - condition: state
-    entity_id: binary_sensor.workday_sensor
-    state: 'on'
-  action:
-  - entity_id: switch.03200076dc4f2222957e
-    service: script.1583846065286
-- id: '1578465674789'
-  alias: Weekday - Dad Triggers
-  description: ''
-  trigger:
-  - at: 08:00
-    platform: time
-  condition:
-  - condition: state
-    entity_id: binary_sensor.workday_sensor
-    state: 'on'
-  action:
-  - service: script.dad_alarm_script
-- id: '1578887318476'
-  alias: Webhook - Master Movies
-  description: ''
-  trigger:
-  - platform: webhook
-    webhook_id: master_movies
-  condition: []
-  action:
-  - service: script.master_movies_script
-- id: '1578925869490'
+- id: Sunrise_Trigger_Minus_1_Hour
   alias: Sunrise - 1 hour before
   description: ''
   trigger:
@@ -116,8 +72,42 @@
   - data: {}
     entity_id: switch.curtain_lights
     service: switch.turn_on
-- id: '1578926216800'
-  alias: Weekend - Austin Triggers
+- id: Sunset_Trigger_Minus_15_Minutes
+  alias: Sunset - 15 Minutes Before
+  trigger:
+  - event: sunset
+    offset: -00:15:00
+    platform: sun
+  action:
+  - entity_id: switch.06200180bcddc2e5e01d
+    service: script.1582169197516
+- id: Weekday_Dad_Good_Morning
+  alias: Weekday - Dad Triggers
+  description: ''
+  trigger:
+  - at: 08:00
+    platform: time
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  action:
+  - service: script.dad_alarm_script
+- id: Weekday_Austin_Good_Morning
+  alias: Weekday - Austin Triggers
+  description: ''
+  trigger:
+  - at: 07:00
+    platform: time
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  action:
+  - entity_id: switch.03200076dc4f2222957e
+    service: script.1583846065286
+- id: Weekend_Austin_Good_Morning
+  alias: Weekend - Austin Morning Triggers
   description: ''
   trigger:
   - at: '9:30'
@@ -129,7 +119,17 @@
   action:
   - entity_id: switch.03200076dc4f2222957e
     service: script.1583846065286
-- id: '1578953820334'
+- id: Austin_Bedtime
+  alias: Bedtime - Austin
+  description: ''
+  trigger:
+  - at: '22:45'
+    platform: time
+  condition: []
+  action:
+  - entity_id: switch.03200076dc4f2222957e
+    service: switch.turn_off
+- id: Ring_Button_Pushed
   alias: Ring - Button Pushed
   description: ''
   trigger:
@@ -145,32 +145,6 @@
   condition: []
   action:
   - delay: ''
-- id: '1589858375869'
-  alias: Timer-BathroomFan-Kids
-  description: ''
-  trigger:
-  - entity_id: switch.04200161ecfabc94a05a
-    platform: state
-    to: 'on'
-  condition: []
-  action:
-  - delay: 0:30
-  - data: {}
-    entity_id: switch.04200161ecfabc94a05a
-    service: switch.turn_off
-- id: '1589861669170'
-  alias: Timer-DadRoom-Lamp
-  description: ''
-  trigger:
-  - entity_id: switch.02200010ecfabc896bca
-    platform: state
-    to: 'on'
-  condition: []
-  action:
-  - delay: '1:30'
-  - data: {}
-    entity_id: switch.02200010ecfabc896bca
-    service: switch.turn_off
 - id: timer_bathroomfan_powder-end
   alias: Timer-BathroomFan-Powder-End
   description: ''
@@ -238,13 +212,13 @@
   condition: []
   action:
   - data: {}
-    entity_id: switch.dads_lamp
+    entity_id: light.dads_lamp
     service: switch.turn_off
 - id: timer_dadslamp-start
   alias: Timer-Dads-Lamp-Start
   description: ''
   trigger:
-  - entity_id: switch.dads_lamp
+  - entity_id: light.dads_lamp
     platform: state
     to: 'on'
   condition: []
