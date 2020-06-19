@@ -111,7 +111,7 @@
     platform: sun
   condition: []
   action:
-  - entity_id: switch.02200010ecfabc89aa43
+  - entity_id: switch.railing_lights
     service: switch.turn_on
   - data: {}
     entity_id: switch.curtain_lights
@@ -171,7 +171,7 @@
   - data: {}
     entity_id: switch.02200010ecfabc896bca
     service: switch.turn_off
-- id: 'timer_bathroomfan_powder-end'
+- id: timer_bathroomfan_powder-end
   alias: Timer-BathroomFan-Powder-End
   description: ''
   trigger:
@@ -186,11 +186,11 @@
   - data: {}
     entity_id: switch.powder_bathroom_fan
     service: switch.turn_off
-- id: 'timer_bathroomfan_powder-start'
+- id: timer_bathroomfan_powder-start
   alias: Timer-BathroomFan-Powder-Start
   description: ''
   trigger:
-  - entity_id: switch.powder_bathroom_fan
+  - entity_id: switch.powder_fan
     platform: state
     to: 'on'
   condition: []
@@ -198,7 +198,7 @@
   - data: {}
     entity_id: timer.powder_bathroom_fan
     service: timer.start
-- id: 'timer_bathroomfan_kids-end'
+- id: timer_bathroomfan_kids-end
   alias: Timer-BathroomFan-Kids-End
   description: ''
   trigger:
@@ -213,7 +213,7 @@
   - data: {}
     entity_id: switch.kids_bathroom_fan
     service: switch.turn_off
-- id: 'timer_bathroomfan_kids-start'
+- id: timer_bathroomfan_kids-start
   alias: Timer-BathroomFan-Kids-Start
   description: ''
   trigger:
@@ -225,7 +225,7 @@
   - data: {}
     entity_id: timer.kids_bathroom_fan
     service: timer.start
-- id: 'timer_dadslamp-end'
+- id: timer_dadslamp-end
   alias: Timer-Dads-Lamp-End
   description: ''
   trigger:
@@ -240,7 +240,7 @@
   - data: {}
     entity_id: switch.dads_lamp
     service: switch.turn_off
-- id: 'timer_dadslamp-start'
+- id: timer_dadslamp-start
   alias: Timer-Dads-Lamp-Start
   description: ''
   trigger:
