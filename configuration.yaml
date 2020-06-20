@@ -67,11 +67,11 @@ homekit:
       - light
       - switch
     exclude_entities:
-      - switch.03200076dc4f22233dae
-      - switch.03200076dc4f222297ed
-      - switch.03200076dc4f2222937d
-      - switch.03200076dc4f22233473
-      - switch.03200076dc4f22233c1f
+      - switch.computer_server
+      - switch.computer_austin
+      - switch.computer_lily
+      - switch.hot_tub
+      - switch.electric_fence
       - switch.03200076dc4f22233be2
       - switch.03200076dc4f22233d50
 
@@ -178,6 +178,96 @@ switch:
     payload_not_available: "Offline"
     optimistic: false
     retain: true
+  - platform: mqtt
+    name: "Buffet Decor"
+    availability_topic: "homeassistant/tele/BuffetDecor/LWT"
+    state_topic: "homeassistant/stat/BuffetDecor/POWER"
+    command_topic: "homeassistant/cmnd/BuffetDecor/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Hot Tub"
+    availability_topic: "homeassistant/tele/HotTub/LWT"
+    state_topic: "homeassistant/stat/HotTub/POWER"
+    command_topic: "homeassistant/cmnd/HotTub/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Electric Fence"
+    availability_topic: "homeassistant/tele/ElectricFence/LWT"
+    state_topic: "homeassistant/stat/ElectricFence/POWER"
+    command_topic: "homeassistant/cmnd/ElectricFence/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Computer Austin"
+    availability_topic: "homeassistant/tele/ComputerAustin/LWT"
+    state_topic: "homeassistant/stat/ComputerAustin/POWER"
+    command_topic: "homeassistant/cmnd/ComputerAustin/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Computer Lily"
+    availability_topic: "homeassistant/tele/ComputerLily/LWT"
+    state_topic: "homeassistant/stat/ComputerLily/POWER"
+    command_topic: "homeassistant/cmnd/ComputerLily/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Main TV"
+    availability_topic: "homeassistant/tele/MainTV/LWT"
+    state_topic: "homeassistant/stat/MainTV/POWER"
+    command_topic: "homeassistant/cmnd/MainTV/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Mantle Decor"
+    availability_topic: "homeassistant/tele/MantleDecor/LWT"
+    state_topic: "homeassistant/stat/MantleDecor/POWER"
+    command_topic: "homeassistant/cmnd/MantleDecor/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Master TV"
+    availability_topic: "homeassistant/tele/MasterTV/LWT"
+    state_topic: "homeassistant/stat/MasterTV/POWER"
+    command_topic: "homeassistant/cmnd/MasterTV/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Computer Server"
+    availability_topic: "homeassistant/tele/ComputerServer/LWT"
+    state_topic: "homeassistant/stat/ComputerServer/POWER"
+    command_topic: "homeassistant/cmnd/ComputerServer/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
 
 sensor:
 - platform: mqtt
@@ -213,6 +303,126 @@ sensor:
 - platform: mqtt
   name: Railing Light Watts
   state_topic: "homeassistant/tele/RailingLights/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Hot Tub Energy Total
+  state_topic: "homeassistant/tele/HotTub/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Hot Tub Watts
+  state_topic: "homeassistant/tele/HotTub/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Buffet Decor Energy Total
+  state_topic: "homeassistant/tele/BuffetDecor/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Buffet Decor Watts
+  state_topic: "homeassistant/tele/BuffetDecor/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Electric Fence Energy Total
+  state_topic: "homeassistant/tele/ElectricFence/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Electric Fence Watts
+  state_topic: "homeassistant/tele/ElectricFence/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name:  Energy Total
+  state_topic: "homeassistant/tele//SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Computer - Austin Watts
+  state_topic: "homeassistant/tele/ComputerAustin/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Computer - Austin Energy Total
+  state_topic: "homeassistant/tele/ComputerAustin/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Computer - Lily Watts
+  state_topic: "homeassistant/tele/ComputerLily/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Computer - Lily Energy Total
+  state_topic: "homeassistant/tele/ComputerLily/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name:  Watts
+  state_topic: "homeassistant/tele//SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Main TV Energy Total
+  state_topic: "homeassistant/tele/MainTV/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Main TV Watts
+  state_topic: "homeassistant/tele/MainTV/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Mantle Decor Energy Total
+  state_topic: "homeassistant/tele/MantleDecor/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Mantle Decor Watts
+  state_topic: "homeassistant/tele/MantleDecor/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Master TV Energy Total
+  state_topic: "homeassistant/tele/MasterTV/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Master TV Watts
+  state_topic: "homeassistant/tele/MasterTV/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Computer - Server Energy Total
+  state_topic: "homeassistant/tele/ComputerServer/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Computer - Server Watts
+  state_topic: "homeassistant/tele/ComputerServer/SENSOR"
   value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
   scan_interval: 300
   unit_of_measurement: W
