@@ -439,6 +439,7 @@ sensor:
   value_template: '{{ value_json["ENERGY"]["Total"] }}'
   scan_interval: 300
   unit_of_measurement: kWh- platform: mqtt
+- platform: mqtt
   name: Blower Energy Total
   state_topic: "homeassistant/tele/Blower/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Total"] }}'
