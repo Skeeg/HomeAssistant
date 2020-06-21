@@ -486,7 +486,8 @@ sensor:
   state_topic: "homeassistant/tele/Spare3/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Total"] }}'
   scan_interval: 300
-  unit_of_measurement: kWh- platform: mqtt
+  unit_of_measurement: kWh
+  - platform: mqtt
   name: Railing Light Watts
   state_topic: "homeassistant/tele/RailingLights/SENSOR"
   value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
