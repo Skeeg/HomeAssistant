@@ -48,6 +48,11 @@ binary_sensor:
       - '2020-07-09'
       - '2020-07-10'
 
+lovelace:
+  resources:
+    url: /config/www/lovelace-card-mod/card-mod.js?v=2
+    type: module
+
 ring:
   username: !secret ring_username
   password: !secret ring_password
@@ -268,6 +273,86 @@ switch:
     payload_not_available: "Offline"
     optimistic: false
     retain: true
+  - platform: mqtt
+    name: "Blower"
+    availability_topic: "homeassistant/tele/Blower/LWT"
+    state_topic: "homeassistant/stat/Blower/POWER"
+    command_topic: "homeassistant/cmnd/Blower/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Computer Media"
+    availability_topic: "homeassistant/tele/ComputerMedia/LWT"
+    state_topic: "homeassistant/stat/ComputerMedia/POWER"
+    command_topic: "homeassistant/cmnd/ComputerMedia/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Lily Fan"
+    availability_topic: "homeassistant/tele/LilyFan/LWT"
+    state_topic: "homeassistant/stat/LilyFan/POWER"
+    command_topic: "homeassistant/cmnd/LilyFan/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Fire Place"
+    availability_topic: "homeassistant/tele/FirePlace/LWT"
+    state_topic: "homeassistant/stat/FirePlace/POWER"
+    command_topic: "homeassistant/cmnd/FirePlace/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Pet Lights"
+    availability_topic: "homeassistant/tele/PetLights/LWT"
+    state_topic: "homeassistant/stat/PetLights/POWER"
+    command_topic: "homeassistant/cmnd/PetLights/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Spare1"
+    availability_topic: "homeassistant/tele/Spare1/LWT"
+    state_topic: "homeassistant/stat/Spare1/POWER"
+    command_topic: "homeassistant/cmnd/Spare1/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Spare2"
+    availability_topic: "homeassistant/tele/Spare2/LWT"
+    state_topic: "homeassistant/stat/Spare2/POWER"
+    command_topic: "homeassistant/cmnd/Spare2/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
+  - platform: mqtt
+    name: "Spare3"
+    availability_topic: "homeassistant/tele/Spare3/LWT"
+    state_topic: "homeassistant/stat/Spare3/POWER"
+    command_topic: "homeassistant/cmnd/Spare3/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
 
 sensor:
 - platform: mqtt
@@ -277,23 +362,11 @@ sensor:
   scan_interval: 300
   unit_of_measurement: kWh
 - platform: mqtt
-  name: Curtain Lights Watts
-  state_topic: "homeassistant/tele/CurtainLights/SENSOR"
-  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
-  scan_interval: 300
-  unit_of_measurement: W
-- platform: mqtt
   name: Dads Lamp Energy Total
   state_topic: "homeassistant/tele/DadsLamp/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Total"] }}'
   scan_interval: 300
   unit_of_measurement: kWh
-- platform: mqtt
-  name: Dads Lamp Watts
-  state_topic: "homeassistant/tele/DadsLamp/SENSOR"
-  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
-  scan_interval: 300
-  unit_of_measurement: W
 - platform: mqtt
   name: Railing Lights Energy Total
   state_topic: "homeassistant/tele/RailingLights/SENSOR"
@@ -301,23 +374,11 @@ sensor:
   scan_interval: 300
   unit_of_measurement: kWh
 - platform: mqtt
-  name: Railing Light Watts
-  state_topic: "homeassistant/tele/RailingLights/SENSOR"
-  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
-  scan_interval: 300
-  unit_of_measurement: W
-- platform: mqtt
   name: Hot Tub Energy Total
   state_topic: "homeassistant/tele/HotTub/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Total"] }}'
   scan_interval: 300
   unit_of_measurement: kWh
-- platform: mqtt
-  name: Hot Tub Watts
-  state_topic: "homeassistant/tele/HotTub/SENSOR"
-  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
-  scan_interval: 300
-  unit_of_measurement: W
 - platform: mqtt
   name: Buffet Decor Energy Total
   state_topic: "homeassistant/tele/BuffetDecor/SENSOR"
@@ -325,23 +386,11 @@ sensor:
   scan_interval: 300
   unit_of_measurement: kWh
 - platform: mqtt
-  name: Buffet Decor Watts
-  state_topic: "homeassistant/tele/BuffetDecor/SENSOR"
-  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
-  scan_interval: 300
-  unit_of_measurement: W
-- platform: mqtt
   name: Electric Fence Energy Total
   state_topic: "homeassistant/tele/ElectricFence/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Total"] }}'
   scan_interval: 300
   unit_of_measurement: kWh
-- platform: mqtt
-  name: Electric Fence Watts
-  state_topic: "homeassistant/tele/ElectricFence/SENSOR"
-  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
-  scan_interval: 300
-  unit_of_measurement: W
 - platform: mqtt
   name:  Energy Total
   state_topic: "homeassistant/tele//SENSOR"
@@ -349,23 +398,11 @@ sensor:
   scan_interval: 300
   unit_of_measurement: kWh
 - platform: mqtt
-  name: Computer - Austin Watts
-  state_topic: "homeassistant/tele/ComputerAustin/SENSOR"
-  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
-  scan_interval: 300
-  unit_of_measurement: W
-- platform: mqtt
   name: Computer - Austin Energy Total
   state_topic: "homeassistant/tele/ComputerAustin/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Total"] }}'
   scan_interval: 300
   unit_of_measurement: kWh
-- platform: mqtt
-  name: Computer - Lily Watts
-  state_topic: "homeassistant/tele/ComputerLily/SENSOR"
-  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
-  scan_interval: 300
-  unit_of_measurement: W
 - platform: mqtt
   name: Computer - Lily Energy Total
   state_topic: "homeassistant/tele/ComputerLily/SENSOR"
@@ -373,23 +410,11 @@ sensor:
   scan_interval: 300
   unit_of_measurement: kWh
 - platform: mqtt
-  name:  Watts
-  state_topic: "homeassistant/tele//SENSOR"
-  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
-  scan_interval: 300
-  unit_of_measurement: W
-- platform: mqtt
   name: Main TV Energy Total
   state_topic: "homeassistant/tele/MainTV/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Total"] }}'
   scan_interval: 300
   unit_of_measurement: kWh
-- platform: mqtt
-  name: Main TV Watts
-  state_topic: "homeassistant/tele/MainTV/SENSOR"
-  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
-  scan_interval: 300
-  unit_of_measurement: W
 - platform: mqtt
   name: Mantle Decor Energy Total
   state_topic: "homeassistant/tele/MantleDecor/SENSOR"
@@ -397,23 +422,11 @@ sensor:
   scan_interval: 300
   unit_of_measurement: kWh
 - platform: mqtt
-  name: Mantle Decor Watts
-  state_topic: "homeassistant/tele/MantleDecor/SENSOR"
-  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
-  scan_interval: 300
-  unit_of_measurement: W
-- platform: mqtt
   name: Master TV Energy Total
   state_topic: "homeassistant/tele/MasterTV/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Total"] }}'
   scan_interval: 300
   unit_of_measurement: kWh
-- platform: mqtt
-  name: Master TV Watts
-  state_topic: "homeassistant/tele/MasterTV/SENSOR"
-  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
-  scan_interval: 300
-  unit_of_measurement: W
 - platform: mqtt
   name: Computer - Server Energy Total
   state_topic: "homeassistant/tele/ComputerServer/SENSOR"
@@ -421,20 +434,186 @@ sensor:
   scan_interval: 300
   unit_of_measurement: kWh
 - platform: mqtt
+  name: Garage Lamp Energy Total
+  state_topic: "homeassistant/tele/GarageLamp/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh- platform: mqtt
+  name: Blower Energy Total
+  state_topic: "homeassistant/tele/Blower/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Computer - Media Energy Total
+  state_topic: "homeassistant/tele/ComputerMedia/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Lily Fan Energy Total
+  state_topic: "homeassistant/tele/LilyFan/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Fire Place Energy Total
+  state_topic: "homeassistant/tele/FirePlace/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Pet Lights Energy Total
+  state_topic: "homeassistant/tele/PetLights/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Spare1 Energy Total
+  state_topic: "homeassistant/tele/Spare1/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Spare2 Energy Total
+  state_topic: "homeassistant/tele/Spare2/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh
+- platform: mqtt
+  name: Spare3 Energy Total
+  state_topic: "homeassistant/tele/Spare3/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  scan_interval: 300
+  unit_of_measurement: kWh- platform: mqtt
+  name: Railing Light Watts
+  state_topic: "homeassistant/tele/RailingLights/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Curtain Lights Watts
+  state_topic: "homeassistant/tele/CurtainLights/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Dads Lamp Watts
+  state_topic: "homeassistant/tele/DadsLamp/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Hot Tub Watts
+  state_topic: "homeassistant/tele/HotTub/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Buffet Decor Watts
+  state_topic: "homeassistant/tele/BuffetDecor/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Electric Fence Watts
+  state_topic: "homeassistant/tele/ElectricFence/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Computer - Austin Watts
+  state_topic: "homeassistant/tele/ComputerAustin/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Computer - Lily Watts
+  state_topic: "homeassistant/tele/ComputerLily/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name:  Watts
+  state_topic: "homeassistant/tele//SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Main TV Watts
+  state_topic: "homeassistant/tele/MainTV/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Mantle Decor Watts
+  state_topic: "homeassistant/tele/MantleDecor/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Master TV Watts
+  state_topic: "homeassistant/tele/MasterTV/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
   name: Computer - Server Watts
   state_topic: "homeassistant/tele/ComputerServer/SENSOR"
   value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
   scan_interval: 300
   unit_of_measurement: W
 - platform: mqtt
-  name: Garage Lamp Energy Total
-  state_topic: "homeassistant/tele/GarageLamp/SENSOR"
-  value_template: '{{ value_json["ENERGY"]["Total"] }}'
-  scan_interval: 300
-  unit_of_measurement: kWh
-- platform: mqtt
   name: Garage Lamp Watts
   state_topic: "homeassistant/tele/GarageLamp/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Blower Watts
+  state_topic: "homeassistant/tele/Blower/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Computer - Media Watts
+  state_topic: "homeassistant/tele/ComputerMedia/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Lily Fan Watts
+  state_topic: "homeassistant/tele/LilyFan/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Fire Place Watts
+  state_topic: "homeassistant/tele/FirePlace/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Pet Lights Watts
+  state_topic: "homeassistant/tele/PetLights/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Spare1 Watts
+  state_topic: "homeassistant/tele/Spare1/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Spare2 Watts
+  state_topic: "homeassistant/tele/Spare2/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
+  scan_interval: 300
+  unit_of_measurement: W
+- platform: mqtt
+  name: Spare3 Watts
+  state_topic: "homeassistant/tele/Spare3/SENSOR"
   value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
   scan_interval: 300
   unit_of_measurement: W
@@ -452,6 +631,16 @@ sensor:
   unit_of_measurement: '%'
 
 light:
+  - platform: mqtt
+    name: "Exterior Side"
+    availability_topic: "homeassistant/tele/ExteriorSide/LWT"
+    state_topic: "homeassistant/stat/ExteriorSide/POWER"
+    command_topic: "homeassistant/cmnd/ExteriorSide/POWER"
+    qos: 0
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    retain: true
   - platform: mqtt
     name: "Family Lights"
     availability_topic: "homeassistant/tele/FamilyLights/LWT"

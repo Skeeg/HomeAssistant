@@ -7,10 +7,10 @@
 
 # Send the voltage to the right GPIO
 # Active Device Template:
-`{"NAME":"Gosund KS-602S","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}`
+`backlog template {"NAME":"Gosund KS-602S","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0;`
 
 # Maxcio Power Switch
-`{"NAME":"W-US002S","GPIO":[0,90,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}`
+`backlog template {"NAME":"W-US002S","GPIO":[0,90,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0;`
 
 Then have to run https://tasmota.github.io/docs/Power-Monitoring-Calibration/ process in console.
 Get values from the Kill-A-Watt device
@@ -182,6 +182,10 @@ Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic 
 {"Hostname":"LibraryLights"}
 `Backlog hostname LibraryLights; DeviceName LibraryLights; topic LibraryLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/LibraryLights/POWER %value% endon; Rule1 1; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
+10.2.4.39
+{"Hostname":"Blower"}
+`Backlog hostname Blower; DeviceName Blower; topic Blower; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/Blower/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
+
 10.2.4.40
 {"Hostname":"CurtainLights"}
 `Backlog hostname CurtainLights; DeviceName CurtainLights; topic CurtainLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/CurtainLights/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45} module 0; powerretain 0; sensorretain 1;`
@@ -270,8 +274,45 @@ Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic 
 
 10.2.4.61
 {"Hostname":"MasterTV"}
-`Backlog hostname MasterTV; DeviceName MasterTV; topic MasterTV; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/MasterTV/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
+`Backlog hostname MasterTV; DeviceName MasterTV; topic MasterTV; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/MasterTV/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1; setoption19 1;`
 
 10.2.4.62
 {"Hostname":"ComputerServer"}
 `Backlog hostname ComputerServer; DeviceName ComputerServer; topic ComputerServer; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/ComputerServer/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
+
+10.2.4.63
+{"Hostname":"ComputerMedia"}
+`Backlog hostname ComputerMedia; DeviceName ComputerMedia; topic ComputerMedia; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/ComputerMedia/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
+
+10.2.4.64
+{"Hostname":"LilyFan"}
+`Backlog hostname LilyFan; DeviceName LilyFan; topic LilyFan; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/LilyFan/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
+
+
+10.2.4.65
+{"Hostname":"Spare1"}
+`Backlog hostname Spare1; DeviceName Spare1; topic Spare1; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/Spare1/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
+
+10.2.4.66
+{"Hostname":"FirePlace"}
+`Backlog hostname FirePlace; DeviceName FirePlace; topic FirePlace; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/FirePlace/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
+
+10.2.4.67
+{"Hostname":"ExteriorSide"}
+`Backlog hostname ExteriorSide; DeviceName ExteriorSide; topic ExteriorSide; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 ExteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/ExteriorSide/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0; sleep 75;`
+
+10.2.4.68
+{"Hostname":"GarageLights_C1"}
+`Backlog hostname GarageLights_C1; DeviceName GarageLights_C1; topic GarageLights_C1; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 GarageLightsGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/GarageLightsGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0; sleep 75;`
+
+10.2.4.69
+{"Hostname":"PetLights"}
+`Backlog hostname PetLights; DeviceName PetLights; topic PetLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/PetLights/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
+
+10.2.4.70
+{"Hostname":"Spare2"}
+`Backlog hostname Spare2; DeviceName Spare2; topic Spare2; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/Spare2/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
+
+10.2.4.71
+{"Hostname":"Spare3"}
+`Backlog hostname Spare3; DeviceName Spare3; topic Spare3; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/Spare3/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
