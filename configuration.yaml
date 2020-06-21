@@ -48,10 +48,10 @@ binary_sensor:
       - '2020-07-09'
       - '2020-07-10'
 
-lovelace:
-  resources:
-    url: /config/www/lovelace-card-mod/card-mod.js?v=2
-    type: module
+# lovelace:
+#   resources:
+#     url: /config/www/lovelace-card-mod/card-mod.js?v=2
+#     type: module
 
 ring:
   username: !secret ring_username
