@@ -34,11 +34,17 @@ From https://tasmota.github.io/docs/Buttons-and-Switches/#button
 cat << EOF > ./iplist.txt
 10.2.4.13
 10.2.4.14
+10.2.4.16
 10.2.4.17
 10.2.4.18
 10.2.4.19
+10.2.4.20
+10.2.4.21
 10.2.4.22
+10.2.4.23
 10.2.4.24
+10.2.4.26
+10.2.4.27
 10.2.4.28
 10.2.4.29
 10.2.4.30
@@ -49,6 +55,8 @@ cat << EOF > ./iplist.txt
 10.2.4.35
 10.2.4.36
 10.2.4.37
+10.2.4.38
+10.2.4.39
 10.2.4.40
 10.2.4.41
 10.2.4.42
@@ -58,6 +66,31 @@ cat << EOF > ./iplist.txt
 10.2.4.46
 10.2.4.47
 10.2.4.48
+10.2.4.49
+10.2.4.50
+10.2.4.51
+10.2.4.52
+10.2.4.53
+10.2.4.54
+10.2.4.55
+10.2.4.56
+10.2.4.57
+10.2.4.58
+10.2.4.59
+10.2.4.60
+10.2.4.61
+10.2.4.62
+10.2.4.63
+10.2.4.64
+10.2.4.65
+10.2.4.66
+10.2.4.67
+10.2.4.68
+10.2.4.69
+10.2.4.70
+10.2.4.71
+10.2.4.72
+10.2.4.73
 EOF
 
 #Get separated data with IP address
@@ -95,6 +128,109 @@ do
     printf '{"IPAddress":"'$n'"}'
     curl "http://$n/cm?cmnd=hostname";
     echo -e '\r'
+done
+
+for n in $(cat ./iplist.txt)
+do
+    curl "http://$n/cm?cmnd=friendlyname1"
+    printf '{"IPAddress":"'$n'"}'
+    curl "http://$n/cm?cmnd=hostname";
+    echo -e '\r'
+done
+
+
+do
+    curl "http://$n/cm?cmnd=friendlyname1" -s | jq --raw-output .FriendlyName1 | sed 's/\([^[:blank:]]\)\([[:upper:]]\)/\1 \2/g';
+    printf '{"IPAddress":"'$n'"}' | jq --raw-output .IPAddress
+    m=$(curl "http://$n/cm?cmnd=hostname" -s | jq --raw-output .Hostname | sed 's/\([^[:blank:]]\)\([[:upper:]]\)/\1 \2/g';); echo $m; echo $n; echo $m;
+    echo -e '\r'
+done
+
+for n in $(cat ./iplist.txt)
+do
+    curl "http://$n/cm?cmnd=devicename" -s | jq --raw-output .DeviceName;
+    curl "http://$n/cm?cmnd=friendlyname" -s | jq --raw-output .FriendlyName1;
+    printf '{"IPAddress":"'$n'"}' | jq --raw-output .IPAddress
+    m=$(curl "http://$n/cm?cmnd=hostname" -s | jq --raw-output .Hostname | sed 's/\([^[:blank:]]\)\([[:upper:]]\)/\1%20\2/g';);
+    echo $m;
+done
+
+for n in $(cat ./iplist.txt)
+do
+    unset m
+    m=$(curl -m 2 "http://$n/cm?cmnd=hostname" -s | jq --raw-output .Hostname | sed 's/\([^[:blank:]]\)\([[:upper:]]\)/\1%20\2/g';);
+    if [ -z $m ];
+        then echo "var failed for $n";
+        else curl "http://$n/cm?cmnd=friendlyname1%20$m";
+    fi
+done
+
+#Disable Autodiscover
+for n in $(cat ./iplist.txt)
+do
+    curl "http://$n/cm?cmnd=setoption19%200"
+    printf '{"IPAddress":"'$n'"}' | jq .;
+    curl "http://$n/cm?cmnd=hostname" -s | jq .;
+    curl "http://$n/cm?cmnd=friendlyname1" -s | jq .;
+    echo -e '\r'
+done
+
+#Enable Autodiscover
+for n in $(cat ./iplist.txt)
+do
+    curl "http://$n/cm?cmnd=setoption19%201"
+    printf '{"IPAddress":"'$n'"}' | jq .;
+    curl "http://$n/cm?cmnd=hostname" -s | jq .;
+    curl "http://$n/cm?cmnd=friendlyname1" -s | jq .;
+    echo -e '\r'
+done
+
+#Roll all devices firmware
+for n in $(cat ./iplist.txt)
+do
+    printf '{"IPAddress":"'$n'"}'
+    curl "http://$n/cm?cmnd=hostname";
+    echo -e '\r\r\r'
+    echo -e "Starting Minimal for $n\r"
+    curl -F 'u2=@/Users/ryan-peay/Downloads/skg-tasmota-minimal.bin' http://$n/u2 -o /Users/ryan-peay/Downloads/firmware/$n.minimal.txt
+    echo -e '\r\r\r'
+    echo -e "Sleep 15\r"
+    sleep 15
+    echo -e "Starting Standard for $n\r"
+    curl -F 'u2=@/Users/ryan-peay/Downloads/skg-tasmota.bin' http://$n/u2 -o /Users/ryan-peay/Downloads/firmware/$n.standard.txt
+    echo -e "Done with $n\r\r\r"
+done
+
+#Check for machine stuck on minimal firmware
+for n in $(cat ./iplist.txt)
+do
+    echo -e "$n\r"; 
+    curl -s http://$n | grep "MINIMAL firmware"
+done
+
+#Check for machine stuck on minimal firmware
+for n in $(cat ./iplist.txt)
+do
+    echo -e "$n\r"; 
+    curl -s http://$n | grep "MINIMAL firmware"
+done
+
+#Just Minimal Firmware
+for n in $(cat ./iplist.txt)
+do
+    printf '{"IPAddress":"'$n'"}'
+    echo -e "\rStarting Minimal for $n\r"
+    curl -F 'u2=@/Users/ryan-peay/Downloads/skg-tasmota-minimal.bin' http://$n/u2 -o /Users/ryan-peay/Downloads/firmware/$n.standard.txt
+    echo -e "Done with $n\r\r\r"
+done
+
+#Just Standard Firmware
+for n in $(cat ./iplist.txt)
+do
+    printf '{"IPAddress":"'$n'"}'
+    echo -e "\rStarting Standard for $n\r"
+    curl -F 'u2=@/Users/ryan-peay/Downloads/skg-tasmota.bin' http://$n/u2 -o /Users/ryan-peay/Downloads/firmware/$n.standard.txt
+    echo -e "Done with $n\r\r\r"
 done
 
 rm -f iplist.txt
@@ -316,3 +452,39 @@ Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic 
 10.2.4.71
 {"Hostname":"Spare3"}
 `Backlog hostname Spare3; DeviceName Spare3; topic Spare3; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/Spare3/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
+
+10.2.4.72
+KidsToilet
+`Backlog hostname KidsToilet; DeviceName KidsToilet; topic KidsToilet; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/KidsToilet/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0; setoption19 1;`
+
+10.2.4.73
+KidsShower
+`Backlog hostname KidsShower; DeviceName KidsShower; topic KidsShower; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/KidsShower/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0; setoption19 1;`
+
+10.2.4.20
+KidsSink
+`Backlog hostname KidsSink; DeviceName KidsSink; topic KidsSink; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/KidsSink/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0; setoption19 1;`
+
+10.2.4.16
+LilyHall
+`Backlog hostname LilyHall; DeviceName LilyHall; topic LilyHall; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 LilyHallGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/LilyHallGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0; setoption19 1;`
+
+10.2.4.21
+AustinHall
+`Backlog hostname AustinHall; DeviceName AustinHall; topic AustinHall; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 AustinHallGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/AustinHallGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0; setoption19 1;`
+
+10.2.4.23
+LilyHall_c1
+`Backlog hostname LilyHall_C1; DeviceName LilyHall_C1; topic LilyHall_C1; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 LilyHallGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/LilyHallGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 0; setoption19 1;`
+
+10.2.4.26
+AustinHall_c1
+`Backlog hostname AustinHall_C1; DeviceName AustinHall_C1; topic AustinHall_C1; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 AustinHallGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/AustinHallGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 0; setoption19 1;`
+
+10.2.4.27
+LilyHall_c2
+`Backlog hostname LilyHall_C2; DeviceName LilyHall_C2; topic LilyHall_C2; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 LilyHallGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/LilyHallGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 0; setoption19 1;`
+
+10.2.4.25 - DEAD
+{"Hostname":"EntryChandelier"}
+`Backlog hostname EntryChandelier; DeviceName EntryChandelier; topic EntryChandelier; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/EntryChandelier/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0; setoption19 1;`
