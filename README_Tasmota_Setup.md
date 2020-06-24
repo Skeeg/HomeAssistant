@@ -113,6 +113,15 @@ do
     echo -e '\r'
 done
 
+#Check setoption
+for n in $(cat ./iplist.txt)
+do
+    printf '{"IPAddress":"'$n'"}'
+    curl "http://$n/cm?cmnd=setoption19";
+    curl "http://$n/cm?cmnd=devicename";
+    echo -e '\r'
+done
+
 #Check inline data without IP Address
 for n in $(cat ./iplist.txt)
 do
@@ -184,6 +193,18 @@ do
     curl "http://$n/cm?cmnd=friendlyname1" -s | jq .;
     echo -e '\r'
 done
+
+
+#Wipe Wifi Calibration, Counters, and Bootcount
+for n in $(cat ./iplist.txt)
+do
+    curl "http://$n/cm?cmnd=hostname"
+    printf '{"IPAddress":"'$n'"}'
+    curl "http://$n/cm?cmnd=friendlyname1"
+    curl "http://$n/cm?cmnd=backlog%20reset%203%3B%20reset%2099%3B"
+    echo -e '\r'
+done
+
 
 #Roll all devices firmware
 for n in $(cat ./iplist.txt)

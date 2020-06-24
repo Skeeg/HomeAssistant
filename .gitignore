@@ -42,3 +42,13 @@ custom_components/
 
 # End of https://www.gitignore.io/api/homeassistant
 
+.storage/auth_provider.homeassistant
+.storage/auth_provider.homeassistant
+.storage/core.config
+.storage/core.config_entries
+.storage/core.restore_state
+.storage/frontend.user_data_e209297cdec44455856b6aab46832759
+.storage/input_boolean
+.storage/mobile_app
+.storage/onboarding
+.storage/person
