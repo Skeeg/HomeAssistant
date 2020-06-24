@@ -40,7 +40,7 @@ austins_alarm_script:
   - data: {}
     entity_id: switch.03200076dc4f2222957e
     service: switch.turn_on
-'1592930154145':
+turn_on_exterior_front_lights:
   alias: ExteriorFrontLightsOn
   sequence:
   - data:
