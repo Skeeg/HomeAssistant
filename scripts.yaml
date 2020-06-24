@@ -10,92 +10,18 @@ master_movies_script:
   alias: Master Movies
   sequence:
   - data: {}
-    entity_id: switch.03200076dc4f222334c2
-    service: switch.turn_on
-  - entity_id: switch.03200076dc4f2222980c
+    entity_id: switch.mastertv_master_tv
     service: switch.turn_on
 bedtime_script:
   alias: Bedtime Script
   sequence:
-  - entity_id: switch.03200076dc4f2222980c
-    service: switch.turn_off
-  - entity_id: switch.03200076dc4f222334c2
-    service: switch.turn_off
-  - entity_id: switch.02200010ecfabc896bca
-    service: switch.turn_on
-  - entity_id: switch.06200181b4e62d1833c9
-    service: switch.turn_off
-  - entity_id: switch.02200010ecfabc89a8b3
-    service: switch.turn_off
-  - entity_id: switch.780740202cf432ca4a96
-    service: switch.turn_off
-  - entity_id: switch.780740202cf432ca1c2a
-    service: switch.turn_off
-  - entity_id: switch.020202312cf432a6f216
-    service: switch.turn_off
-  - entity_id: switch.020202312cf432a6b258
-    service: switch.turn_off
-  - entity_id: light.main_dimmer
-    service: light.turn_off
-  - entity_id: switch.03200076dc4f22233d43
-    service: switch.turn_off
-  - entity_id: switch.38837485c44f33a9dd7b
-    service: switch.turn_off
-  - entity_id: switch.03200076dc4f2222925e
-    service: switch.turn_off
-  - entity_id: switch.03200076dc4f22229553
-    service: switch.turn_off
-  - entity_id: switch.02200010ecfabc89aa43
-    service: switch.turn_off
-  - entity_id: switch.780740202cf432ca1c91
-    service: switch.turn_off
-  - entity_id: switch.01200092600194560fdd
-    service: switch.turn_off
-  - entity_id: switch.03200076dc4f22233d9c
-    service: switch.turn_off
-  - entity_id: switch.06200180bcddc2e5e01d
-    service: switch.turn_off
-  - entity_id: switch.04200161ecfabc949bde
-    service: switch.turn_off
-  - entity_id: switch.04200161ecfabc949315
-    service: switch.turn_off
-  - entity_id: switch.388374852cf432a1e7fb
-    service: switch.turn_off
-  - entity_id: switch.04200161ecfabc94940f
-    service: switch.turn_off
-  - entity_id: switch.04200161ecfabc94a05a
-    service: switch.turn_off
-  - entity_id: switch.047555462cf432a189ba
-    service: switch.turn_off
-  - entity_id: switch.06200180bcddc2e5dde0
-    service: switch.turn_off
-  - entity_id: switch.04200161ecfabc949fe8
-    service: switch.turn_off
-  - entity_id: switch.78074020600194d9f42d
-    service: switch.turn_off
-  - entity_id: switch.780740202cf432ca3b84
-    service: switch.turn_off
-  - entity_id: switch.04200161ecfabc949179
-    service: switch.turn_off
-  - entity_id: switch.78074020600194d9ea84
-    service: switch.turn_off
-  - entity_id: switch.780740202cf432ca407a
-    service: switch.turn_off
-  - entity_id: switch.06200181b4e62d183b7a
-    service: switch.turn_off
-  - entity_id: switch.032002565ccf7f739f6f
-    service: switch.turn_off
-  - entity_id: switch.802378622cf432a7032f
-    service: switch.turn_off
-  - entity_id: switch.04200161ecfabc949393
-    service: switch.turn_off
-  - entity_id: switch.780740202cf432ca424e
-    service: switch.turn_off
-  - entity_id: switch.03200076dc4f22233661
-    service: switch.turn_off
+  - data:
+      payload: 'OFF'
+      topic: homeassistant/cmnd/AllStandard/POWER
+    service: mqtt.publish
   - data: {}
-    entity_id: switch.03200076dc4f22229075
-    service: switch.turn_off
+    entity_id: light.main_dimmer
+    service: light.turn_off
 holiday_lighting_script:
   alias: Holiday Lighting
   sequence:
@@ -114,3 +40,10 @@ austins_alarm_script:
   - data: {}
     entity_id: switch.03200076dc4f2222957e
     service: switch.turn_on
+'1592930154145':
+  alias: ExteriorFrontLightsOn
+  sequence:
+  - data:
+      payload: 'ON'
+      topic: homeassistant/cmnd/ExteriorFrontLights/POWER
+    service: mqtt.publish

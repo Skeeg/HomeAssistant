@@ -34,9 +34,9 @@
     to: opening
   condition: []
   action:
-  - alias: ''
-    data: {}
-    entity_id: switch.780740202cf432ca424e
+  - entity_id: switch.garagelights_garage_lights
+    service: switch.turn_on
+  - entity_id: switch.garagelamp_garage_lamp
     service: switch.turn_on
 - id: GarageClosing
   alias: GarageClosing
@@ -56,7 +56,9 @@
     to: closed
   condition: []
   action:
-  - entity_id: switch.780740202cf432ca424e
+  - entity_id: switch.garagelights_garage_lights
+    service: switch.turn_off
+  - entity_id: switch.garagelamp_garage_lamp
     service: switch.turn_off
 - id: Sunrise_Trigger_Minus_1_Hour
   alias: Sunrise - 1 hour before
@@ -67,10 +69,10 @@
     platform: sun
   condition: []
   action:
-  - entity_id: switch.railing_lights
+  - entity_id: switch.railinglights_railing_lights
     service: switch.turn_on
   - data: {}
-    entity_id: switch.curtain_lights
+    entity_id: switch.curtainlights_curtain_lights
     service: switch.turn_on
 - id: Sunset_Trigger_Minus_15_Minutes
   alias: Sunset - 15 Minutes Before
@@ -126,7 +128,7 @@
     platform: time
   condition: []
   action:
-  - entity_id: switch.03200076dc4f2222957e
+  - entity_id: switch.petlights_pet_lights
     service: switch.turn_off
 - id: Ring_Button_Pushed
   alias: Ring - Button Pushed
@@ -157,13 +159,13 @@
   condition: []
   action:
   - data: {}
-    entity_id: switch.powder_bathroom_fan
+    entity_id: switch.powderfan_powder_fan
     service: switch.turn_off
 - id: timer_bathroomfan_powder-start
   alias: Timer-BathroomFan-Powder-Start
   description: ''
   trigger:
-  - entity_id: switch.powder_fan
+  - entity_id: switch.powderfan_powder_fan
     platform: state
     to: 'on'
   condition: []
@@ -184,13 +186,13 @@
   condition: []
   action:
   - data: {}
-    entity_id: switch.kids_bathroom_fan
+    entity_id: switch.kidsbathroomfan_kids_bathroom_fan
     service: switch.turn_off
 - id: timer_bathroomfan_kids-start
   alias: Timer-BathroomFan-Kids-Start
   description: ''
   trigger:
-  - entity_id: switch.kids_bathroom_fan
+  - entity_id: switch.kidsbathroomfan_kids_bathroom_fan
     platform: state
     to: 'on'
   condition: []
@@ -211,13 +213,13 @@
   condition: []
   action:
   - data: {}
-    entity_id: light.dads_lamp
+    entity_id: switch.dadslamp_dads_lamp
     service: switch.turn_off
 - id: timer_dadslamp-start
   alias: Timer-Dads-Lamp-Start
   description: ''
   trigger:
-  - entity_id: light.dads_lamp
+  - entity_id: switch.dadslamp_dads_lamp
     platform: state
     to: 'on'
   condition: []
@@ -225,3 +227,81 @@
   - data: {}
     entity_id: timer.dads_lamp
     service: timer.start
+- id: '1592887549721'
+  alias: iOS - Bedtime Widget
+  description: ''
+  trigger:
+  - event_data:
+      actionName: Bedtime
+    event_type: ios.action_fired
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    service: script.bedtime_script
+- id: '1592929743553'
+  alias: iOS - Master Movies Widget
+  description: ''
+  trigger:
+  - event_data:
+      actionName: Master Movies
+    event_type: ios.action_fired
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    service: script.master_movies_script
+- id: '1592930214228'
+  alias: iOS - Front Lights Widget
+  description: ''
+  trigger:
+  - event_data:
+      actionName: Exterior Front Lights
+    event_type: ios.action_fired
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    service: script.1592930154145
+- id: '1592959107835'
+  alias: iOS - Garage Close Widget
+  description: ''
+  trigger:
+  - event_data:
+      actionName: Close Garages
+    event_type: ios.action_fired
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    entity_id: cover.main_garage
+    service: cover.close_cover
+  - data: {}
+    entity_id: cover.3rd_car_garage
+    service: cover.close_cover
+- id: '1592959169095'
+  alias: iOS - Garage Open Main Widget
+  description: ''
+  trigger:
+  - event_data:
+      actionName: Open Main Garage
+    event_type: ios.action_fired
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    entity_id: cover.main_garage
+    service: cover.open_cover
+- id: '1592959227737'
+  alias: iOS - Garage Open 3rd Car Widget
+  description: ''
+  trigger:
+  - event_data:
+      actionName: Open 3rd Car
+    event_type: ios.action_fired
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    entity_id: cover.3rd_car_garage
+    service: cover.open_cover
