@@ -227,7 +227,7 @@
   - data: {}
     entity_id: timer.dads_lamp
     service: timer.start
-- id: '1592887549721'
+- id: iOS_Bedtime_Widget
   alias: iOS - Bedtime Widget
   description: ''
   trigger:
@@ -239,7 +239,7 @@
   action:
   - data: {}
     service: script.bedtime_script
-- id: '1592929743553'
+- id: iOS_MasterMovies_Widget
   alias: iOS - Master Movies Widget
   description: ''
   trigger:
@@ -251,7 +251,7 @@
   action:
   - data: {}
     service: script.master_movies_script
-- id: '1592930214228'
+- id: iOS_FrontLights_Widget
   alias: iOS - Front Lights Widget
   description: ''
   trigger:
@@ -262,8 +262,8 @@
   condition: []
   action:
   - data: {}
-    service: script.1592930154145
-- id: '1592959107835'
+    service: script.turn_on_exterior_front_lights
+- id: iOS_GarageClose_Widget
   alias: iOS - Garage Close Widget
   description: ''
   trigger:
@@ -279,7 +279,7 @@
   - data: {}
     entity_id: cover.3rd_car_garage
     service: cover.close_cover
-- id: '1592959169095'
+- id: iOS_Garage_OpenMain_Widget
   alias: iOS - Garage Open Main Widget
   description: ''
   trigger:
@@ -292,7 +292,7 @@
   - data: {}
     entity_id: cover.main_garage
     service: cover.open_cover
-- id: '1592959227737'
+- id: iOS_Garage_Open3rdCar_Widget
   alias: iOS - Garage Open 3rd Car Widget
   description: ''
   trigger:
