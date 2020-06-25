@@ -145,6 +145,12 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "switch.entrychandelier_entry_chandelier"
+                                },
+                                {
+                                    "entity": "switch.entrycans_entry_can_lights"
+                                },
+                                {
                                     "entity": "switch.librarylights_library_lights"
                                 },
                                 {
@@ -514,298 +520,303 @@
                                 "entities": [
                                     {
                                         "entity": "sensor.familylights_status",
-                                        "icon": "${vars[4] >= -67 ? 'mdi:wifi' : vars[4] >= -70 ? 'mdi:wifi-strength-3' : vars[4] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[4] >= -67 ? 'mdi:wifi-strength-4' : vars[4] >= -70 ? 'mdi:wifi-strength-3' : vars[4] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[2] + ' : ' + vars[4] + 'dBm : ' + ( vars[4] >= -35 ? 'Amazing' : vars[4] >= -67 ? 'Great' : vars[4] >= -70 ? 'Okay' : vars[4] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[6] + ' Downtime out of ' + vars[1] + ', ' + vars[5] + ' Wireless Events.   ' + vars[7] + ' MQTT Messages.   ' + vars[8] + '% Processing Time.  : ' + vars[9] + ' on Hardware : ' + vars[3] }"
                                     },
                                     {
                                         "entity": "sensor.familyfan_status",
-                                        "icon": "${vars[14] >= -67 ? 'mdi:wifi' : vars[14] >= -70 ? 'mdi:wifi-strength-3' : vars[14] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[14] >= -67 ? 'mdi:wifi-strength-4' : vars[14] >= -70 ? 'mdi:wifi-strength-3' : vars[14] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[12] + ' : ' + vars[14] + 'dBm : ' + ( vars[14] >= -35 ? 'Amazing' : vars[14] >= -67 ? 'Great' : vars[14] >= -70 ? 'Okay' : vars[14] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[16] + ' Downtime out of ' + vars[11] + ', ' + vars[15] + ' Wireless Events.   ' + vars[17] + ' MQTT Messages.   ' + vars[18] + '% Processing Time.  : ' + vars[19] + ' on Hardware : ' + vars[13] }"
                                     },
                                     {
                                         "entity": "sensor.lilyhall_status",
-                                        "icon": "${vars[24] >= -67 ? 'mdi:wifi' : vars[24] >= -70 ? 'mdi:wifi-strength-3' : vars[24] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[24] >= -67 ? 'mdi:wifi-strength-4' : vars[24] >= -70 ? 'mdi:wifi-strength-3' : vars[24] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[22] + ' : ' + vars[24] + 'dBm : ' + ( vars[24] >= -35 ? 'Amazing' : vars[24] >= -67 ? 'Great' : vars[24] >= -70 ? 'Okay' : vars[24] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[26] + ' Downtime out of ' + vars[21] + ', ' + vars[25] + ' Wireless Events.   ' + vars[27] + ' MQTT Messages.   ' + vars[28] + '% Processing Time.  : ' + vars[29] + ' on Hardware : ' + vars[23] }"
                                     },
                                     {
                                         "entity": "sensor.entrycans_c1_status",
-                                        "icon": "${vars[34] >= -67 ? 'mdi:wifi' : vars[34] >= -70 ? 'mdi:wifi-strength-3' : vars[34] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[34] >= -67 ? 'mdi:wifi-strength-4' : vars[34] >= -70 ? 'mdi:wifi-strength-3' : vars[34] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[32] + ' : ' + vars[34] + 'dBm : ' + ( vars[34] >= -35 ? 'Amazing' : vars[34] >= -67 ? 'Great' : vars[34] >= -70 ? 'Okay' : vars[34] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[36] + ' Downtime out of ' + vars[31] + ', ' + vars[35] + ' Wireless Events.   ' + vars[37] + ' MQTT Messages.   ' + vars[38] + '% Processing Time.  : ' + vars[39] + ' on Hardware : ' + vars[33] }"
                                     },
                                     {
                                         "entity": "sensor.entrycans_status",
-                                        "icon": "${vars[44] >= -67 ? 'mdi:wifi' : vars[44] >= -70 ? 'mdi:wifi-strength-3' : vars[44] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[44] >= -67 ? 'mdi:wifi-strength-4' : vars[44] >= -70 ? 'mdi:wifi-strength-3' : vars[44] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[42] + ' : ' + vars[44] + 'dBm : ' + ( vars[44] >= -35 ? 'Amazing' : vars[44] >= -67 ? 'Great' : vars[44] >= -70 ? 'Okay' : vars[44] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[46] + ' Downtime out of ' + vars[41] + ', ' + vars[45] + ' Wireless Events.   ' + vars[47] + ' MQTT Messages.   ' + vars[48] + '% Processing Time.  : ' + vars[49] + ' on Hardware : ' + vars[43] }"
                                     },
                                     {
                                         "entity": "sensor.entrycans_c2_status",
-                                        "icon": "${vars[54] >= -67 ? 'mdi:wifi' : vars[54] >= -70 ? 'mdi:wifi-strength-3' : vars[54] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[54] >= -67 ? 'mdi:wifi-strength-4' : vars[54] >= -70 ? 'mdi:wifi-strength-3' : vars[54] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[52] + ' : ' + vars[54] + 'dBm : ' + ( vars[54] >= -35 ? 'Amazing' : vars[54] >= -67 ? 'Great' : vars[54] >= -70 ? 'Okay' : vars[54] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[56] + ' Downtime out of ' + vars[51] + ', ' + vars[55] + ' Wireless Events.   ' + vars[57] + ' MQTT Messages.   ' + vars[58] + '% Processing Time.  : ' + vars[59] + ' on Hardware : ' + vars[53] }"
                                     },
                                     {
                                         "entity": "sensor.kidssink_status",
-                                        "icon": "${vars[64] >= -67 ? 'mdi:wifi' : vars[64] >= -70 ? 'mdi:wifi-strength-3' : vars[64] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[64] >= -67 ? 'mdi:wifi-strength-4' : vars[64] >= -70 ? 'mdi:wifi-strength-3' : vars[64] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[62] + ' : ' + vars[64] + 'dBm : ' + ( vars[64] >= -35 ? 'Amazing' : vars[64] >= -67 ? 'Great' : vars[64] >= -70 ? 'Okay' : vars[64] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[66] + ' Downtime out of ' + vars[61] + ', ' + vars[65] + ' Wireless Events.   ' + vars[67] + ' MQTT Messages.   ' + vars[68] + '% Processing Time.  : ' + vars[69] + ' on Hardware : ' + vars[63] }"
                                     },
                                     {
                                         "entity": "sensor.austinhall_status",
-                                        "icon": "${vars[74] >= -67 ? 'mdi:wifi' : vars[74] >= -70 ? 'mdi:wifi-strength-3' : vars[74] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[74] >= -67 ? 'mdi:wifi-strength-4' : vars[74] >= -70 ? 'mdi:wifi-strength-3' : vars[74] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[72] + ' : ' + vars[74] + 'dBm : ' + ( vars[74] >= -35 ? 'Amazing' : vars[74] >= -67 ? 'Great' : vars[74] >= -70 ? 'Okay' : vars[74] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[76] + ' Downtime out of ' + vars[71] + ', ' + vars[75] + ' Wireless Events.   ' + vars[77] + ' MQTT Messages.   ' + vars[78] + '% Processing Time.  : ' + vars[79] + ' on Hardware : ' + vars[73] }"
                                     },
                                     {
                                         "entity": "sensor.dadslights_status",
-                                        "icon": "${vars[84] >= -67 ? 'mdi:wifi' : vars[84] >= -70 ? 'mdi:wifi-strength-3' : vars[84] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[84] >= -67 ? 'mdi:wifi-strength-4' : vars[84] >= -70 ? 'mdi:wifi-strength-3' : vars[84] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[82] + ' : ' + vars[84] + 'dBm : ' + ( vars[84] >= -35 ? 'Amazing' : vars[84] >= -67 ? 'Great' : vars[84] >= -70 ? 'Okay' : vars[84] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[86] + ' Downtime out of ' + vars[81] + ', ' + vars[85] + ' Wireless Events.   ' + vars[87] + ' MQTT Messages.   ' + vars[88] + '% Processing Time.  : ' + vars[89] + ' on Hardware : ' + vars[83] }"
                                     },
                                     {
                                         "entity": "sensor.lilyhall_c1_status",
-                                        "icon": "${vars[94] >= -67 ? 'mdi:wifi' : vars[94] >= -70 ? 'mdi:wifi-strength-3' : vars[94] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[94] >= -67 ? 'mdi:wifi-strength-4' : vars[94] >= -70 ? 'mdi:wifi-strength-3' : vars[94] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[92] + ' : ' + vars[94] + 'dBm : ' + ( vars[94] >= -35 ? 'Amazing' : vars[94] >= -67 ? 'Great' : vars[94] >= -70 ? 'Okay' : vars[94] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[96] + ' Downtime out of ' + vars[91] + ', ' + vars[95] + ' Wireless Events.   ' + vars[97] + ' MQTT Messages.   ' + vars[98] + '% Processing Time.  : ' + vars[99] + ' on Hardware : ' + vars[93] }"
                                     },
                                     {
                                         "entity": "sensor.porchlights_status",
-                                        "icon": "${vars[104] >= -67 ? 'mdi:wifi' : vars[104] >= -70 ? 'mdi:wifi-strength-3' : vars[104] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[104] >= -67 ? 'mdi:wifi-strength-4' : vars[104] >= -70 ? 'mdi:wifi-strength-3' : vars[104] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[102] + ' : ' + vars[104] + 'dBm : ' + ( vars[104] >= -35 ? 'Amazing' : vars[104] >= -67 ? 'Great' : vars[104] >= -70 ? 'Okay' : vars[104] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[106] + ' Downtime out of ' + vars[101] + ', ' + vars[105] + ' Wireless Events.   ' + vars[107] + ' MQTT Messages.   ' + vars[108] + '% Processing Time.  : ' + vars[109] + ' on Hardware : ' + vars[103] }"
                                     },
                                     {
                                         "entity": "sensor.austinhall_c1_status",
-                                        "icon": "${vars[114] >= -67 ? 'mdi:wifi' : vars[114] >= -70 ? 'mdi:wifi-strength-3' : vars[114] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[114] >= -67 ? 'mdi:wifi-strength-4' : vars[114] >= -70 ? 'mdi:wifi-strength-3' : vars[114] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[112] + ' : ' + vars[114] + 'dBm : ' + ( vars[114] >= -35 ? 'Amazing' : vars[114] >= -67 ? 'Great' : vars[114] >= -70 ? 'Okay' : vars[114] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[116] + ' Downtime out of ' + vars[111] + ', ' + vars[115] + ' Wireless Events.   ' + vars[117] + ' MQTT Messages.   ' + vars[118] + '% Processing Time.  : ' + vars[119] + ' on Hardware : ' + vars[113] }"
                                     },
                                     {
                                         "entity": "sensor.lilyhall_c2_status",
-                                        "icon": "${vars[124] >= -67 ? 'mdi:wifi' : vars[124] >= -70 ? 'mdi:wifi-strength-3' : vars[124] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[124] >= -67 ? 'mdi:wifi-strength-4' : vars[124] >= -70 ? 'mdi:wifi-strength-3' : vars[124] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[122] + ' : ' + vars[124] + 'dBm : ' + ( vars[124] >= -35 ? 'Amazing' : vars[124] >= -67 ? 'Great' : vars[124] >= -70 ? 'Okay' : vars[124] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[126] + ' Downtime out of ' + vars[121] + ', ' + vars[125] + ' Wireless Events.   ' + vars[127] + ' MQTT Messages.   ' + vars[128] + '% Processing Time.  : ' + vars[129] + ' on Hardware : ' + vars[123] }"
                                     },
                                     {
                                         "entity": "sensor.mainhall_c1_status",
-                                        "icon": "${vars[134] >= -67 ? 'mdi:wifi' : vars[134] >= -70 ? 'mdi:wifi-strength-3' : vars[134] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[134] >= -67 ? 'mdi:wifi-strength-4' : vars[134] >= -70 ? 'mdi:wifi-strength-3' : vars[134] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[132] + ' : ' + vars[134] + 'dBm : ' + ( vars[134] >= -35 ? 'Amazing' : vars[134] >= -67 ? 'Great' : vars[134] >= -70 ? 'Okay' : vars[134] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[136] + ' Downtime out of ' + vars[131] + ', ' + vars[135] + ' Wireless Events.   ' + vars[137] + ' MQTT Messages.   ' + vars[138] + '% Processing Time.  : ' + vars[139] + ' on Hardware : ' + vars[133] }"
                                     },
                                     {
                                         "entity": "sensor.mainhall_status",
-                                        "icon": "${vars[144] >= -67 ? 'mdi:wifi' : vars[144] >= -70 ? 'mdi:wifi-strength-3' : vars[144] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[144] >= -67 ? 'mdi:wifi-strength-4' : vars[144] >= -70 ? 'mdi:wifi-strength-3' : vars[144] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[142] + ' : ' + vars[144] + 'dBm : ' + ( vars[144] >= -35 ? 'Amazing' : vars[144] >= -67 ? 'Great' : vars[144] >= -70 ? 'Okay' : vars[144] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[146] + ' Downtime out of ' + vars[141] + ', ' + vars[145] + ' Wireless Events.   ' + vars[147] + ' MQTT Messages.   ' + vars[148] + '% Processing Time.  : ' + vars[149] + ' on Hardware : ' + vars[143] }"
                                     },
                                     {
                                         "entity": "sensor.mainhall_c2_status",
-                                        "icon": "${vars[154] >= -67 ? 'mdi:wifi' : vars[154] >= -70 ? 'mdi:wifi-strength-3' : vars[154] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[154] >= -67 ? 'mdi:wifi-strength-4' : vars[154] >= -70 ? 'mdi:wifi-strength-3' : vars[154] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[152] + ' : ' + vars[154] + 'dBm : ' + ( vars[154] >= -35 ? 'Amazing' : vars[154] >= -67 ? 'Great' : vars[154] >= -70 ? 'Okay' : vars[154] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[156] + ' Downtime out of ' + vars[151] + ', ' + vars[155] + ' Wireless Events.   ' + vars[157] + ' MQTT Messages.   ' + vars[158] + '% Processing Time.  : ' + vars[159] + ' on Hardware : ' + vars[153] }"
                                     },
                                     {
                                         "entity": "sensor.kitchencans_status",
-                                        "icon": "${vars[164] >= -67 ? 'mdi:wifi' : vars[164] >= -70 ? 'mdi:wifi-strength-3' : vars[164] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[164] >= -67 ? 'mdi:wifi-strength-4' : vars[164] >= -70 ? 'mdi:wifi-strength-3' : vars[164] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[162] + ' : ' + vars[164] + 'dBm : ' + ( vars[164] >= -35 ? 'Amazing' : vars[164] >= -67 ? 'Great' : vars[164] >= -70 ? 'Okay' : vars[164] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[166] + ' Downtime out of ' + vars[161] + ', ' + vars[165] + ' Wireless Events.   ' + vars[167] + ' MQTT Messages.   ' + vars[168] + '% Processing Time.  : ' + vars[169] + ' on Hardware : ' + vars[163] }"
                                     },
                                     {
                                         "entity": "sensor.kitchensink_status",
-                                        "icon": "${vars[174] >= -67 ? 'mdi:wifi' : vars[174] >= -70 ? 'mdi:wifi-strength-3' : vars[174] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[174] >= -67 ? 'mdi:wifi-strength-4' : vars[174] >= -70 ? 'mdi:wifi-strength-3' : vars[174] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[172] + ' : ' + vars[174] + 'dBm : ' + ( vars[174] >= -35 ? 'Amazing' : vars[174] >= -67 ? 'Great' : vars[174] >= -70 ? 'Okay' : vars[174] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[176] + ' Downtime out of ' + vars[171] + ', ' + vars[175] + ' Wireless Events.   ' + vars[177] + ' MQTT Messages.   ' + vars[178] + '% Processing Time.  : ' + vars[179] + ' on Hardware : ' + vars[173] }"
                                     },
                                     {
                                         "entity": "sensor.kitchensink_c1_status",
-                                        "icon": "${vars[184] >= -67 ? 'mdi:wifi' : vars[184] >= -70 ? 'mdi:wifi-strength-3' : vars[184] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[184] >= -67 ? 'mdi:wifi-strength-4' : vars[184] >= -70 ? 'mdi:wifi-strength-3' : vars[184] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[182] + ' : ' + vars[184] + 'dBm : ' + ( vars[184] >= -35 ? 'Amazing' : vars[184] >= -67 ? 'Great' : vars[184] >= -70 ? 'Okay' : vars[184] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[186] + ' Downtime out of ' + vars[181] + ', ' + vars[185] + ' Wireless Events.   ' + vars[187] + ' MQTT Messages.   ' + vars[188] + '% Processing Time.  : ' + vars[189] + ' on Hardware : ' + vars[183] }"
                                     },
                                     {
                                         "entity": "sensor.kitchencans_c1_status",
-                                        "icon": "${vars[194] >= -67 ? 'mdi:wifi' : vars[194] >= -70 ? 'mdi:wifi-strength-3' : vars[194] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[194] >= -67 ? 'mdi:wifi-strength-4' : vars[194] >= -70 ? 'mdi:wifi-strength-3' : vars[194] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[192] + ' : ' + vars[194] + 'dBm : ' + ( vars[194] >= -35 ? 'Amazing' : vars[194] >= -67 ? 'Great' : vars[194] >= -70 ? 'Okay' : vars[194] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[196] + ' Downtime out of ' + vars[191] + ', ' + vars[195] + ' Wireless Events.   ' + vars[197] + ' MQTT Messages.   ' + vars[198] + '% Processing Time.  : ' + vars[199] + ' on Hardware : ' + vars[193] }"
                                     },
                                     {
                                         "entity": "sensor.powderhall_status",
-                                        "icon": "${vars[204] >= -67 ? 'mdi:wifi' : vars[204] >= -70 ? 'mdi:wifi-strength-3' : vars[204] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[204] >= -67 ? 'mdi:wifi-strength-4' : vars[204] >= -70 ? 'mdi:wifi-strength-3' : vars[204] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[202] + ' : ' + vars[204] + 'dBm : ' + ( vars[204] >= -35 ? 'Amazing' : vars[204] >= -67 ? 'Great' : vars[204] >= -70 ? 'Okay' : vars[204] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[206] + ' Downtime out of ' + vars[201] + ', ' + vars[205] + ' Wireless Events.   ' + vars[207] + ' MQTT Messages.   ' + vars[208] + '% Processing Time.  : ' + vars[209] + ' on Hardware : ' + vars[203] }"
                                     },
                                     {
                                         "entity": "sensor.studylights_status",
-                                        "icon": "${vars[214] >= -67 ? 'mdi:wifi' : vars[214] >= -70 ? 'mdi:wifi-strength-3' : vars[214] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[214] >= -67 ? 'mdi:wifi-strength-4' : vars[214] >= -70 ? 'mdi:wifi-strength-3' : vars[214] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[212] + ' : ' + vars[214] + 'dBm : ' + ( vars[214] >= -35 ? 'Amazing' : vars[214] >= -67 ? 'Great' : vars[214] >= -70 ? 'Okay' : vars[214] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[216] + ' Downtime out of ' + vars[211] + ', ' + vars[215] + ' Wireless Events.   ' + vars[217] + ' MQTT Messages.   ' + vars[218] + '% Processing Time.  : ' + vars[219] + ' on Hardware : ' + vars[213] }"
                                     },
                                     {
                                         "entity": "sensor.librarylights_status",
-                                        "icon": "${vars[224] >= -67 ? 'mdi:wifi' : vars[224] >= -70 ? 'mdi:wifi-strength-3' : vars[224] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[224] >= -67 ? 'mdi:wifi-strength-4' : vars[224] >= -70 ? 'mdi:wifi-strength-3' : vars[224] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[222] + ' : ' + vars[224] + 'dBm : ' + ( vars[224] >= -35 ? 'Amazing' : vars[224] >= -67 ? 'Great' : vars[224] >= -70 ? 'Okay' : vars[224] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[226] + ' Downtime out of ' + vars[221] + ', ' + vars[225] + ' Wireless Events.   ' + vars[227] + ' MQTT Messages.   ' + vars[228] + '% Processing Time.  : ' + vars[229] + ' on Hardware : ' + vars[223] }"
                                     },
                                     {
                                         "entity": "sensor.computeraustin_status",
-                                        "icon": "${vars[234] >= -67 ? 'mdi:wifi' : vars[234] >= -70 ? 'mdi:wifi-strength-3' : vars[234] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[234] >= -67 ? 'mdi:wifi-strength-4' : vars[234] >= -70 ? 'mdi:wifi-strength-3' : vars[234] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[232] + ' : ' + vars[234] + 'dBm : ' + ( vars[234] >= -35 ? 'Amazing' : vars[234] >= -67 ? 'Great' : vars[234] >= -70 ? 'Okay' : vars[234] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[236] + ' Downtime out of ' + vars[231] + ', ' + vars[235] + ' Wireless Events.   ' + vars[237] + ' MQTT Messages.   ' + vars[238] + '% Processing Time.  : ' + vars[239] + ' on Hardware : ' + vars[233] }"
                                     },
                                     {
                                         "entity": "sensor.blower_status",
-                                        "icon": "${vars[244] >= -67 ? 'mdi:wifi' : vars[244] >= -70 ? 'mdi:wifi-strength-3' : vars[244] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[244] >= -67 ? 'mdi:wifi-strength-4' : vars[244] >= -70 ? 'mdi:wifi-strength-3' : vars[244] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[242] + ' : ' + vars[244] + 'dBm : ' + ( vars[244] >= -35 ? 'Amazing' : vars[244] >= -67 ? 'Great' : vars[244] >= -70 ? 'Okay' : vars[244] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[246] + ' Downtime out of ' + vars[241] + ', ' + vars[245] + ' Wireless Events.   ' + vars[247] + ' MQTT Messages.   ' + vars[248] + '% Processing Time.  : ' + vars[249] + ' on Hardware : ' + vars[243] }"
                                     },
                                     {
                                         "entity": "sensor.curtainlights_status",
-                                        "icon": "${vars[254] >= -67 ? 'mdi:wifi' : vars[254] >= -70 ? 'mdi:wifi-strength-3' : vars[254] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[254] >= -67 ? 'mdi:wifi-strength-4' : vars[254] >= -70 ? 'mdi:wifi-strength-3' : vars[254] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[252] + ' : ' + vars[254] + 'dBm : ' + ( vars[254] >= -35 ? 'Amazing' : vars[254] >= -67 ? 'Great' : vars[254] >= -70 ? 'Okay' : vars[254] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[256] + ' Downtime out of ' + vars[251] + ', ' + vars[255] + ' Wireless Events.   ' + vars[257] + ' MQTT Messages.   ' + vars[258] + '% Processing Time.  : ' + vars[259] + ' on Hardware : ' + vars[253] }"
                                     },
                                     {
                                         "entity": "sensor.evelights_status",
-                                        "icon": "${vars[264] >= -67 ? 'mdi:wifi' : vars[264] >= -70 ? 'mdi:wifi-strength-3' : vars[264] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[264] >= -67 ? 'mdi:wifi-strength-4' : vars[264] >= -70 ? 'mdi:wifi-strength-3' : vars[264] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[262] + ' : ' + vars[264] + 'dBm : ' + ( vars[264] >= -35 ? 'Amazing' : vars[264] >= -67 ? 'Great' : vars[264] >= -70 ? 'Okay' : vars[264] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[266] + ' Downtime out of ' + vars[261] + ', ' + vars[265] + ' Wireless Events.   ' + vars[267] + ' MQTT Messages.   ' + vars[268] + '% Processing Time.  : ' + vars[269] + ' on Hardware : ' + vars[263] }"
                                     },
                                     {
                                         "entity": "sensor.powderfan_status",
-                                        "icon": "${vars[274] >= -67 ? 'mdi:wifi' : vars[274] >= -70 ? 'mdi:wifi-strength-3' : vars[274] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[274] >= -67 ? 'mdi:wifi-strength-4' : vars[274] >= -70 ? 'mdi:wifi-strength-3' : vars[274] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[272] + ' : ' + vars[274] + 'dBm : ' + ( vars[274] >= -35 ? 'Amazing' : vars[274] >= -67 ? 'Great' : vars[274] >= -70 ? 'Okay' : vars[274] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[276] + ' Downtime out of ' + vars[271] + ', ' + vars[275] + ' Wireless Events.   ' + vars[277] + ' MQTT Messages.   ' + vars[278] + '% Processing Time.  : ' + vars[279] + ' on Hardware : ' + vars[273] }"
                                     },
                                     {
                                         "entity": "sensor.studyfan_status",
-                                        "icon": "${vars[284] >= -67 ? 'mdi:wifi' : vars[284] >= -70 ? 'mdi:wifi-strength-3' : vars[284] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[284] >= -67 ? 'mdi:wifi-strength-4' : vars[284] >= -70 ? 'mdi:wifi-strength-3' : vars[284] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[282] + ' : ' + vars[284] + 'dBm : ' + ( vars[284] >= -35 ? 'Amazing' : vars[284] >= -67 ? 'Great' : vars[284] >= -70 ? 'Okay' : vars[284] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[286] + ' Downtime out of ' + vars[281] + ', ' + vars[285] + ' Wireless Events.   ' + vars[287] + ' MQTT Messages.   ' + vars[288] + '% Processing Time.  : ' + vars[289] + ' on Hardware : ' + vars[283] }"
                                     },
                                     {
                                         "entity": "sensor.powderlights_status",
-                                        "icon": "${vars[294] >= -67 ? 'mdi:wifi' : vars[294] >= -70 ? 'mdi:wifi-strength-3' : vars[294] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[294] >= -67 ? 'mdi:wifi-strength-4' : vars[294] >= -70 ? 'mdi:wifi-strength-3' : vars[294] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[292] + ' : ' + vars[294] + 'dBm : ' + ( vars[294] >= -35 ? 'Amazing' : vars[294] >= -67 ? 'Great' : vars[294] >= -70 ? 'Okay' : vars[294] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[296] + ' Downtime out of ' + vars[291] + ', ' + vars[295] + ' Wireless Events.   ' + vars[297] + ' MQTT Messages.   ' + vars[298] + '% Processing Time.  : ' + vars[299] + ' on Hardware : ' + vars[293] }"
                                     },
                                     {
                                         "entity": "sensor.railinglights_status",
-                                        "icon": "${vars[304] >= -67 ? 'mdi:wifi' : vars[304] >= -70 ? 'mdi:wifi-strength-3' : vars[304] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[304] >= -67 ? 'mdi:wifi-strength-4' : vars[304] >= -70 ? 'mdi:wifi-strength-3' : vars[304] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[302] + ' : ' + vars[304] + 'dBm : ' + ( vars[304] >= -35 ? 'Amazing' : vars[304] >= -67 ? 'Great' : vars[304] >= -70 ? 'Okay' : vars[304] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[306] + ' Downtime out of ' + vars[301] + ', ' + vars[305] + ' Wireless Events.   ' + vars[307] + ' MQTT Messages.   ' + vars[308] + '% Processing Time.  : ' + vars[309] + ' on Hardware : ' + vars[303] }"
                                     },
                                     {
                                         "entity": "sensor.dadslamp_status",
-                                        "icon": "${vars[314] >= -67 ? 'mdi:wifi' : vars[314] >= -70 ? 'mdi:wifi-strength-3' : vars[314] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[314] >= -67 ? 'mdi:wifi-strength-4' : vars[314] >= -70 ? 'mdi:wifi-strength-3' : vars[314] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[312] + ' : ' + vars[314] + 'dBm : ' + ( vars[314] >= -35 ? 'Amazing' : vars[314] >= -67 ? 'Great' : vars[314] >= -70 ? 'Okay' : vars[314] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[316] + ' Downtime out of ' + vars[311] + ', ' + vars[315] + ' Wireless Events.   ' + vars[317] + ' MQTT Messages.   ' + vars[318] + '% Processing Time.  : ' + vars[319] + ' on Hardware : ' + vars[313] }"
                                     },
                                     {
                                         "entity": "sensor.christmaspackage_status",
-                                        "icon": "${vars[324] >= -67 ? 'mdi:wifi' : vars[324] >= -70 ? 'mdi:wifi-strength-3' : vars[324] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[324] >= -67 ? 'mdi:wifi-strength-4' : vars[324] >= -70 ? 'mdi:wifi-strength-3' : vars[324] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[322] + ' : ' + vars[324] + 'dBm : ' + ( vars[324] >= -35 ? 'Amazing' : vars[324] >= -67 ? 'Great' : vars[324] >= -70 ? 'Okay' : vars[324] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[326] + ' Downtime out of ' + vars[321] + ', ' + vars[325] + ' Wireless Events.   ' + vars[327] + ' MQTT Messages.   ' + vars[328] + '% Processing Time.  : ' + vars[329] + ' on Hardware : ' + vars[323] }"
                                     },
                                     {
                                         "entity": "sensor.basementlights_status",
-                                        "icon": "${vars[334] >= -67 ? 'mdi:wifi' : vars[334] >= -70 ? 'mdi:wifi-strength-3' : vars[334] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[334] >= -67 ? 'mdi:wifi-strength-4' : vars[334] >= -70 ? 'mdi:wifi-strength-3' : vars[334] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[332] + ' : ' + vars[334] + 'dBm : ' + ( vars[334] >= -35 ? 'Amazing' : vars[334] >= -67 ? 'Great' : vars[334] >= -70 ? 'Okay' : vars[334] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[336] + ' Downtime out of ' + vars[331] + ', ' + vars[335] + ' Wireless Events.   ' + vars[337] + ' MQTT Messages.   ' + vars[338] + '% Processing Time.  : ' + vars[339] + ' on Hardware : ' + vars[333] }"
                                     },
                                     {
                                         "entity": "sensor.garagelamp_status",
-                                        "icon": "${vars[344] >= -67 ? 'mdi:wifi' : vars[344] >= -70 ? 'mdi:wifi-strength-3' : vars[344] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[344] >= -67 ? 'mdi:wifi-strength-4' : vars[344] >= -70 ? 'mdi:wifi-strength-3' : vars[344] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[342] + ' : ' + vars[344] + 'dBm : ' + ( vars[344] >= -35 ? 'Amazing' : vars[344] >= -67 ? 'Great' : vars[344] >= -70 ? 'Okay' : vars[344] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[346] + ' Downtime out of ' + vars[341] + ', ' + vars[345] + ' Wireless Events.   ' + vars[347] + ' MQTT Messages.   ' + vars[348] + '% Processing Time.  : ' + vars[349] + ' on Hardware : ' + vars[343] }"
                                     },
                                     {
                                         "entity": "sensor.dininglights_status",
-                                        "icon": "${vars[354] >= -67 ? 'mdi:wifi' : vars[354] >= -70 ? 'mdi:wifi-strength-3' : vars[354] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[354] >= -67 ? 'mdi:wifi-strength-4' : vars[354] >= -70 ? 'mdi:wifi-strength-3' : vars[354] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[352] + ' : ' + vars[354] + 'dBm : ' + ( vars[354] >= -35 ? 'Amazing' : vars[354] >= -67 ? 'Great' : vars[354] >= -70 ? 'Okay' : vars[354] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[356] + ' Downtime out of ' + vars[351] + ', ' + vars[355] + ' Wireless Events.   ' + vars[357] + ' MQTT Messages.   ' + vars[358] + '% Processing Time.  : ' + vars[359] + ' on Hardware : ' + vars[353] }"
                                     },
                                     {
                                         "entity": "sensor.patiolights_status",
-                                        "icon": "${vars[364] >= -67 ? 'mdi:wifi' : vars[364] >= -70 ? 'mdi:wifi-strength-3' : vars[364] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[364] >= -67 ? 'mdi:wifi-strength-4' : vars[364] >= -70 ? 'mdi:wifi-strength-3' : vars[364] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[362] + ' : ' + vars[364] + 'dBm : ' + ( vars[364] >= -35 ? 'Amazing' : vars[364] >= -67 ? 'Great' : vars[364] >= -70 ? 'Okay' : vars[364] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[366] + ' Downtime out of ' + vars[361] + ', ' + vars[365] + ' Wireless Events.   ' + vars[367] + ' MQTT Messages.   ' + vars[368] + '% Processing Time.  : ' + vars[369] + ' on Hardware : ' + vars[363] }"
                                     },
                                     {
                                         "entity": "sensor.garagelights_status",
-                                        "icon": "${vars[374] >= -67 ? 'mdi:wifi' : vars[374] >= -70 ? 'mdi:wifi-strength-3' : vars[374] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[374] >= -67 ? 'mdi:wifi-strength-4' : vars[374] >= -70 ? 'mdi:wifi-strength-3' : vars[374] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[372] + ' : ' + vars[374] + 'dBm : ' + ( vars[374] >= -35 ? 'Amazing' : vars[374] >= -67 ? 'Great' : vars[374] >= -70 ? 'Okay' : vars[374] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[376] + ' Downtime out of ' + vars[371] + ', ' + vars[375] + ' Wireless Events.   ' + vars[377] + ' MQTT Messages.   ' + vars[378] + '% Processing Time.  : ' + vars[379] + ' on Hardware : ' + vars[373] }"
                                     },
                                     {
                                         "entity": "sensor.exteriorgaragelights_status",
-                                        "icon": "${vars[384] >= -67 ? 'mdi:wifi' : vars[384] >= -70 ? 'mdi:wifi-strength-3' : vars[384] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[384] >= -67 ? 'mdi:wifi-strength-4' : vars[384] >= -70 ? 'mdi:wifi-strength-3' : vars[384] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[382] + ' : ' + vars[384] + 'dBm : ' + ( vars[384] >= -35 ? 'Amazing' : vars[384] >= -67 ? 'Great' : vars[384] >= -70 ? 'Okay' : vars[384] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[386] + ' Downtime out of ' + vars[381] + ', ' + vars[385] + ' Wireless Events.   ' + vars[387] + ' MQTT Messages.   ' + vars[388] + '% Processing Time.  : ' + vars[389] + ' on Hardware : ' + vars[383] }"
                                     },
                                     {
                                         "entity": "sensor.kidsbathroomfan_status",
-                                        "icon": "${vars[394] >= -67 ? 'mdi:wifi' : vars[394] >= -70 ? 'mdi:wifi-strength-3' : vars[394] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[394] >= -67 ? 'mdi:wifi-strength-4' : vars[394] >= -70 ? 'mdi:wifi-strength-3' : vars[394] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[392] + ' : ' + vars[394] + 'dBm : ' + ( vars[394] >= -35 ? 'Amazing' : vars[394] >= -67 ? 'Great' : vars[394] >= -70 ? 'Okay' : vars[394] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[396] + ' Downtime out of ' + vars[391] + ', ' + vars[395] + ' Wireless Events.   ' + vars[397] + ' MQTT Messages.   ' + vars[398] + '% Processing Time.  : ' + vars[399] + ' on Hardware : ' + vars[393] }"
                                     },
                                     {
                                         "entity": "sensor.buffetdecor_status",
-                                        "icon": "${vars[404] >= -67 ? 'mdi:wifi' : vars[404] >= -70 ? 'mdi:wifi-strength-3' : vars[404] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[404] >= -67 ? 'mdi:wifi-strength-4' : vars[404] >= -70 ? 'mdi:wifi-strength-3' : vars[404] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[402] + ' : ' + vars[404] + 'dBm : ' + ( vars[404] >= -35 ? 'Amazing' : vars[404] >= -67 ? 'Great' : vars[404] >= -70 ? 'Okay' : vars[404] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[406] + ' Downtime out of ' + vars[401] + ', ' + vars[405] + ' Wireless Events.   ' + vars[407] + ' MQTT Messages.   ' + vars[408] + '% Processing Time.  : ' + vars[409] + ' on Hardware : ' + vars[403] }"
                                     },
                                     {
                                         "entity": "sensor.hottub_status",
-                                        "icon": "${vars[414] >= -67 ? 'mdi:wifi' : vars[414] >= -70 ? 'mdi:wifi-strength-3' : vars[414] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[414] >= -67 ? 'mdi:wifi-strength-4' : vars[414] >= -70 ? 'mdi:wifi-strength-3' : vars[414] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[412] + ' : ' + vars[414] + 'dBm : ' + ( vars[414] >= -35 ? 'Amazing' : vars[414] >= -67 ? 'Great' : vars[414] >= -70 ? 'Okay' : vars[414] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[416] + ' Downtime out of ' + vars[411] + ', ' + vars[415] + ' Wireless Events.   ' + vars[417] + ' MQTT Messages.   ' + vars[418] + '% Processing Time.  : ' + vars[419] + ' on Hardware : ' + vars[413] }"
                                     },
                                     {
                                         "entity": "sensor.electricfence_status",
-                                        "icon": "${vars[424] >= -67 ? 'mdi:wifi' : vars[424] >= -70 ? 'mdi:wifi-strength-3' : vars[424] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[424] >= -67 ? 'mdi:wifi-strength-4' : vars[424] >= -70 ? 'mdi:wifi-strength-3' : vars[424] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[422] + ' : ' + vars[424] + 'dBm : ' + ( vars[424] >= -35 ? 'Amazing' : vars[424] >= -67 ? 'Great' : vars[424] >= -70 ? 'Okay' : vars[424] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[426] + ' Downtime out of ' + vars[421] + ', ' + vars[425] + ' Wireless Events.   ' + vars[427] + ' MQTT Messages.   ' + vars[428] + '% Processing Time.  : ' + vars[429] + ' on Hardware : ' + vars[423] }"
                                     },
                                     {
                                         "entity": "sensor.computerlily_status",
-                                        "icon": "${vars[434] >= -67 ? 'mdi:wifi' : vars[434] >= -70 ? 'mdi:wifi-strength-3' : vars[434] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[434] >= -67 ? 'mdi:wifi-strength-4' : vars[434] >= -70 ? 'mdi:wifi-strength-3' : vars[434] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[432] + ' : ' + vars[434] + 'dBm : ' + ( vars[434] >= -35 ? 'Amazing' : vars[434] >= -67 ? 'Great' : vars[434] >= -70 ? 'Okay' : vars[434] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[436] + ' Downtime out of ' + vars[431] + ', ' + vars[435] + ' Wireless Events.   ' + vars[437] + ' MQTT Messages.   ' + vars[438] + '% Processing Time.  : ' + vars[439] + ' on Hardware : ' + vars[433] }"
                                     },
                                     {
                                         "entity": "sensor.maintv_status",
-                                        "icon": "${vars[444] >= -67 ? 'mdi:wifi' : vars[444] >= -70 ? 'mdi:wifi-strength-3' : vars[444] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[444] >= -67 ? 'mdi:wifi-strength-4' : vars[444] >= -70 ? 'mdi:wifi-strength-3' : vars[444] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[442] + ' : ' + vars[444] + 'dBm : ' + ( vars[444] >= -35 ? 'Amazing' : vars[444] >= -67 ? 'Great' : vars[444] >= -70 ? 'Okay' : vars[444] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[446] + ' Downtime out of ' + vars[441] + ', ' + vars[445] + ' Wireless Events.   ' + vars[447] + ' MQTT Messages.   ' + vars[448] + '% Processing Time.  : ' + vars[449] + ' on Hardware : ' + vars[443] }"
                                     },
                                     {
                                         "entity": "sensor.mantledecor_status",
-                                        "icon": "${vars[454] >= -67 ? 'mdi:wifi' : vars[454] >= -70 ? 'mdi:wifi-strength-3' : vars[454] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[454] >= -67 ? 'mdi:wifi-strength-4' : vars[454] >= -70 ? 'mdi:wifi-strength-3' : vars[454] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[452] + ' : ' + vars[454] + 'dBm : ' + ( vars[454] >= -35 ? 'Amazing' : vars[454] >= -67 ? 'Great' : vars[454] >= -70 ? 'Okay' : vars[454] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[456] + ' Downtime out of ' + vars[451] + ', ' + vars[455] + ' Wireless Events.   ' + vars[457] + ' MQTT Messages.   ' + vars[458] + '% Processing Time.  : ' + vars[459] + ' on Hardware : ' + vars[453] }"
                                     },
                                     {
                                         "entity": "sensor.mastertv_status",
-                                        "icon": "${vars[464] >= -67 ? 'mdi:wifi' : vars[464] >= -70 ? 'mdi:wifi-strength-3' : vars[464] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[464] >= -67 ? 'mdi:wifi-strength-4' : vars[464] >= -70 ? 'mdi:wifi-strength-3' : vars[464] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[462] + ' : ' + vars[464] + 'dBm : ' + ( vars[464] >= -35 ? 'Amazing' : vars[464] >= -67 ? 'Great' : vars[464] >= -70 ? 'Okay' : vars[464] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[466] + ' Downtime out of ' + vars[461] + ', ' + vars[465] + ' Wireless Events.   ' + vars[467] + ' MQTT Messages.   ' + vars[468] + '% Processing Time.  : ' + vars[469] + ' on Hardware : ' + vars[463] }"
                                     },
                                     {
                                         "entity": "sensor.computerserver_status",
-                                        "icon": "${vars[474] >= -67 ? 'mdi:wifi' : vars[474] >= -70 ? 'mdi:wifi-strength-3' : vars[474] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[474] >= -67 ? 'mdi:wifi-strength-4' : vars[474] >= -70 ? 'mdi:wifi-strength-3' : vars[474] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[472] + ' : ' + vars[474] + 'dBm : ' + ( vars[474] >= -35 ? 'Amazing' : vars[474] >= -67 ? 'Great' : vars[474] >= -70 ? 'Okay' : vars[474] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[476] + ' Downtime out of ' + vars[471] + ', ' + vars[475] + ' Wireless Events.   ' + vars[477] + ' MQTT Messages.   ' + vars[478] + '% Processing Time.  : ' + vars[479] + ' on Hardware : ' + vars[473] }"
                                     },
                                     {
                                         "entity": "sensor.computermedia_status",
-                                        "icon": "${vars[484] >= -67 ? 'mdi:wifi' : vars[484] >= -70 ? 'mdi:wifi-strength-3' : vars[484] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[484] >= -67 ? 'mdi:wifi-strength-4' : vars[484] >= -70 ? 'mdi:wifi-strength-3' : vars[484] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[482] + ' : ' + vars[484] + 'dBm : ' + ( vars[484] >= -35 ? 'Amazing' : vars[484] >= -67 ? 'Great' : vars[484] >= -70 ? 'Okay' : vars[484] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[486] + ' Downtime out of ' + vars[481] + ', ' + vars[485] + ' Wireless Events.   ' + vars[487] + ' MQTT Messages.   ' + vars[488] + '% Processing Time.  : ' + vars[489] + ' on Hardware : ' + vars[483] }"
                                     },
                                     {
                                         "entity": "sensor.lilyfan_status",
-                                        "icon": "${vars[494] >= -67 ? 'mdi:wifi' : vars[494] >= -70 ? 'mdi:wifi-strength-3' : vars[494] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "icon": "${vars[494] >= -67 ? 'mdi:wifi-strength-4' : vars[494] >= -70 ? 'mdi:wifi-strength-3' : vars[494] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[492] + ' : ' + vars[494] + 'dBm : ' + ( vars[494] >= -35 ? 'Amazing' : vars[494] >= -67 ? 'Great' : vars[494] >= -70 ? 'Okay' : vars[494] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[496] + ' Downtime out of ' + vars[491] + ', ' + vars[495] + ' Wireless Events.   ' + vars[497] + ' MQTT Messages.   ' + vars[498] + '% Processing Time.  : ' + vars[499] + ' on Hardware : ' + vars[493] }"
                                     },
                                     {
-                                        "entity": "sensor.spare1_status",
-                                        "icon": "${vars[504] >= -67 ? 'mdi:wifi' : vars[504] >= -70 ? 'mdi:wifi-strength-3' : vars[504] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "entity": "sensor.fireplace_status",
+                                        "icon": "${vars[504] >= -67 ? 'mdi:wifi-strength-4' : vars[504] >= -70 ? 'mdi:wifi-strength-3' : vars[504] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[502] + ' : ' + vars[504] + 'dBm : ' + ( vars[504] >= -35 ? 'Amazing' : vars[504] >= -67 ? 'Great' : vars[504] >= -70 ? 'Okay' : vars[504] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[506] + ' Downtime out of ' + vars[501] + ', ' + vars[505] + ' Wireless Events.   ' + vars[507] + ' MQTT Messages.   ' + vars[508] + '% Processing Time.  : ' + vars[509] + ' on Hardware : ' + vars[503] }"
                                     },
                                     {
-                                        "entity": "sensor.fireplace_status",
-                                        "icon": "${vars[514] >= -67 ? 'mdi:wifi' : vars[514] >= -70 ? 'mdi:wifi-strength-3' : vars[514] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "entity": "sensor.exteriorside_status",
+                                        "icon": "${vars[514] >= -67 ? 'mdi:wifi-strength-4' : vars[514] >= -70 ? 'mdi:wifi-strength-3' : vars[514] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[512] + ' : ' + vars[514] + 'dBm : ' + ( vars[514] >= -35 ? 'Amazing' : vars[514] >= -67 ? 'Great' : vars[514] >= -70 ? 'Okay' : vars[514] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[516] + ' Downtime out of ' + vars[511] + ', ' + vars[515] + ' Wireless Events.   ' + vars[517] + ' MQTT Messages.   ' + vars[518] + '% Processing Time.  : ' + vars[519] + ' on Hardware : ' + vars[513] }"
                                     },
                                     {
-                                        "entity": "sensor.exteriorside_status",
-                                        "icon": "${vars[524] >= -67 ? 'mdi:wifi' : vars[524] >= -70 ? 'mdi:wifi-strength-3' : vars[524] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "entity": "sensor.garagelights_c1_status",
+                                        "icon": "${vars[524] >= -67 ? 'mdi:wifi-strength-4' : vars[524] >= -70 ? 'mdi:wifi-strength-3' : vars[524] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[522] + ' : ' + vars[524] + 'dBm : ' + ( vars[524] >= -35 ? 'Amazing' : vars[524] >= -67 ? 'Great' : vars[524] >= -70 ? 'Okay' : vars[524] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[526] + ' Downtime out of ' + vars[521] + ', ' + vars[525] + ' Wireless Events.   ' + vars[527] + ' MQTT Messages.   ' + vars[528] + '% Processing Time.  : ' + vars[529] + ' on Hardware : ' + vars[523] }"
                                     },
                                     {
-                                        "entity": "sensor.garagelights_c1_status",
-                                        "icon": "${vars[534] >= -67 ? 'mdi:wifi' : vars[534] >= -70 ? 'mdi:wifi-strength-3' : vars[534] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "entity": "sensor.petlights_status",
+                                        "icon": "${vars[534] >= -67 ? 'mdi:wifi-strength-4' : vars[534] >= -70 ? 'mdi:wifi-strength-3' : vars[534] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[532] + ' : ' + vars[534] + 'dBm : ' + ( vars[534] >= -35 ? 'Amazing' : vars[534] >= -67 ? 'Great' : vars[534] >= -70 ? 'Okay' : vars[534] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[536] + ' Downtime out of ' + vars[531] + ', ' + vars[535] + ' Wireless Events.   ' + vars[537] + ' MQTT Messages.   ' + vars[538] + '% Processing Time.  : ' + vars[539] + ' on Hardware : ' + vars[533] }"
                                     },
                                     {
-                                        "entity": "sensor.petlights_status",
-                                        "icon": "${vars[544] >= -67 ? 'mdi:wifi' : vars[544] >= -70 ? 'mdi:wifi-strength-3' : vars[544] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "entity": "sensor.kidstoilet_status",
+                                        "icon": "${vars[544] >= -67 ? 'mdi:wifi-strength-4' : vars[544] >= -70 ? 'mdi:wifi-strength-3' : vars[544] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[542] + ' : ' + vars[544] + 'dBm : ' + ( vars[544] >= -35 ? 'Amazing' : vars[544] >= -67 ? 'Great' : vars[544] >= -70 ? 'Okay' : vars[544] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[546] + ' Downtime out of ' + vars[541] + ', ' + vars[545] + ' Wireless Events.   ' + vars[547] + ' MQTT Messages.   ' + vars[548] + '% Processing Time.  : ' + vars[549] + ' on Hardware : ' + vars[543] }"
                                     },
                                     {
-                                        "entity": "sensor.spare2_status",
-                                        "icon": "${vars[554] >= -67 ? 'mdi:wifi' : vars[554] >= -70 ? 'mdi:wifi-strength-3' : vars[554] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "entity": "sensor.kidsshower_status",
+                                        "icon": "${vars[554] >= -67 ? 'mdi:wifi-strength-4' : vars[554] >= -70 ? 'mdi:wifi-strength-3' : vars[554] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[552] + ' : ' + vars[554] + 'dBm : ' + ( vars[554] >= -35 ? 'Amazing' : vars[554] >= -67 ? 'Great' : vars[554] >= -70 ? 'Okay' : vars[554] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[556] + ' Downtime out of ' + vars[551] + ', ' + vars[555] + ' Wireless Events.   ' + vars[557] + ' MQTT Messages.   ' + vars[558] + '% Processing Time.  : ' + vars[559] + ' on Hardware : ' + vars[553] }"
                                     },
                                     {
-                                        "entity": "sensor.spare3_status",
-                                        "icon": "${vars[564] >= -67 ? 'mdi:wifi' : vars[564] >= -70 ? 'mdi:wifi-strength-3' : vars[564] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "entity": "sensor.entrychandelier_status",
+                                        "icon": "${vars[564] >= -67 ? 'mdi:wifi-strength-4' : vars[564] >= -70 ? 'mdi:wifi-strength-3' : vars[564] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[562] + ' : ' + vars[564] + 'dBm : ' + ( vars[564] >= -35 ? 'Amazing' : vars[564] >= -67 ? 'Great' : vars[564] >= -70 ? 'Okay' : vars[564] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[566] + ' Downtime out of ' + vars[561] + ', ' + vars[565] + ' Wireless Events.   ' + vars[567] + ' MQTT Messages.   ' + vars[568] + '% Processing Time.  : ' + vars[569] + ' on Hardware : ' + vars[563] }"
                                     },
                                     {
-                                        "entity": "sensor.kidstoilet_status",
-                                        "icon": "${vars[574] >= -67 ? 'mdi:wifi' : vars[574] >= -70 ? 'mdi:wifi-strength-3' : vars[574] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "entity": "sensor.spare1_status",
+                                        "icon": "${vars[574] >= -67 ? 'mdi:wifi-strength-4' : vars[574] >= -70 ? 'mdi:wifi-strength-3' : vars[574] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[572] + ' : ' + vars[574] + 'dBm : ' + ( vars[574] >= -35 ? 'Amazing' : vars[574] >= -67 ? 'Great' : vars[574] >= -70 ? 'Okay' : vars[574] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[576] + ' Downtime out of ' + vars[571] + ', ' + vars[575] + ' Wireless Events.   ' + vars[577] + ' MQTT Messages.   ' + vars[578] + '% Processing Time.  : ' + vars[579] + ' on Hardware : ' + vars[573] }"
                                     },
                                     {
-                                        "entity": "sensor.kidsshower_status",
-                                        "icon": "${vars[584] >= -67 ? 'mdi:wifi' : vars[584] >= -70 ? 'mdi:wifi-strength-3' : vars[584] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "entity": "sensor.spare2_status",
+                                        "icon": "${vars[584] >= -67 ? 'mdi:wifi-strength-4' : vars[584] >= -70 ? 'mdi:wifi-strength-3' : vars[584] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
                                         "name": "${ vars[582] + ' : ' + vars[584] + 'dBm : ' + ( vars[584] >= -35 ? 'Amazing' : vars[584] >= -67 ? 'Great' : vars[584] >= -70 ? 'Okay' : vars[584] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[586] + ' Downtime out of ' + vars[581] + ', ' + vars[585] + ' Wireless Events.   ' + vars[587] + ' MQTT Messages.   ' + vars[588] + '% Processing Time.  : ' + vars[589] + ' on Hardware : ' + vars[583] }"
+                                    },
+                                    {
+                                        "entity": "sensor.spare3_status",
+                                        "icon": "${vars[594] >= -67 ? 'mdi:wifi-strength-4' : vars[594] >= -70 ? 'mdi:wifi-strength-3' : vars[594] >= -80 ? 'mdi:wifi-strength-2' : 'mdi:wifi-strength-1' }",
+                                        "name": "${ vars[592] + ' : ' + vars[594] + 'dBm : ' + ( vars[594] >= -35 ? 'Amazing' : vars[594] >= -67 ? 'Great' : vars[594] >= -70 ? 'Okay' : vars[594] >= -80 ? 'Bad' : 'Unusable' ) + ' Signal ' + vars[596] + ' Downtime out of ' + vars[591] + ', ' + vars[595] + ' Wireless Events.   ' + vars[597] + ' MQTT Messages.   ' + vars[598] + '% Processing Time.  : ' + vars[599] + ' on Hardware : ' + vars[593] }"
                                     }
                                 ],
                                 "show_header_toggle": false,
@@ -863,15 +874,16 @@
                                 "sensor.computerserver_status",
                                 "sensor.computermedia_status",
                                 "sensor.lilyfan_status",
-                                "sensor.spare1_status",
                                 "sensor.fireplace_status",
                                 "sensor.exteriorside_status",
                                 "sensor.garagelights_c1_status",
                                 "sensor.petlights_status",
-                                "sensor.spare2_status",
-                                "sensor.spare3_status",
                                 "sensor.kidstoilet_status",
-                                "sensor.kidsshower_status"
+                                "sensor.kidsshower_status",
+                                "sensor.entrychandelier_status",
+                                "sensor.spare1_status",
+                                "sensor.spare2_status",
+                                "sensor.spare3_status"
                             ],
                             "type": "custom:config-template-card",
                             "variables": [
@@ -1375,16 +1387,6 @@
                                 "states['sensor.lilyfan_status'].attributes['MqttCount']",
                                 "states['sensor.lilyfan_status'].attributes['LoadAvg']",
                                 "states['sensor.lilyfan_status'].attributes['Hostname']",
-                                "states['sensor.spare1_status'].state",
-                                "states['sensor.spare1_status'].attributes['Uptime']",
-                                "states['sensor.spare1_status'].attributes['IPAddress']",
-                                "states['sensor.spare1_status'].attributes['Module or Template']",
-                                "states['sensor.spare1_status'].attributes['Signal (dBm)']",
-                                "states['sensor.spare1_status'].attributes['WiFi LinkCount']",
-                                "states['sensor.spare1_status'].attributes['WiFi Downtime']",
-                                "states['sensor.spare1_status'].attributes['MqttCount']",
-                                "states['sensor.spare1_status'].attributes['LoadAvg']",
-                                "states['sensor.spare1_status'].attributes['Hostname']",
                                 "states['sensor.fireplace_status'].state",
                                 "states['sensor.fireplace_status'].attributes['Uptime']",
                                 "states['sensor.fireplace_status'].attributes['IPAddress']",
@@ -1425,26 +1427,6 @@
                                 "states['sensor.petlights_status'].attributes['MqttCount']",
                                 "states['sensor.petlights_status'].attributes['LoadAvg']",
                                 "states['sensor.petlights_status'].attributes['Hostname']",
-                                "states['sensor.spare2_status'].state",
-                                "states['sensor.spare2_status'].attributes['Uptime']",
-                                "states['sensor.spare2_status'].attributes['IPAddress']",
-                                "states['sensor.spare2_status'].attributes['Module or Template']",
-                                "states['sensor.spare2_status'].attributes['Signal (dBm)']",
-                                "states['sensor.spare2_status'].attributes['WiFi LinkCount']",
-                                "states['sensor.spare2_status'].attributes['WiFi Downtime']",
-                                "states['sensor.spare2_status'].attributes['MqttCount']",
-                                "states['sensor.spare2_status'].attributes['LoadAvg']",
-                                "states['sensor.spare2_status'].attributes['Hostname']",
-                                "states['sensor.spare3_status'].state",
-                                "states['sensor.spare3_status'].attributes['Uptime']",
-                                "states['sensor.spare3_status'].attributes['IPAddress']",
-                                "states['sensor.spare3_status'].attributes['Module or Template']",
-                                "states['sensor.spare3_status'].attributes['Signal (dBm)']",
-                                "states['sensor.spare3_status'].attributes['WiFi LinkCount']",
-                                "states['sensor.spare3_status'].attributes['WiFi Downtime']",
-                                "states['sensor.spare3_status'].attributes['MqttCount']",
-                                "states['sensor.spare3_status'].attributes['LoadAvg']",
-                                "states['sensor.spare3_status'].attributes['Hostname']",
                                 "states['sensor.kidstoilet_status'].state",
                                 "states['sensor.kidstoilet_status'].attributes['Uptime']",
                                 "states['sensor.kidstoilet_status'].attributes['IPAddress']",
@@ -1464,7 +1446,47 @@
                                 "states['sensor.kidsshower_status'].attributes['WiFi Downtime']",
                                 "states['sensor.kidsshower_status'].attributes['MqttCount']",
                                 "states['sensor.kidsshower_status'].attributes['LoadAvg']",
-                                "states['sensor.kidsshower_status'].attributes['Hostname']"
+                                "states['sensor.kidsshower_status'].attributes['Hostname']",
+                                "states['sensor.entrychandelier_status'].state",
+                                "states['sensor.entrychandelier_status'].attributes['Uptime']",
+                                "states['sensor.entrychandelier_status'].attributes['IPAddress']",
+                                "states['sensor.entrychandelier_status'].attributes['Module or Template']",
+                                "states['sensor.entrychandelier_status'].attributes['Signal (dBm)']",
+                                "states['sensor.entrychandelier_status'].attributes['WiFi LinkCount']",
+                                "states['sensor.entrychandelier_status'].attributes['WiFi Downtime']",
+                                "states['sensor.entrychandelier_status'].attributes['MqttCount']",
+                                "states['sensor.entrychandelier_status'].attributes['LoadAvg']",
+                                "states['sensor.entrychandelier_status'].attributes['Hostname']",
+                                "states['sensor.spare1_status'].state",
+                                "states['sensor.spare1_status'].attributes['Uptime']",
+                                "states['sensor.spare1_status'].attributes['IPAddress']",
+                                "states['sensor.spare1_status'].attributes['Module or Template']",
+                                "states['sensor.spare1_status'].attributes['Signal (dBm)']",
+                                "states['sensor.spare1_status'].attributes['WiFi LinkCount']",
+                                "states['sensor.spare1_status'].attributes['WiFi Downtime']",
+                                "states['sensor.spare1_status'].attributes['MqttCount']",
+                                "states['sensor.spare1_status'].attributes['LoadAvg']",
+                                "states['sensor.spare1_status'].attributes['Hostname']",
+                                "states['sensor.spare2_status'].state",
+                                "states['sensor.spare2_status'].attributes['Uptime']",
+                                "states['sensor.spare2_status'].attributes['IPAddress']",
+                                "states['sensor.spare2_status'].attributes['Module or Template']",
+                                "states['sensor.spare2_status'].attributes['Signal (dBm)']",
+                                "states['sensor.spare2_status'].attributes['WiFi LinkCount']",
+                                "states['sensor.spare2_status'].attributes['WiFi Downtime']",
+                                "states['sensor.spare2_status'].attributes['MqttCount']",
+                                "states['sensor.spare2_status'].attributes['LoadAvg']",
+                                "states['sensor.spare2_status'].attributes['Hostname']",
+                                "states['sensor.spare3_status'].state",
+                                "states['sensor.spare3_status'].attributes['Uptime']",
+                                "states['sensor.spare3_status'].attributes['IPAddress']",
+                                "states['sensor.spare3_status'].attributes['Module or Template']",
+                                "states['sensor.spare3_status'].attributes['Signal (dBm)']",
+                                "states['sensor.spare3_status'].attributes['WiFi LinkCount']",
+                                "states['sensor.spare3_status'].attributes['WiFi Downtime']",
+                                "states['sensor.spare3_status'].attributes['MqttCount']",
+                                "states['sensor.spare3_status'].attributes['LoadAvg']",
+                                "states['sensor.spare3_status'].attributes['Hostname']"
                             ]
                         }
                     ],
