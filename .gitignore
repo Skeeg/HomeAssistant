@@ -59,3 +59,4 @@ custom_components/
 .storage/core.uuid
 .storage/homekit.15e750efa78640668976340bdd01a4ed.aids
 .storage/homekit.15e750efa78640668976340bdd01a4ed.state
+.storage/hacs*

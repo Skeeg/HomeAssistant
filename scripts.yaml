@@ -4,8 +4,6 @@ dad_alarm_script:
   - data: {}
     entity_id: light.dads_lamp
     service: switch.turn_on
-  - entity_id: light.dads_lights
-    service: switch.turn_on
 master_movies_script:
   alias: Master Movies
   sequence:
@@ -38,7 +36,7 @@ austins_alarm_script:
   alias: Austin Alarm
   sequence:
   - data: {}
-    entity_id: switch.03200076dc4f2222957e
+    entity_id: switch.petlights_pet_lights
     service: switch.turn_on
 turn_on_exterior_front_lights:
   alias: ExteriorFrontLightsOn
