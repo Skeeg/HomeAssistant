@@ -1,20 +1,20 @@
 #Pass IP List and collect Device Name for generating entries
-rm devnames.txt
-for n in $(cat ./iplist.txt)
-do
-  unset m
-  m=$(curl "http://$n/cm?cmnd=devicename" -s | jq --raw-output .DeviceName | tr '[:upper:]' '[:lower:]');
-  if [ -z $m ];
-  then echo "var failed for $n";
-  else 
-    echo $m >> devnames.txt
-    echo $m;
-  fi
-done
+# rm devnames.txt
+# for n in $(cat ./iplist.txt)
+# do
+#   unset m
+#   m=$(curl "http://$n/cm?cmnd=devicename" -s | jq --raw-output .DeviceName | tr '[:upper:]' '[:lower:]');
+#   if [ -z $m ];
+#   then echo "var failed for $n";
+#   else 
+#     echo $m >> devnames.txt
+#     echo $m;
+#   fi
+# done
 
 
 #Pass DeviceNames and generate Custom Card Config
-rm customcardstart.yml customcardmiddle.yml customcardend.yml customcard.yml
+rm customcard.yml
 indexCounter=0
 
 cat << EOF > customcardstart.yml
@@ -40,7 +40,7 @@ do
   cat << EOF >> customcardstart.yml
     - entity: sensor.$entityName
       icon: >-
-        \${vars[$(($indexCounter+4))] >= -67 ? 'mdi:wifi' :
+        \${vars[$(($indexCounter+4))] >= -67 ? 'mdi:wifi-strength-4' :
         vars[$(($indexCounter+4))] >= -70 ? 'mdi:wifi-strength-3' :
         vars[$(($indexCounter+4))] >= -80 ? 'mdi:wifi-strength-2' :
         'mdi:wifi-strength-1' }
@@ -90,4 +90,5 @@ EOF
   indexCounter=$indexCounter+10
 done
 cat customcardstart.yml customcardmiddle.yml customcardend.yml > customcard.yml
-cat customcard.yml
+rm customcardstart.yml customcardmiddle.yml customcardend.yml
+#cat customcard.yml

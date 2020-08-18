@@ -82,17 +82,17 @@ cat << EOF > ./iplist.txt
 10.2.4.62
 10.2.4.63
 10.2.4.64
-10.2.4.65
 10.2.4.66
 10.2.4.67
 10.2.4.68
 10.2.4.69
-10.2.4.70
-10.2.4.71
 10.2.4.72
 10.2.4.73
+10.2.4.83
 EOF
+```
 
+```!bash
 #Get separated data with IP address
 for n in $(cat ./iplist.txt)
 do
@@ -103,7 +103,9 @@ do
     echo -e '\r'
     echo -e '\r'
 done
+```
 
+```!bash
 #Check inline data without IP Address
 for n in $(cat ./iplist.txt)
 do
@@ -112,7 +114,9 @@ do
     curl "http://$n/cm?cmnd=hostname";
     echo -e '\r'
 done
+```
 
+```!bash
 #Check setoption
 for n in $(cat ./iplist.txt)
 do
@@ -121,15 +125,18 @@ do
     curl "http://$n/cm?cmnd=devicename";
     echo -e '\r'
 done
+```
 
+```!bash
 #Check inline data without IP Address
 for n in $(cat ./iplist.txt)
 do
     curl "http://$n/cm?cmnd=topic"
     echo -e '\r'
 done
+```
 
-
+```!bash
 for n in $(cat ./iplist.txt)
 do
     curl "http://$n/cm?cmnd=sleep%20200"
@@ -138,7 +145,9 @@ do
     curl "http://$n/cm?cmnd=hostname";
     echo -e '\r'
 done
+```
 
+```!bash
 for n in $(cat ./iplist.txt)
 do
     curl "http://$n/cm?cmnd=friendlyname1"
@@ -146,34 +155,58 @@ do
     curl "http://$n/cm?cmnd=hostname";
     echo -e '\r'
 done
+```
 
-
+```!bash
 do
-    curl "http://$n/cm?cmnd=friendlyname1" -s | jq --raw-output .FriendlyName1 | sed 's/\([^[:blank:]]\)\([[:upper:]]\)/\1 \2/g';
+    curl "http://$n/cm?cmnd=friendlyname1" -s | \
+      jq --raw-output .FriendlyName1 | sed 's/\([^[:blank:]]\)\([[:upper:]]\)/\1 \2/g';
     printf '{"IPAddress":"'$n'"}' | jq --raw-output .IPAddress
-    m=$(curl "http://$n/cm?cmnd=hostname" -s | jq --raw-output .Hostname | sed 's/\([^[:blank:]]\)\([[:upper:]]\)/\1 \2/g';); echo $m; echo $n; echo $m;
+    m=$(curl "http://$n/cm?cmnd=hostname" -s \
+      | jq --raw-output .Hostname | \
+      sed 's/\([^[:blank:]]\)\([[:upper:]]\)/\1 \2/g';);
+      echo $m; echo $n; echo $m;
     echo -e '\r'
 done
+```
 
+```!bash
 for n in $(cat ./iplist.txt)
 do
     curl "http://$n/cm?cmnd=devicename" -s | jq --raw-output .DeviceName;
     curl "http://$n/cm?cmnd=friendlyname" -s | jq --raw-output .FriendlyName1;
     printf '{"IPAddress":"'$n'"}' | jq --raw-output .IPAddress
-    m=$(curl "http://$n/cm?cmnd=hostname" -s | jq --raw-output .Hostname | sed 's/\([^[:blank:]]\)\([[:upper:]]\)/\1%20\2/g';);
+    m=$(curl "http://$n/cm?cmnd=hostname" -s | \
+      jq --raw-output .Hostname \
+      | sed 's/\([^[:blank:]]\)\([[:upper:]]\)/\1%20\2/g';);
     echo $m;
 done
+```
 
+```!bash
 for n in $(cat ./iplist.txt)
 do
     unset m
-    m=$(curl -m 2 "http://$n/cm?cmnd=hostname" -s | jq --raw-output .Hostname | sed 's/\([^[:blank:]]\)\([[:upper:]]\)/\1%20\2/g';);
+    m=$(curl -m 2 "http://$n/cm?cmnd=hostname" -s | \
+      jq --raw-output .Hostname | \
+      sed 's/\([^[:blank:]]\)\([[:upper:]]\)/\1%20\2/g';);
     if [ -z $m ];
         then echo "var failed for $n";
         else curl "http://$n/cm?cmnd=friendlyname1%20$m";
     fi
 done
+```
 
+```!bash
+#Get rules
+for n in $(cat ./iplist.txt)
+do
+    printf '{"IPAddress":"'$n'"}'
+    curl "http://$n/cm?cmnd=rule1" -s | jq -c '[.Rule1,.Rules]'
+done
+```
+
+```!bash
 #Disable Autodiscover
 for n in $(cat ./iplist.txt)
 do
@@ -183,7 +216,9 @@ do
     curl "http://$n/cm?cmnd=friendlyname1" -s | jq .;
     echo -e '\r'
 done
+```
 
+```!bash
 #Enable Autodiscover
 for n in $(cat ./iplist.txt)
 do
@@ -193,8 +228,9 @@ do
     curl "http://$n/cm?cmnd=friendlyname1" -s | jq .;
     echo -e '\r'
 done
+```
 
-
+```!bash
 #Wipe Wifi Calibration, Counters, and Bootcount
 for n in $(cat ./iplist.txt)
 do
@@ -204,57 +240,68 @@ do
     curl "http://$n/cm?cmnd=backlog%20reset%203%3B%20reset%2099%3B"
     echo -e '\r'
 done
+```
 
+```!bash
+#Roll all devices firmware - use alternate shell script file
+# for n in $(cat ./iplist.txt)
+# do
+#     printf '{"IPAddress":"'$n'"}'
+#     curl "http://$n/cm?cmnd=hostname";
+#     echo -e '\r\r\r'
+#     echo -e "Starting Minimal for $n\r"
+#     curl -F 'u2=@/Users/ryan-peay/Downloads/skg-tasmota-minimal.bin' \
+#       http://$n/u2 -o /Users/ryan-peay/Downloads/firmware/$n.minimal.txt
+#     echo -e '\r\r\r'
+#     echo -e "Sleep 15\r"
+#     sleep 15
+#     echo -e "Starting Standard for $n\r"
+#     curl -F 'u2=@/Users/ryan-peay/Downloads/skg-tasmota.bin' \
+ #       http://$n/u2 -o /Users/ryan-peay/Downloads/firmware/$n.standard.txt
+#     echo -e "Done with $n\r\r\r"
+# done
+```
 
-#Roll all devices firmware
-for n in $(cat ./iplist.txt)
-do
-    printf '{"IPAddress":"'$n'"}'
-    curl "http://$n/cm?cmnd=hostname";
-    echo -e '\r\r\r'
-    echo -e "Starting Minimal for $n\r"
-    curl -F 'u2=@/Users/ryan-peay/Downloads/skg-tasmota-minimal.bin' http://$n/u2 -o /Users/ryan-peay/Downloads/firmware/$n.minimal.txt
-    echo -e '\r\r\r'
-    echo -e "Sleep 15\r"
-    sleep 15
-    echo -e "Starting Standard for $n\r"
-    curl -F 'u2=@/Users/ryan-peay/Downloads/skg-tasmota.bin' http://$n/u2 -o /Users/ryan-peay/Downloads/firmware/$n.standard.txt
-    echo -e "Done with $n\r\r\r"
-done
-
+```!bash
 #Check for machine stuck on minimal firmware
 for n in $(cat ./iplist.txt)
 do
     echo -e "$n\r"; 
     curl -s http://$n | grep "MINIMAL firmware"
 done
+```
 
+```!bash
 #Check for machine stuck on minimal firmware
 for n in $(cat ./iplist.txt)
 do
     echo -e "$n\r"; 
     curl -s http://$n | grep "MINIMAL firmware"
 done
+```
 
+```!bash
 #Just Minimal Firmware
 for n in $(cat ./iplist.txt)
 do
     printf '{"IPAddress":"'$n'"}'
     echo -e "\rStarting Minimal for $n\r"
-    curl -F 'u2=@/Users/ryan-peay/Downloads/skg-tasmota-minimal.bin' http://$n/u2 -o /Users/ryan-peay/Downloads/firmware/$n.standard.txt
+    curl -F 'u2=@/Users/ryan-peay/Downloads/skg-tasmota-minimal.bin' \
+      http://$n/u2 -o /Users/ryan-peay/Downloads/firmware/$n.standard.txt
     echo -e "Done with $n\r\r\r"
 done
+```
 
+```!bash
 #Just Standard Firmware
 for n in $(cat ./iplist.txt)
 do
     printf '{"IPAddress":"'$n'"}'
     echo -e "\rStarting Standard for $n\r"
-    curl -F 'u2=@/Users/ryan-peay/Downloads/skg-tasmota.bin' http://$n/u2 -o /Users/ryan-peay/Downloads/firmware/$n.standard.txt
+    curl -F 'u2=@/Users/ryan-peay/Downloads/skg-tasmota.bin' \
+      http://$n/u2 -o /Users/ryan-peay/Downloads/firmware/$n.standard.txt
     echo -e "Done with $n\r\r\r"
 done
-
-rm -f iplist.txt
 ```
 
 Temp Config Maxcio
@@ -506,6 +553,9 @@ AustinHall_c1
 LilyHall_c2
 `Backlog hostname LilyHall_C2; DeviceName LilyHall_C2; topic LilyHall_C2; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; grouptopic3 LilyHallGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/LilyHallGroup/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Control","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0; powerretain 0; setoption19 1;`
 
-10.2.4.25 - DEAD
+10.2.4.83
 {"Hostname":"EntryChandelier"}
-`Backlog hostname EntryChandelier; DeviceName EntryChandelier; topic EntryChandelier; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/EntryChandelier/POWER %value% endon; Rule1 1; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0; setoption19 1;`
+`Backlog hostname EntryChandelier; DeviceName EntryChandelier; topic EntryChandelier; friendlyname Entry Chandelier; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights;  setoption19 1;`
+
+Mass Flash:
+`Backlog fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon; Rule1 0; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
