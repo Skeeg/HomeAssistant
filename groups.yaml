@@ -1,0 +1,12 @@
+# group:
+#   lights:
+#     name: AllLights
+#     entities:
+#       - light.family_lights
+#       - light.entry_cans
+#   bedtime:
+#     name: BedTime
+#     entities:
+#       - switch.demo_tasmota_switch
+#       - light.family_lights
+#       - light.entry_cans
