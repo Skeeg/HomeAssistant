@@ -3,15 +3,15 @@
 default_config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-http:
+#http:
   # For extra security set this to only accept connections on localhost if NGINX is on the same machine
   # server_host: 127.0.0.1
   # Update this line to be your domain
-  base_url: https://home.skeeg.net
-  use_x_forwarded_for: true
+  # base_url: https://home.skeeg.net
+  # use_x_forwarded_for: true
   # You must set the trusted proxy IP address so that Home Assistant will properly accept connections
   # Set this to your NGINX machine IP, or localhost if hosted on the same machine.
-  trusted_proxies: 10.2.2.4
+  # trusted_proxies: 10.2.2.4
 
 # Text to speech
 tts:
@@ -47,6 +47,9 @@ binary_sensor:
       - '2020-07-08'
       - '2020-07-09'
       - '2020-07-10'
+      - '2020-12-24'
+      - '2020-12-25'
+      - '2021-01-01'
 
 # lovelace:
 #   resources:
@@ -57,8 +60,8 @@ ring:
   username: !secret ring_username
   password: !secret ring_password
 
-camera:
-  platform: ring
+# camera:
+#   platform: ring
 
 # media_player:
 #   - platform: songpal
@@ -76,7 +79,6 @@ homekit:
       - switch.computer_austin
       - switch.computer_lily
       - switch.computer_media
-      - switch.hot_tub
 
 mqtt:
   broker: 10.2.2.4
@@ -839,3 +841,5 @@ timer:
     duration: '00:20:00'
   dads_lamp:
     duration: '01:00:00'
+  outdoor_decorations:
+    duration: '06:00:00'

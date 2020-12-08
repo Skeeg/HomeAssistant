@@ -1,4 +1,6 @@
 {
+    "version": 1,
+    "key": "lovelace",
     "data": {
         "config": {
             "title": "Home",
@@ -20,51 +22,14 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "script.master_movies_script"
+                                    "entity": "switch.hottub_hot_tub"
                                 },
                                 {
-                                    "entity": "script.bedtime_script"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Scripts",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "cover.main_garage"
+                                    "entity": "switch.computerserver_computer_server"
                                 },
                                 {
-                                    "entity": "cover.3rd_car_garage"
-                                }
-                            ],
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.fireplace_fire_place"
+                                    "entity": "switch.spare4_spare_4"
                                 },
-                                {
-                                    "entity": "switch.blower_blower"
-                                },
-                                {
-                                    "entity": "switch.familyfan_family_fan"
-                                },
-                                {
-                                    "entity": "switch.maintv_main_tv"
-                                },
-                                {
-                                    "entity": "switch.mastertv_master_tv"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Comfort",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
                                 {
                                     "entity": "switch.railinglights_railing_lights"
                                 },
@@ -78,7 +43,22 @@
                                     "entity": "switch.buffetdecor_buffet_decor"
                                 },
                                 {
-                                    "entity": "switch.christmaspackage_christmas_package"
+                                    "entity": "switch.christmasrailing_christmas_railing"
+                                },
+                                {
+                                    "entity": "switch.endtable_end_table"
+                                },
+                                {
+                                    "entity": "switch.kitchentable_kitchen_table"
+                                },
+                                {
+                                    "entity": "switch.spare1_spare1"
+                                },
+                                {
+                                    "entity": "switch.spare2_spare2"
+                                },
+                                {
+                                    "entity": "switch.spare3_spare3"
                                 }
                             ],
                             "show_header_toggle": true,
@@ -113,6 +93,28 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "switch.fireplace_fire_place"
+                                },
+                                {
+                                    "entity": "switch.blower_blower"
+                                },
+                                {
+                                    "entity": "switch.familyfan_family_fan"
+                                },
+                                {
+                                    "entity": "switch.maintv_main_tv"
+                                },
+                                {
+                                    "entity": "switch.mastertv_master_tv"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Comfort",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
                                     "entity": "timer.dads_lamp"
                                 },
                                 {
@@ -123,6 +125,30 @@
                                 }
                             ],
                             "title": "Sleep Timers",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "script.master_movies_script"
+                                },
+                                {
+                                    "entity": "script.bedtime_script"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Scripts",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "cover.main_garage"
+                                },
+                                {
+                                    "entity": "cover.3rd_car_garage"
+                                }
+                            ],
                             "type": "entities"
                         }
                     ],
@@ -280,6 +306,9 @@
                                     "entity": "sensor.computerlily_energy_apparentpower"
                                 },
                                 {
+                                    "entity": "sensor.computermedia_energy_apparentpower"
+                                },
+                                {
                                     "entity": "sensor.computerserver_energy_apparentpower"
                                 },
                                 {
@@ -323,6 +352,9 @@
                                 },
                                 {
                                     "entity": "sensor.computerlily_energy_total"
+                                },
+                                {
+                                    "entity": "sensor.computermedia_energy_total"
                                 },
                                 {
                                     "entity": "sensor.computerserver_energy_total"
@@ -438,19 +470,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "switch.spare1_spare1"
-                                },
-                                {
-                                    "entity": "switch.spare2_spare2"
-                                },
-                                {
-                                    "entity": "switch.spare3_spare3"
-                                },
-                                {
                                     "entity": "switch.lilyfan_lilys_fan"
-                                },
-                                {
-                                    "entity": "switch.familyfan_family_fan"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -487,9 +507,6 @@
                                 },
                                 {
                                     "entity": "switch.computermedia_computer_media"
-                                },
-                                {
-                                    "entity": "switch.computerserver_computer_server"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -1496,7 +1513,5 @@
                 }
             ]
         }
-    },
-    "key": "lovelace",
-    "version": 1
+    }
 }
