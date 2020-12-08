@@ -54,9 +54,6 @@ ring:
   username: !secret ring_username
   password: !secret ring_password
 
-camera:
-  platform: ring
-
 # media_player:
 #   - platform: songpal
 #     name: soundbar
