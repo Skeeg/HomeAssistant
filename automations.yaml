@@ -200,6 +200,45 @@
   - data: {}
     entity_id: timer.kids_bathroom_fan
     service: timer.start
+- id: timer_outdoor-decorations-end
+  alias: Timer-Outdoor-Decorations-End
+  description: ''
+  trigger:
+  - entity_id: timer.outdoor_decorations
+    platform: state
+    to: finished
+  - entity_id: timer.outdoor_decorations
+    platform: state
+    to: idle
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.hottub_hot_tub
+    service: switch.turn_off
+  - data: {}
+    entity_id: switch.computerserver_computer_server
+    service: switch.turn_off
+  - data: {}
+    entity_id: switch.spare4_spare_4
+    service: switch.turn_off
+- id: timer_outdoor-lights-start
+  alias: Timer-BathroomFan-Kids-Start
+  description: ''
+  trigger:
+  - entity_id: switch.hottub_hot_tub
+    platform: state
+    to: 'on'
+  - entity_id: switch.computerserver_computer_server
+    platform: state
+    to: 'on'
+  - entity_id: switch.spare4_spare_4
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data: {}
+    entity_id: timer.outdoor_decorations
+    service: timer.start
 - id: timer_dadslamp-end
   alias: Timer-Dads-Lamp-End
   description: ''
