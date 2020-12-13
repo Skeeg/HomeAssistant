@@ -33,11 +33,84 @@ turn_on_exterior_front_lights:
       payload: 'ON'
       topic: homeassistant/cmnd/ExteriorFrontLights/POWER
     service: mqtt.publish
-'1607826405058':
-  alias: MainTV_VolUp
+maintv_volup:
+  alias: MainTV_VolumeUp
   sequence:
   - data:
       payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD58A7"}'
       topic: homeassistant/cmnd/MediaRemote/IRSend
     service: mqtt.publish
-  mode: single
+maintv_voldown:
+  alias: MainTV_VolumeDown
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD7887"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_poweron:
+  alias: MainTV_PowerOn
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD7E81"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_poweroff:
+  alias: MainTV_PowerOff
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FDFE01"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_selectsoundbarinput:
+  alias: MainTV_SelectSoundBarInput
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FDF00F"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FDC03F"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+soundbar_poweron:
+  alias: SoundBar_PowerOn
+  sequence:
+  - data:
+      payload: '{"Protocol":"SONY","Bits":15,"Data":"0x3A0C"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+soundbar_poweroff:
+  alias: SoundBar_PowerOff
+  sequence:
+  - data:
+      payload: '{"Protocol":"SONY","Bits":15,"Data":"0x7A0C"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+soundbar_volup:
+  alias: SoundBar_VolumeUp
+  sequence:
+  - data:
+      payload: '{"Protocol":"SONY","Bits":15,"Data":"0x240C"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+soundbar_voldown:
+  alias: SoundBar_VolumeDown
+  sequence:
+  - data:
+      payload: '{"Protocol":"SONY","Bits":15,"Data":"0x640C"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+soundbar_appletv:
+  alias: SoundBar_AppleTV
+  sequence:
+  - data:
+      payload: '{"Protocol":"SONY","Bits":20,"Data":"0x08114"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+soundbar_games:
+  alias: SoundBar_Games
+  sequence:
+  - data:
+      payload: '{"Protocol":"SONY","Bits":20,"Data":"0x48114"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
