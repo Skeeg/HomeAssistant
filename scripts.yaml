@@ -33,3 +33,11 @@ turn_on_exterior_front_lights:
       payload: 'ON'
       topic: homeassistant/cmnd/ExteriorFrontLights/POWER
     service: mqtt.publish
+'1607826405058':
+  alias: MainTV_VolUp
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD58A7"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+  mode: single
