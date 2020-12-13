@@ -98,4 +98,4 @@ timer:
   dads_lamp:
     duration: '01:00:00'
   outdoor_decorations:
-    duration: '06:00:00'
+    duration: '05:00:00'
