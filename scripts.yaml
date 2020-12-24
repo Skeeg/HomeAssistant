@@ -8,8 +8,9 @@ master_movies_script:
   alias: Master Movies
   sequence:
   - data: {}
-    entity_id: switch.mastertv_master_tv
+    entity_id: switch.master_tv
     service: switch.turn_on
+  mode: single
 bedtime_script:
   alias: Bedtime Script
   sequence:
