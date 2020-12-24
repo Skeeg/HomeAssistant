@@ -146,6 +146,7 @@
   condition: []
   action:
   - delay: ''
+  mode: single
 - id: timer_bathroomfan_powder-end
   alias: Timer-BathroomFan-Powder-End
   description: ''
@@ -159,13 +160,14 @@
   condition: []
   action:
   - data: {}
-    entity_id: switch.powderfan_powder_fan
+    entity_id: switch.powder_fan
     service: switch.turn_off
+  mode: single
 - id: timer_bathroomfan_powder-start
   alias: Timer-BathroomFan-Powder-Start
   description: ''
   trigger:
-  - entity_id: switch.powderfan_powder_fan
+  - entity_id: switch.powder_fan
     platform: state
     to: 'on'
   condition: []
@@ -173,6 +175,7 @@
   - data: {}
     entity_id: timer.powder_bathroom_fan
     service: timer.start
+  mode: single
 - id: timer_bathroomfan_kids-end
   alias: Timer-BathroomFan-Kids-End
   description: ''
@@ -186,13 +189,14 @@
   condition: []
   action:
   - data: {}
-    entity_id: switch.kidsbathroomfan_kids_bathroom_fan
+    entity_id: switch.kids_bathroom_fan
     service: switch.turn_off
+  mode: single
 - id: timer_bathroomfan_kids-start
   alias: Timer-BathroomFan-Kids-Start
   description: ''
   trigger:
-  - entity_id: switch.kidsbathroomfan_kids_bathroom_fan
+  - entity_id: switch.kids_bathroom_fan
     platform: state
     to: 'on'
   condition: []
@@ -200,6 +204,7 @@
   - data: {}
     entity_id: timer.kids_bathroom_fan
     service: timer.start
+  mode: single
 - id: timer_outdoor-decorations-end
   alias: Timer-Outdoor-Decorations-End
   description: ''
@@ -213,25 +218,26 @@
   condition: []
   action:
   - data: {}
-    entity_id: switch.hottub_hot_tub
+    entity_id: switch.ground_decor
     service: switch.turn_off
   - data: {}
-    entity_id: switch.computerserver_computer_server
+    entity_id: switch.top_christmas
     service: switch.turn_off
   - data: {}
-    entity_id: switch.spare4_spare_4
+    entity_id: switch.bottom_christmas
     service: switch.turn_off
+  mode: single
 - id: timer_outdoor-lights-start
-  alias: Timer-BathroomFan-Kids-Start
+  alias: Timer-Outdoor-Decorations-Start
   description: ''
   trigger:
-  - entity_id: switch.hottub_hot_tub
+  - entity_id: switch.ground_decor
     platform: state
     to: 'on'
-  - entity_id: switch.computerserver_computer_server
+  - entity_id: switch.top_christmas
     platform: state
     to: 'on'
-  - entity_id: switch.spare4_spare_4
+  - entity_id: switch.bottom_christmas
     platform: state
     to: 'on'
   condition: []
@@ -239,6 +245,7 @@
   - data: {}
     entity_id: timer.outdoor_decorations
     service: timer.start
+  mode: single
 - id: timer_dadslamp-end
   alias: Timer-Dads-Lamp-End
   description: ''
