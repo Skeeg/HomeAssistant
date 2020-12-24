@@ -176,6 +176,35 @@
     entity_id: timer.powder_bathroom_fan
     service: timer.start
   mode: single
+- id: timer_internet_router_restoration-start
+  alias: Timer-Internet-Router-Restoration-Start
+  description: ''
+  trigger:
+  - entity_id: switch.internet_router
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data: {}
+    entity_id: timer.internet_router_restoration
+    service: timer.start
+  mode: single
+- id: timer_internet_router_restoration-end
+  alias: Timer-Internet-Router-Restoration-End
+  description: ''
+  trigger:
+  - entity_id: timer.internet_router_restoration
+    platform: state
+    to: finished
+  - entity_id: timer.internet_router_restoration
+    platform: state
+    to: idle
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.internet_router
+    service: switch.turn_on
+  mode: single
 - id: timer_bathroomfan_kids-end
   alias: Timer-BathroomFan-Kids-End
   description: ''
