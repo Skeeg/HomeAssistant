@@ -12,6 +12,9 @@
 # Maxcio Power Switch
 `backlog template {"NAME":"W-US002S","GPIO":[0,90,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0;`
 
+# Sonoff Power Switch
+`backlog template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0;`
+
 Then have to run https://tasmota.github.io/docs/Power-Monitoring-Calibration/ process in console.
 Get values from the Kill-A-Watt device
 
@@ -81,16 +84,62 @@ cat << EOF > ./iplist.txt
 10.2.4.61
 10.2.4.62
 10.2.4.63
-10.2.4.64
+10.2.4.65
 10.2.4.66
 10.2.4.67
 10.2.4.68
 10.2.4.69
+10.2.4.70
+10.2.4.71
 10.2.4.72
 10.2.4.73
 10.2.4.83
+10.2.4.89
+10.2.4.90
+10.2.4.91
+10.2.4.92
+10.2.4.93
+10.2.4.96
+10.2.4.97
+10.2.4.98
+10.2.4.99
+10.2.4.100
+10.2.4.101
+10.2.4.102
+10.2.4.103
+10.2.4.104
+10.2.4.105
+10.2.4.109
+10.2.4.111
 EOF
 ```
+
+```!bash
+#!/bin/bash
+#Add IP Address to json payload, then create CSV with IP address and DeviceName
+for n in $(cat ./iplist.txt)
+do
+    moduleName=`curl "http://$n/cm?cmnd=module" -s | jq .Module.\"0\"`
+    curl "http://$n/cm?cmnd=status%200" -s |\
+        jq --raw-output ". += {"Module": $moduleName} | [.StatusNET.IPAddress, .Status.DeviceName, (\"Module:\" + (.Status.Module|tostring)), .Module] | @csv"
+done
+```
+
+```!bash
+#!/bin/bash
+for n in $(cat ./badiplist.txt)
+do
+    printf "%s" "waiting for $n ..."
+    while ! timeout 0.2 ping -c 1 -n $n &> /dev/null
+    do
+        printf "%c" "."
+    done
+    moduleName=`curl "http://$n/cm?cmnd=module" -s | jq .Module.\"0\"`
+    curl "http://$n/cm?cmnd=status%200" -s |\
+        jq --raw-output ". += {"Module": $moduleName} | [.StatusNET.IPAddress, .Status.DeviceName, (\"Module:\" + (.Status.Module|tostring)), .Module] | @csv"
+done
+```
+
 
 ```!bash
 #Get separated data with IP address
@@ -304,6 +353,19 @@ do
 done
 ```
 
+```!bash
+#Roll to new skeeg-v2 firmware
+for n in $(cat ./iplist.txt)
+for n in $(echo "10.2.4.14 10.2.4.15")
+do
+    printf '{"IPAddress":"'$n'"}'
+    echo -e "\rStarting v2 for $n\r"
+    curl -F 'u2=@/Users/ryan-peay/Downloads/tasmota 9.1.0/skeeg-v2/tasmota.bin.gz' \
+      http://$n/u2 -o /Users/ryan-peay/Downloads/tasmota\ 9.1.0/skeeg-v2//$n.txt
+    echo -e "Done with $n\r\r\r"
+done
+
+
 Temp Config Maxcio
 
 Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/TempConfig/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0;
@@ -390,10 +452,6 @@ Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic 
 {"Hostname":"Blower"}
 `Backlog hostname Blower; DeviceName Blower; topic Blower; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/Blower/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
 
-10.2.4.40
-{"Hostname":"CurtainLights"}
-`Backlog hostname CurtainLights; DeviceName CurtainLights; topic CurtainLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/CurtainLights/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45} module 0; powerretain 0; sensorretain 1;`
-
 10.2.4.41
 {"Hostname":"EveLights"}
 `Backlog hostname EveLights; DeviceName EveLights; topic EveLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 ExteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/EveLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
@@ -411,16 +469,6 @@ Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic 
 {"Hostname":"PowderLights"}
 `Backlog hostname PowderLights; DeviceName PowderLights; topic PowderLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/PowderLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
-10.2.4.45
-{"Hostname":"RailingLights"}
-`Backlog hostname RailingLights; DeviceName RailingLights; topic RailingLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/RailingLights/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1`
-
-
-10.2.4.46
-#DadsLamp
-`Backlog hostname DadsLamp; DeviceName DadsLamp; topic DadsLamp; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/DadsLamp/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0;`
-
-
 10.2.4.47
 {"Hostname":"ChristmasPackage"}
 `Backlog hostname ChristmasPackage; DeviceName ChristmasPackage; topic ChristmasPackage; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 ExteriorDecorations; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/ChristmasPackage/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
@@ -428,10 +476,6 @@ Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic 
 10.2.4.48
 {"Hostname":"BasementLights"}
 `Backlog hostname BasementLights; DeviceName BasementLights; topic BasementLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/BasementLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
-
-#GarageLamp
-10.2.4.49
-`Backlog hostname GarageLamp; DeviceName GarageLamp; topic GarageLamp; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 GarageLightsGroup; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/GarageLamp/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sleep 75;`
 
 10.2.4.50
 `Backlog hostname DiningLights; DeviceName DiningLights; topic DiningLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/DiningLights/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18} module 0; powerretain 0; sleep 75;`
@@ -448,18 +492,6 @@ Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic 
 10.2.4.54
 `Backlog hostname KidsBathroomFan; DeviceName KidsBathroomFan; topic KidsBathroomFan; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorFans; grouptopic3 BathroomFans; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/KidsBathroomFan/POWER %value% endon; Rule1 1; Template {"NAME":"Maxcio Active","GPIO":[9,0,0,0,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
 
-10.2.4.55
-{"Hostname":"BuffetDecor"}
-`Backlog hostname BuffetDecor; DeviceName BuffetDecor; topic BuffetDecor; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/BuffetDecor/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
-
-10.2.4.56
-{"Hostname":"HotTub"}
-`Backlog hostname HotTub; DeviceName HotTub; topic HotTub; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/HotTub/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
-
-10.2.4.57
-{"Hostname":"ElectricFence"}
-`Backlog hostname ElectricFence; DeviceName ElectricFence; topic ElectricFence; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/ElectricFence/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
-
 10.2.4.38
 {"Hostname":"ComputerAustin"}
 `Backlog hostname ComputerAustin; DeviceName ComputerAustin; topic ComputerAustin; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/ComputerAustin/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
@@ -471,10 +503,6 @@ Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic 
 10.2.4.59
 {"Hostname":"MainTV"}
 `Backlog hostname MainTV; DeviceName MainTV; topic MainTV; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/MainTV/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
-
-10.2.4.60
-{"Hostname":"MantleDecor"}
-`Backlog hostname MantleDecor; DeviceName MantleDecor; topic MantleDecor; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/MantleDecor/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
 
 10.2.4.61
 {"Hostname":"MasterTV"}
@@ -496,10 +524,6 @@ Backlog hostname TempConfig; DeviceName TempConfig; topic TempConfig; fulltopic 
 10.2.4.65
 {"Hostname":"Spare1"}
 `Backlog hostname Spare1; DeviceName Spare1; topic Spare1; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/Spare1/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
-
-10.2.4.66
-{"Hostname":"FirePlace"}
-`Backlog hostname FirePlace; DeviceName FirePlace; topic FirePlace; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/FirePlace/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
 
 10.2.4.67
 {"Hostname":"ExteriorSide"}
@@ -559,3 +583,239 @@ LilyHall_c2
 
 Mass Flash:
 `Backlog fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon; Rule1 0; Template {"NAME":"Gosund KS-602S Active","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0; powerretain 0;`
+
+
+backlog grouptopic AllStandard; grouptopic2 InteriorDecorations; Timer1 {"Arm":1,"Mode":0,"Time":"07:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":1}; Timer2 {"Arm":1,"Mode":0,"Time":"23:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":0};
+
+
+Mass Sonoff
+`backlog hostname replace; DeviceName replace; topic replace; friendlyname replace; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1; Timer1 {"Arm":1,"Mode":0,"Time":"07:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":1}; Timer2 {"Arm":1,"Mode":0,"Time":"23:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":0};`
+
+backlog hostname EndTable; DeviceName EndTable; topic EndTable; friendlyname End Table; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1; Timer1 {"Arm":1,"Mode":0,"Time":"07:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":1}; Timer2 {"Arm":1,"Mode":0,"Time":"23:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":0};
+
+backlog hostname KitchenTable; DeviceName KitchenTable; topic KitchenTable; friendlyname Kitchen Table; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1; Timer1 {"Arm":1,"Mode":0,"Time":"07:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":1}; Timer2 {"Arm":1,"Mode":0,"Time":"23:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":0};
+
+backlog hostname ChristmasRailing; DeviceName ChristmasRailing; topic ChristmasRailing; friendlyname Christmas Railing; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1; Timer1 {"Arm":1,"Mode":0,"Time":"07:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":1}; Timer2 {"Arm":1,"Mode":0,"Time":"23:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":0};
+
+backlog hostname IslandDecorations; DeviceName IslandDecorations; topic IslandDecorations; friendlyname Island Decorations; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1; Timer1 {"Arm":1,"Mode":0,"Time":"07:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":1}; Timer2 {"Arm":1,"Mode":0,"Time":"23:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":0}; Timers 1;
+
+
+10.2.4.96
+backlog hostname MediaRemote; DeviceName MediaRemote; topic MediaRemote; friendlyname Media Remote; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"NodeMCU","GPIO":[255,255,255,255,255,255,255,255,255,255,255,255,255],"FLAG":15,"BASE":18}; module 0; setoption19 1;
+
+10.2.4.109
+backlog hostname DadsTest; DeviceName DadsTest; topic DadsTest; friendlyname Dads Test; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"WemoD1Mini","GPIO":[255,255,255,255,255,255,255,255,255,255,255,255,255],"FLAG":15,"BASE":18}; module 0; setoption19 1;
+
+10.2.4.110
+backlog hostname Test2; DeviceName Test2; topic Test2; friendlyname Test2; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"WemoD1Mini","GPIO":[255,255,255,255,255,255,255,255,255,255,255,255,255],"FLAG":15,"BASE":18}; module 0;
+
+backlog Timer1 {"Arm":1,"Mode":0,"Time":"07:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":1}; Timer2 {"Arm":1,"Mode":0,"Time":"23:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":0}; Timers 1;
+
+
+SomethingNothingSomething
+backlog hostname replace; DeviceName replace; topic replace; friendlyname replace; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1; Timer1 {"Arm":1,"Mode":0,"Time":"07:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":1}; Timer2 {"Arm":1,"Mode":0,"Time":"23:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":0}; Timers 1;
+
+
+backlog setoption19 0; EnergyReset3 0; hostname GroundDecor; DeviceName GroundDecor; topic GroundDecor; friendlyname Ground Decor; setoption19 1;
+backlog setoption19 0; EnergyReset3 0; hostname TopChristmas; DeviceName TopChristmas; topic TopChristmas; friendlyname Top Christmas; setoption19 1;
+backlog setoption19 0; EnergyReset3 0; hostname BottomChristmas; DeviceName BottomChristmas; topic BottomChristmas; friendlyname Bottom Christmas; setoption19 1;
+
+
+
+
+
+#OldFirePlace
+10.2.4.66
+{"Hostname":"FirePlace"}
+`Backlog hostname FirePlace; DeviceName FirePlace; topic FirePlace; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/FirePlace/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
+
+10.2.4.103
+{"Hostname":"FirePlace"}
+`Backlog seriallog 0; setoption19 0; hostname FirePlace; DeviceName FirePlace; topic FirePlace; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; switchmode 3; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1;`
+
+
+#Clear grouptopics
+grouptopic 0; 
+
+#OldBlower
+10.2.4.39
+{"Hostname":"Blower"}
+`Backlog hostname Blower; DeviceName Blower; topic Blower; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/Blower/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
+
+
+10.2.4.104
+{"Hostname":"Blower"}
+`Backlog seriallog 0; setoption19 0; hostname Blower; DeviceName Blower; topic Blower; fulltopic homeassistant/%prefix%/%topic%/; grouptopic1 0; switchmode 3; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1;`
+
+
+#OldGarageLamp
+10.2.4.49
+`Backlog hostname GarageLamp; DeviceName GarageLamp; topic GarageLamp; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 GarageLightsGroup; switchmode 3; latitude 40.297297; longitude -111.878340; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sleep 75;`
+
+
+10.2.4.102
+backlog seriallog 0; setoption19 0; hostname GarageLamp; DeviceName GarageLamp; topic GarageLamp; friendlyname Garage Lamp; grouptopic AllStandard; grouptopic2 GarageLightsGroup; switchmode 3; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"Sonoff+I2C","GPIO":[17,5,0,6,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1;
+
+#OldCurtainLights
+10.2.4.40
+{"Hostname":"CurtainLights"}
+`Backlog hostname CurtainLights; DeviceName CurtainLights; topic CurtainLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/CurtainLights/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45} module 0; powerretain 0; sensorretain 1;`
+
+10.2.4.101
+backlog seriallog 0; setoption19 0; hostname CurtainLights; DeviceName CurtainLights; topic CurtainLights; friendlyname Curtain Lights; grouptopic AllStandard; grouptopic2 InteriorDecorations; switchmode 3; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1};; module 0; setoption19 1;
+
+#OldBuffet
+10.2.4.55
+{"Hostname":"BuffetDecor"}
+`Backlog hostname BuffetDecor; DeviceName BuffetDecor; topic BuffetDecor; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/BuffetDecor/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
+
+10.2.4.98
+backlog seriallog 0; setoption19 0; hostname BuffetDecor; DeviceName BuffetDecor; topic BuffetDecor; friendlyname Buffet Decor; grouptopic AllStandard; grouptopic2 InteriorDecorations; switchmode 3; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1;
+
+#OldMantle
+10.2.4.70
+backlog setoption19 0; EnergyReset3 0; hostname LeftMantle; DeviceName LeftMantle; topic LeftMantle; friendlyname Left Mantle; setoption19 1;
+
+10.2.4.105
+backlog seriallog 0; setoption19 0; hostname LeftMantle; DeviceName LeftMantle; topic LeftMantle; friendlyname Left Mantle; grouptopic AllStandard; grouptopic2 InteriorDecorations; switchmode 3; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1;
+
+#OldEntryDecor
+10.2.4.71
+backlog setoption19 0; EnergyReset3 0; hostname EntryDecorations; DeviceName EntryDecorations; topic EntryDecorations; friendlyname EntryDecorations; setoption19 1;
+
+10.2.4.99
+backlog seriallog 0; setoption19 0; hostname EntryDecorations; DeviceName EntryDecorations; topic EntryDecorations; friendlyname Entry Decorations; grouptopic AllStandard; grouptopic2 InteriorDecorations; switchmode 3; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1;
+
+#FrontTree
+10.2.4.65
+backlog setoption19 0; EnergyReset3 0; hostname FrontTree; DeviceName FrontTree; topic FrontTree; friendlyname Front Tree; setoption19 1;
+
+10.2.4.111
+backlog seriallog 0; setoption19 0; hostname FrontTree; DeviceName FrontTree; topic FrontTree; friendlyname Front Tree; grouptopic AllStandard; grouptopic2 InteriorDecorations; switchmode 3; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1;
+
+#OldRailingLights
+10.2.4.45
+{"Hostname":"RailingLights"}
+`Backlog hostname RailingLights; DeviceName RailingLights; topic RailingLights; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorDecorations; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/RailingLights/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1`
+
+10.2.4.100
+backlog seriallog 0; setoption19 0; hostname RailingLights; DeviceName RailingLights; topic RailingLights; friendlyname Railing Lights; grouptopic AllStandard; grouptopic2 InteriorDecorations; switchmode 3; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1;
+
+
+#NewHotTub
+10.2.4.71
+Backlog timers 0; timer1 0; timer2 0; EnergyReset3 0; hostname HotTub; DeviceName HotTub; friendlyname Hot Tub; topic HotTub; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; switchmode 3; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 1; sensorretain 1; setoption19 1; Rule1 on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon; Rule1 1;
+
+#NewKitchenFridge
+10.2.4.70
+Backlog timers 0; timer1 0; timer2 0; EnergyReset3 0; hostname KitchenFridge; DeviceName KitchenFridge; friendlyname Kitchen Fridge; topic KitchenFridge; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; switchmode 3; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 1; sensorretain 1; setoption19 1; Rule1 on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon; Rule1 1;
+
+#GarageFridge
+10.2.4.49
+Backlog timers 0; timer1 0; timer2 0; EnergyReset3 0; hostname GarageFridge; DeviceName GarageFridge; friendlyname Garage Fridge; topic GarageFridge; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; switchmode 3; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 1; sensorretain 1; setoption19 1; Rule1 on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon; Rule1 1;
+
+#GarageFreezer
+10.2.4.45
+Backlog timers 0; timer1 0; timer2 0; EnergyReset3 0; hostname GarageFreezer; DeviceName GarageFreezer; friendlyname Garage Freezer; topic GarageFreezer; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; switchmode 3; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 1; sensorretain 1; setoption19 1; Rule1 on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon; Rule1 1;
+
+#DeepFreeze
+10.2.4.39
+Backlog timers 0; timer1 0; timer2 0; EnergyReset3 0; hostname DeepFreeze; DeviceName DeepFreeze; friendlyname Deep Freeze; topic DeepFreeze; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; switchmode 3; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 1; sensorretain 1; setoption19 1; Rule1 on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon; Rule1 1;
+
+
+#OldElectricFence
+10.2.4.57
+{"Hostname":"ElectricFence"}
+`Backlog hostname ElectricFence; DeviceName ElectricFence; topic ElectricFence; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/ElectricFence/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
+
+#ElectricFence
+10.2.4.114
+backlog seriallog 0; setoption19 0; hostname ElectricFence; DeviceName ElectricFence; topic ElectricFence; friendlyname Electric Fence;  grouptopic 0; switchmode 3; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1;
+
+#OldMantleDecor
+10.2.4.60
+{"Hostname":"MantleDecor"}
+`Backlog hostname MantleDecor; DeviceName MantleDecor; topic MantleDecor; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/MantleDecor/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0; sensorretain 1;`
+
+#NewMantleDecor
+backlog seriallog 0; setoption19 0; hostname MantleDecor; DeviceName MantleDecor; topic MantleDecor; friendlyname Mantle Decor; switchmode 3; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1; Timer1 {"Arm":1,"Mode":0,"Time":"07:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":1}; Timer2 {"Arm":1,"Mode":0,"Time":"23:00","Window":0,"Days":"1111111","Repeat":1,"Output":1,"Action":0}; Timers 1; grouptopic AllStandard; grouptopic2 InteriorDecorations; 
+
+
+#OldDadsLamp
+10.2.4.46
+`Backlog hostname DadsLamp; DeviceName DadsLamp; topic DadsLamp; fulltopic homeassistant/%prefix%/%topic%/; grouptopic AllStandard; grouptopic2 InteriorLights; timedst 0; timestd 0; timezone 99; switchmode 3; latitude 40.297297; longitude -111.878340; Rule1 on Switch1#state do Publish homeassistant/cmnd/DadsLamp/POWER %value% endon; Rule1 1; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 0;`
+
+10.2.4.117
+backlog seriallog 0; setoption19 0; hostname DadsLamp; DeviceName DadsLamp; topic DadsLamp; friendlyname Dads Lamp; switchmode 3; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1; grouptopic 0;
+
+#NewDadsFan
+10.2.4.113
+backlog seriallog 0; setoption19 0; hostname DadsFan; DeviceName DadsFan; topic DadsFan; friendlyname Dads Fan; switchmode 3; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"Sonoff Basic","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1; grouptopic 0;
+
+
+backlog seriallog 0; setoption19 0; hostname Spare1; DeviceName Spare1; topic Spare1; friendlyname Spare1; switchmode 3; fulltopic homeassistant/%prefix%/%topic%/; module 0; grouptopic 0;
+
+
+10.2.4.112
+backlog seriallog 0; setoption19 0; hostname RetroPi; DeviceName RetroPi; topic RetroPi; friendlyname Retro Pi; grouptopic 0; switchmode 3; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"Sonoff+I2C","GPIO":[17,5,0,6,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1;
+
+
+#NewDadsWorkspace
+10.2.4.70
+Backlog timers 0; timer1 0; timer2 0; EnergyReset3 0; hostname DadsWorkspace; DeviceName DadsWorkspace; friendlyname Dads Workspace; topic DadsWorkspace; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; switchmode 3; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 1; sensorretain 1; setoption19 1; Rule1 on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon; Rule1 1;
+
+#NewBasementWorkspaceMonitor
+10.2.4.109
+backlog hostname WorkspaceMonitor; DeviceName WorkspaceMonitor; topic WorkspaceMonitor; friendlyname Workspace Monitor; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"WemoD1Mini","GPIO":[255,255,255,255,255,255,255,255,255,255,255,255,255],"FLAG":15,"BASE":18}; module 0; setoption19 1;
+
+
+InternetRouter
+10.2.4.118
+backlog seriallog 0; setoption19 0; hostname InternetRouter; DeviceName InternetRouter; topic InternetRouter; friendlyname Internet Router; grouptopic2 0; grouptopic 0; switchmode 3; fulltopic homeassistant/%prefix%/%topic%/; template {"NAME":"Sonoff+I2C","GPIO":[17,5,0,6,0,0,0,0,21,56,0,0,0],"FLAG":0,"BASE":1}; module 0; setoption19 1;
+
+#NewNetworkEquipment
+10.2.4.46
+Backlog timers 0; timer1 0; timer2 0; EnergyReset3 0; hostname NetworkEquipment; DeviceName NetworkEquipment; friendlyname Network Equipment; topic NetworkEquipment; fulltopic homeassistant/%prefix%/%topic%/; grouptopic 0; switchmode 3; Template {"NAME":"W-US002S","GPIO":[0,82,0,52,133,132,0,0,130,53,21,0,0],"FLAG":0,"BASE":45}; module 0; powerretain 1; sensorretain 1; setoption19 1; Rule1 on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon; Rule1 1;
+
+
+######!!!!!REMEMBER TO RESET TIMERS _AND_ COUNTERS ON W-US002S MODULES!!!!!######
+
+for n in `echo "10.2.4.69 10.2.4.63 10.2.4.38 10.2.4.59 10.2.4.58 10.2.4.61"`
+do
+  curl "http://$n/cm?cmnd=EnergyReset3%200"
+done
+
+
+for n in `echo "10.2.4.69 10.2.4.63 10.2.4.38 10.2.4.59 10.2.4.58 10.2.4.61 10.2.4.100 10.2.4.111 10.2.4.99 10.2.4.105 10.2.4.98 10.2.4.101 10.2.4.102 10.2.4.104 10.2.4.103"`
+do
+    echo -e '\r\r\r'
+    curl "http://$n/cm?cmnd=setoption19%200"
+    echo -e '\r\r\r'
+    echo -e "Sleep 15\r"
+    sleep 15
+    echo -e "Starting Standard for $n\r"
+    curl "http://$n/cm?cmnd=setoption19%201"
+    echo -e '\r\r\r'
+done
+
+
+
+for n in `cat  ./iplist.txt`
+do
+    curl "http://$n/cm?cmnd=setoption19%200"
+    echo -e '\r'
+    curl "http://$n/cm?cmnd=setoption19%201"
+    echo -e '\r\r'
+done
+
+
+
+for n in `echo "10.2.4.105 10.2.4.111 10.2.4.116 10.2.4.100 10.2.4.101 10.2.4.99 10.2.4.98 10.2.4.93"`
+do
+  curl "http://$n/cm?cmnd=backlog%20grouptopic%20AllStandard%3B%20grouptopic2%20InteriorDecorations%3B%20Timer1%20%7B%22Enable%22%3A1%2C%22Mode%22%3A0%2C%22Time%22%3A%2207%3A00%22%2C%22Window%22%3A0%2C%22Days%22%3A%221111111%22%2C%22Repeat%22%3A1%2C%22Output%22%3A1%2C%22Action%22%3A1%7D%3B%20Timer2%20%7B%22Enable%22%3A1%2C%22Mode%22%3A0%2C%22Time%22%3A%2223%3A00%22%2C%22Window%22%3A0%2C%22Days%22%3A%221111111%22%2C%22Repeat%22%3A1%2C%22Output%22%3A1%2C%22Action%22%3A0%7D%3B%20Timers%201%3B%20Power%201%3B"
+done
+
+for n in `echo "10.2.4.105 10.2.4.111 10.2.4.116 10.2.4.100 10.2.4.101 10.2.4.99 10.2.4.98 10.2.4.93"`
+do
+    curl "http://$n/cm?cmnd=timers" -s | jq .
+done
