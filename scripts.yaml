@@ -62,6 +62,62 @@ maintv_poweroff:
       payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FDFE01"}'
       topic: homeassistant/cmnd/MediaRemote/IRSend
     service: mqtt.publish
+maintv_menu:
+  alias: MainTV_Menu
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD01FE"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_arrowup:
+  alias: MainTV_ArrowUp
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD41BE"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_arrowleft:
+  alias: MainTV_ArrowLeft
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FDB847"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_arrowright:
+  alias: MainTV_ArrowRight
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD9867"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_arrowdown:
+  alias: MainTV_ArrowDown
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FDC13E"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_enter:
+  alias: MainTV_Enter
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD916E"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_exit:
+  alias: MainTV_Exit
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD1AE5"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_mute:
+  alias: MainTV_Mute
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD08F7"}'
+      topic: homeassistant/cmnd/MediaRemote/IRSend
+    service: mqtt.publish
 maintv_selectsoundbarinput:
   alias: MainTV_SelectSoundBarInput
   sequence:
