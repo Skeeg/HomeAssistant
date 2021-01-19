@@ -14,13 +14,18 @@ master_movies_script:
 bedtime_script:
   alias: Bedtime Script
   sequence:
+  - data: {}
+    entity_id: light.main_dimmer
+    service: light.turn_off
+  - service: script.maintv_poweroff
+    data: {}
   - data:
       payload: 'OFF'
       topic: homeassistant/cmnd/AllStandard/POWER
     service: mqtt.publish
-  - data: {}
-    entity_id: light.main_dimmer
-    service: light.turn_off
+  - service: script.soundbar_poweroff
+    data: {}
+  mode: single
 austins_alarm_script:
   alias: Austin Alarm
   sequence:
