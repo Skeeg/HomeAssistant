@@ -87,9 +87,9 @@ homekit:
       - switch.network_equipment
       - switch.deep_freeze
       - switch.laptop_charger
-      - light.austins_room
-      - light.lilys_lights
-      - light.main_dimmer
+      # - light.austins_room
+      # - light.lilys_lights
+      # - light.main_dimmer
 
 mqtt:
   broker: 10.2.2.4
