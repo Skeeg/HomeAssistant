@@ -87,6 +87,7 @@ homekit:
       - switch.network_equipment
       - switch.deep_freeze
       - switch.laptop_charger
+      - switch.study_fan
       # - light.austins_room
       # - light.lilys_lights
       # - light.main_dimmer
