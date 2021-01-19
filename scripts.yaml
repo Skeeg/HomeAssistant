@@ -19,12 +19,13 @@ bedtime_script:
     service: light.turn_off
   - service: script.maintv_poweroff
     data: {}
+  - service: script.soundbar_poweroff
+    data: {}
+  - delay: 00:00:05
   - data:
       payload: 'OFF'
       topic: homeassistant/cmnd/AllStandard/POWER
     service: mqtt.publish
-  - service: script.soundbar_poweroff
-    data: {}
   mode: single
 austins_alarm_script:
   alias: Austin Alarm
