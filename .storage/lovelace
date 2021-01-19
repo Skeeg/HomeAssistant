@@ -31,14 +31,32 @@
                                 },
                                 {
                                     "entity": "switch.master_tv"
-                                },
-                                {
-                                    "entity": "switch.dads_fan"
                                 }
                             ],
                             "show_header_toggle": false,
                             "title": "Comfort",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "switch.austins_fan"
+                                },
+                                {
+                                    "entity": "switch.dads_fan"
+                                },
+                                {
+                                    "entity": "switch.lilys_fan"
+                                },
+                                {
+                                    "entity": "switch.basement_fan"
+                                }
+                            ],
+                            "title": "Bedroom Fans",
+                            "show_header_toggle": false,
+                            "state_color": true
                         },
                         {
                             "entities": [
@@ -67,6 +85,9 @@
                                     "entity": "switch.christmas_railing"
                                 },
                                 {
+                                    "entity": "switch.kitchen_table"
+                                },
+                                {
                                     "entity": "switch.end_table"
                                 },
                                 {
@@ -84,7 +105,8 @@
                             ],
                             "show_header_toggle": true,
                             "title": "Decorations",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         },
                         {
                             "entities": [
@@ -109,7 +131,8 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Bathrooms",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         },
                         {
                             "entities": [
@@ -154,7 +177,8 @@
                                     "entity": "cover.3rd_car_garage"
                                 }
                             ],
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         },
                         {
                             "entities": [
@@ -164,7 +188,8 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Safety",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         }
                     ],
                     "path": "default_view",
@@ -333,112 +358,121 @@
                             ]
                         },
                         {
-                            "type": "vertical-stack",
-                            "cards": [
+                            "type": "conditional",
+                            "conditions": [
                                 {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.maintv_menu"
-                                            },
-                                            "name": "TV Menu",
-                                            "icon": "mdi:menu",
-                                            "icon_height": "50px",
-                                            "entity": "script.maintv_menu"
-                                        },
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.maintv_arrowup"
-                                            },
-                                            "name": "TV Exit",
-                                            "icon": "mdi:arrow-up-bold",
-                                            "entity": "script.maintv_arrowup",
-                                            "icon_height": "50px"
-                                        },
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.maintv_enter"
-                                            },
-                                            "name": "TV Enter",
-                                            "icon": "mdi:camera-control",
-                                            "entity": "script.maintv_enter",
-                                            "icon_height": "50px"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.maintv_arrowleft"
-                                            },
-                                            "name": "TV Left",
-                                            "icon": "mdi:arrow-left-bold",
-                                            "entity": "script.maintv_arrowleft",
-                                            "icon_height": "50px"
-                                        },
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.maintv_arrowdown"
-                                            },
-                                            "name": "TV Down",
-                                            "icon": "mdi:arrow-down-bold",
-                                            "entity": "script.maintv_arrowdown",
-                                            "icon_height": "50px"
-                                        },
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.maintv_arrowright"
-                                            },
-                                            "name": "TV Right",
-                                            "icon": "mdi:arrow-right-bold",
-                                            "entity": "script.maintv_arrowright",
-                                            "icon_height": "50px"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.maintv_exit"
-                                            },
-                                            "name": "TV Exit",
-                                            "icon": "mdi:keyboard-esc",
-                                            "entity": "script.maintv_exit",
-                                            "icon_height": "50px"
-                                        },
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.maintv_mute"
-                                            },
-                                            "name": "TV Mute",
-                                            "icon": "mdi:volume-mute",
-                                            "entity": "script.maintv_mute",
-                                            "icon_height": "50px"
-                                        }
-                                    ]
+                                    "entity": "switch.retro_pi",
+                                    "state_not": "off"
                                 }
-                            ]
+                            ],
+                            "card": {
+                                "type": "vertical-stack",
+                                "cards": [
+                                    {
+                                        "type": "horizontal-stack",
+                                        "cards": [
+                                            {
+                                                "type": "entity-button",
+                                                "tap_action": {
+                                                    "action": "call-service",
+                                                    "service": "script.maintv_menu"
+                                                },
+                                                "name": "TV Menu",
+                                                "icon": "mdi:menu",
+                                                "icon_height": "50px",
+                                                "entity": "script.maintv_menu"
+                                            },
+                                            {
+                                                "type": "entity-button",
+                                                "tap_action": {
+                                                    "action": "call-service",
+                                                    "service": "script.maintv_arrowup"
+                                                },
+                                                "name": "TV Exit",
+                                                "icon": "mdi:arrow-up-bold",
+                                                "entity": "script.maintv_arrowup",
+                                                "icon_height": "50px"
+                                            },
+                                            {
+                                                "type": "entity-button",
+                                                "tap_action": {
+                                                    "action": "call-service",
+                                                    "service": "script.maintv_enter"
+                                                },
+                                                "name": "TV Enter",
+                                                "icon": "mdi:camera-control",
+                                                "entity": "script.maintv_enter",
+                                                "icon_height": "50px"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "horizontal-stack",
+                                        "cards": [
+                                            {
+                                                "type": "entity-button",
+                                                "tap_action": {
+                                                    "action": "call-service",
+                                                    "service": "script.maintv_arrowleft"
+                                                },
+                                                "name": "TV Left",
+                                                "icon": "mdi:arrow-left-bold",
+                                                "entity": "script.maintv_arrowleft",
+                                                "icon_height": "50px"
+                                            },
+                                            {
+                                                "type": "entity-button",
+                                                "tap_action": {
+                                                    "action": "call-service",
+                                                    "service": "script.maintv_arrowdown"
+                                                },
+                                                "name": "TV Down",
+                                                "icon": "mdi:arrow-down-bold",
+                                                "entity": "script.maintv_arrowdown",
+                                                "icon_height": "50px"
+                                            },
+                                            {
+                                                "type": "entity-button",
+                                                "tap_action": {
+                                                    "action": "call-service",
+                                                    "service": "script.maintv_arrowright"
+                                                },
+                                                "name": "TV Right",
+                                                "icon": "mdi:arrow-right-bold",
+                                                "entity": "script.maintv_arrowright",
+                                                "icon_height": "50px"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "horizontal-stack",
+                                        "cards": [
+                                            {
+                                                "type": "entity-button",
+                                                "tap_action": {
+                                                    "action": "call-service",
+                                                    "service": "script.maintv_exit"
+                                                },
+                                                "name": "TV Exit",
+                                                "icon": "mdi:keyboard-esc",
+                                                "entity": "script.maintv_exit",
+                                                "icon_height": "50px"
+                                            },
+                                            {
+                                                "type": "entity-button",
+                                                "tap_action": {
+                                                    "action": "call-service",
+                                                    "service": "script.maintv_mute"
+                                                },
+                                                "name": "TV Mute",
+                                                "icon": "mdi:volume-mute",
+                                                "entity": "script.maintv_mute",
+                                                "icon_height": "50px"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
                         }
                     ]
                 },
@@ -449,11 +483,18 @@
                             "entities": [
                                 {
                                     "entity": "switch.basement_lights"
+                                },
+                                {
+                                    "entity": "switch.basement_lamp"
+                                },
+                                {
+                                    "entity": "switch.lava_lamp"
                                 }
                             ],
                             "show_header_toggle": false,
                             "title": "Downstairs Lights",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         },
                         {
                             "entities": [
@@ -481,7 +522,8 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Upstairs Lights",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         },
                         {
                             "entities": [
@@ -525,7 +567,8 @@
                             "show_header_toggle": false,
                             "theme": "default",
                             "title": "Main Floor Lights",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         },
                         {
                             "entities": [
@@ -547,7 +590,8 @@
                             ],
                             "show_header_toggle": true,
                             "title": "Exterior Lights",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         },
                         {
                             "entities": [
@@ -560,7 +604,8 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Garage Lights",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         }
                     ],
                     "path": "lighting",
@@ -737,16 +782,16 @@
                     "title": "Sensors"
                 },
                 {
+                    "panel": true,
+                    "path": "weather",
+                    "title": "Weather",
                     "badges": [],
                     "cards": [
                         {
                             "entity": "weather.home",
                             "type": "weather-forecast"
                         }
-                    ],
-                    "panel": true,
-                    "path": "weather",
-                    "title": "Weather"
+                    ]
                 }
             ]
         }
