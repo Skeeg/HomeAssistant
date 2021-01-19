@@ -71,11 +71,21 @@ homekit:
       - switch.computer_media
       - switch.control1_austin_hall
       - switch.control1_entry_cans
-      - switch.control2_entry_cans
+      - switch.control1_garage_lights
+      - switch.control1_kitchen_cans
+      - switch.control1_kitchen_sink
       - switch.control1_lily_hall
-      - switch.control2_lily_hall
       - switch.control1_main_hall
+      - switch.control2_entry_cans
+      - switch.control2_lily_hall
       - switch.control2_main_hall
+      - switch.hot_tub
+      - switch.internet_router
+      - switch.kitchen_fridge
+      - switch.garage_fridge
+      - switch.garage_freezer
+      - switch.network_equipment
+      - switch.deep_freeze
 
 mqtt:
   broker: 10.2.2.4
