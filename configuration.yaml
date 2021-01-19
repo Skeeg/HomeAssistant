@@ -66,10 +66,16 @@ homekit:
       - light
       - switch
     exclude_entities:
-      - switch.computer_server
       - switch.computer_austin
       - switch.computer_lily
       - switch.computer_media
+      - switch.control1_austin_hall
+      - switch.control1_entry_cans
+      - switch.control2_entry_cans
+      - switch.control1_lily_hall
+      - switch.control2_lily_hall
+      - switch.control1_main_hall
+      - switch.control2_main_hall
 
 mqtt:
   broker: 10.2.2.4
@@ -96,8 +102,8 @@ timer:
   kids_bathroom_fan:
     duration: '00:20:00'
   dads_lamp:
-    duration: '01:00:00'
+    duration: '02:00:00'
   outdoor_decorations:
-    duration: '06:00:00'
+    duration: '05:00:00'
   internet_router_restoration:
     duration: '00:00:15'
