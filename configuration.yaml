@@ -86,6 +86,7 @@ homekit:
       - switch.garage_freezer
       - switch.network_equipment
       - switch.deep_freeze
+      - switch.laptop_charger
 
 mqtt:
   broker: 10.2.2.4
