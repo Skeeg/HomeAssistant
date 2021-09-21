@@ -77,7 +77,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.14": {
@@ -157,7 +157,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.16": {
@@ -557,7 +557,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.21": {
@@ -717,7 +717,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.23": {
@@ -877,7 +877,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.26": {
@@ -1677,7 +1677,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.36": {
@@ -1837,7 +1837,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.38": {
@@ -1953,7 +1953,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -2077,7 +2077,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.42": {
@@ -2157,7 +2157,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.43": {
@@ -2317,7 +2317,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.45": {
@@ -2637,7 +2637,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.50": {
@@ -2717,7 +2717,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.51": {
@@ -2797,7 +2797,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.52": {
@@ -2957,7 +2957,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.54": {
@@ -3037,87 +3037,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
-      "Rule": "OFF"
-    },
-    "10.2.4.55": {
-      "Hostname": "Unused2",
-      "DeviceName": "Unused2",
-      "FriendlyName1": "Unused2",
-      "Topic": "Unused2",
-      "SwitchMode": 3,
-      "PowerRetain": "ON",
-      "SensorRetain": "ON",
-      "SetOption19": "OFF",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "W-US002S",
-        "GPIO": [
-          0,
-          192,
-          0,
-          288,
-          2688,
-          2656,
-          0,
-          0,
-          2592,
-          289,
-          224,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 45
-      },
-      "Module": 0,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.57": {
@@ -3197,7 +3117,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.58": {
@@ -3760,166 +3680,6 @@
       "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
-    "10.2.4.65": {
-      "Hostname": "Unused4",
-      "DeviceName": "Unused4",
-      "FriendlyName1": "Unused4",
-      "Topic": "Unused4",
-      "SwitchMode": 3,
-      "PowerRetain": "ON",
-      "SensorRetain": "ON",
-      "SetOption19": "OFF",
-      "SerialLog": 2,
-      "Template": {
-        "NAME": "W-US002S",
-        "GPIO": [
-          0,
-          192,
-          0,
-          288,
-          2688,
-          2656,
-          0,
-          0,
-          2592,
-          289,
-          224,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 45
-      },
-      "Module": 0,
-      "GroupTopic1": "InteriorDecorations",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/Spare1/POWER %value% endon",
-      "Rule": "ON"
-    },
-    "10.2.4.66": {
-      "Hostname": "NetworkEquipment",
-      "DeviceName": "NetworkEquipment",
-      "FriendlyName1": "Network Equipment",
-      "Topic": "NetworkEquipment",
-      "SwitchMode": 3,
-      "PowerRetain": "ON",
-      "SensorRetain": "ON",
-      "SetOption19": "ON",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "W-US002S",
-        "GPIO": [
-          0,
-          192,
-          0,
-          288,
-          2688,
-          2656,
-          0,
-          0,
-          2592,
-          289,
-          224,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 45
-      },
-      "Module": 0,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
-      "Rule": "ON"
-    },
     "10.2.4.67": {
       "Hostname": "ExteriorSide",
       "DeviceName": "ExteriorSide",
@@ -3997,7 +3757,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.68": {
@@ -4397,7 +4157,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.73": {
@@ -4477,7 +4237,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.83": {
@@ -4557,7 +4317,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.89": {
@@ -4880,86 +4640,6 @@
       "Rule1": "on time#minute|1 do Power 1 endon",
       "Rule": "ON"
     },
-    "10.2.4.93": {
-      "Hostname": "ChristmasRailing",
-      "DeviceName": "ChristmasRailing",
-      "FriendlyName1": "Christmas Railing",
-      "Topic": "ChristmasRailing",
-      "SwitchMode": 0,
-      "PowerRetain": "OFF",
-      "SensorRetain": "OFF",
-      "SetOption19": "ON",
-      "SerialLog": 2,
-      "Template": {
-        "NAME": "Sonoff Basic",
-        "GPIO": [
-          32,
-          1,
-          1,
-          1,
-          1,
-          0,
-          0,
-          0,
-          224,
-          320,
-          1,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 1
-      },
-      "Module": 0,
-      "GroupTopic1": "AllStandard",
-      "GroupTopic2": "InteriorDecorations",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 1,
-        "Mode": 0,
-        "Time": "07:00",
-        "Window": 0,
-        "Days": "1111111",
-        "Repeat": 1,
-        "Output": 1,
-        "Action": 1
-      },
-      "Timer2": {
-        "Enable": 1,
-        "Mode": 0,
-        "Time": "23:00",
-        "Window": 0,
-        "Days": "1111111",
-        "Repeat": 1,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "ON",
-      "Rule1": "",
-      "Rule": "OFF"
-    },
     "10.2.4.96": {
       "Hostname": "MediaRemote",
       "DeviceName": "MediaRemote",
@@ -5003,7 +4683,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer2": {
         "Enable": 0,
@@ -5012,7 +4692,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer3": {
         "Enable": 0,
@@ -5021,7 +4701,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer4": {
         "Enable": 0,
@@ -5030,7 +4710,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timers": "OFF",
       "Rule1": "",
@@ -5041,86 +4721,6 @@
       "DeviceName": "BuffetDecor",
       "FriendlyName1": "Buffet Decor",
       "Topic": "BuffetDecor",
-      "SwitchMode": 3,
-      "PowerRetain": "OFF",
-      "SensorRetain": "OFF",
-      "SetOption19": "ON",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "Sonoff Basic",
-        "GPIO": [
-          32,
-          1,
-          1,
-          1,
-          1,
-          0,
-          0,
-          0,
-          224,
-          320,
-          1,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 1
-      },
-      "Module": 0,
-      "GroupTopic1": "AllStandard",
-      "GroupTopic2": "InteriorDecorations",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 1,
-        "Mode": 0,
-        "Time": "07:00",
-        "Window": 0,
-        "Days": "1111111",
-        "Repeat": 1,
-        "Output": 1,
-        "Action": 1
-      },
-      "Timer2": {
-        "Enable": 1,
-        "Mode": 0,
-        "Time": "23:00",
-        "Window": 0,
-        "Days": "1111111",
-        "Repeat": 1,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "ON",
-      "Rule1": "",
-      "Rule": "OFF"
-    },
-    "10.2.4.99": {
-      "Hostname": "EntryDecorations",
-      "DeviceName": "EntryDecorations",
-      "FriendlyName1": "Entry Decorations",
-      "Topic": "EntryDecorations",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6279,7 +5879,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer2": {
         "Enable": 0,
@@ -6288,7 +5888,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer3": {
         "Enable": 0,
@@ -6297,7 +5897,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer4": {
         "Enable": 0,
@@ -6306,7 +5906,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timers": "OFF",
       "Rule1": "",
@@ -6792,86 +6392,6 @@
       "Rule1": "",
       "Rule": "OFF"
     },
-    "10.2.4.130": {
-      "Hostname": "Unused5",
-      "DeviceName": "Unused5",
-      "FriendlyName1": "Unused5",
-      "Topic": "Unused5",
-      "SwitchMode": 3,
-      "PowerRetain": "ON",
-      "SensorRetain": "ON",
-      "SetOption19": "OFF",
-      "SerialLog": 2,
-      "Template": {
-        "NAME": "W-US002S",
-        "GPIO": [
-          0,
-          192,
-          0,
-          288,
-          2688,
-          2656,
-          0,
-          0,
-          2592,
-          289,
-          224,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 45
-      },
-      "Module": 0,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "",
-      "Rule": "OFF"
-    },
     "10.2.4.131": {
       "Hostname": "%s-%04d",
       "DeviceName": "Lilys_Vigil",
@@ -6949,246 +6469,6 @@
         "Action": 0
       },
       "Timers": "ON",
-      "Rule1": "",
-      "Rule": "OFF"
-    },
-    "10.2.4.138": {
-      "Hostname": "%s-%04d",
-      "DeviceName": "Tasmota",
-      "FriendlyName1": "Tasmota",
-      "Topic": "tasmota_%06X",
-      "SwitchMode": 0,
-      "PowerRetain": "OFF",
-      "SensorRetain": "OFF",
-      "SetOption19": "OFF",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "Generic",
-        "GPIO": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1
-        ],
-        "FLAG": 0,
-        "BASE": 18
-      },
-      "Module": 1,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "",
-      "Rule": "OFF"
-    },
-    "10.2.4.139": {
-      "Hostname": "%s-%04d",
-      "DeviceName": "Tasmota",
-      "FriendlyName1": "Tasmota",
-      "Topic": "tasmota_%06X",
-      "SwitchMode": 0,
-      "PowerRetain": "OFF",
-      "SensorRetain": "OFF",
-      "SetOption19": "OFF",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "Generic",
-        "GPIO": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1
-        ],
-        "FLAG": 0,
-        "BASE": 18
-      },
-      "Module": 1,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "",
-      "Rule": "OFF"
-    },
-    "10.2.4.112": {
-      "Hostname": "RetroPi",
-      "DeviceName": "RetroPi",
-      "FriendlyName1": "Retro Pi",
-      "Topic": "RetroPi",
-      "SwitchMode": 3,
-      "PowerRetain": "OFF",
-      "SensorRetain": "OFF",
-      "SetOption19": "ON",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "Sonoff+I2C",
-        "GPIO": [
-          32,
-          608,
-          0,
-          640,
-          0,
-          0,
-          0,
-          0,
-          224,
-          320,
-          0,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 1
-      },
-      "Module": 0,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
       "Rule1": "",
       "Rule": "OFF"
     }
