@@ -5,6 +5,7 @@
       "DeviceName": "FamilyLights",
       "FriendlyName1": "Family Lights",
       "Topic": "FamilyLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -77,7 +78,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.14": {
@@ -85,6 +86,7 @@
       "DeviceName": "FamilyFan",
       "FriendlyName1": "Family Fan",
       "Topic": "FamilyFan",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -157,7 +159,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.16": {
@@ -165,6 +167,7 @@
       "DeviceName": "LilyHall",
       "FriendlyName1": "Lilys Hall Lights",
       "Topic": "LilyHall",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -237,7 +240,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/LilyHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/LilyHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.17": {
@@ -245,6 +248,7 @@
       "DeviceName": "EntryCans_C1",
       "FriendlyName1": "Control1 - Entry Cans",
       "Topic": "EntryCans_C1",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -317,7 +321,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/EntryCansGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/EntryCansGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.18": {
@@ -325,6 +329,7 @@
       "DeviceName": "EntryCans",
       "FriendlyName1": "Entry Can Lights",
       "Topic": "EntryCans",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -397,7 +402,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/EntryCansGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/EntryCansGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.19": {
@@ -405,6 +410,7 @@
       "DeviceName": "EntryCans_C2",
       "FriendlyName1": "Control2 - Entry Cans",
       "Topic": "EntryCans_C2",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -477,7 +483,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/EntryCansGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/EntryCansGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.20": {
@@ -485,6 +491,7 @@
       "DeviceName": "KidsSink",
       "FriendlyName1": "Kids Sink Lights",
       "Topic": "KidsSink",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -557,7 +564,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.21": {
@@ -565,6 +572,7 @@
       "DeviceName": "AustinHall",
       "FriendlyName1": "Austins Hall Lights",
       "Topic": "AustinHall",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -637,7 +645,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/AustinHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/AustinHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.22": {
@@ -645,6 +653,7 @@
       "DeviceName": "DadsLights",
       "FriendlyName1": "Dads Lights",
       "Topic": "DadsLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -717,7 +726,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.23": {
@@ -725,6 +734,7 @@
       "DeviceName": "LilyHall_C1",
       "FriendlyName1": "Control1 - Lily Hall",
       "Topic": "LilyHall_C1",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -797,7 +807,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/LilyHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/LilyHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.24": {
@@ -805,6 +815,7 @@
       "DeviceName": "PorchLights",
       "FriendlyName1": "Porch Lights",
       "Topic": "PorchLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -877,7 +888,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.26": {
@@ -885,6 +896,7 @@
       "DeviceName": "AustinHall_C1",
       "FriendlyName1": "Control1 - Austin Hall",
       "Topic": "AustinHall_C1",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -957,7 +969,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/AustinHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/AustinHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.27": {
@@ -965,6 +977,7 @@
       "DeviceName": "LilyHall_C2",
       "FriendlyName1": "Control2 - Lily Hall",
       "Topic": "LilyHall_C2",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -1037,7 +1050,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/LilyHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/LilyHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.28": {
@@ -1045,6 +1058,7 @@
       "DeviceName": "MainHall_C1",
       "FriendlyName1": "Control1 - Main Hall",
       "Topic": "MainHall_C1",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -1117,7 +1131,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/MainHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/MainHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.29": {
@@ -1125,6 +1139,7 @@
       "DeviceName": "MainHall",
       "FriendlyName1": "Main Hall Lights",
       "Topic": "MainHall",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -1197,7 +1212,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/MainHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/MainHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.30": {
@@ -1205,6 +1220,7 @@
       "DeviceName": "MainHall_C2",
       "FriendlyName1": "Control2 - Main Hall",
       "Topic": "MainHall_C2",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -1277,7 +1293,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/MainHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/MainHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.31": {
@@ -1285,6 +1301,7 @@
       "DeviceName": "KitchenCans",
       "FriendlyName1": "Kitchen Can Lights",
       "Topic": "KitchenCans",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -1357,7 +1374,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/KitchenCansGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/KitchenCansGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.32": {
@@ -1365,6 +1382,7 @@
       "DeviceName": "KitchenSink",
       "FriendlyName1": "Kitchen Sink Lights",
       "Topic": "KitchenSink",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -1437,7 +1455,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/KitchenSinkGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/KitchenSinkGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.33": {
@@ -1445,6 +1463,7 @@
       "DeviceName": "KitchenSink_C1",
       "FriendlyName1": "Control1 - Kitchen Sink",
       "Topic": "KitchenSink_C1",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -1517,7 +1536,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/KitchenSinkGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/KitchenSinkGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.34": {
@@ -1525,6 +1544,7 @@
       "DeviceName": "KitchenCans_C1",
       "FriendlyName1": "Control1 - Kitchen Cans",
       "Topic": "KitchenCans_C1",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -1597,7 +1617,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/KitchenCansGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/KitchenCansGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.35": {
@@ -1605,6 +1625,7 @@
       "DeviceName": "PowderHall",
       "FriendlyName1": "Powder Hall Lights",
       "Topic": "PowderHall",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -1677,7 +1698,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.36": {
@@ -1685,6 +1706,7 @@
       "DeviceName": "StudyLights",
       "FriendlyName1": "Study Lights",
       "Topic": "StudyLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -1757,7 +1779,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/StudyLightsGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/StudyLightsGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.37": {
@@ -1765,6 +1787,7 @@
       "DeviceName": "LibraryLights",
       "FriendlyName1": "Library Lights",
       "Topic": "LibraryLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -1837,7 +1860,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.38": {
@@ -1845,6 +1868,7 @@
       "DeviceName": "ComputerAustin",
       "FriendlyName1": "Computer Austin",
       "Topic": "ComputerAustin",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -1917,7 +1941,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.40": {
@@ -1925,6 +1949,7 @@
       "DeviceName": "BasementFridge",
       "FriendlyName1": "Basement Fridge",
       "Topic": "BasementFridge",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -1953,7 +1978,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -1997,7 +2022,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.41": {
@@ -2005,6 +2030,7 @@
       "DeviceName": "EveLights",
       "FriendlyName1": "Eve Lights",
       "Topic": "EveLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -2077,7 +2103,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.42": {
@@ -2085,6 +2111,7 @@
       "DeviceName": "PowderFan",
       "FriendlyName1": "Powder Fan",
       "Topic": "PowderFan",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -2157,7 +2184,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.43": {
@@ -2165,6 +2192,7 @@
       "DeviceName": "StudyFan",
       "FriendlyName1": "Study Fan",
       "Topic": "StudyFan",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -2237,7 +2265,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/StudyLightsGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/StudyLightsGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.44": {
@@ -2245,6 +2273,7 @@
       "DeviceName": "PowderLights",
       "FriendlyName1": "Powder Lights",
       "Topic": "PowderLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -2317,7 +2346,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.45": {
@@ -2325,6 +2354,7 @@
       "DeviceName": "GarageFreezer",
       "FriendlyName1": "Garage Freezer",
       "Topic": "GarageFreezer",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -2397,7 +2427,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.46": {
@@ -2405,6 +2435,7 @@
       "DeviceName": "LaptopCharger",
       "FriendlyName1": "Laptop Charger",
       "Topic": "LaptopCharger",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -2485,6 +2516,7 @@
       "DeviceName": "ChristmasPackage",
       "FriendlyName1": "Christmas Package",
       "Topic": "ChristmasPackage",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -2557,7 +2589,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.48": {
@@ -2565,6 +2597,7 @@
       "DeviceName": "BasementLights",
       "FriendlyName1": "Basement Lights",
       "Topic": "BasementLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -2637,7 +2670,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.50": {
@@ -2645,6 +2678,7 @@
       "DeviceName": "DiningLights",
       "FriendlyName1": "Dining Lights",
       "Topic": "DiningLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -2717,7 +2751,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.51": {
@@ -2725,6 +2759,7 @@
       "DeviceName": "PatioLights",
       "FriendlyName1": "Patio Lights",
       "Topic": "PatioLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -2797,7 +2832,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.52": {
@@ -2805,6 +2840,7 @@
       "DeviceName": "GarageLights",
       "FriendlyName1": "Garage Lights",
       "Topic": "GarageLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -2877,7 +2913,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/GarageLightsGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/GarageLightsGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.53": {
@@ -2885,6 +2921,7 @@
       "DeviceName": "ExteriorGarageLights",
       "FriendlyName1": "Exterior Garage Lights",
       "Topic": "ExteriorGarageLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -2957,7 +2994,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.54": {
@@ -2965,6 +3002,7 @@
       "DeviceName": "KidsBathroomFan",
       "FriendlyName1": "Kids Bathroom Fan",
       "Topic": "KidsBathroomFan",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -3037,7 +3075,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.55": {
@@ -3045,10 +3083,92 @@
       "DeviceName": "Unused2",
       "FriendlyName1": "Unused2",
       "Topic": "Unused2",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
       "SetOption19": "OFF",
+      "SerialLog": 0,
+      "Template": {
+        "NAME": "W-US002S",
+        "GPIO": [
+          0,
+          192,
+          0,
+          288,
+          2688,
+          2656,
+          0,
+          0,
+          2592,
+          289,
+          224,
+          0,
+          0,
+          0
+        ],
+        "FLAG": 0,
+        "BASE": 45
+      },
+      "Module": 0,
+      "GroupTopic1": "tasmotas",
+      "GroupTopic2": "",
+      "GroupTopic3": "",
+      "GroupTopic4": "",
+      "Timer1": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer2": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer3": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer4": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timers": "OFF",
+      "Rule1": "",
+      "Rule": "OFF"
+    },
+    "10.2.4.56": {
+      "Hostname": "GroundDecor",
+      "DeviceName": "GroundDecor",
+      "FriendlyName1": "Ground Decor",
+      "Topic": "GroundDecor",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
+      "PowerRetain": "ON",
+      "SensorRetain": "ON",
+      "SetOption19": "ON",
       "SerialLog": 0,
       "Template": {
         "NAME": "W-US002S",
@@ -3125,6 +3245,7 @@
       "DeviceName": "3dPrinter",
       "FriendlyName1": "3d Printer",
       "Topic": "3dPrinter",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3197,7 +3318,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.58": {
@@ -3205,6 +3326,7 @@
       "DeviceName": "ComputerLily",
       "FriendlyName1": "Computer Lily",
       "Topic": "ComputerLily",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3277,7 +3399,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.59": {
@@ -3285,6 +3407,7 @@
       "DeviceName": "MainTV",
       "FriendlyName1": "Main TV",
       "Topic": "MainTV",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3365,6 +3488,7 @@
       "DeviceName": "DadsWorkspace",
       "FriendlyName1": "Dads Workspace",
       "Topic": "DadsWorkspace",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3437,7 +3561,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.61": {
@@ -3445,6 +3569,7 @@
       "DeviceName": "MasterTV",
       "FriendlyName1": "Master TV",
       "Topic": "MasterTV",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3525,6 +3650,7 @@
       "DeviceName": "TopChristmas",
       "FriendlyName1": "Top Christmas",
       "Topic": "TopChristmas",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3605,6 +3731,7 @@
       "DeviceName": "ComputerMedia",
       "FriendlyName1": "Computer Media",
       "Topic": "ComputerMedia",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3677,7 +3804,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.64": {
@@ -3685,6 +3812,7 @@
       "DeviceName": "ServerDisks",
       "FriendlyName1": "Server Disks",
       "Topic": "ServerDisks",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3757,7 +3885,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.65": {
@@ -3765,6 +3893,7 @@
       "DeviceName": "Unused4",
       "FriendlyName1": "Unused4",
       "Topic": "Unused4",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3837,7 +3966,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/Spare1/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/Spare1/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.66": {
@@ -3845,6 +3974,7 @@
       "DeviceName": "NetworkEquipment",
       "FriendlyName1": "Network Equipment",
       "Topic": "NetworkEquipment",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3917,7 +4047,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.67": {
@@ -3925,6 +4055,7 @@
       "DeviceName": "ExteriorSide",
       "FriendlyName1": "Exterior Side Lights",
       "Topic": "ExteriorSide",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -3997,7 +4128,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.68": {
@@ -4005,6 +4136,7 @@
       "DeviceName": "GarageLights_C1",
       "FriendlyName1": "Control1 - Garage Lights",
       "Topic": "GarageLights_C1",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "ON",
@@ -4077,7 +4209,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/GarageLightsGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/GarageLightsGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.69": {
@@ -4085,6 +4217,7 @@
       "DeviceName": "PetLights",
       "FriendlyName1": "Pet Lights",
       "Topic": "PetLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -4165,6 +4298,7 @@
       "DeviceName": "KitchenFridge",
       "FriendlyName1": "Kitchen Fridge",
       "Topic": "KitchenFridge",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -4237,7 +4371,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.71": {
@@ -4245,6 +4379,7 @@
       "DeviceName": "HotTub",
       "FriendlyName1": "Hot Tub",
       "Topic": "HotTub",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -4317,7 +4452,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.72": {
@@ -4325,6 +4460,7 @@
       "DeviceName": "KidsToilet",
       "FriendlyName1": "Kids Toilet Lights",
       "Topic": "KidsToilet",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -4397,7 +4533,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.73": {
@@ -4405,6 +4541,7 @@
       "DeviceName": "KidsShower",
       "FriendlyName1": "Kids Shower Lights",
       "Topic": "KidsShower",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -4477,7 +4614,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.83": {
@@ -4485,6 +4622,7 @@
       "DeviceName": "EntryChandelier",
       "FriendlyName1": "Entry Chandelier",
       "Topic": "EntryChandelier",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -4557,7 +4695,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER %value% endon",
       "Rule": "OFF"
     },
     "10.2.4.89": {
@@ -4565,6 +4703,7 @@
       "DeviceName": "BottomChristmas",
       "FriendlyName1": "Bottom Christmas",
       "Topic": "BottomChristmas",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -4645,6 +4784,7 @@
       "DeviceName": "KitchenTable",
       "FriendlyName1": "Kitchen Table",
       "Topic": "KitchenTable",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 0,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -4725,6 +4865,7 @@
       "DeviceName": "EndTable",
       "FriendlyName1": "End Table",
       "Topic": "EndTable",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 0,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -4805,6 +4946,7 @@
       "DeviceName": "PiHole",
       "FriendlyName1": "Pi Hole",
       "Topic": "PiHole",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -4881,58 +5023,59 @@
       "Rule": "ON"
     },
     "10.2.4.93": {
-      "Hostname": "ChristmasRailing",
-      "DeviceName": "ChristmasRailing",
-      "FriendlyName1": "Christmas Railing",
-      "Topic": "ChristmasRailing",
+      "Hostname": "%s-%04d",
+      "DeviceName": "Tasmota",
+      "FriendlyName1": "Tasmota",
+      "Topic": "tasmota_%06X",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 0,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
-      "SetOption19": "ON",
-      "SerialLog": 2,
+      "SetOption19": "OFF",
+      "SerialLog": 0,
       "Template": {
-        "NAME": "Sonoff Basic",
+        "NAME": "Generic",
         "GPIO": [
-          32,
           1,
           1,
           1,
           1,
-          0,
-          0,
-          0,
-          224,
-          320,
           1,
-          0,
-          0,
-          0
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
         ],
         "FLAG": 0,
-        "BASE": 1
+        "BASE": 18
       },
-      "Module": 0,
-      "GroupTopic1": "AllStandard",
-      "GroupTopic2": "InteriorDecorations",
+      "Module": 1,
+      "GroupTopic1": "tasmotas",
+      "GroupTopic2": "",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
-        "Enable": 1,
+        "Enable": 0,
         "Mode": 0,
-        "Time": "07:00",
+        "Time": "00:00",
         "Window": 0,
-        "Days": "1111111",
-        "Repeat": 1,
+        "Days": "0000000",
+        "Repeat": 0,
         "Output": 1,
-        "Action": 1
+        "Action": 0
       },
       "Timer2": {
-        "Enable": 1,
+        "Enable": 0,
         "Mode": 0,
-        "Time": "23:00",
+        "Time": "00:00",
         "Window": 0,
-        "Days": "1111111",
-        "Repeat": 1,
+        "Days": "0000000",
+        "Repeat": 0,
         "Output": 1,
         "Action": 0
       },
@@ -4956,7 +5099,7 @@
         "Output": 1,
         "Action": 0
       },
-      "Timers": "ON",
+      "Timers": "OFF",
       "Rule1": "",
       "Rule": "OFF"
     },
@@ -4965,6 +5108,7 @@
       "DeviceName": "MediaRemote",
       "FriendlyName1": "Media Remote",
       "Topic": "MediaRemote",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 0,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5003,7 +5147,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer2": {
         "Enable": 0,
@@ -5012,7 +5156,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer3": {
         "Enable": 0,
@@ -5021,7 +5165,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer4": {
         "Enable": 0,
@@ -5030,7 +5174,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timers": "OFF",
       "Rule1": "",
@@ -5041,6 +5185,7 @@
       "DeviceName": "BuffetDecor",
       "FriendlyName1": "Buffet Decor",
       "Topic": "BuffetDecor",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5121,6 +5266,7 @@
       "DeviceName": "EntryDecorations",
       "FriendlyName1": "Entry Decorations",
       "Topic": "EntryDecorations",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5201,6 +5347,7 @@
       "DeviceName": "RailingLights",
       "FriendlyName1": "Railing Lights",
       "Topic": "RailingLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5281,6 +5428,7 @@
       "DeviceName": "CurtainLights",
       "FriendlyName1": "Curtain Lights",
       "Topic": "CurtainLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5361,6 +5509,7 @@
       "DeviceName": "GarageLamp",
       "FriendlyName1": "Garage Lamp",
       "Topic": "GarageLamp",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5441,6 +5590,7 @@
       "DeviceName": "FirePlace",
       "FriendlyName1": "Fireplace",
       "Topic": "FirePlace",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5521,6 +5671,7 @@
       "DeviceName": "Blower",
       "FriendlyName1": "Blower",
       "Topic": "Blower",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5601,6 +5752,7 @@
       "DeviceName": "LeftMantle",
       "FriendlyName1": "Left Mantle",
       "Topic": "LeftMantle",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5681,6 +5833,7 @@
       "DeviceName": "PatioFountain",
       "FriendlyName1": "Patio Fountain",
       "Topic": "PatioFountain",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -5752,7 +5905,88 @@
         "Output": 1,
         "Action": 0
       },
-      "Timers": "ON",
+      "Timers": "OFF",
+      "Rule1": "",
+      "Rule": "OFF"
+    },
+    "10.2.4.112": {
+      "Hostname": "RetroPi",
+      "DeviceName": "RetroPi",
+      "FriendlyName1": "Retro Pi",
+      "Topic": "RetroPi",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
+      "PowerRetain": "OFF",
+      "SensorRetain": "OFF",
+      "SetOption19": "ON",
+      "SerialLog": 0,
+      "Template": {
+        "NAME": "Sonoff+I2C",
+        "GPIO": [
+          32,
+          608,
+          0,
+          640,
+          0,
+          0,
+          0,
+          0,
+          224,
+          320,
+          0,
+          0,
+          0,
+          0
+        ],
+        "FLAG": 0,
+        "BASE": 1
+      },
+      "Module": 0,
+      "GroupTopic1": "tasmotas",
+      "GroupTopic2": "",
+      "GroupTopic3": "",
+      "GroupTopic4": "",
+      "Timer1": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer2": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer3": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer4": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timers": "OFF",
       "Rule1": "",
       "Rule": "OFF"
     },
@@ -5761,6 +5995,7 @@
       "DeviceName": "DadsFan",
       "FriendlyName1": "Dads Fan",
       "Topic": "DadsFan",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5841,6 +6076,7 @@
       "DeviceName": "ElectricFence",
       "FriendlyName1": "Electric Fence",
       "Topic": "ElectricFence",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5921,6 +6157,7 @@
       "DeviceName": "ElectronicsWorkstation",
       "FriendlyName1": "Electronics Workstation",
       "Topic": "ElectronicsWorkstation",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6001,6 +6238,7 @@
       "DeviceName": "MantleDecor",
       "FriendlyName1": "Mantle Decor",
       "Topic": "MantleDecor",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6081,6 +6319,7 @@
       "DeviceName": "DadsLamp",
       "FriendlyName1": "Dads Lamp",
       "Topic": "DadsLamp",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6161,6 +6400,7 @@
       "DeviceName": "InternetRouter",
       "FriendlyName1": "Internet Router",
       "Topic": "InternetRouter",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6241,6 +6481,7 @@
       "DeviceName": "WorkspaceMonitor",
       "FriendlyName1": "Workspace Monitor",
       "Topic": "WorkspaceMonitor",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6279,7 +6520,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer2": {
         "Enable": 0,
@@ -6288,7 +6529,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer3": {
         "Enable": 0,
@@ -6297,7 +6538,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer4": {
         "Enable": 0,
@@ -6306,7 +6547,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timers": "OFF",
       "Rule1": "",
@@ -6317,6 +6558,7 @@
       "DeviceName": "LavaLamp",
       "FriendlyName1": "Lava Lamp",
       "Topic": "LavaLamp",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 0,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6393,10 +6635,11 @@
       "Rule": "OFF"
     },
     "10.2.4.124": {
-      "Hostname": "BasementLamp",
-      "DeviceName": "BasementLamp",
-      "FriendlyName1": "Basement Lamp",
-      "Topic": "BasementLamp",
+      "Hostname": "HotTubLights",
+      "DeviceName": "HotTubLights",
+      "FriendlyName1": "HotTub Lights",
+      "Topic": "HotTubLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 0,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6425,7 +6668,7 @@
       },
       "Module": 0,
       "GroupTopic1": "AllStandard",
-      "GroupTopic2": "InteriorDecorations",
+      "GroupTopic2": "ExteriorLights",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -6473,10 +6716,11 @@
       "Rule": "OFF"
     },
     "10.2.4.125": {
-      "Hostname": "BasementFan",
-      "DeviceName": "BasementFan",
-      "FriendlyName1": "Basement Fan",
-      "Topic": "BasementFan",
+      "Hostname": "GazeboLights",
+      "DeviceName": "GazeboLights",
+      "FriendlyName1": "Gazebo Lights",
+      "Topic": "GazeboLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 0,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6504,8 +6748,8 @@
         "BASE": 1
       },
       "Module": 0,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic1": "AllStandard",
+      "GroupTopic2": "ExteriorLights",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -6557,6 +6801,7 @@
       "DeviceName": "LilysFan",
       "FriendlyName1": "Lilys Fan",
       "Topic": "LilysFan",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6637,6 +6882,7 @@
       "DeviceName": "AustinsFan",
       "FriendlyName1": "Austins Fan",
       "Topic": "AustinsFan",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6717,6 +6963,7 @@
       "DeviceName": "MasterPi",
       "FriendlyName1": "MasterPi",
       "Topic": "tasmota_%06X",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 0,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6797,6 +7044,7 @@
       "DeviceName": "Unused5",
       "FriendlyName1": "Unused5",
       "Topic": "Unused5",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -6872,91 +7120,12 @@
       "Rule1": "",
       "Rule": "OFF"
     },
-    "10.2.4.131": {
-      "Hostname": "%s-%04d",
-      "DeviceName": "Lilys_Vigil",
-      "FriendlyName1": "Lilys Vigil",
-      "Topic": "tasmota_%06X",
-      "SwitchMode": 0,
-      "PowerRetain": "OFF",
-      "SensorRetain": "OFF",
-      "SetOption19": "ON",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "Generic",
-        "GPIO": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1
-        ],
-        "FLAG": 0,
-        "BASE": 18
-      },
-      "Module": 0,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 1,
-        "Mode": 2,
-        "Time": "-00:30",
-        "Window": 0,
-        "Days": "1111111",
-        "Repeat": 1,
-        "Output": 1,
-        "Action": 1
-      },
-      "Timer2": {
-        "Enable": 1,
-        "Mode": 1,
-        "Time": "00:30",
-        "Window": 0,
-        "Days": "1111111",
-        "Repeat": 1,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "ON",
-      "Rule1": "",
-      "Rule": "OFF"
-    },
     "10.2.4.138": {
       "Hostname": "%s-%04d",
       "DeviceName": "Tasmota",
       "FriendlyName1": "Tasmota",
       "Topic": "tasmota_%06X",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 0,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -7037,6 +7206,7 @@
       "DeviceName": "Tasmota",
       "FriendlyName1": "Tasmota",
       "Topic": "tasmota_%06X",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 0,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -7112,36 +7282,37 @@
       "Rule1": "",
       "Rule": "OFF"
     },
-    "10.2.4.112": {
-      "Hostname": "RetroPi",
-      "DeviceName": "RetroPi",
-      "FriendlyName1": "Retro Pi",
-      "Topic": "RetroPi",
-      "SwitchMode": 3,
+    "10.2.4.131": {
+      "Hostname": "LilysVigil",
+      "DeviceName": "LilysVigil",
+      "FriendlyName1": "Lilys Vigil",
+      "Topic": "LilysVigil",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 0,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
       "SerialLog": 0,
       "Template": {
-        "NAME": "Sonoff+I2C",
+        "NAME": "Generic",
         "GPIO": [
-          32,
-          608,
-          0,
-          640,
-          0,
-          0,
-          0,
-          0,
-          224,
-          320,
-          0,
-          0,
-          0,
-          0
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
         ],
         "FLAG": 0,
-        "BASE": 1
+        "BASE": 18
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
@@ -7149,22 +7320,22 @@
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
+        "Enable": 1,
+        "Mode": 2,
+        "Time": "-00:30",
         "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
+        "Days": "1111111",
+        "Repeat": 1,
         "Output": 1,
-        "Action": 0
+        "Action": 1
       },
       "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
+        "Enable": 1,
+        "Mode": 1,
+        "Time": "00:30",
         "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
+        "Days": "1111111",
+        "Repeat": 1,
         "Output": 1,
         "Action": 0
       },
@@ -7188,7 +7359,7 @@
         "Output": 1,
         "Action": 0
       },
-      "Timers": "OFF",
+      "Timers": "ON",
       "Rule1": "",
       "Rule": "OFF"
     }
