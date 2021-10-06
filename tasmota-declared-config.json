@@ -1,15 +1,17 @@
 {
   "tasmotas": {
     "10.2.4.13": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "FamilyLights",
       "DeviceName": "FamilyLights",
       "FriendlyName1": "Family Lights",
       "Topic": "FamilyLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Maxcio Active",
         "GPIO": [
@@ -81,15 +83,17 @@
       "Rule": "OFF"
     },
     "10.2.4.14": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "FamilyFan",
       "DeviceName": "FamilyFan",
       "FriendlyName1": "Family Fan",
       "Topic": "FamilyFan",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Maxcio Active",
         "GPIO": [
@@ -161,15 +165,17 @@
       "Rule": "OFF"
     },
     "10.2.4.16": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "LilyHall",
       "DeviceName": "LilyHall",
       "FriendlyName1": "Lilys Hall Lights",
       "Topic": "LilyHall",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -237,19 +243,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/LilyHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/LilyHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.17": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "EntryCans_C1",
       "DeviceName": "EntryCans_C1",
       "FriendlyName1": "Control1 - Entry Cans",
       "Topic": "EntryCans_C1",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Control",
         "GPIO": [
@@ -317,19 +325,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/EntryCansGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/EntryCansGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.18": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "EntryCans",
       "DeviceName": "EntryCans",
       "FriendlyName1": "Entry Can Lights",
       "Topic": "EntryCans",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -397,19 +407,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/EntryCansGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/EntryCansGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.19": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "EntryCans_C2",
       "DeviceName": "EntryCans_C2",
       "FriendlyName1": "Control2 - Entry Cans",
       "Topic": "EntryCans_C2",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Control",
         "GPIO": [
@@ -477,19 +489,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/EntryCansGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/EntryCansGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.20": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "KidsSink",
       "DeviceName": "KidsSink",
       "FriendlyName1": "Kids Sink Lights",
       "Topic": "KidsSink",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -561,15 +575,17 @@
       "Rule": "OFF"
     },
     "10.2.4.21": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "AustinHall",
       "DeviceName": "AustinHall",
       "FriendlyName1": "Austins Hall Lights",
       "Topic": "AustinHall",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Control",
         "GPIO": [
@@ -637,19 +653,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/AustinHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/AustinHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.22": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "DadsLights",
       "DeviceName": "DadsLights",
       "FriendlyName1": "Dads Lights",
       "Topic": "DadsLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -721,15 +739,17 @@
       "Rule": "OFF"
     },
     "10.2.4.23": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "LilyHall_C1",
       "DeviceName": "LilyHall_C1",
       "FriendlyName1": "Control1 - Lily Hall",
       "Topic": "LilyHall_C1",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Control",
         "GPIO": [
@@ -797,19 +817,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/LilyHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/LilyHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.24": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "PorchLights",
       "DeviceName": "PorchLights",
       "FriendlyName1": "Porch Lights",
       "Topic": "PorchLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -881,15 +903,17 @@
       "Rule": "OFF"
     },
     "10.2.4.26": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "AustinHall_C1",
       "DeviceName": "AustinHall_C1",
       "FriendlyName1": "Control1 - Austin Hall",
       "Topic": "AustinHall_C1",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Control",
         "GPIO": [
@@ -957,19 +981,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/AustinHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/AustinHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.27": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "LilyHall_C2",
       "DeviceName": "LilyHall_C2",
       "FriendlyName1": "Control2 - Lily Hall",
       "Topic": "LilyHall_C2",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Control",
         "GPIO": [
@@ -1037,19 +1063,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/LilyHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/LilyHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.28": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "MainHall_C1",
       "DeviceName": "MainHall_C1",
       "FriendlyName1": "Control1 - Main Hall",
       "Topic": "MainHall_C1",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Control",
         "GPIO": [
@@ -1117,19 +1145,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/MainHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/MainHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.29": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "MainHall",
       "DeviceName": "MainHall",
       "FriendlyName1": "Main Hall Lights",
       "Topic": "MainHall",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -1197,19 +1227,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/MainHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/MainHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.30": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "MainHall_C2",
       "DeviceName": "MainHall_C2",
       "FriendlyName1": "Control2 - Main Hall",
       "Topic": "MainHall_C2",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Control",
         "GPIO": [
@@ -1277,19 +1309,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/MainHallGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/MainHallGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.31": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "KitchenCans",
       "DeviceName": "KitchenCans",
       "FriendlyName1": "Kitchen Can Lights",
       "Topic": "KitchenCans",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -1357,19 +1391,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/KitchenCansGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/KitchenCansGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.32": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "KitchenSink",
       "DeviceName": "KitchenSink",
       "FriendlyName1": "Kitchen Sink Lights",
       "Topic": "KitchenSink",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -1437,19 +1473,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/KitchenSinkGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/KitchenSinkGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.33": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "KitchenSink_C1",
       "DeviceName": "KitchenSink_C1",
       "FriendlyName1": "Control1 - Kitchen Sink",
       "Topic": "KitchenSink_C1",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -1517,19 +1555,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/KitchenSinkGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/KitchenSinkGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.34": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "KitchenCans_C1",
       "DeviceName": "KitchenCans_C1",
       "FriendlyName1": "Control1 - Kitchen Cans",
       "Topic": "KitchenCans_C1",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -1597,19 +1637,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/KitchenCansGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/KitchenCansGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.35": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "PowderHall",
       "DeviceName": "PowderHall",
       "FriendlyName1": "Powder Hall Lights",
       "Topic": "PowderHall",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -1681,15 +1723,17 @@
       "Rule": "OFF"
     },
     "10.2.4.36": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "StudyLights",
       "DeviceName": "StudyLights",
       "FriendlyName1": "Study Lights",
       "Topic": "StudyLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Maxcio Active",
         "GPIO": [
@@ -1757,19 +1801,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/StudyLightsGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/StudyLightsGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.37": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "LibraryLights",
       "DeviceName": "LibraryLights",
       "FriendlyName1": "Library Lights",
       "Topic": "LibraryLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -1841,10 +1887,12 @@
       "Rule": "OFF"
     },
     "10.2.4.38": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "ComputerAustin",
       "DeviceName": "ComputerAustin",
       "FriendlyName1": "Computer Austin",
       "Topic": "ComputerAustin",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -1917,14 +1965,16 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.40": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "BasementFridge",
       "DeviceName": "BasementFridge",
       "FriendlyName1": "Basement Fridge",
       "Topic": "BasementFridge",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -1953,7 +2003,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\\\"\\",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -1997,19 +2047,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.41": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "EveLights",
       "DeviceName": "EveLights",
       "FriendlyName1": "Eve Lights",
       "Topic": "EveLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Maxcio Active",
         "GPIO": [
@@ -2081,15 +2133,17 @@
       "Rule": "OFF"
     },
     "10.2.4.42": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "PowderFan",
       "DeviceName": "PowderFan",
       "FriendlyName1": "Powder Fan",
       "Topic": "PowderFan",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Maxcio Active",
         "GPIO": [
@@ -2161,15 +2215,17 @@
       "Rule": "OFF"
     },
     "10.2.4.43": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "StudyFan",
       "DeviceName": "StudyFan",
       "FriendlyName1": "Study Fan",
       "Topic": "StudyFan",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Maxcio Control",
         "GPIO": [
@@ -2237,19 +2293,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/StudyLightsGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/StudyLightsGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.44": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "PowderLights",
       "DeviceName": "PowderLights",
       "FriendlyName1": "Powder Lights",
       "Topic": "PowderLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Maxcio Active",
         "GPIO": [
@@ -2321,10 +2379,12 @@
       "Rule": "OFF"
     },
     "10.2.4.45": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "GarageFreezer",
       "DeviceName": "GarageFreezer",
       "FriendlyName1": "Garage Freezer",
       "Topic": "GarageFreezer",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -2397,14 +2457,16 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.46": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "LaptopCharger",
       "DeviceName": "LaptopCharger",
       "FriendlyName1": "Laptop Charger",
       "Topic": "LaptopCharger",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -2481,15 +2543,17 @@
       "Rule": "OFF"
     },
     "10.2.4.47": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "ChristmasPackage",
       "DeviceName": "ChristmasPackage",
       "FriendlyName1": "Christmas Package",
       "Topic": "ChristmasPackage",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Maxcio Active",
         "GPIO": [
@@ -2557,19 +2621,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
-      "Rule": "ON"
+      "Rule1": "",
+      "Rule": "OFF"
     },
     "10.2.4.48": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "BasementLights",
       "DeviceName": "BasementLights",
       "FriendlyName1": "Basement Lights",
       "Topic": "BasementLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Maxcio Active",
         "GPIO": [
@@ -2641,15 +2707,17 @@
       "Rule": "OFF"
     },
     "10.2.4.50": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "DiningLights",
       "DeviceName": "DiningLights",
       "FriendlyName1": "Dining Lights",
       "Topic": "DiningLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Maxcio Active",
         "GPIO": [
@@ -2721,15 +2789,17 @@
       "Rule": "OFF"
     },
     "10.2.4.51": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "PatioLights",
       "DeviceName": "PatioLights",
       "FriendlyName1": "Patio Lights",
       "Topic": "PatioLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Maxcio Active",
         "GPIO": [
@@ -2801,15 +2871,17 @@
       "Rule": "OFF"
     },
     "10.2.4.52": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "GarageLights",
       "DeviceName": "GarageLights",
       "FriendlyName1": "Garage Lights",
       "Topic": "GarageLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -2877,19 +2949,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/GarageLightsGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/GarageLightsGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.53": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "ExteriorGarageLights",
       "DeviceName": "ExteriorGarageLights",
       "FriendlyName1": "Exterior Garage Lights",
       "Topic": "ExteriorGarageLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Maxcio Active",
         "GPIO": [
@@ -2961,15 +3035,17 @@
       "Rule": "OFF"
     },
     "10.2.4.54": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "KidsBathroomFan",
       "DeviceName": "KidsBathroomFan",
       "FriendlyName1": "Kids Bathroom Fan",
       "Topic": "KidsBathroomFan",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Maxcio Active",
         "GPIO": [
@@ -3041,10 +3117,12 @@
       "Rule": "OFF"
     },
     "10.2.4.55": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "Unused2",
       "DeviceName": "Unused2",
       "FriendlyName1": "Unused2",
       "Topic": "Unused2",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3120,91 +3198,13 @@
       "Rule1": "",
       "Rule": "OFF"
     },
-    "10.2.4.57": {
-      "Hostname": "3dPrinter",
-      "DeviceName": "3dPrinter",
-      "FriendlyName1": "3d Printer",
-      "Topic": "3dPrinter",
-      "SwitchMode": 3,
-      "PowerRetain": "ON",
-      "SensorRetain": "ON",
-      "SetOption19": "ON",
-      "SerialLog": 2,
-      "Template": {
-        "NAME": "W-US002S",
-        "GPIO": [
-          0,
-          192,
-          0,
-          288,
-          2688,
-          2656,
-          0,
-          0,
-          2592,
-          289,
-          224,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 45
-      },
-      "Module": 0,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "",
-      "Rule": "OFF"
-    },
-    "10.2.4.58": {
-      "Hostname": "ComputerLily",
-      "DeviceName": "ComputerLily",
-      "FriendlyName1": "Computer Lily",
-      "Topic": "ComputerLily",
+    "10.2.4.56": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "Hostname": "GroundDecor",
+      "DeviceName": "GroundDecor",
+      "FriendlyName1": "Ground Decor",
+      "Topic": "GroundDecor",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3277,14 +3277,180 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "",
+      "Rule": "OFF"
+    },
+    "10.2.4.57": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "Hostname": "3dPrinter",
+      "DeviceName": "3dPrinter",
+      "FriendlyName1": "3d Printer",
+      "Topic": "3dPrinter",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
+      "PowerRetain": "ON",
+      "SensorRetain": "ON",
+      "SetOption19": "ON",
+      "SerialLog": 0,
+      "Template": {
+        "NAME": "W-US002S",
+        "GPIO": [
+          0,
+          192,
+          0,
+          288,
+          2688,
+          2656,
+          0,
+          0,
+          2592,
+          289,
+          224,
+          0,
+          0,
+          0
+        ],
+        "FLAG": 0,
+        "BASE": 45
+      },
+      "Module": 0,
+      "GroupTopic1": "tasmotas",
+      "GroupTopic2": "",
+      "GroupTopic3": "",
+      "GroupTopic4": "",
+      "Timer1": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer2": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer3": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer4": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timers": "OFF",
+      "Rule1": "",
+      "Rule": "OFF"
+    },
+    "10.2.4.58": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "Hostname": "ComputerLily",
+      "DeviceName": "ComputerLily",
+      "FriendlyName1": "Computer Lily",
+      "Topic": "ComputerLily",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
+      "PowerRetain": "ON",
+      "SensorRetain": "ON",
+      "SetOption19": "ON",
+      "SerialLog": 0,
+      "Template": {
+        "NAME": "W-US002S",
+        "GPIO": [
+          0,
+          192,
+          0,
+          288,
+          2688,
+          2656,
+          0,
+          0,
+          2592,
+          289,
+          224,
+          0,
+          0,
+          0
+        ],
+        "FLAG": 0,
+        "BASE": 45
+      },
+      "Module": 0,
+      "GroupTopic1": "tasmotas",
+      "GroupTopic2": "",
+      "GroupTopic3": "",
+      "GroupTopic4": "",
+      "Timer1": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer2": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer3": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer4": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timers": "OFF",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.59": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "MainTV",
       "DeviceName": "MainTV",
       "FriendlyName1": "Main TV",
       "Topic": "MainTV",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3361,10 +3527,12 @@
       "Rule": "OFF"
     },
     "10.2.4.60": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "DadsWorkspace",
       "DeviceName": "DadsWorkspace",
       "FriendlyName1": "Dads Workspace",
       "Topic": "DadsWorkspace",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3437,14 +3605,16 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.61": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "MasterTV",
       "DeviceName": "MasterTV",
       "FriendlyName1": "Master TV",
       "Topic": "MasterTV",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3521,10 +3691,12 @@
       "Rule": "OFF"
     },
     "10.2.4.62": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "TopChristmas",
       "DeviceName": "TopChristmas",
       "FriendlyName1": "Top Christmas",
       "Topic": "TopChristmas",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3601,10 +3773,12 @@
       "Rule": "OFF"
     },
     "10.2.4.63": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "ComputerMedia",
       "DeviceName": "ComputerMedia",
       "FriendlyName1": "Computer Media",
       "Topic": "ComputerMedia",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3677,174 +3851,16 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.64": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "ServerDisks",
       "DeviceName": "ServerDisks",
       "FriendlyName1": "Server Disks",
       "Topic": "ServerDisks",
-      "SwitchMode": 3,
-      "PowerRetain": "ON",
-      "SensorRetain": "ON",
-      "SetOption19": "ON",
-      "SerialLog": 2,
-      "Template": {
-        "NAME": "W-US002S",
-        "GPIO": [
-          0,
-          192,
-          0,
-          288,
-          2688,
-          2656,
-          0,
-          0,
-          2592,
-          289,
-          224,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 45
-      },
-      "Module": 0,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
-      "Rule": "ON"
-    },
-    "10.2.4.65": {
-      "Hostname": "Unused4",
-      "DeviceName": "Unused4",
-      "FriendlyName1": "Unused4",
-      "Topic": "Unused4",
-      "SwitchMode": 3,
-      "PowerRetain": "ON",
-      "SensorRetain": "ON",
-      "SetOption19": "OFF",
-      "SerialLog": 2,
-      "Template": {
-        "NAME": "W-US002S",
-        "GPIO": [
-          0,
-          192,
-          0,
-          288,
-          2688,
-          2656,
-          0,
-          0,
-          2592,
-          289,
-          224,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 45
-      },
-      "Module": 0,
-      "GroupTopic1": "InteriorDecorations",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/Spare1/POWER %value% endon",
-      "Rule": "ON"
-    },
-    "10.2.4.66": {
-      "Hostname": "NetworkEquipment",
-      "DeviceName": "NetworkEquipment",
-      "FriendlyName1": "Network Equipment",
-      "Topic": "NetworkEquipment",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -3917,19 +3933,185 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
+      "Rule": "ON"
+    },
+    "10.2.4.65": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "Hostname": "Unused4",
+      "DeviceName": "Unused4",
+      "FriendlyName1": "Unused4",
+      "Topic": "Unused4",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
+      "PowerRetain": "ON",
+      "SensorRetain": "ON",
+      "SetOption19": "OFF",
+      "SerialLog": 0,
+      "Template": {
+        "NAME": "W-US002S",
+        "GPIO": [
+          0,
+          192,
+          0,
+          288,
+          2688,
+          2656,
+          0,
+          0,
+          2592,
+          289,
+          224,
+          0,
+          0,
+          0
+        ],
+        "FLAG": 0,
+        "BASE": 45
+      },
+      "Module": 0,
+      "GroupTopic1": "tasmotas",
+      "GroupTopic2": "",
+      "GroupTopic3": "",
+      "GroupTopic4": "",
+      "Timer1": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer2": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer3": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer4": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timers": "OFF",
+      "Rule1": "",
+      "Rule": "OFF"
+    },
+    "10.2.4.66": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "Hostname": "NetworkEquipment",
+      "DeviceName": "NetworkEquipment",
+      "FriendlyName1": "Network Equipment",
+      "Topic": "NetworkEquipment",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
+      "PowerRetain": "ON",
+      "SensorRetain": "ON",
+      "SetOption19": "ON",
+      "SerialLog": 0,
+      "Template": {
+        "NAME": "W-US002S",
+        "GPIO": [
+          0,
+          192,
+          0,
+          288,
+          2688,
+          2656,
+          0,
+          0,
+          2592,
+          289,
+          224,
+          0,
+          0,
+          0
+        ],
+        "FLAG": 0,
+        "BASE": 45
+      },
+      "Module": 0,
+      "GroupTopic1": "tasmotas",
+      "GroupTopic2": "",
+      "GroupTopic3": "",
+      "GroupTopic4": "",
+      "Timer1": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer2": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer3": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer4": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timers": "OFF",
+      "Rule1": "on time#minute|1 do Power 1 endon",
       "Rule": "ON"
     },
     "10.2.4.67": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "ExteriorSide",
       "DeviceName": "ExteriorSide",
       "FriendlyName1": "Exterior Side Lights",
       "Topic": "ExteriorSide",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -4001,15 +4183,17 @@
       "Rule": "OFF"
     },
     "10.2.4.68": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "GarageLights_C1",
       "DeviceName": "GarageLights_C1",
       "FriendlyName1": "Control1 - Garage Lights",
       "Topic": "GarageLights_C1",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "ON",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -4077,14 +4261,16 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/GarageLightsGroup/POWER %value% endon",
+      "Rule1": "on Switch1#state do Publish cmnd/GarageLightsGroup/POWER %value% endon",
       "Rule": "ON"
     },
     "10.2.4.69": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "PetLights",
       "DeviceName": "PetLights",
       "FriendlyName1": "Pet Lights",
       "Topic": "PetLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -4161,10 +4347,12 @@
       "Rule": "OFF"
     },
     "10.2.4.70": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "KitchenFridge",
       "DeviceName": "KitchenFridge",
       "FriendlyName1": "Kitchen Fridge",
       "Topic": "KitchenFridge",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -4237,14 +4425,16 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.71": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "HotTub",
       "DeviceName": "HotTub",
       "FriendlyName1": "Hot Tub",
       "Topic": "HotTub",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -4317,19 +4507,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON"
     },
     "10.2.4.72": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "KidsToilet",
       "DeviceName": "KidsToilet",
       "FriendlyName1": "Kids Toilet Lights",
       "Topic": "KidsToilet",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Maxcio Active",
         "GPIO": [
@@ -4401,15 +4593,17 @@
       "Rule": "OFF"
     },
     "10.2.4.73": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "KidsShower",
       "DeviceName": "KidsShower",
       "FriendlyName1": "Kids Shower Lights",
       "Topic": "KidsShower",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Maxcio Active",
         "GPIO": [
@@ -4481,15 +4675,17 @@
       "Rule": "OFF"
     },
     "10.2.4.83": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "EntryChandelier",
       "DeviceName": "EntryChandelier",
       "FriendlyName1": "Entry Chandelier",
       "Topic": "EntryChandelier",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Gosund KS-602S Active",
         "GPIO": [
@@ -4561,10 +4757,12 @@
       "Rule": "OFF"
     },
     "10.2.4.89": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "BottomChristmas",
       "DeviceName": "BottomChristmas",
       "FriendlyName1": "Bottom Christmas",
       "Topic": "BottomChristmas",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -4641,15 +4839,17 @@
       "Rule": "OFF"
     },
     "10.2.4.90": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "KitchenTable",
       "DeviceName": "KitchenTable",
       "FriendlyName1": "Kitchen Table",
       "Topic": "KitchenTable",
-      "SwitchMode": 0,
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Sonoff Basic",
         "GPIO": [
@@ -4721,15 +4921,17 @@
       "Rule": "OFF"
     },
     "10.2.4.91": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "EndTable",
       "DeviceName": "EndTable",
       "FriendlyName1": "End Table",
       "Topic": "EndTable",
-      "SwitchMode": 0,
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "Sonoff Basic",
         "GPIO": [
@@ -4801,10 +5003,12 @@
       "Rule": "OFF"
     },
     "10.2.4.92": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "PiHole",
       "DeviceName": "PiHole",
       "FriendlyName1": "Pi Hole",
       "Topic": "PiHole",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -4881,15 +5085,17 @@
       "Rule": "ON"
     },
     "10.2.4.93": {
-      "Hostname": "ChristmasRailing",
-      "DeviceName": "ChristmasRailing",
-      "FriendlyName1": "Christmas Railing",
-      "Topic": "ChristmasRailing",
-      "SwitchMode": 0,
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
+      "Hostname": "SonoffSpare3",
+      "DeviceName": "SonoffSpare3",
+      "FriendlyName1": "SonoffSpare3",
+      "Topic": "SonoffSpare3",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
-      "SetOption19": "ON",
-      "SerialLog": 2,
+      "SetOption19": "OFF",
+      "SerialLog": 0,
       "Template": {
         "NAME": "Sonoff Basic",
         "GPIO": [
@@ -4912,27 +5118,27 @@
         "BASE": 1
       },
       "Module": 0,
-      "GroupTopic1": "AllStandard",
-      "GroupTopic2": "InteriorDecorations",
+      "GroupTopic1": "tasmotas",
+      "GroupTopic2": "",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
-        "Enable": 1,
+        "Enable": 0,
         "Mode": 0,
-        "Time": "07:00",
+        "Time": "00:00",
         "Window": 0,
-        "Days": "1111111",
-        "Repeat": 1,
+        "Days": "0000000",
+        "Repeat": 0,
         "Output": 1,
-        "Action": 1
+        "Action": 0
       },
       "Timer2": {
-        "Enable": 1,
+        "Enable": 0,
         "Mode": 0,
-        "Time": "23:00",
+        "Time": "00:00",
         "Window": 0,
-        "Days": "1111111",
-        "Repeat": 1,
+        "Days": "0000000",
+        "Repeat": 0,
         "Output": 1,
         "Action": 0
       },
@@ -4956,20 +5162,22 @@
         "Output": 1,
         "Action": 0
       },
-      "Timers": "ON",
+      "Timers": "OFF",
       "Rule1": "",
       "Rule": "OFF"
     },
     "10.2.4.96": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-ir.bin.gz",
       "Hostname": "MediaRemote",
       "DeviceName": "MediaRemote",
       "FriendlyName1": "Media Remote",
       "Topic": "MediaRemote",
-      "SwitchMode": 0,
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "NodeMCU",
         "GPIO": [
@@ -5037,10 +5245,12 @@
       "Rule": "OFF"
     },
     "10.2.4.98": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "BuffetDecor",
       "DeviceName": "BuffetDecor",
       "FriendlyName1": "Buffet Decor",
       "Topic": "BuffetDecor",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5117,10 +5327,12 @@
       "Rule": "OFF"
     },
     "10.2.4.99": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "EntryDecorations",
       "DeviceName": "EntryDecorations",
       "FriendlyName1": "Entry Decorations",
       "Topic": "EntryDecorations",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5197,10 +5409,12 @@
       "Rule": "OFF"
     },
     "10.2.4.100": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "RailingLights",
       "DeviceName": "RailingLights",
       "FriendlyName1": "Railing Lights",
       "Topic": "RailingLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5277,10 +5491,12 @@
       "Rule": "OFF"
     },
     "10.2.4.101": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "CurtainLights",
       "DeviceName": "CurtainLights",
       "FriendlyName1": "Curtain Lights",
       "Topic": "CurtainLights",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5357,10 +5573,12 @@
       "Rule": "OFF"
     },
     "10.2.4.102": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "GarageLamp",
       "DeviceName": "GarageLamp",
       "FriendlyName1": "Garage Lamp",
       "Topic": "GarageLamp",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5437,10 +5655,12 @@
       "Rule": "OFF"
     },
     "10.2.4.103": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "FirePlace",
       "DeviceName": "FirePlace",
       "FriendlyName1": "Fireplace",
       "Topic": "FirePlace",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5517,10 +5737,12 @@
       "Rule": "OFF"
     },
     "10.2.4.104": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "Blower",
       "DeviceName": "Blower",
       "FriendlyName1": "Blower",
       "Topic": "Blower",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5597,10 +5819,12 @@
       "Rule": "OFF"
     },
     "10.2.4.105": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "LeftMantle",
       "DeviceName": "LeftMantle",
       "FriendlyName1": "Left Mantle",
       "Topic": "LeftMantle",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5677,10 +5901,12 @@
       "Rule": "OFF"
     },
     "10.2.4.111": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "PatioFountain",
       "DeviceName": "PatioFountain",
       "FriendlyName1": "Patio Fountain",
       "Topic": "PatioFountain",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
@@ -5752,15 +5978,99 @@
         "Output": 1,
         "Action": 0
       },
-      "Timers": "ON",
+      "Timers": "OFF",
+      "Rule1": "",
+      "Rule": "OFF"
+    },
+    "10.2.4.112": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
+      "Hostname": "RetroPi",
+      "DeviceName": "RetroPi",
+      "FriendlyName1": "Retro Pi",
+      "Topic": "RetroPi",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
+      "PowerRetain": "OFF",
+      "SensorRetain": "OFF",
+      "SetOption19": "ON",
+      "SerialLog": 0,
+      "Template": {
+        "NAME": "Sonoff+I2C",
+        "GPIO": [
+          32,
+          608,
+          0,
+          640,
+          0,
+          0,
+          0,
+          0,
+          224,
+          320,
+          0,
+          0,
+          0,
+          0
+        ],
+        "FLAG": 0,
+        "BASE": 1
+      },
+      "Module": 0,
+      "GroupTopic1": "tasmotas",
+      "GroupTopic2": "",
+      "GroupTopic3": "",
+      "GroupTopic4": "",
+      "Timer1": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer2": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer3": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer4": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timers": "OFF",
       "Rule1": "",
       "Rule": "OFF"
     },
     "10.2.4.113": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "DadsFan",
       "DeviceName": "DadsFan",
       "FriendlyName1": "Dads Fan",
       "Topic": "DadsFan",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5837,10 +6147,12 @@
       "Rule": "OFF"
     },
     "10.2.4.114": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "ElectricFence",
       "DeviceName": "ElectricFence",
       "FriendlyName1": "Electric Fence",
       "Topic": "ElectricFence",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5917,10 +6229,12 @@
       "Rule": "OFF"
     },
     "10.2.4.115": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "ElectronicsWorkstation",
       "DeviceName": "ElectronicsWorkstation",
       "FriendlyName1": "Electronics Workstation",
       "Topic": "ElectronicsWorkstation",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -5997,10 +6311,12 @@
       "Rule": "OFF"
     },
     "10.2.4.116": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "MantleDecor",
       "DeviceName": "MantleDecor",
       "FriendlyName1": "Mantle Decor",
       "Topic": "MantleDecor",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6077,10 +6393,12 @@
       "Rule": "OFF"
     },
     "10.2.4.117": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "DadsLamp",
       "DeviceName": "DadsLamp",
       "FriendlyName1": "Dads Lamp",
       "Topic": "DadsLamp",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6157,10 +6475,12 @@
       "Rule": "OFF"
     },
     "10.2.4.118": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "InternetRouter",
       "DeviceName": "InternetRouter",
       "FriendlyName1": "Internet Router",
       "Topic": "InternetRouter",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6233,14 +6553,16 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "",
-      "Rule": "OFF"
+      "Rule1": "on time#minute|1 do Power 1 endon",
+      "Rule": "ON"
     },
     "10.2.4.119": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "WorkspaceMonitor",
       "DeviceName": "WorkspaceMonitor",
       "FriendlyName1": "Workspace Monitor",
       "Topic": "WorkspaceMonitor",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6313,11 +6635,13 @@
       "Rule": "OFF"
     },
     "10.2.4.123": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "LavaLamp",
       "DeviceName": "LavaLamp",
       "FriendlyName1": "Lava Lamp",
       "Topic": "LavaLamp",
-      "SwitchMode": 0,
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
@@ -6393,11 +6717,13 @@
       "Rule": "OFF"
     },
     "10.2.4.124": {
-      "Hostname": "BasementLamp",
-      "DeviceName": "BasementLamp",
-      "FriendlyName1": "Basement Lamp",
-      "Topic": "BasementLamp",
-      "SwitchMode": 0,
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
+      "Hostname": "HotTubLights",
+      "DeviceName": "HotTubLights",
+      "FriendlyName1": "HotTub Lights",
+      "Topic": "HotTubLights",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
@@ -6425,7 +6751,7 @@
       },
       "Module": 0,
       "GroupTopic1": "AllStandard",
-      "GroupTopic2": "InteriorDecorations",
+      "GroupTopic2": "ExteriorLights",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -6473,11 +6799,13 @@
       "Rule": "OFF"
     },
     "10.2.4.125": {
-      "Hostname": "BasementFan",
-      "DeviceName": "BasementFan",
-      "FriendlyName1": "Basement Fan",
-      "Topic": "BasementFan",
-      "SwitchMode": 0,
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
+      "Hostname": "GazeboLights",
+      "DeviceName": "GazeboLights",
+      "FriendlyName1": "Gazebo Lights",
+      "Topic": "GazeboLights",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
       "SetOption19": "ON",
@@ -6504,8 +6832,8 @@
         "BASE": 1
       },
       "Module": 0,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic1": "AllStandard",
+      "GroupTopic2": "ExteriorLights",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -6553,10 +6881,12 @@
       "Rule": "OFF"
     },
     "10.2.4.126": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "LilysFan",
       "DeviceName": "LilysFan",
       "FriendlyName1": "Lilys Fan",
       "Topic": "LilysFan",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6633,10 +6963,12 @@
       "Rule": "OFF"
     },
     "10.2.4.127": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "AustinsFan",
       "DeviceName": "AustinsFan",
       "FriendlyName1": "Austins Fan",
       "Topic": "AustinsFan",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6713,10 +7045,12 @@
       "Rule": "OFF"
     },
     "10.2.4.129": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "MasterPi",
       "DeviceName": "MasterPi",
       "FriendlyName1": "MasterPi",
       "Topic": "tasmota_%06X",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 0,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6793,15 +7127,17 @@
       "Rule": "OFF"
     },
     "10.2.4.130": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
       "Hostname": "Unused5",
       "DeviceName": "Unused5",
       "FriendlyName1": "Unused5",
       "Topic": "Unused5",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
       "SetOption19": "OFF",
-      "SerialLog": 2,
+      "SerialLog": 0,
       "Template": {
         "NAME": "W-US002S",
         "GPIO": [
@@ -6873,10 +7209,12 @@
       "Rule": "OFF"
     },
     "10.2.4.131": {
-      "Hostname": "%s-%04d",
-      "DeviceName": "Lilys_Vigil",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
+      "Hostname": "LilysVigil",
+      "DeviceName": "LilysVigil",
       "FriendlyName1": "Lilys Vigil",
-      "Topic": "tasmota_%06X",
+      "Topic": "LilysVigil",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 0,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
@@ -6953,189 +7291,113 @@
       "Rule": "OFF"
     },
     "10.2.4.138": {
-      "Hostname": "%s-%04d",
-      "DeviceName": "Tasmota",
-      "FriendlyName1": "Tasmota",
-      "Topic": "tasmota_%06X",
-      "SwitchMode": 0,
-      "PowerRetain": "OFF",
-      "SensorRetain": "OFF",
-      "SetOption19": "OFF",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "Generic",
-        "GPIO": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1
-        ],
-        "FLAG": 0,
-        "BASE": 18
-      },
-      "Module": 1,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "",
-      "Rule": "OFF"
-    },
-    "10.2.4.139": {
-      "Hostname": "%s-%04d",
-      "DeviceName": "Tasmota",
-      "FriendlyName1": "Tasmota",
-      "Topic": "tasmota_%06X",
-      "SwitchMode": 0,
-      "PowerRetain": "OFF",
-      "SensorRetain": "OFF",
-      "SetOption19": "OFF",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "Generic",
-        "GPIO": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1
-        ],
-        "FLAG": 0,
-        "BASE": 18
-      },
-      "Module": 1,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "",
-      "Rule": "OFF"
-    },
-    "10.2.4.112": {
-      "Hostname": "RetroPi",
-      "DeviceName": "RetroPi",
-      "FriendlyName1": "Retro Pi",
-      "Topic": "RetroPi",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
+      "Hostname": "AnimalShed",
+      "DeviceName": "AnimalShed",
+      "FriendlyName1": "Animal Shed",
+      "Topic": "AnimalShed",
+      "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
-      "SetOption19": "ON",
+      "SetOption19": "OFF",
       "SerialLog": 0,
       "Template": {
-        "NAME": "Sonoff+I2C",
+        "NAME": "Sonoff Basic",
         "GPIO": [
           32,
-          608,
-          0,
-          640,
-          0,
+          1,
+          1,
+          1,
+          1,
           0,
           0,
           0,
           224,
           320,
+          1,
           0,
+          0,
+          0
+        ],
+        "FLAG": 0,
+        "BASE": 1
+      },
+      "Module": 0,
+      "GroupTopic1": "tasmotas",
+      "GroupTopic2": "",
+      "GroupTopic3": "",
+      "GroupTopic4": "",
+      "Timer1": {
+        "Enable": 1,
+        "Mode": 2,
+        "Time": "-01:00",
+        "Window": 0,
+        "Days": "1111111",
+        "Repeat": 1,
+        "Output": 1,
+        "Action": 1
+      },
+      "Timer2": {
+        "Enable": 1,
+        "Mode": 2,
+        "Time": "03:00",
+        "Window": 0,
+        "Days": "1111111",
+        "Repeat": 1,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer3": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer4": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timers": "ON",
+      "Rule1": "",
+      "Rule": "OFF"
+    },
+    "10.2.4.139": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
+      "Hostname": "SonoffSpare2",
+      "DeviceName": "SonoffSpare2",
+      "FriendlyName1": "SonoffSpare2",
+      "Topic": "SonoffSpare2",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
+      "PowerRetain": "OFF",
+      "SensorRetain": "OFF",
+      "SetOption19": "OFF",
+      "SerialLog": 0,
+      "Template": {
+        "NAME": "Sonoff Basic",
+        "GPIO": [
+          32,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          224,
+          320,
+          1,
           0,
           0,
           0

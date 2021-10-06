@@ -98,15 +98,58 @@ done
 
 ```!bash
 #Just Minimal Firmware
-for n in $(cat ./iplist.txt)
+for ip in $(seq 13 14);
 do
-    printf '{"IPAddress":"'$n'"}'
-    echo -e "\rStarting Minimal for $n\r"
-    curl -F 'u2=@/Users/ryan-peay/Downloads/skg-tasmota-minimal.bin' \
-      http://$n/u2 -o /Users/ryan-peay/Downloads/firmware/$n.standard.txt
-    echo -e "Done with $n\r\r\r"
+    printf '{"IPAddress":"10.2.4.'$ip'"}'
+    echo -e "\rStarting Minimal for 10.2.4.$ip\r"
+    # curl -F 'u2=@/Users/ryan-peay/repo/tasmota/build_output/firmware/tasmota-minimal.bin.gz' \
+    #   http://10.2.4.$ip/u2 -o /Users/ryan-peay/Downloads/firmware/$ip.9.5.txt
+    curl "http://10.2.4.$ip/u1?o=http%3A%2F%2F10.2.2.4%3A2020%2Ftasmota-minimal.bin.gz"
+    echo -e "Done with $ip\r\r\r"
 done
 ```
+# Backlog OtaUrl http://10.2.2.4/tasmota-minimal.bin.gz;
+
+```!bash
+for ip in $(cat $HOME/Downloads/2021-09-19-tasmota-information.json | jq '.tasmotas[]."Status 0".StatusNET.IPAddress' -cr)
+do
+  printf '{"IPAddress":"'$ip'"}'
+  echo -e "\rStarting Minimal for $ip\r"
+  # curl "http://$ip/cm?cmnd=OtaUrl%20http%3A%2F%2F10.2.2.4%3A2020%2Ftasmota.bin.gz"
+  curl "http://$ip/u1?o=http%3A%2F%2F10.2.2.4%3A2020%2Ftasmota-minimal.bin.gz"
+  echo -e "Done with $ip\r\r\r"
+done
+```
+
+```!bash
+# web server prep
+# ssh pi@10.2.2.4
+# cd /home/pi/docker/busybox/firmware
+# python3 -m http.server 2020
+
+for ip in $(cat $HOME/Downloads/2021-09-19-tasmota-information.json | jq '.tasmotas[]."Status 0".StatusNET.IPAddress' -cr)
+do
+  jqstr=".tasmotas.\"$ip\" | . += {\"IP\": \"$ip\"}"
+  devicedata=$(jq $jqstr -c < $HOME/repo/homeassistant/tasmota-declared-config4.json)
+
+  standardstring="http://10.2.2.4:2020/tasmota.bin.gz"
+  if [[ $(echo $devicedata | jq -r '.OtaUrl') == $standardstring ]] 
+  then
+    echo $devicedata | jq '. | {IP, OtaUrl}' -c
+    # curl "http://$ip/u1?o=http%3A%2F%2F10.2.2 .4%3A2020%2Ftasmota.bin.gz"
+  fi
+
+  sensorstring="http://10.2.2.4:2020/tasmota-sensors.bin.gz"
+  if [[ $(echo $devicedata | jq -r '.OtaUrl') == $sensorstring ]] 
+  then
+    echo $devicedata | jq '. | {IP, OtaUrl}' -c
+    # curl "http://$ip/u1?o=http%3A%2F%2F10.2.2.4%3A2020%2Ftasmota-minimal.bin.gz"
+    # curl "http://$ip/u1?o=http%3A%2F%2F10.2.2.4%3A2020%2Ftasmota-sensors.bin.gz"
+  fi
+done
+```
+
+
 
 ```!bash
 #Just Standard Firmware
