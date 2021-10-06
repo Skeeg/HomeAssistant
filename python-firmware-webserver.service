@@ -1,0 +1,11 @@
+[Unit]
+Description=Python Firmware Web Server
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 -m http.server 2020 --dir /home/pi/docker/homeassistant/firmware
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
