@@ -80,7 +80,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "FamilyLights"
     },
     "10.2.4.14": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -162,7 +163,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "FamilyFan"
     },
     "10.2.4.16": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -244,7 +246,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/LilyHallGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "LilyHall"
     },
     "10.2.4.17": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -326,7 +329,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/EntryCansGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "EntryCans_C1"
     },
     "10.2.4.18": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -408,7 +412,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/EntryCansGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "EntryCans"
     },
     "10.2.4.19": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -490,7 +495,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/EntryCansGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "EntryCans_C2"
     },
     "10.2.4.20": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -572,7 +578,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "KidsSink"
     },
     "10.2.4.21": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -654,7 +661,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/AustinHallGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "AustinHall"
     },
     "10.2.4.22": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -736,7 +744,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "DadsLights"
     },
     "10.2.4.23": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -818,7 +827,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/LilyHallGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "LilyHall_C1"
     },
     "10.2.4.24": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -900,7 +910,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "PorchLights"
     },
     "10.2.4.26": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -982,7 +993,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/AustinHallGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "AustinHall_C1"
     },
     "10.2.4.27": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -1064,7 +1076,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/LilyHallGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "LilyHall_C2"
     },
     "10.2.4.28": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -1146,7 +1159,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/MainHallGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "MainHall_C1"
     },
     "10.2.4.29": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -1228,7 +1242,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/MainHallGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "MainHall"
     },
     "10.2.4.30": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -1310,7 +1325,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/MainHallGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "MainHall_C2"
     },
     "10.2.4.31": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -1392,7 +1408,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/KitchenCansGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "KitchenCans"
     },
     "10.2.4.32": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -1474,7 +1491,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/KitchenSinkGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "KitchenSink"
     },
     "10.2.4.33": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -1556,7 +1574,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/KitchenSinkGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "KitchenSink_C1"
     },
     "10.2.4.34": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -1638,7 +1657,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/KitchenCansGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "KitchenCans_C1"
     },
     "10.2.4.35": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -1720,7 +1740,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "PowderHall"
     },
     "10.2.4.36": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -1802,7 +1823,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/StudyLightsGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "StudyLights"
     },
     "10.2.4.37": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -1884,10 +1906,11 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "LibraryLights"
     },
     "10.2.4.38": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
       "Hostname": "ComputerAustin",
       "DeviceName": "ComputerAustin",
       "FriendlyName1": "Computer Austin",
@@ -1966,7 +1989,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "ComputerAustin"
     },
     "10.2.4.40": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
@@ -2047,8 +2071,9 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
-      "Rule": "ON"
+      "Rule1": "on time#minute|1 do Power 1 endon",
+      "Rule": "ON",
+      "ConfigurationTopic": "BasementFridge"
     },
     "10.2.4.41": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -2130,7 +2155,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "EveLights"
     },
     "10.2.4.42": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -2212,7 +2238,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "PowderFan"
     },
     "10.2.4.43": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -2294,7 +2321,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/StudyLightsGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "StudyFan"
     },
     "10.2.4.44": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -2376,10 +2404,11 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "PowderLights"
     },
     "10.2.4.45": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
       "Hostname": "GarageFreezer",
       "DeviceName": "GarageFreezer",
       "FriendlyName1": "Garage Freezer",
@@ -2457,15 +2486,16 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
-      "Rule": "ON"
+      "Rule1": "on time#minute|1 do Power 1 endon",
+      "Rule": "ON",
+      "ConfigurationTopic": "GarageFreezer"
     },
     "10.2.4.46": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
-      "Hostname": "LaptopCharger",
-      "DeviceName": "LaptopCharger",
-      "FriendlyName1": "Laptop Charger",
-      "Topic": "LaptopCharger",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
+      "Hostname": "Unused03",
+      "DeviceName": "Unused03",
+      "FriendlyName1": "Unused03",
+      "Topic": "Unused03",
       "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
@@ -2540,7 +2570,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "LaptopCharger"
     },
     "10.2.4.47": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -2622,7 +2653,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "ChristmasPackage"
     },
     "10.2.4.48": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -2704,7 +2736,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "BasementLights"
     },
     "10.2.4.50": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -2786,7 +2819,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "DiningLights"
     },
     "10.2.4.51": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -2868,7 +2902,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "PatioLights"
     },
     "10.2.4.52": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -2950,7 +2985,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/GarageLightsGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "GarageLights"
     },
     "10.2.4.53": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -3032,7 +3068,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "ExteriorGarageLights"
     },
     "10.2.4.54": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -3114,10 +3151,11 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "KidsBathroomFan"
     },
     "10.2.4.55": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
       "Hostname": "Unused2",
       "DeviceName": "Unused2",
       "FriendlyName1": "Unused2",
@@ -3196,10 +3234,11 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "Unused2"
     },
     "10.2.4.56": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
       "Hostname": "GroundDecor",
       "DeviceName": "GroundDecor",
       "FriendlyName1": "Ground Decor",
@@ -3278,10 +3317,11 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "GroundDecor"
     },
     "10.2.4.57": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
       "Hostname": "3dPrinter",
       "DeviceName": "3dPrinter",
       "FriendlyName1": "3d Printer",
@@ -3360,10 +3400,11 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "3dPrinter"
     },
     "10.2.4.58": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
       "Hostname": "ComputerLily",
       "DeviceName": "ComputerLily",
       "FriendlyName1": "Computer Lily",
@@ -3442,10 +3483,11 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "ComputerLily"
     },
     "10.2.4.59": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
       "Hostname": "MainTV",
       "DeviceName": "MainTV",
       "FriendlyName1": "Main TV",
@@ -3524,10 +3566,11 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "MainTV"
     },
     "10.2.4.60": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
       "Hostname": "DadsWorkspace",
       "DeviceName": "DadsWorkspace",
       "FriendlyName1": "Dads Workspace",
@@ -3606,10 +3649,11 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "DadsWorkspace"
     },
     "10.2.4.61": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
       "Hostname": "MasterTV",
       "DeviceName": "MasterTV",
       "FriendlyName1": "Master TV",
@@ -3688,14 +3732,15 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "MasterTV"
     },
     "10.2.4.62": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
-      "Hostname": "TopChristmas",
-      "DeviceName": "TopChristmas",
-      "FriendlyName1": "Top Christmas",
-      "Topic": "TopChristmas",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
+      "Hostname": "Unused01",
+      "DeviceName": "Unused01",
+      "FriendlyName1": "Unused01",
+      "Topic": "Unused01",
       "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
@@ -3770,10 +3815,11 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "TopChristmas"
     },
     "10.2.4.63": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
       "Hostname": "ComputerMedia",
       "DeviceName": "ComputerMedia",
       "FriendlyName1": "Computer Media",
@@ -3852,7 +3898,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "ComputerMedia"
     },
     "10.2.4.64": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
@@ -3934,10 +3981,11 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "ServerDisks"
     },
     "10.2.4.65": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
       "Hostname": "Unused4",
       "DeviceName": "Unused4",
       "FriendlyName1": "Unused4",
@@ -4016,10 +4064,11 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "Unused4"
     },
     "10.2.4.66": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
       "Hostname": "NetworkEquipment",
       "DeviceName": "NetworkEquipment",
       "FriendlyName1": "Network Equipment",
@@ -4098,7 +4147,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on time#minute|1 do Power 1 endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "NetworkEquipment"
     },
     "10.2.4.67": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -4180,7 +4230,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "ExteriorSide"
     },
     "10.2.4.68": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -4262,10 +4313,11 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/GarageLightsGroup/POWER %value% endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "GarageLights_C1"
     },
     "10.2.4.69": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
       "Hostname": "PetLights",
       "DeviceName": "PetLights",
       "FriendlyName1": "Pet Lights",
@@ -4344,10 +4396,11 @@
       },
       "Timers": "ON",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "PetLights"
     },
     "10.2.4.70": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
       "Hostname": "KitchenFridge",
       "DeviceName": "KitchenFridge",
       "FriendlyName1": "Kitchen Fridge",
@@ -4425,8 +4478,9 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
-      "Rule": "ON"
+      "Rule1": "on time#minute|1 do Power 1 endon",
+      "Rule": "ON",
+      "ConfigurationTopic": "KitchenFridge"
     },
     "10.2.4.71": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
@@ -4508,7 +4562,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "HotTub"
     },
     "10.2.4.72": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -4590,7 +4645,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "KidsToilet"
     },
     "10.2.4.73": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -4672,7 +4728,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "KidsShower"
     },
     "10.2.4.83": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -4754,14 +4811,15 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "EntryChandelier"
     },
     "10.2.4.89": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
-      "Hostname": "BottomChristmas",
-      "DeviceName": "BottomChristmas",
-      "FriendlyName1": "Bottom Christmas",
-      "Topic": "BottomChristmas",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
+      "Hostname": "Unused02",
+      "DeviceName": "Unused02",
+      "FriendlyName1": "Unused02",
+      "Topic": "Unused02",
       "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
@@ -4836,7 +4894,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "BottomChristmas"
     },
     "10.2.4.90": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -4918,7 +4977,8 @@
       },
       "Timers": "ON",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "KitchenTable"
     },
     "10.2.4.91": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -5000,7 +5060,8 @@
       },
       "Timers": "ON",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "EndTable"
     },
     "10.2.4.92": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -5082,7 +5143,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on time#minute|1 do Power 1 endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "PiHole"
     },
     "10.2.4.93": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -5164,10 +5226,11 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "SonoffSpare3"
     },
     "10.2.4.96": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-ir.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-ircustom.bin.gz",
       "Hostname": "MediaRemote",
       "DeviceName": "MediaRemote",
       "FriendlyName1": "Media Remote",
@@ -5242,7 +5305,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "MediaRemote"
     },
     "10.2.4.98": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -5324,7 +5388,8 @@
       },
       "Timers": "ON",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "BuffetDecor"
     },
     "10.2.4.99": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -5406,7 +5471,8 @@
       },
       "Timers": "ON",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "tasmota_155E07"
     },
     "10.2.4.100": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -5488,7 +5554,8 @@
       },
       "Timers": "ON",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "RailingLights"
     },
     "10.2.4.101": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -5570,7 +5637,8 @@
       },
       "Timers": "ON",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "CurtainLights"
     },
     "10.2.4.102": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -5652,7 +5720,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "GarageLamp"
     },
     "10.2.4.103": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -5734,7 +5803,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "FirePlace"
     },
     "10.2.4.104": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -5816,7 +5886,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "Blower"
     },
     "10.2.4.105": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -5898,7 +5969,8 @@
       },
       "Timers": "ON",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "LeftMantle"
     },
     "10.2.4.111": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -5980,7 +6052,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "PatioFountain"
     },
     "10.2.4.112": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -6062,7 +6135,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "RetroPi"
     },
     "10.2.4.113": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -6144,14 +6218,15 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "DadsFan"
     },
     "10.2.4.114": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
-      "Hostname": "ElectricFence",
-      "DeviceName": "ElectricFence",
-      "FriendlyName1": "Electric Fence",
-      "Topic": "ElectricFence",
+      "Hostname": "AnimalShed",
+      "DeviceName": "AnimalShed",
+      "FriendlyName1": "Animal Shed",
+      "Topic": "AnimalShed",
       "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
@@ -6185,22 +6260,22 @@
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
+        "Enable": 1,
+        "Mode": 2,
+        "Time": "-01:00",
         "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
+        "Days": "1111111",
+        "Repeat": 1,
         "Output": 1,
-        "Action": 0
+        "Action": 1
       },
       "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
+        "Enable": 1,
+        "Mode": 2,
+        "Time": "03:00",
         "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
+        "Days": "1111111",
+        "Repeat": 1,
         "Output": 1,
         "Action": 0
       },
@@ -6224,9 +6299,10 @@
         "Output": 1,
         "Action": 0
       },
-      "Timers": "OFF",
+      "Timers": "ON",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "AnimalShed"
     },
     "10.2.4.115": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -6308,7 +6384,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "ElectronicsWorkstation"
     },
     "10.2.4.116": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -6390,7 +6467,8 @@
       },
       "Timers": "ON",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "MantleDecor"
     },
     "10.2.4.117": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -6472,7 +6550,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "DadsLamp"
     },
     "10.2.4.118": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -6554,7 +6633,8 @@
       },
       "Timers": "OFF",
       "Rule1": "on time#minute|1 do Power 1 endon",
-      "Rule": "ON"
+      "Rule": "ON",
+      "ConfigurationTopic": "InternetRouter"
     },
     "10.2.4.119": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -6632,7 +6712,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "WorkspaceMonitor"
     },
     "10.2.4.123": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -6714,7 +6795,8 @@
       },
       "Timers": "ON",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "LavaLamp"
     },
     "10.2.4.124": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -6796,7 +6878,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "HotTubLights"
     },
     "10.2.4.125": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -6878,7 +6961,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "GazeboLights"
     },
     "10.2.4.126": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -6960,7 +7044,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "LilysFan"
     },
     "10.2.4.127": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -7042,7 +7127,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "AustinsFan"
     },
     "10.2.4.129": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -7124,13 +7210,14 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "tasmota_5BEFBD"
     },
     "10.2.4.130": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
       "Hostname": "Unused5",
-      "DeviceName": "Unused5",
-      "FriendlyName1": "Unused5",
+      "DeviceName": "Sprinklers",
+      "FriendlyName1": "Sprinklers",
       "Topic": "Unused5",
       "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
@@ -7206,7 +7293,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "Unused5"
     },
     "10.2.4.131": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -7288,14 +7376,15 @@
       },
       "Timers": "ON",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "LilysVigil"
     },
     "10.2.4.138": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
-      "Hostname": "AnimalShed",
-      "DeviceName": "AnimalShed",
-      "FriendlyName1": "Animal Shed",
-      "Topic": "AnimalShed",
+      "Hostname": "ElectricFence",
+      "DeviceName": "ElectricFence",
+      "FriendlyName1": "Electric Fence",
+      "Topic": "ElectricFence",
       "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "OFF",
@@ -7329,22 +7418,22 @@
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
-        "Enable": 1,
-        "Mode": 2,
-        "Time": "-01:00",
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
         "Window": 0,
-        "Days": "1111111",
-        "Repeat": 1,
+        "Days": "0000000",
+        "Repeat": 0,
         "Output": 1,
-        "Action": 1
+        "Action": 0
       },
       "Timer2": {
-        "Enable": 1,
-        "Mode": 2,
-        "Time": "03:00",
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
         "Window": 0,
-        "Days": "1111111",
-        "Repeat": 1,
+        "Days": "0000000",
+        "Repeat": 0,
         "Output": 1,
         "Action": 0
       },
@@ -7368,9 +7457,10 @@
         "Output": 1,
         "Action": 0
       },
-      "Timers": "ON",
+      "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "ElectricFence"
     },
     "10.2.4.139": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -7452,7 +7542,8 @@
       },
       "Timers": "OFF",
       "Rule1": "",
-      "Rule": "OFF"
+      "Rule": "OFF",
+      "ConfigurationTopic": "SonoffSpare2"
     }
   }
 }
