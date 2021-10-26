@@ -245,7 +245,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/LilyHallGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/LilyHallGroup/POWER 1 else power off; publish cmnd/LilyHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "LilyHall"
     },
@@ -328,7 +328,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/EntryCansGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/EntryCansGroup/POWER 1 else power off; publish cmnd/EntryCansGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "EntryCans_C1"
     },
@@ -411,7 +411,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/EntryCansGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/EntryCansGroup/POWER 1 else power off; publish cmnd/EntryCansGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "EntryCans"
     },
@@ -494,7 +494,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/EntryCansGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/EntryCansGroup/POWER 1 else power off; publish cmnd/EntryCansGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "EntryCans_C2"
     },
@@ -660,7 +660,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/AustinHallGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/AustinHallGroup/POWER 1 else power off; publish cmnd/AustinHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "AustinHall"
     },
@@ -826,7 +826,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/LilyHallGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/LilyHallGroup/POWER 1 else power off; publish cmnd/LilyHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "LilyHall_C1"
     },
@@ -992,7 +992,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/AustinHallGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/AustinHallGroup/POWER 1 else power off; publish cmnd/AustinHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "AustinHall_C1"
     },
@@ -1075,7 +1075,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/LilyHallGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/LilyHallGroup/POWER 1 else power off; publish cmnd/LilyHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "LilyHall_C2"
     },
@@ -1158,7 +1158,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/MainHallGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/MainHallGroup/POWER 1 else power off; publish cmnd/MainHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "MainHall_C1"
     },
@@ -1241,7 +1241,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/MainHallGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/MainHallGroup/POWER 1 else power off; publish cmnd/MainHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "MainHall"
     },
@@ -1324,7 +1324,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/MainHallGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/MainHallGroup/POWER 1 else power off; publish cmnd/MainHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "MainHall_C2"
     },
@@ -1407,7 +1407,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/KitchenCansGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/KitchenCansGroup/POWER 1 else power off; publish cmnd/KitchenCansGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "KitchenCans"
     },
@@ -1490,7 +1490,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/KitchenSinkGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/KitchenSinkGroup/POWER 1 else power off; publish cmnd/KitchenSinkGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "KitchenSink"
     },
@@ -1573,7 +1573,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/KitchenSinkGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/KitchenSinkGroup/POWER 1 else power off; publish cmnd/KitchenSinkGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "KitchenSink_C1"
     },
@@ -1656,7 +1656,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/KitchenCansGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/KitchenCansGroup/POWER 1 else power off; publish cmnd/KitchenCansGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "KitchenCans_C1"
     },
@@ -1822,7 +1822,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/StudyLightsGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/StudyLightsGroup/POWER 1 else power off; publish cmnd/StudyLightsGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "StudyLights"
     },
@@ -1988,7 +1988,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do power on endon",
       "Rule": "ON",
       "ConfigurationTopic": "ComputerAustin"
     },
@@ -2320,7 +2320,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/StudyLightsGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/StudyLightsGroup/POWER 1 else power off; publish cmnd/StudyLightsGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "StudyFan"
     },
@@ -2984,7 +2984,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/GarageLightsGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/GarageLightsGroup/POWER 1 else power off; publish cmnd/GarageLightsGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "GarageLights"
     },
@@ -3482,7 +3482,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do power on endon",
       "Rule": "ON",
       "ConfigurationTopic": "ComputerLily"
     },
@@ -3648,7 +3648,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do power on endon",
       "Rule": "ON",
       "ConfigurationTopic": "DadsWorkspace"
     },
@@ -3897,7 +3897,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do power on endon",
       "Rule": "ON",
       "ConfigurationTopic": "ComputerMedia"
     },
@@ -3980,7 +3980,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do power on endon",
       "Rule": "ON",
       "ConfigurationTopic": "ServerDisks"
     },
@@ -4312,7 +4312,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/GarageLightsGroup/POWER %value% endon",
+      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/GarageLightsGroup/POWER 1 else power off; publish cmnd/GarageLightsGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
       "Rule": "ON",
       "ConfigurationTopic": "GarageLights_C1"
     },
@@ -4561,7 +4561,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
+      "Rule1": "on Switch1#state do power on endon",
       "Rule": "ON",
       "ConfigurationTopic": "HotTub"
     },
@@ -7215,15 +7215,15 @@
     },
     "10.2.4.130": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
-      "Hostname": "Unused5",
+      "Hostname": "Sprinklers",
       "DeviceName": "Sprinklers",
       "FriendlyName1": "Sprinklers",
-      "Topic": "Unused5",
+      "Topic": "Sprinklers",
       "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
-      "SetOption19": "OFF",
+      "SetOption19": "ON",
       "SerialLog": 0,
       "Template": {
         "NAME": "W-US002S",
@@ -7294,7 +7294,7 @@
       "Timers": "OFF",
       "Rule1": "",
       "Rule": "OFF",
-      "ConfigurationTopic": "Unused5"
+      "ConfigurationTopic": "Sprinklers"
     },
     "10.2.4.131": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
