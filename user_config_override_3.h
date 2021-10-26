@@ -20,7 +20,7 @@
 #ifndef _USER_CONFIG_OVERRIDE_H_
 #define _USER_CONFIG_OVERRIDE_H_
 
-#define CUSTOM_IMAGE_STR "custom-skeeg-v4"
+#define CUSTOM_IMAGE_STR "v6"
 
 // force the compiler to show a warning to confirm that this file is included
 #warning **** user_config_override.h: Using Settings from this File ****
@@ -316,6 +316,9 @@
   #define USE_ENERGY_SENSOR                        // Add energy sensors (-14k code)
   #define USE_ADE7953                            // [I2cDriver7] Enable ADE7953 Energy monitor as used on Shelly 2.5 (I2C address 0x38) (+1k5)
   #define CODE_IMAGE_STR CUSTOM_IMAGE_STR"_sensors"
+  // #Enable Conditional Rules
+  #define USE_EXPRESSION         // Add support for expression evaluation in rules (+3k2 code, +64 bytes mem)  
+  #define SUPPORT_IF_STATEMENT   // Add support for IF statement in rules (+4k2 code, -332 bytes mem)  
 #endif
 
 #ifdef FIRMWARE_IR
@@ -323,6 +326,9 @@
   #undef USE_ENERGY_SENSOR
   #undef USE_ADE7953
   #define CODE_IMAGE_STR CUSTOM_IMAGE_STR"_ir"
+  // #Enable Conditional Rules
+  // #define USE_EXPRESSION         // Add support for expression evaluation in rules (+3k2 code, +64 bytes mem)  
+  // #define SUPPORT_IF_STATEMENT   // Add support for IF statement in rules (+4k2 code, -332 bytes mem)  
 #endif
 
 #ifdef FIRMWARE_MINIMAL
@@ -337,12 +343,18 @@
   #undef USE_ENERGY_SENSOR
   #undef USE_ADE7953
   #define CODE_IMAGE_STR CUSTOM_IMAGE_STR"_ir_custom"
+  // #Enable Conditional Rules
+  #define USE_EXPRESSION         // Add support for expression evaluation in rules (+3k2 code, +64 bytes mem)  
+  #define SUPPORT_IF_STATEMENT   // Add support for IF statement in rules (+4k2 code, -332 bytes mem)  
 #endif
 
 #ifndef CODE_IMAGE_STR
   #undef USE_ENERGY_SENSOR
   #undef USE_ADE7953
   #define CODE_IMAGE_STR CUSTOM_IMAGE_STR"_standard"
+  // #Enable Conditional Rules
+  #define USE_EXPRESSION         // Add support for expression evaluation in rules (+3k2 code, +64 bytes mem)  
+  #define SUPPORT_IF_STATEMENT   // Add support for IF statement in rules (+4k2 code, -332 bytes mem)  
 #endif
 
 #endif  // _USER_CONFIG_OVERRIDE_H_
