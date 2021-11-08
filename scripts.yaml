@@ -7,9 +7,10 @@ dad_alarm_script:
 master_movies_script:
   alias: Master Movies
   sequence:
-  - data: {}
-    entity_id: switch.master_tv
-    service: switch.turn_on
+  - service: mqtt.publish
+    data:
+      topic: cmnd/MasterTV/POWER
+      payload: '2'
   mode: single
 bedtime_script:
   alias: Bedtime Script
@@ -21,7 +22,6 @@ bedtime_script:
     data: {}
   - service: script.soundbar_poweroff
     data: {}
-  - delay: 00:00:05
   - data:
       payload: 'OFF'
       topic: cmnd/AllStandard/POWER
@@ -177,3 +177,17 @@ soundbar_games:
       payload: '{"Protocol":"SONY","Bits":20,"Data":"0x48114"}'
       topic: cmnd/MediaRemote/IRSend
     service: mqtt.publish
+'1612922701814':
+  alias: AllOn Script
+  sequence:
+  - data: {}
+    entity_id:
+    - light.main_dimmer
+    - light.austins_room
+    - light.lilys_lights
+    service: light.turn_on
+  - data:
+      payload: 'ON'
+      topic: homeassistant/cmnd/AllStandard/POWER
+    service: mqtt.publish
+  mode: single

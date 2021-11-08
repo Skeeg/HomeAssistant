@@ -6,6 +6,159 @@
             "title": "Home",
             "views": [
                 {
+                    "title": "Security",
+                    "path": "security",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "picture-entity",
+                            "entity": "camera.cam_frontdoor_mediaprofile_channel1_mainstream",
+                            "show_name": false,
+                            "show_state": false
+                        },
+                        {
+                            "type": "picture-entity",
+                            "entity": "camera.cam_sidefront_mediaprofile_channel1_mainstream",
+                            "show_state": false,
+                            "show_name": false
+                        },
+                        {
+                            "type": "picture-entity",
+                            "entity": "camera.cam_sideback_mediaprofile_channel1_mainstream",
+                            "show_name": false,
+                            "show_state": false
+                        },
+                        {
+                            "type": "picture-entity",
+                            "entity": "camera.cam_rear_mediaprofile_channel1_mainstream",
+                            "show_name": false,
+                            "show_state": false
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "cover.main_garage"
+                                },
+                                {
+                                    "entity": "cover.3rd_car_garage"
+                                }
+                            ],
+                            "type": "entities",
+                            "state_color": true
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.00000_cell_motion_detection_2"
+                                },
+                                {
+                                    "entity": "binary_sensor.00000_field_detection_3"
+                                },
+                                {
+                                    "entity": "binary_sensor.00000_global_scene_change_2"
+                                },
+                                {
+                                    "entity": "binary_sensor.00000_motion_alarm_2"
+                                },
+                                {
+                                    "entity": "sensor.processor_usage_2"
+                                }
+                            ],
+                            "title": "FrontDoor Camera Stats"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.00000_cell_motion_detection"
+                                },
+                                {
+                                    "entity": "binary_sensor.00000_field_detection_2"
+                                },
+                                {
+                                    "entity": "binary_sensor.00000_global_scene_change"
+                                },
+                                {
+                                    "entity": "binary_sensor.00000_motion_alarm"
+                                },
+                                {
+                                    "entity": "sensor.processor_usage"
+                                }
+                            ],
+                            "title": "SideFront Camera Stats"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "binary_sensor.00000_cell_motion_detection_3",
+                                "binary_sensor.00000_field_detection",
+                                "binary_sensor.00000_global_scene_change_3",
+                                "binary_sensor.00000_motion_alarm_3",
+                                "sensor.processor_usage_3"
+                            ],
+                            "title": "SideBack Camera Stats"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "binary_sensor.00000_cell_motion_detection_4",
+                                "binary_sensor.00000_field_detection_4",
+                                "binary_sensor.00000_global_scene_change_4",
+                                "binary_sensor.00000_motion_alarm_4",
+                                "sensor.processor_usage_4"
+                            ],
+                            "title": "Rear Camera Status"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.electric_fence"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Safety",
+                            "type": "entities",
+                            "state_color": true
+                        }
+                    ]
+                },
+                {
+                    "title": "LiveView",
+                    "path": "liveview",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "picture-entity",
+                            "entity": "camera.cam_frontdoor_mediaprofile_channel1_substream1",
+                            "show_name": false,
+                            "show_state": false,
+                            "camera_view": "live"
+                        },
+                        {
+                            "type": "picture-entity",
+                            "entity": "camera.cam_sidefront_mediaprofile_channel1_substream1",
+                            "show_state": false,
+                            "show_name": false,
+                            "camera_view": "live"
+                        },
+                        {
+                            "type": "picture-entity",
+                            "entity": "camera.cam_sideback_mediaprofile_channel1_substream1",
+                            "show_name": false,
+                            "show_state": false,
+                            "camera_view": "live"
+                        },
+                        {
+                            "type": "picture-entity",
+                            "entity": "camera.cam_rear_mediaprofile_channel1_substream1",
+                            "show_name": false,
+                            "show_state": false,
+                            "camera_view": "live"
+                        }
+                    ]
+                },
+                {
                     "badges": [
                         {
                             "entity": "binary_sensor.updater"
@@ -17,6 +170,9 @@
                     "cards": [
                         {
                             "entities": [
+                                {
+                                    "entity": "switch.patio_fountain"
+                                },
                                 {
                                     "entity": "switch.fireplace"
                                 },
@@ -49,9 +205,6 @@
                                 },
                                 {
                                     "entity": "switch.lilys_fan"
-                                },
-                                {
-                                    "entity": "switch.basement_fan"
                                 }
                             ],
                             "title": "Bedroom Fans",
@@ -64,10 +217,7 @@
                                     "entity": "switch.ground_decor"
                                 },
                                 {
-                                    "entity": "switch.top_christmas"
-                                },
-                                {
-                                    "entity": "switch.bottom_christmas"
+                                    "entity": "switch.christmas_package"
                                 },
                                 {
                                     "entity": "switch.railing_lights"
@@ -82,25 +232,16 @@
                                     "entity": "switch.buffet_decor"
                                 },
                                 {
-                                    "entity": "switch.christmas_railing"
-                                },
-                                {
                                     "entity": "switch.kitchen_table"
                                 },
                                 {
                                     "entity": "switch.end_table"
                                 },
                                 {
-                                    "entity": "switch.front_tree"
-                                },
-                                {
                                     "entity": "switch.left_mantle"
                                 },
                                 {
                                     "entity": "switch.entry_decorations"
-                                },
-                                {
-                                    "entity": "switch.island_decorations"
                                 }
                             ],
                             "show_header_toggle": true,
@@ -158,6 +299,9 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "script.1612922701814"
+                                },
+                                {
                                     "entity": "script.master_movies_script"
                                 },
                                 {
@@ -169,27 +313,62 @@
                             "type": "entities"
                         },
                         {
+                            "type": "entities",
                             "entities": [
                                 {
-                                    "entity": "cover.main_garage"
+                                    "entity": "switch.unused01"
                                 },
                                 {
-                                    "entity": "cover.3rd_car_garage"
+                                    "entity": "switch.unused02"
+                                },
+                                {
+                                    "entity": "switch.unused03"
+                                },
+                                {
+                                    "entity": "switch.unused04"
+                                },
+                                {
+                                    "entity": "switch.unused05"
+                                },
+                                {
+                                    "entity": "switch.unused06"
+                                },
+                                {
+                                    "entity": "switch.sonoffspare2"
+                                },
+                                {
+                                    "entity": "switch.sonoffspare3"
                                 }
-                            ],
-                            "type": "entities",
-                            "state_color": true
+                            ]
                         },
                         {
+                            "type": "entities",
                             "entities": [
                                 {
-                                    "entity": "switch.electric_fence"
+                                    "entity": "switch.computer_austin"
+                                },
+                                {
+                                    "entity": "switch.computer_lily"
+                                },
+                                {
+                                    "entity": "switch.computer_media"
+                                },
+                                {
+                                    "entity": "switch.computer_mob"
+                                },
+                                {
+                                    "entity": "switch.server_disks"
+                                },
+                                {
+                                    "entity": "switch.dads_workspace"
+                                },
+                                {
+                                    "entity": "switch.electronics_workstation"
+                                },
+                                {
+                                    "entity": "switch.3dprinter"
                                 }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Safety",
-                            "type": "entities",
-                            "state_color": true
+                            ]
                         }
                     ],
                     "path": "default_view",
@@ -362,7 +541,7 @@
                             "conditions": [
                                 {
                                     "entity": "switch.retro_pi",
-                                    "state_not": "off"
+                                    "state_not": "off1"
                                 }
                             ],
                             "card": {
@@ -485,9 +664,6 @@
                                     "entity": "switch.basement_lights"
                                 },
                                 {
-                                    "entity": "switch.basement_lamp"
-                                },
-                                {
                                     "entity": "switch.lava_lamp"
                                 }
                             ],
@@ -512,6 +688,9 @@
                                 },
                                 {
                                     "entity": "light.lilys_lights"
+                                },
+                                {
+                                    "entity": "light.lilys_vigil"
                                 },
                                 {
                                     "entity": "switch.dads_lights"
@@ -586,6 +765,12 @@
                                 },
                                 {
                                     "entity": "switch.patio_lights"
+                                },
+                                {
+                                    "entity": "switch.gazebo_lights"
+                                },
+                                {
+                                    "entity": "switch.hottub_lights"
                                 }
                             ],
                             "show_header_toggle": true,
@@ -790,6 +975,23 @@
                         {
                             "entity": "weather.home",
                             "type": "weather-forecast"
+                        }
+                    ]
+                },
+                {
+                    "title": "Test",
+                    "path": "test",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "remote.master"
+                            ]
+                        },
+                        {
+                            "type": "media-control",
+                            "entity": "media_player.master"
                         }
                     ]
                 }

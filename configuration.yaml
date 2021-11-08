@@ -21,7 +21,37 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
-
+#camera: !include cameras.yaml
+#camera:
+# - platform: generic
+#   name: sidefrontcam
+#   authentication: digest
+#   username: !secret ip_cam_user
+#   password: !secret ip_cam_pass
+#   still_image_url: http://10.2.3.10/cgi-bin/snapshot.cgi
+#   stream_source: rtsp://stream:homeassistantstream@10.2.3.10:554/cam/realmonitor?channel=1&subtype=1&unicast=true&proto=Onvif
+# - platform: generic
+#   name: frontdoorcam
+#   authentication: digest
+#   username: !secret ip_cam_user
+#   password: !secret ip_cam_pass
+#   still_image_url: http://10.2.3.11/cgi-bin/snapshot.cgi
+#   stream_source: rtsp://stream:homeassistantstream@10.2.3.11:554/cam/realmonitor?channel=1&subtype=1&unicast=true&proto=Onvif
+# - platform: generic
+#   name: sidebackcam
+#   authentication: digest
+#    username: !secret ip_cam_user
+#   password: !secret ip_cam_pass
+#   still_image_url: http://10.2.3.12/cgi-bin/snapshot.cgi
+#   stream_source: rtsp://stream:homeassistantstream@10.2.3.12:554/cam/realmonitor?channel=1&subtype=1&unicast=true&proto=Onvif
+# - platform: generic
+#   name: backdoorcam
+#   authentication: digest
+#   username: !secret ip_cam_user
+#   password: !secret ip_cam_pass
+#   still_image_url: http://10.2.3.13/cgi-bin/snapshot.cgi
+#   stream_source: rtsp://stream:homeassistantstream@10.2.3.13:554/cam/realmonitor?channel=1&subtype=1&unicast=true&proto=Onvif
+ 
 cover:
   - platform: myq
     username: !secret myq_username
