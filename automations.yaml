@@ -247,8 +247,11 @@
   condition: []
   action:
   - data: {}
-    entity_id: switch.ground_decor
     service: switch.turn_off
+    target:
+      entity_id:
+      - switch.ground_decor
+      - switch.christmas_package
   mode: single
 - id: timer_outdoor-lights-start
   alias: Timer-Outdoor-Decorations-Start
