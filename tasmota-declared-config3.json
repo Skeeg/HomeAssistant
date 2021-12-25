@@ -36,7 +36,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -83,89 +83,6 @@
       "Rule": "OFF",
       "ConfigurationTopic": "FamilyLights"
     },
-    "10.2.4.14": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
-      "Hostname": "FamilyFan",
-      "DeviceName": "FamilyFan",
-      "FriendlyName1": "Family Fan",
-      "Topic": "FamilyFan",
-      "FullTopic": "%prefix%/%topic%/",
-      "SwitchMode": 3,
-      "PowerRetain": "OFF",
-      "SensorRetain": "OFF",
-      "SetOption19": "ON",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "Maxcio Active",
-        "GPIO": [
-          160,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          224,
-          320,
-          0,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 18
-      },
-      "Module": 0,
-      "GroupTopic1": "AllStandard",
-      "GroupTopic2": "InteriorFans",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "",
-      "Rule": "OFF",
-      "ConfigurationTopic": "FamilyFan"
-    },
     "10.2.4.16": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "LilyHall",
@@ -203,7 +120,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "LilyHallGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -245,7 +162,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/LilyHallGroup/POWER 1 else power off; publish cmnd/LilyHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/LilyHallGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "LilyHall"
     },
@@ -286,7 +203,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "EntryCansGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -328,7 +245,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/EntryCansGroup/POWER 1 else power off; publish cmnd/EntryCansGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/EntryCansGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "EntryCans_C1"
     },
@@ -369,7 +286,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "EntryCansGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -411,7 +328,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/EntryCansGroup/POWER 1 else power off; publish cmnd/EntryCansGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/EntryCansGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "EntryCans"
     },
@@ -452,7 +369,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "EntryCansGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -494,7 +411,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/EntryCansGroup/POWER 1 else power off; publish cmnd/EntryCansGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/EntryCansGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "EntryCans_C2"
     },
@@ -534,7 +451,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -594,7 +511,7 @@
       "SetOption19": "ON",
       "SerialLog": 0,
       "Template": {
-        "NAME": "Gosund KS-602S Active",
+        "NAME": "Gosund KS-602S Control",
         "GPIO": [
           160,
           320,
@@ -618,7 +535,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "AustinHallGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -660,7 +577,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/AustinHallGroup/POWER 1 else power off; publish cmnd/AustinHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/AustinHallGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "AustinHall"
     },
@@ -700,7 +617,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -747,89 +664,6 @@
       "Rule": "OFF",
       "ConfigurationTopic": "DadsLights"
     },
-    "10.2.4.23": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
-      "Hostname": "LilyHall_C1",
-      "DeviceName": "LilyHall_C1",
-      "FriendlyName1": "Control1 - Lily Hall",
-      "Topic": "LilyHall_C1",
-      "FullTopic": "%prefix%/%topic%/",
-      "SwitchMode": 3,
-      "PowerRetain": "OFF",
-      "SensorRetain": "OFF",
-      "SetOption19": "ON",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "Gosund KS-602S Control",
-        "GPIO": [
-          160,
-          320,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          224,
-          576,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 18
-      },
-      "Module": 0,
-      "GroupTopic1": "AllStandard",
-      "GroupTopic2": "InteriorLights",
-      "GroupTopic3": "LilyHallGroup",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/LilyHallGroup/POWER 1 else power off; publish cmnd/LilyHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
-      "Rule": "ON",
-      "ConfigurationTopic": "LilyHall_C1"
-    },
     "10.2.4.24": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "PorchLights",
@@ -867,7 +701,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "ExteriorFrontLights",
       "GroupTopic3": "ExteriorLights",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -950,7 +784,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "AustinHallGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -992,7 +826,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/AustinHallGroup/POWER 1 else power off; publish cmnd/AustinHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/AustinHallGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "AustinHall_C1"
     },
@@ -1033,7 +867,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "LilyHallGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -1075,7 +909,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/LilyHallGroup/POWER 1 else power off; publish cmnd/LilyHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/LilyHallGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "LilyHall_C2"
     },
@@ -1116,7 +950,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "MainHallGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -1158,7 +992,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/MainHallGroup/POWER 1 else power off; publish cmnd/MainHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/MainHallGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "MainHall_C1"
     },
@@ -1199,7 +1033,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "MainHallGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -1241,7 +1075,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/MainHallGroup/POWER 1 else power off; publish cmnd/MainHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/MainHallGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "MainHall"
     },
@@ -1282,7 +1116,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "MainHallGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -1324,7 +1158,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/MainHallGroup/POWER 1 else power off; publish cmnd/MainHallGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/MainHallGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "MainHall_C2"
     },
@@ -1365,7 +1199,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "KitchenCansGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -1407,7 +1241,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/KitchenCansGroup/POWER 1 else power off; publish cmnd/KitchenCansGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/KitchenCansGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "KitchenCans"
     },
@@ -1448,7 +1282,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "KitchenSinkGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -1490,7 +1324,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/KitchenSinkGroup/POWER 1 else power off; publish cmnd/KitchenSinkGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/KitchenSinkGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "KitchenSink"
     },
@@ -1531,7 +1365,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "KitchenSinkGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -1573,7 +1407,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/KitchenSinkGroup/POWER 1 else power off; publish cmnd/KitchenSinkGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/KitchenSinkGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "KitchenSink_C1"
     },
@@ -1614,7 +1448,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "KitchenCansGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -1656,7 +1490,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/KitchenCansGroup/POWER 1 else power off; publish cmnd/KitchenCansGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/KitchenCansGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "KitchenCans_C1"
     },
@@ -1696,7 +1530,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -1780,7 +1614,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "StudyLightsGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -1822,7 +1656,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/StudyLightsGroup/POWER 1 else power off; publish cmnd/StudyLightsGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/StudyLightsGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "StudyLights"
     },
@@ -1862,7 +1696,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -1944,7 +1778,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -1988,92 +1822,9 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do power on endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON",
       "ConfigurationTopic": "ComputerAustin"
-    },
-    "10.2.4.40": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
-      "Hostname": "BasementFridge",
-      "DeviceName": "BasementFridge",
-      "FriendlyName1": "Basement Fridge",
-      "Topic": "BasementFridge",
-      "FullTopic": "%prefix%/%topic%/",
-      "SwitchMode": 3,
-      "PowerRetain": "ON",
-      "SensorRetain": "ON",
-      "SetOption19": "ON",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "W-US002S",
-        "GPIO": [
-          0,
-          192,
-          0,
-          288,
-          2688,
-          2656,
-          0,
-          0,
-          2592,
-          289,
-          224,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 45
-      },
-      "Module": 0,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "\\\"\\",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "on time#minute|1 do Power 1 endon",
-      "Rule": "ON",
-      "ConfigurationTopic": "BasementFridge"
     },
     "10.2.4.41": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -2112,7 +1863,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "ExteriorFrontLights",
       "GroupTopic3": "ExteriorLights",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -2195,7 +1946,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorFans",
       "GroupTopic3": "BathroomFans",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -2278,7 +2029,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
       "GroupTopic3": "StudyLightsGroup",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -2320,7 +2071,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/StudyLightsGroup/POWER 1 else power off; publish cmnd/StudyLightsGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/StudyLightsGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "StudyFan"
     },
@@ -2360,7 +2111,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -2442,7 +2193,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -2525,7 +2276,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -2571,7 +2322,7 @@
       "Timers": "OFF",
       "Rule1": "",
       "Rule": "OFF",
-      "ConfigurationTopic": "LaptopCharger"
+      "ConfigurationTopic": "Unused03"
     },
     "10.2.4.47": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -2608,7 +2359,7 @@
       },
       "Module": 0,
       "GroupTopic1": "AlwaysOn",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -2692,7 +2443,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -2739,6 +2490,89 @@
       "Rule": "OFF",
       "ConfigurationTopic": "BasementLights"
     },
+    "10.2.4.49": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin",
+      "Hostname": "GarageFridge",
+      "DeviceName": "GarageFridge",
+      "FriendlyName1": "Garage Fridge",
+      "Topic": "GarageFridge",
+      "FullTopic": "homeassistant/%prefix%/%topic%/",
+      "SwitchMode": 3,
+      "PowerRetain": "ON",
+      "SensorRetain": "ON",
+      "SetOption19": "ON",
+      "SerialLog": 0,
+      "Template": {
+        "NAME": "W-US002S",
+        "GPIO": [
+          0,
+          192,
+          0,
+          288,
+          2688,
+          2656,
+          0,
+          0,
+          2592,
+          289,
+          224,
+          0,
+          0,
+          0
+        ],
+        "FLAG": 0,
+        "BASE": 45
+      },
+      "Module": 0,
+      "GroupTopic1": "tasmotas",
+      "GroupTopic2": "",
+      "GroupTopic3": "",
+      "GroupTopic4": "",
+      "Timer1": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer2": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer3": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer4": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timers": "OFF",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule": "ON",
+      "ConfigurationTopic": "GarageFridge"
+    },
     "10.2.4.50": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "DiningLights",
@@ -2775,7 +2609,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -2858,7 +2692,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "ExteriorLights",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -2941,7 +2775,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "GarageLightsGroup",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -2984,7 +2818,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/GarageLightsGroup/POWER 1 else power off; publish cmnd/GarageLightsGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/GarageLightsGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "GarageLights"
     },
@@ -3025,7 +2859,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "ExteriorFrontLights",
       "GroupTopic3": "ExteriorLights",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -3108,7 +2942,7 @@
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorFans",
       "GroupTopic3": "BathroomFans",
-      "GroupTopic4": "",
+      "GroupTopic4": "\"\"",
       "Timer1": {
         "Enable": 0,
         "Mode": 0,
@@ -3156,15 +2990,15 @@
     },
     "10.2.4.55": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
-      "Hostname": "ComputerMob",
-      "DeviceName": "ComputerMob",
-      "FriendlyName1": "Computer Mob",
-      "Topic": "ComputerMob",
+      "Hostname": "Unused2",
+      "DeviceName": "Unused2",
+      "FriendlyName1": "Unused2",
+      "Topic": "Unused2",
       "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
-      "SetOption19": "ON",
+      "SetOption19": "OFF",
       "SerialLog": 0,
       "Template": {
         "NAME": "W-US002S",
@@ -3189,7 +3023,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -3235,7 +3069,7 @@
       "Timers": "OFF",
       "Rule1": "",
       "Rule": "OFF",
-      "ConfigurationTopic": "ComputerMob"
+      "ConfigurationTopic": "Unused2"
     },
     "10.2.4.56": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
@@ -3272,7 +3106,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -3355,7 +3189,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -3438,7 +3272,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -3482,7 +3316,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do power on endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON",
       "ConfigurationTopic": "ComputerLily"
     },
@@ -3521,7 +3355,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -3604,7 +3438,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -3648,7 +3482,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do power on endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON",
       "ConfigurationTopic": "DadsWorkspace"
     },
@@ -3687,7 +3521,7 @@
       },
       "Module": 0,
       "GroupTopic1": "AllStandard",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -3770,7 +3604,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -3816,7 +3650,7 @@
       "Timers": "OFF",
       "Rule1": "",
       "Rule": "OFF",
-      "ConfigurationTopic": "TopChristmas"
+      "ConfigurationTopic": "Unused01"
     },
     "10.2.4.63": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
@@ -3853,7 +3687,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -3897,7 +3731,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do power on endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON",
       "ConfigurationTopic": "ComputerMedia"
     },
@@ -3936,7 +3770,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -3980,21 +3814,21 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "on Switch1#state do power on endon",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
       "Rule": "ON",
       "ConfigurationTopic": "ServerDisks"
     },
     "10.2.4.65": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
-      "Hostname": "Unused04",
-      "DeviceName": "Unused04",
-      "FriendlyName1": "Unused04",
-      "Topic": "Unused04",
+      "Hostname": "Unused4",
+      "DeviceName": "Unused4",
+      "FriendlyName1": "Unused4",
+      "Topic": "Unused4",
       "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
-      "SetOption19": "ON",
+      "SetOption19": "OFF",
       "SerialLog": 0,
       "Template": {
         "NAME": "W-US002S",
@@ -4019,7 +3853,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -4065,7 +3899,7 @@
       "Timers": "OFF",
       "Rule1": "",
       "Rule": "OFF",
-      "ConfigurationTopic": "Unused04"
+      "ConfigurationTopic": "Unused4"
     },
     "10.2.4.66": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
@@ -4102,7 +3936,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -4186,7 +4020,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "ExteriorLights",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -4269,7 +4103,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "GarageLightsGroup",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -4312,7 +4146,7 @@
         "Action": 0
       },
       "Timers": "OFF",
-      "Rule1": "ON switch1#state do if (var1==0.000) then status; power on; publish cmnd/GarageLightsGroup/POWER 1 else power off; publish cmnd/GarageLightsGroup/POWER 0 endif ENDON ON system#boot DO var1=0.000 ENDON ON power1#state=0 DO var1=0.000 ENDON ON power1#state=1 DO var1=1.000 ENDON",
+      "Rule1": "on Switch1#state do Publish cmnd/GarageLightsGroup/POWER %value% endon",
       "Rule": "ON",
       "ConfigurationTopic": "GarageLights_C1"
     },
@@ -4351,7 +4185,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -4434,7 +4268,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -4482,172 +4316,6 @@
       "Rule": "ON",
       "ConfigurationTopic": "KitchenFridge"
     },
-    "10.2.4.71": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
-      "Hostname": "HotTub",
-      "DeviceName": "HotTub",
-      "FriendlyName1": "Hot Tub",
-      "Topic": "HotTub",
-      "FullTopic": "%prefix%/%topic%/",
-      "SwitchMode": 3,
-      "PowerRetain": "ON",
-      "SensorRetain": "ON",
-      "SetOption19": "ON",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "W-US002S",
-        "GPIO": [
-          0,
-          192,
-          0,
-          288,
-          2688,
-          2656,
-          0,
-          0,
-          2592,
-          289,
-          224,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 45
-      },
-      "Module": 0,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "on Switch1#state do power on endon",
-      "Rule": "ON",
-      "ConfigurationTopic": "HotTub"
-    },
-    "10.2.4.72": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
-      "Hostname": "KidsToilet",
-      "DeviceName": "KidsToilet",
-      "FriendlyName1": "Kids Toilet Lights",
-      "Topic": "KidsToilet",
-      "FullTopic": "%prefix%/%topic%/",
-      "SwitchMode": 3,
-      "PowerRetain": "OFF",
-      "SensorRetain": "OFF",
-      "SetOption19": "ON",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "Maxcio Active",
-        "GPIO": [
-          160,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          224,
-          320,
-          0,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 18
-      },
-      "Module": 0,
-      "GroupTopic1": "AllStandard",
-      "GroupTopic2": "InteriorLights",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "",
-      "Rule": "OFF",
-      "ConfigurationTopic": "KidsToilet"
-    },
     "10.2.4.73": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "KidsShower",
@@ -4684,7 +4352,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -4767,7 +4435,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorLights",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -4849,7 +4517,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -4895,7 +4563,7 @@
       "Timers": "OFF",
       "Rule1": "",
       "Rule": "OFF",
-      "ConfigurationTopic": "BottomChristmas"
+      "ConfigurationTopic": "Unused02"
     },
     "10.2.4.90": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -4933,7 +4601,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorDecorations",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 1,
@@ -5016,7 +4684,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorDecorations",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 1,
@@ -5098,7 +4766,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -5156,7 +4824,7 @@
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
-      "SetOption19": "ON",
+      "SetOption19": "OFF",
       "SerialLog": 0,
       "Template": {
         "NAME": "Sonoff Basic",
@@ -5181,7 +4849,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -5264,7 +4932,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -5274,7 +4942,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer2": {
         "Enable": 0,
@@ -5283,7 +4951,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer3": {
         "Enable": 0,
@@ -5292,7 +4960,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer4": {
         "Enable": 0,
@@ -5301,7 +4969,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timers": "OFF",
       "Rule1": "",
@@ -5344,7 +5012,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorDecorations",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 1,
@@ -5427,7 +5095,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorDecorations",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 1,
@@ -5474,89 +5142,6 @@
       "Rule": "OFF",
       "ConfigurationTopic": "EntryDecorations"
     },
-    "10.2.4.100": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
-      "Hostname": "RailingLights",
-      "DeviceName": "RailingLights",
-      "FriendlyName1": "Railing Lights",
-      "Topic": "RailingLights",
-      "FullTopic": "%prefix%/%topic%/",
-      "SwitchMode": 3,
-      "PowerRetain": "OFF",
-      "SensorRetain": "OFF",
-      "SetOption19": "ON",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "Sonoff Basic",
-        "GPIO": [
-          32,
-          1,
-          1,
-          1,
-          1,
-          0,
-          0,
-          0,
-          224,
-          320,
-          1,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 1
-      },
-      "Module": 0,
-      "GroupTopic1": "AllStandard",
-      "GroupTopic2": "InteriorDecorations",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 1,
-        "Mode": 0,
-        "Time": "07:00",
-        "Window": 0,
-        "Days": "1111111",
-        "Repeat": 1,
-        "Output": 1,
-        "Action": 1
-      },
-      "Timer2": {
-        "Enable": 1,
-        "Mode": 0,
-        "Time": "23:00",
-        "Window": 0,
-        "Days": "1111111",
-        "Repeat": 1,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "ON",
-      "Rule1": "",
-      "Rule": "OFF",
-      "ConfigurationTopic": "RailingLights"
-    },
     "10.2.4.101": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "CurtainLights",
@@ -5593,7 +5178,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorDecorations",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 1,
@@ -5676,7 +5261,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "GarageLightsGroup",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -5758,7 +5343,7 @@
       },
       "Module": 0,
       "GroupTopic1": "AllStandard",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -5841,7 +5426,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -5925,7 +5510,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorDecorations",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 1,
@@ -6006,8 +5591,8 @@
         "BASE": 1
       },
       "Module": 0,
-      "GroupTopic1": "AllStandard",
-      "GroupTopic2": "",
+      "GroupTopic1": "InteriorDecorations",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -6055,89 +5640,6 @@
       "Rule": "OFF",
       "ConfigurationTopic": "PatioFountain"
     },
-    "10.2.4.112": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
-      "Hostname": "RetroPi",
-      "DeviceName": "RetroPi",
-      "FriendlyName1": "Retro Pi",
-      "Topic": "RetroPi",
-      "FullTopic": "%prefix%/%topic%/",
-      "SwitchMode": 3,
-      "PowerRetain": "OFF",
-      "SensorRetain": "OFF",
-      "SetOption19": "ON",
-      "SerialLog": 0,
-      "Template": {
-        "NAME": "Sonoff+I2C",
-        "GPIO": [
-          32,
-          608,
-          0,
-          640,
-          0,
-          0,
-          0,
-          0,
-          224,
-          320,
-          0,
-          0,
-          0,
-          0
-        ],
-        "FLAG": 0,
-        "BASE": 1
-      },
-      "Module": 0,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
-      "GroupTopic4": "",
-      "Timer1": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer2": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer3": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timer4": {
-        "Enable": 0,
-        "Mode": 0,
-        "Time": "00:00",
-        "Window": 0,
-        "Days": "0000000",
-        "Repeat": 0,
-        "Output": 1,
-        "Action": 0
-      },
-      "Timers": "OFF",
-      "Rule1": "",
-      "Rule": "OFF",
-      "ConfigurationTopic": "RetroPi"
-    },
     "10.2.4.113": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
       "Hostname": "DadsFan",
@@ -6173,7 +5675,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -6256,7 +5758,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -6339,7 +5841,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -6423,7 +5925,7 @@
       "Module": 2,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorDecorations",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 1,
@@ -6505,7 +6007,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -6588,7 +6090,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -6671,7 +6173,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -6681,7 +6183,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer2": {
         "Enable": 0,
@@ -6690,7 +6192,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer3": {
         "Enable": 0,
@@ -6699,7 +6201,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timer4": {
         "Enable": 0,
@@ -6708,7 +6210,7 @@
         "Window": 0,
         "Days": "0000000",
         "Repeat": 0,
-        "Action": 0
+        "Action": 3
       },
       "Timers": "OFF",
       "Rule1": "",
@@ -6751,7 +6253,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "InteriorDecorations",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 1,
@@ -6834,7 +6336,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "ExteriorLights",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -6917,7 +6419,7 @@
       "Module": 0,
       "GroupTopic1": "AllStandard",
       "GroupTopic2": "ExteriorLights",
-      "GroupTopic3": "",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -6999,7 +6501,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -7082,7 +6584,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -7135,7 +6637,7 @@
       "Hostname": "MasterPi",
       "DeviceName": "MasterPi",
       "FriendlyName1": "MasterPi",
-      "Topic": "MasterPi",
+      "Topic": "tasmota_%06X",
       "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 0,
       "PowerRetain": "OFF",
@@ -7143,29 +6645,29 @@
       "SetOption19": "ON",
       "SerialLog": 0,
       "Template": {
-        "NAME": "Sonoff Basic",
+        "NAME": "Generic",
         "GPIO": [
-          32,
           1,
           1,
           1,
           1,
-          0,
-          0,
-          0,
-          224,
-          320,
           1,
-          0,
-          0,
-          0
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
         ],
         "FLAG": 0,
-        "BASE": 1
+        "BASE": 18
       },
-      "Module": 0,
+      "Module": 1,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -7211,19 +6713,19 @@
       "Timers": "OFF",
       "Rule1": "",
       "Rule": "OFF",
-      "ConfigurationTopic": "MasterPi"
+      "ConfigurationTopic": "tasmota_5BEFBD"
     },
     "10.2.4.130": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
-      "Hostname": "Sprinklers",
+      "Hostname": "Unused5",
       "DeviceName": "Sprinklers",
       "FriendlyName1": "Sprinklers",
-      "Topic": "Sprinklers",
+      "Topic": "Unused5",
       "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
       "SensorRetain": "ON",
-      "SetOption19": "ON",
+      "SetOption19": "OFF",
       "SerialLog": 0,
       "Template": {
         "NAME": "W-US002S",
@@ -7248,7 +6750,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -7294,7 +6796,7 @@
       "Timers": "OFF",
       "Rule1": "",
       "Rule": "OFF",
-      "ConfigurationTopic": "Sprinklers"
+      "ConfigurationTopic": "Unused5"
     },
     "10.2.4.131": {
       "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
@@ -7331,7 +6833,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -7414,7 +6916,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -7472,7 +6974,7 @@
       "SwitchMode": 3,
       "PowerRetain": "OFF",
       "SensorRetain": "OFF",
-      "SetOption19": "ON",
+      "SetOption19": "OFF",
       "SerialLog": 0,
       "Template": {
         "NAME": "Sonoff Basic",
@@ -7497,7 +6999,7 @@
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
+      "GroupTopic2": "\"\"",
       "GroupTopic3": "",
       "GroupTopic4": "",
       "Timer1": {
@@ -7545,42 +7047,43 @@
       "Rule": "OFF",
       "ConfigurationTopic": "SonoffSpare2"
     },
-    "10.2.4.141": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
-      "Hostname": "Unused05",
-      "DeviceName": "Unused05",
-      "FriendlyName1": "Unused05",
-      "Topic": "Unused05",
+    "10.2.4.14": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
+      "Hostname": "FamilyFan",
+      "DeviceName": "FamilyFan",
+      "FriendlyName1": "Family Fan",
+      "Topic": "FamilyFan",
       "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
-      "PowerRetain": "ON",
-      "SensorRetain": "ON",
+      "PowerRetain": "OFF",
+      "SensorRetain": "OFF",
       "SetOption19": "ON",
       "SerialLog": 0,
       "Template": {
-        "NAME": "Sonoff S31",
+        "NAME": "Maxcio Active",
         "GPIO": [
-          17,
-          145,
-          0,
-          146,
+          160,
           0,
           0,
           0,
           0,
-          21,
-          56,
+          0,
+          0,
+          0,
+          224,
+          320,
+          0,
           0,
           0,
           0
         ],
         "FLAG": 0,
-        "BASE": 41
+        "BASE": 18
       },
       "Module": 0,
-      "GroupTopic1": "tasmotas",
-      "GroupTopic2": "",
-      "GroupTopic3": "",
+      "GroupTopic1": "AllStandard",
+      "GroupTopic2": "InteriorFans",
+      "GroupTopic3": "\"\"",
       "GroupTopic4": "",
       "Timer1": {
         "Enable": 0,
@@ -7625,14 +7128,97 @@
       "Timers": "OFF",
       "Rule1": "",
       "Rule": "OFF",
-      "ConfigurationTopic": "Unused05"
+      "ConfigurationTopic": "FamilyFan"
     },
-    "10.2.4.142": {
-      "OtaUrl": "http://10.2.2.4:2020/tasmota-sensors.bin.gz",
-      "Hostname": "Unused06",
-      "DeviceName": "Unused06",
-      "FriendlyName1": "Unused06",
-      "Topic": "Unused06",
+    "10.2.4.23": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
+      "Hostname": "LilyHall_C1",
+      "DeviceName": "LilyHall_C1",
+      "FriendlyName1": "Control1 - Lily Hall",
+      "Topic": "LilyHall_C1",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
+      "PowerRetain": "OFF",
+      "SensorRetain": "OFF",
+      "SetOption19": "ON",
+      "SerialLog": 0,
+      "Template": {
+        "NAME": "Gosund KS-602S Control",
+        "GPIO": [
+          160,
+          320,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          224,
+          576,
+          0
+        ],
+        "FLAG": 0,
+        "BASE": 18
+      },
+      "Module": 0,
+      "GroupTopic1": "AllStandard",
+      "GroupTopic2": "InteriorLights",
+      "GroupTopic3": "LilyHallGroup",
+      "GroupTopic4": "\"\"",
+      "Timer1": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer2": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer3": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer4": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timers": "OFF",
+      "Rule1": "on Switch1#state do Publish cmnd/LilyHallGroup/POWER %value% endon",
+      "Rule": "ON",
+      "ConfigurationTopic": "LilyHall_C1"
+    },
+    "10.2.4.71": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "Hostname": "HotTub",
+      "DeviceName": "HotTub",
+      "FriendlyName1": "Hot Tub",
+      "Topic": "HotTub",
       "FullTopic": "%prefix%/%topic%/",
       "SwitchMode": 3,
       "PowerRetain": "ON",
@@ -7640,24 +7226,25 @@
       "SetOption19": "ON",
       "SerialLog": 0,
       "Template": {
-        "NAME": "Sonoff S31",
+        "NAME": "W-US002S",
         "GPIO": [
-          17,
-          145,
           0,
-          146,
+          192,
+          0,
+          288,
+          2688,
+          2656,
           0,
           0,
-          0,
-          0,
-          21,
-          56,
+          2592,
+          289,
+          224,
           0,
           0,
           0
         ],
         "FLAG": 0,
-        "BASE": 41
+        "BASE": 45
       },
       "Module": 0,
       "GroupTopic1": "tasmotas",
@@ -7705,9 +7292,424 @@
         "Action": 0
       },
       "Timers": "OFF",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
+      "Rule": "ON",
+      "ConfigurationTopic": "HotTub"
+    },
+    "10.2.4.72": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
+      "Hostname": "KidsToilet",
+      "DeviceName": "KidsToilet",
+      "FriendlyName1": "Kids Toilet Lights",
+      "Topic": "KidsToilet",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
+      "PowerRetain": "OFF",
+      "SensorRetain": "OFF",
+      "SetOption19": "ON",
+      "SerialLog": 0,
+      "Template": {
+        "NAME": "Maxcio Active",
+        "GPIO": [
+          160,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          224,
+          320,
+          0,
+          0,
+          0,
+          0
+        ],
+        "FLAG": 0,
+        "BASE": 18
+      },
+      "Module": 0,
+      "GroupTopic1": "AllStandard",
+      "GroupTopic2": "InteriorLights",
+      "GroupTopic3": "\"\"",
+      "GroupTopic4": "",
+      "Timer1": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer2": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer3": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer4": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timers": "OFF",
       "Rule1": "",
       "Rule": "OFF",
-      "ConfigurationTopic": "Unused06"
+      "ConfigurationTopic": "KidsToilet"
+    },
+    "10.2.4.100": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
+      "Hostname": "RailingLights",
+      "DeviceName": "RailingLights",
+      "FriendlyName1": "Railing Lights",
+      "Topic": "RailingLights",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
+      "PowerRetain": "OFF",
+      "SensorRetain": "OFF",
+      "SetOption19": "ON",
+      "SerialLog": 0,
+      "Template": {
+        "NAME": "Sonoff Basic",
+        "GPIO": [
+          32,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          224,
+          320,
+          1,
+          0,
+          0,
+          0
+        ],
+        "FLAG": 0,
+        "BASE": 1
+      },
+      "Module": 0,
+      "GroupTopic1": "AllStandard",
+      "GroupTopic2": "InteriorDecorations",
+      "GroupTopic3": "\"\"",
+      "GroupTopic4": "",
+      "Timer1": {
+        "Enable": 1,
+        "Mode": 0,
+        "Time": "07:00",
+        "Window": 0,
+        "Days": "1111111",
+        "Repeat": 1,
+        "Output": 1,
+        "Action": 1
+      },
+      "Timer2": {
+        "Enable": 1,
+        "Mode": 0,
+        "Time": "23:00",
+        "Window": 0,
+        "Days": "1111111",
+        "Repeat": 1,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer3": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer4": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timers": "ON",
+      "Rule1": "",
+      "Rule": "OFF",
+      "ConfigurationTopic": "RailingLights"
+    },
+    "10.2.4.112": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota.bin.gz",
+      "Hostname": "RetroPi",
+      "DeviceName": "RetroPi",
+      "FriendlyName1": "Retro Pi",
+      "Topic": "RetroPi",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
+      "PowerRetain": "OFF",
+      "SensorRetain": "OFF",
+      "SetOption19": "ON",
+      "SerialLog": 0,
+      "Template": {
+        "NAME": "Sonoff+I2C",
+        "GPIO": [
+          32,
+          608,
+          0,
+          640,
+          0,
+          0,
+          0,
+          0,
+          224,
+          320,
+          0,
+          0,
+          0,
+          0
+        ],
+        "FLAG": 0,
+        "BASE": 1
+      },
+      "Module": 0,
+      "GroupTopic1": "tasmotas",
+      "GroupTopic2": "\"\"",
+      "GroupTopic3": "",
+      "GroupTopic4": "",
+      "Timer1": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer2": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer3": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer4": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timers": "OFF",
+      "Rule1": "",
+      "Rule": "OFF",
+      "ConfigurationTopic": "RetroPi"
+    },
+    "10.2.4.39": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "Hostname": "DeepFreeze",
+      "DeviceName": "DeepFreeze",
+      "FriendlyName1": "Deep Freeze",
+      "Topic": "DeepFreeze",
+      "FullTopic": "homeassistant/%prefix%/%topic%/",
+      "SwitchMode": 3,
+      "PowerRetain": "ON",
+      "SensorRetain": "ON",
+      "SetOption19": "ON",
+      "SerialLog": 2,
+      "Template": {
+        "NAME": "W-US002S",
+        "GPIO": [
+          0,
+          192,
+          0,
+          288,
+          2688,
+          2656,
+          0,
+          0,
+          2592,
+          289,
+          224,
+          0,
+          0,
+          0
+        ],
+        "FLAG": 0,
+        "BASE": 45
+      },
+      "Module": 0,
+      "GroupTopic1": "tasmotas",
+      "GroupTopic2": "",
+      "GroupTopic3": "",
+      "GroupTopic4": "",
+      "Timer1": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer2": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer3": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer4": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timers": "OFF",
+      "Rule1": "on Switch1#state do Publish homeassistant/cmnd/%topic%/POWER 1 endon",
+      "Rule": "ON",
+      "ConfigurationTopic": "DeepFreeze"
+    },
+    "10.2.4.40": {
+      "OtaUrl": "http://10.2.2.4:2020/tasmota-minimal.bin.gz",
+      "Hostname": "BasementFridge",
+      "DeviceName": "BasementFridge",
+      "FriendlyName1": "Basement Fridge",
+      "Topic": "BasementFridge",
+      "FullTopic": "%prefix%/%topic%/",
+      "SwitchMode": 3,
+      "PowerRetain": "ON",
+      "SensorRetain": "ON",
+      "SetOption19": "ON",
+      "SerialLog": 0,
+      "Template": {
+        "NAME": "W-US002S",
+        "GPIO": [
+          0,
+          192,
+          0,
+          288,
+          2688,
+          2656,
+          0,
+          0,
+          2592,
+          289,
+          224,
+          0,
+          0,
+          0
+        ],
+        "FLAG": 0,
+        "BASE": 45
+      },
+      "Module": 0,
+      "GroupTopic1": "tasmotas",
+      "GroupTopic2": "\\\"\\",
+      "GroupTopic3": "",
+      "GroupTopic4": "",
+      "Timer1": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer2": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer3": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timer4": {
+        "Enable": 0,
+        "Mode": 0,
+        "Time": "00:00",
+        "Window": 0,
+        "Days": "0000000",
+        "Repeat": 0,
+        "Output": 1,
+        "Action": 0
+      },
+      "Timers": "OFF",
+      "Rule1": "on Switch1#state do Publish cmnd/%topic%/POWER 1 endon",
+      "Rule": "ON",
+      "ConfigurationTopic": "BasementFridge"
     }
   }
 }

@@ -111,3 +111,9 @@ do
   curl "http://$n/cm?cmnd=restart%201" -s | jq .
 done
 ```
+
+# Sorting for easier differentials
+  jq --sort-keys '.' < $repopath/homeassistant/tasmota-declared-config3.json > $repopath/homeassistant/tasmota-declared-config-sorted3.json
+  jq --sort-keys '.' < $HOME/Downloads/2021-10-04-tasmota-information.json > $HOME/Downloads/2021-10-04-tasmota-information-sorted.json
+  jq --sort-keys '.' < $repopath/homeassistant/tasmota-declared-config.json > $repopath/homeassistant/tasmota-declared-config-sorted.json
+  jq --sort-keys '.' < $HOME/Downloads/2021-10-19-tasmota-information.json > $HOME/Downloads/2021-10-19-tasmota-information-sorted.json
