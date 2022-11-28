@@ -10,6 +10,7 @@ typer = "*"
 
 [dev-packages]
 pylint = "*"
+debugpy = "*"
 
 [requires]
 python_version = "3"
