@@ -1,0 +1,101 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Attach",
+      "type": "python",
+      "request": "attach",
+      "connect": {
+        "host": "localhost",
+        "port": 5678
+      }
+    },
+    {
+      "name": "Python: Apply_Tasmota_JSON",
+      "type": "python",
+      "request": "launch",
+      "program": "tasmota_json.py",
+      "cwd": "",
+      // "program": "${file}",
+      "console": "integratedTerminal",
+      "args": [
+        "--hostlistfile", "./at.json",
+        "--tasmotacommandfile", "./tasmota_commands.json", 
+        // "--auditexportfile", "./2022-11-19-sorted-tasmota-information.json",
+        // "--auditdevices", 
+        // "--importprioraudit",
+        // "--appendexportedaudit",
+        // "--exportconfig", 
+        // "--exportconfigfile", "./tasconfig.json",
+        // "--appendexportedconfig",
+        // "--sortedcommandoutput",
+        "--configfiletoapply", "./tassort.json",
+        // "--applydefinedtopic",
+        "--pushconfigs",
+      ],
+      // "stopOnEntry": true
+    },
+    {
+      "name": "Python: Audit_Tasmota_JSON",
+      "type": "python",
+      "request": "launch",
+      "program": "/Users/ryan-peay/repo/homeassistant/tasmota_json.py",
+      "cwd": "/Users/ryan-peay/repo/homeassistant/",
+      // "program": "${file}",
+      "console": "integratedTerminal",
+      "args": [
+        "--hostlistfile", "./at.json",
+        "--tasmotacommandfile", "./tasmota_commands.json", 
+        "--auditexportfile", "./tasmota-polled.json",
+        // "--auditdevices", 
+        "--importprioraudit",
+        "--appendexportedaudit",
+        "--exportconfig", 
+        "--exportconfigfile", "./tasconfig.json",
+        "--appendexportedconfig",
+        "--sortedcommandoutput",
+        "--configfiletoapply", "./tasconfig.json",
+        // "--applydefinedtopic",
+        // "--pushconfigs",
+      ],
+      // "stopOnEntry": true
+    },
+    {
+      "name": "Python: Validate_Tasmota_JSON",
+      "type": "python",
+      "request": "launch",
+      "program": "/Users/ryan-peay/repo/homeassistant/tasmota_json.py",
+      "cwd": "/Users/ryan-peay/repo/homeassistant/",
+      // "program": "${file}",
+      "console": "integratedTerminal",
+      "args": [
+        "--hostlistfile", "./at.json",
+        "--tasmotacommandfile", "./tasmota_commands.json", 
+        "--auditexportfile", "./tas-audit.json",
+        "--auditdevices", 
+        "--importprioraudit",
+        // "--appendexportedaudit",
+        "--exportconfig", 
+        "--exportconfigfile", "./tasconfig.json",
+        // "--appendexportedconfig",
+        "--sortedcommandoutput",
+        "--configfiletoapply", "./tasconfig.json",
+        // "--applydefinedtopic",
+        // "--pushconfigs",
+      ],
+      // "stopOnEntry": true
+    },
+    {
+      "name": "Python: Current_file",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "args": [],
+      "stopOnEntry": true
+    }
+  ]
+}

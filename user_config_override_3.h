@@ -20,7 +20,8 @@
 #ifndef _USER_CONFIG_OVERRIDE_H_
 #define _USER_CONFIG_OVERRIDE_H_
 
-#define CUSTOM_IMAGE_STR "v6"
+#define CUSTOM_IMAGE_STR "v10"
+#define FIRMWARE_PATH "http://firmware:2020/1mb"
 
 // force the compiler to show a warning to confirm that this file is included
 #warning **** user_config_override.h: Using Settings from this File ****
@@ -179,30 +180,6 @@
 #endif
 #define SERIAL_LOG_LEVEL       LOG_LEVEL_NONE    // [SerialLog] (LOG_LEVEL_NONE, LOG_LEVEL_ERROR, LOG_LEVEL_INFO, LOG_LEVEL_DEBUG, LOG_LEVEL_DEBUG_MORE)
 
-// #Enable Home Assistant
-#ifndef USE_HOME_ASSISTANT
-  #define USE_HOME_ASSISTANT                        
-#endif
-
-// #Sensors
-#define USE_I2C                                  // I2C using library wire (+10k code, 0k2 mem, 124 iram)
-#define USE_BH1750                               // [I2cDriver11] Enable BH1750 sensor (I2C address 0x23 or 0x5C) (+0k5 code)
-#define USE_BMP                                  // [I2cDriver10] Enable BMP085/BMP180/BMP280/BME280 sensors (I2C addresses 0x76 and 0x77) (+4k4 code)
-  #define USE_BME680                             // Enable support for BME680 sensor using Bosch BME680 library (+4k code)
-#define USE_SR04                                 // Add support for HC-SR04 ultrasonic devices (+1k code)
-#define USE_IR_REMOTE                            // Send IR remote commands using library IRremoteESP8266 and ArduinoJson (+4k code, 0k3 mem, 48 iram)
-  #define USE_IR_RECEIVE                         // Support for IR receiver (+5k5 code, 264 iram)
-#define USE_LIGHT                                // Add Dimmer/Light support
-#define USE_WS2812                               // WS2812 Led string using library NeoPixelBus (+5k code, +1k mem, 232 iram) - Disable by //
-//  #define USE_WS2812_DMA                         // DMA supports only GPIO03 (= Serial RXD) (+1k mem). When USE_WS2812_DMA is enabled expect Exceptions on Pow
-#ifndef USE_WS2812_HARDWARE
-  #define USE_WS2812_HARDWARE  NEO_HW_WS2812     // Hardware type (NEO_HW_WS2812, NEO_HW_WS2812X, NEO_HW_WS2813, NEO_HW_SK6812, NEO_HW_LC8812, NEO_HW_APA106)
-#endif
-#ifndef USE_WS2812_CTYPE
-  #define USE_WS2812_CTYPE     NEO_GRB           // Color type (NEO_RGB, NEO_GRB, NEO_BRG, NEO_RBG, NEO_RGBW, NEO_GRBW)
-#endif
-
-#define USE_COUNTER                              // Enable counters
 #undef USE_ADC_VCC                               // Add Analog input on selected devices
 
 // #Remove Stuff
@@ -226,9 +203,6 @@
   #undef USE_EMULATION_WEMO                        // Disable Belkin WeMo emulation for Alexa (+6k code, +2k mem common)
 #endif 
 
-#ifndef USE_PROMETHEUS
-  #define USE_PROMETHEUS                            // Enable support for https://prometheus.io/ metrics exporting over HTTP /metrics endpoint
-#endif 
 
 
 #undef ROTARY_V1                                 // Disable support for MI Desk Lamp
@@ -307,28 +281,93 @@
 #undef USE_HRE                                   // Disable support for Badger HR-E Water Meter (+1k4 code)
 #undef USE_A4988_STEPPER                         // Disable support for A4988_Stepper
 
-#ifdef CODE_IMAGE_STR
-  #undef CODE_IMAGE_STR
-#endif
-
 #ifdef FIRMWARE_SENSORS
+  #ifndef USE_PROMETHEUS
+    #define USE_PROMETHEUS                            // Enable support for https://prometheus.io/ metrics exporting over HTTP /metrics endpoint
+  #endif 
+  #ifndef USE_HOME_ASSISTANT
+    #define USE_HOME_ASSISTANT                        
+  #endif
+
+  #define USE_COUNTER                              // Enable counters
+
   #undef CODE_IMAGE_STR
-  #define USE_ENERGY_SENSOR                        // Add energy sensors (-14k code)
-  #define USE_ADE7953                            // [I2cDriver7] Enable ADE7953 Energy monitor as used on Shelly 2.5 (I2C address 0x38) (+1k5)
   #define CODE_IMAGE_STR CUSTOM_IMAGE_STR"_sensors"
+  #define USE_ENERGY_SENSOR                        // Add energy sensors (-14k code)
+  // #define USE_IR_REMOTE                            // Send IR remote commands using library IRremoteESP8266 and ArduinoJson (+4k code, 0k3 mem, 48 iram)
+  //   #define USE_IR_RECEIVE                         // Support for IR receiver (+5k5 code, 264 iram)
+  // #define USE_IR_REMOTE_FULL                       // Support all IR protocols from IRremoteESP8266
+  #define USE_ADE7953                            // [I2cDriver7] Enable ADE7953 Energy monitor as used on Shelly 2.5 (I2C address 0x38) (+1k5)
   // #Enable Conditional Rules
   #define USE_EXPRESSION         // Add support for expression evaluation in rules (+3k2 code, +64 bytes mem)  
-  #define SUPPORT_IF_STATEMENT   // Add support for IF statement in rules (+4k2 code, -332 bytes mem)  
+  #define SUPPORT_IF_STATEMENT   // Add support for IF statement in rules (+4k2 code, -332 bytes mem) 
+  
+  #undef USE_LIGHT                                // Add Dimmer/Light support
+  #undef USE_WS2812                               // WS2812 Led string using library NeoPixelBus (+5k code, +1k mem, 232 iram) - Disable by //
+  #undef USE_WS2812_HARDWARE
+  #undef NEO_HW_WS2812     // Hardware type (NEO_HW_WS2812, NEO_HW_WS2812X, NEO_HW_WS2813, NEO_HW_SK6812, NEO_HW_LC8812, NEO_HW_APA106)
+  #undef USE_WS2812_CTYPE
+  #undef NEO_GRB           // Color type (NEO_RGB, NEO_GRB, NEO_BRG, NEO_RBG, NEO_RGBW, NEO_GRBW)
+  
+  #undef OTA_URL
+  #define OTA_URL FIRMWARE_PATH"/tasmota-sensors.bin.gz"  // [OtaUrl]
+#endif
+
+#ifdef FIRMWARE_IR_SENSORS
+  #ifndef USE_PROMETHEUS
+    #define USE_PROMETHEUS                            // Enable support for https://prometheus.io/ metrics exporting over HTTP /metrics endpoint
+  #endif 
+  #ifndef USE_HOME_ASSISTANT
+    #define USE_HOME_ASSISTANT                        
+  #endif
+
+  #define USE_COUNTER                              // Enable counters
+
+  #undef CODE_IMAGE_STR
+  #define CODE_IMAGE_STR CUSTOM_IMAGE_STR"_ir_sensors"
+  #define USE_ENERGY_SENSOR                        // Add energy sensors (-14k code)
+  #define USE_IR_REMOTE                            // Send IR remote commands using library IRremoteESP8266 and ArduinoJson (+4k code, 0k3 mem, 48 iram)
+    #define USE_IR_RECEIVE                         // Support for IR receiver (+5k5 code, 264 iram)
+  #define USE_IR_REMOTE_FULL                       // Support all IR protocols from IRremoteESP8266
+  #define USE_ADE7953                            // [I2cDriver7] Enable ADE7953 Energy monitor as used on Shelly 2.5 (I2C address 0x38) (+1k5)
+  // #Enable Conditional Rules
+  #define USE_EXPRESSION         // Add support for expression evaluation in rules (+3k2 code, +64 bytes mem)  
+  #define SUPPORT_IF_STATEMENT   // Add support for IF statement in rules (+4k2 code, -332 bytes mem) 
+  #undef OTA_URL
+  #define OTA_URL FIRMWARE_PATH"/tasmota-ir-sensors.bin.gz"  // [OtaUrl]
 #endif
 
 #ifdef FIRMWARE_IR
-  #undef CODE_IMAGE_STR
-  #undef USE_ENERGY_SENSOR
+  #ifndef USE_PROMETHEUS
+    #define USE_PROMETHEUS                            // Enable support for https://prometheus.io/ metrics exporting over HTTP /metrics endpoint
+  #endif 
+  #ifndef USE_HOME_ASSISTANT
+    #define USE_HOME_ASSISTANT                        
+  #endif
+
+  #define USE_COUNTER                              // Enable counters
+
+  #define USE_BH1750                               // [I2cDriver11] Enable BH1750 sensor (I2C address 0x23 or 0x5C) (+0k5 code)
+  #define USE_BMP                                  // [I2cDriver10] Enable BMP085/BMP180/BMP280/BME280 sensors (I2C addresses 0x76 and 0x77) (+4k4 code)
+    #define USE_BME680                             // Enable support for BME680 sensor using Bosch BME680 library (+4k code)
+  #define USE_SR04                                 // Add support for HC-SR04 ultrasonic devices (+1k code)
+  #define USE_IR_REMOTE                            // Send IR remote commands using library IRremoteESP8266 and ArduinoJson (+4k code, 0k3 mem, 48 iram)
+    #define USE_IR_RECEIVE                         // Support for IR receiver (+5k5 code, 264 iram)
+  #define USE_IR_REMOTE_FULL                       // Support all IR protocols from IRremoteESP8266
   #undef USE_ADE7953
+  #define USE_COUNTER                              // Enable counters
+  #undef USE_ADC_VCC                               // Add Analog input on selected devices
+  #undef CODE_IMAGE_STR
   #define CODE_IMAGE_STR CUSTOM_IMAGE_STR"_ir"
+  #undef USE_ENERGY_SENSOR
   // #Enable Conditional Rules
   // #define USE_EXPRESSION         // Add support for expression evaluation in rules (+3k2 code, +64 bytes mem)  
   // #define SUPPORT_IF_STATEMENT   // Add support for IF statement in rules (+4k2 code, -332 bytes mem)  
+  #undef OTA_URL
+  #define OTA_URL FIRMWARE_PATH"/tasmota-ir.bin.gz"  // [OtaUrl]
+  #ifndef USE_I2C
+    #define USE_I2C                                  // I2C using library wire (+10k code, 0k2 mem, 124 iram)
+  #endif
 #endif
 
 #ifdef FIRMWARE_MINIMAL
@@ -336,25 +375,45 @@
   #undef USE_ENERGY_SENSOR
   #undef USE_ADE7953
   #define CODE_IMAGE_STR CUSTOM_IMAGE_STR"_minimal"
+  #undef OTA_URL
+  #define OTA_URL FIRMWARE_PATH"/tasmota.bin.gz"  // [OtaUrl]
 #endif
 
-#ifdef FIRMWARE_IR_CUSTOM
-  #undef CODE_IMAGE_STR
-  #undef USE_ENERGY_SENSOR
-  #undef USE_ADE7953
-  #define CODE_IMAGE_STR CUSTOM_IMAGE_STR"_ir_custom"
-  // #Enable Conditional Rules
-  #define USE_EXPRESSION         // Add support for expression evaluation in rules (+3k2 code, +64 bytes mem)  
-  #define SUPPORT_IF_STATEMENT   // Add support for IF statement in rules (+4k2 code, -332 bytes mem)  
-#endif
+#ifdef FIRMWARE_RULES_ENABLED
+  #ifndef USE_PROMETHEUS
+    #define USE_PROMETHEUS                            // Enable support for https://prometheus.io/ metrics exporting over HTTP /metrics endpoint
+  #endif 
+  // STANDARD FIRMWARE BUILD
+  #ifndef USE_HOME_ASSISTANT
+    #define USE_HOME_ASSISTANT                        
+  #endif
 
-#ifndef CODE_IMAGE_STR
+  #define USE_COUNTER                              // Enable counters
+  #define USE_I2C                                  // I2C using library wire (+10k code, 0k2 mem, 124 iram)
+  #define USE_BH1750                               // [I2cDriver11] Enable BH1750 sensor (I2C address 0x23 or 0x5C) (+0k5 code)
+  #define USE_BMP                                  // [I2cDriver10] Enable BMP085/BMP180/BMP280/BME280 sensors (I2C addresses 0x76 and 0x77) (+4k4 code)
+    #define USE_BME680                             // Enable support for BME680 sensor using Bosch BME680 library (+4k code)
+  #define USE_SR04                                 // Add support for HC-SR04 ultrasonic devices (+1k code)
+  // #define USE_IR_REMOTE                            // Send IR remote commands using library IRremoteESP8266 and ArduinoJson (+4k code, 0k3 mem, 48 iram)
+  //   #define USE_IR_RECEIVE                         // Support for IR receiver (+5k5 code, 264 iram)
+  #define USE_LIGHT                                // Add Dimmer/Light support
+  #define USE_WS2812                               // WS2812 Led string using library NeoPixelBus (+5k code, +1k mem, 232 iram) - Disable by //
+  //  #define USE_WS2812_DMA                         // DMA supports only GPIO03 (= Serial RXD) (+1k mem). When USE_WS2812_DMA is enabled expect Exceptions on Pow
+  #ifndef USE_WS2812_HARDWARE
+    #define USE_WS2812_HARDWARE  NEO_HW_WS2812     // Hardware type (NEO_HW_WS2812, NEO_HW_WS2812X, NEO_HW_WS2813, NEO_HW_SK6812, NEO_HW_LC8812, NEO_HW_APA106)
+  #endif
+  #ifndef USE_WS2812_CTYPE
+    #define USE_WS2812_CTYPE     NEO_GRB           // Color type (NEO_RGB, NEO_GRB, NEO_BRG, NEO_RBG, NEO_RGBW, NEO_GRBW)
+  #endif
+
   #undef USE_ENERGY_SENSOR
   #undef USE_ADE7953
   #define CODE_IMAGE_STR CUSTOM_IMAGE_STR"_standard"
   // #Enable Conditional Rules
   #define USE_EXPRESSION         // Add support for expression evaluation in rules (+3k2 code, +64 bytes mem)  
   #define SUPPORT_IF_STATEMENT   // Add support for IF statement in rules (+4k2 code, -332 bytes mem)  
+  #undef OTA_URL
+  #define OTA_URL FIRMWARE_PATH"/tasmota.bin.gz"  // [OtaUrl]
 #endif
 
 #endif  // _USER_CONFIG_OVERRIDE_H_
