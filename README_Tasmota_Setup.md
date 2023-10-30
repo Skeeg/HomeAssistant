@@ -1,21 +1,26 @@
-# Control Device Template:
-This basically tells the device that it does have a Relay so that it will accept power on commands 
+# Control Device Template
+
+This basically tells the device that it does have a Relay so that it will accept power on commands
 Doing this enables the LED, but will sends 5v to the wrong (dead end) GPIO, which doesn't engage the mechanical relay
 
-```
+```tasmota-console
 backlog template {"NAME":"Gosund KS-602S","GPIO":[9,56,0,0,0,0,0,0,0,0,0,21,158],"FLAG":0,"BASE":18}; module 0;
 ```
-# Active Device Template:
+
+# Active Device Template
+
 Send voltage for a power on event to a correct GPIO
 
-```
+```tasmota-console
 backlog template {"NAME":"Gosund KS-602S","GPIO":[9,56,0,0,0,0,0,0,0,0,21,0,158],"FLAG":0,"BASE":18}; module 0;
 ```
+
 # Power Calibration
-Have to run https://tasmota.github.io/docs/Power-Monitoring-Calibration/ process in console.
+
+Have to run <https://tasmota.github.io/docs/Power-Monitoring-Calibration/> process in console.
 Get values from the Kill-A-Watt device
 
-```
+```tasmota-console
 PowerSet 53.0
 VoltageSet 120.0
 CurrentSet 430
@@ -27,15 +32,17 @@ CurrentSet 430
 
 Useful commands:
 
-```!bash
+```bash
 #!/bin/bash
 #sed split long word at capitals
 echo "FreakingHeckStuffREALLY" | sed 's/\([^[:blank:]]\)\([[:upper:]]\)/\1 \2/g'
 #Result:
 #Freaking Heck Stuff RE AL LY
 ```
-# Get all Firmware versions from dumped configs:
-```!bash
+
+# Get all Firmware versions from dumped configs
+
+```bash
 while IFS= read -r line
 do
   echo $line; 
@@ -45,7 +52,7 @@ do
 done < <(cat $HOME/Downloads/2021-09-19-tasmota-information.json | jq '.tasmotas[]."Status 0".StatusNET.IPAddress' -cr)
 ```
 
-```!bash
+```bash
 #Check for machine stuck on minimal firmware
 for n in $(cat $HOME/Downloads/2021-09-19-tasmota-information.json | jq '.tasmotas[]."Status 0".StatusNET.IPAddress' -cr)
 do
@@ -55,9 +62,10 @@ done
 ```
 
 # Firmware updates via hosted firmeware files
-Backlog OtaUrl http://10.2.2.4/tasmota-minimal.bin.gz;
 
-```!bash
+Backlog OtaUrl <http://10.2.2.4/tasmota-minimal.bin.gz>;
+
+```bash
 # current method of firmware
 # sudo cp python-firmware-webserver.service /etc/systemd/system/python-firmware-webserver.service
 # sudo systemctl daemon-reload
@@ -91,11 +99,11 @@ do
 done
 ```
 
+# !!!!! REMEMBER TO RESET COUNTERS _AND_ TIMERS ON W-US002S MODULES
 
-
-# !!!!! REMEMBER TO RESET COUNTERS _AND_ TIMERS ON W-US002S MODULES !!!!!
 # Energy Counter Reset on all sensor based devices
-```!bash
+
+```bash
 for ip in $(jq -c '.tasmotas[]' < $HOME/Downloads/2021-09-22-tasmota-information.json | grep "(sensors)" | jq -rc '."Status 0".StatusNET.IPAddress');
 do
 curl "http://$ip/cm?cmnd=energyreset%200" -s | jq -c .
@@ -105,7 +113,8 @@ done
 ```
 
 # Mass Reboots
-```!bash
+
+```bash
 for ip in $(jq -c '.tasmotas[]' < $HOME/Downloads/2021-09-22-tasmota-information.json | jq -rc '."Status 0".StatusNET.IPAddress');
 do
   curl "http://$n/cm?cmnd=restart%201" -s | jq .
@@ -113,7 +122,19 @@ done
 ```
 
 # Sorting for easier differentials
-  jq --sort-keys '.' < $repopath/homeassistant/tasmota-declared-config3.json > $repopath/homeassistant/tasmota-declared-config-sorted3.json
-  jq --sort-keys '.' < $HOME/Downloads/2021-10-04-tasmota-information.json > $HOME/Downloads/2021-10-04-tasmota-information-sorted.json
-  jq --sort-keys '.' < $repopath/homeassistant/tasmota-declared-config.json > $repopath/homeassistant/tasmota-declared-config-sorted.json
-  jq --sort-keys '.' < $HOME/Downloads/2021-10-19-tasmota-information.json > $HOME/Downloads/2021-10-19-tasmota-information-sorted.json
+
+```bash
+jq --sort-keys '.' < $repopath/homeassistant/tasmota-declared-config3.json > $repopath/homeassistant/tasmota-declared-config-sorted3.json
+```
+
+```bash
+jq --sort-keys '.' < $HOME/Downloads/2021-10-04-tasmota-information.json > $HOME/Downloads/2021-10-04-tasmota-information-sorted.json
+```
+
+```bash
+jq --sort-keys '.' < $repopath/homeassistant/tasmota-declared-config.json > $repopath/homeassistant/tasmota-declared-config-sorted.json
+```
+
+```bash
+jq --sort-keys '.' < $HOME/Downloads/2021-10-19-tasmota-information.json > $HOME/Downloads/2021-10-19-tasmota-information-sorted.json
+```
