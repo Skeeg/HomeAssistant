@@ -1,18 +1,20 @@
 {
+    "version": "6",
+    "key": "hacs/172733314.hacs",
     "data": {
         "archived": false,
         "authors": [
             "@ludeeus"
         ],
         "category": "integration",
-        "config_flow": true,
         "content_in_root": false,
         "country": [],
-        "default_branch": "master",
+        "config_flow": true,
+        "default_branch": "main",
         "description": "HACS gives you a powerful UI to handle downloads of all your custom needs.",
         "domain": "hacs",
         "domains": [],
-        "downloads": 8316,
+        "downloads": 7620,
         "file_name": "",
         "filename": "hacs.zip",
         "first_install": false,
@@ -21,34 +23,35 @@
         "hacs": "0.19.0",
         "hide": false,
         "hide_default_branch": true,
-        "homeassistant": "0.110.0",
+        "homeassistant": "2020.12.0",
         "id": "172733314",
-        "installed": true,
-        "installed_commit": null,
-        "installed_version": "1.1.0",
         "iot_class": null,
-        "last_commit": "93c1a4c",
-        "last_updated": "2020-06-24T06:41:42Z",
-        "last_version": "1.1.1",
+        "installed": true,
+        "installed_commit": "c47fddf",
+        "installed_version": "1.10.0",
+        "open_issues": 40,
+        "last_commit": "d27967a",
+        "last_version": "1.10.1",
+        "last_updated": "2021-01-23T12:57:59Z",
         "manifest_name": "HACS",
         "new": false,
-        "open_issues": 17,
         "persistent_directory": null,
-        "published_tags": [
-            "1.1.1",
-            "1.1.0",
-            "1.0.3",
-            "1.0.2",
-            "1.0.1"
-        ],
-        "pushed_at": "2020-06-24T06:41:42",
+        "pushed_at": "2021-01-23T12:57:59",
         "releases": true,
         "render_readme": false,
+        "published_tags": [
+            "1.10.1",
+            "1.10.0",
+            "1.9.0",
+            "1.8.0",
+            "1.6.2"
+        ],
         "selected_tag": null,
         "show_beta": false,
-        "stargazers_count": 1115,
+        "stargazers_count": 1514,
         "topics": [
             "community",
+            "hacktoberfest",
             "hacs",
             "home-assistant",
             "integration",
@@ -56,7 +59,5 @@
             "python"
         ],
         "zip_release": true
-    },
-    "key": "hacs/172733314.hacs",
-    "version": "6"
+    }
 }

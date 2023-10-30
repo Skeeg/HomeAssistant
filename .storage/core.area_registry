@@ -1,24 +1,87 @@
 {
-    "version": 1,
-    "key": "core.area_registry",
-    "data": {
-        "areas": [
-            {
-                "name": "Living Room",
-                "id": "6aaa97ecd3884db3886ea9787e8f5cb4"
-            },
-            {
-                "name": "Kitchen",
-                "id": "97de28d509614fec9f8c37613739d917"
-            },
-            {
-                "name": "Bedroom",
-                "id": "41da06862f4140778e6d7d50f4375a0d"
-            },
-            {
-                "name": "Master",
-                "id": "master"
-            }
-        ]
-    }
+  "version": 1,
+  "minor_version": 3,
+  "key": "core.area_registry",
+  "data": {
+    "areas": [
+      {
+        "name": "Living Room",
+        "id": "6aaa97ecd3884db3886ea9787e8f5cb4",
+        "picture": null,
+        "aliases": []
+      },
+      {
+        "name": "Kitchen",
+        "id": "97de28d509614fec9f8c37613739d917",
+        "picture": null,
+        "aliases": []
+      },
+      {
+        "name": "Bedroom",
+        "id": "41da06862f4140778e6d7d50f4375a0d",
+        "picture": null,
+        "aliases": []
+      },
+      {
+        "name": "Master",
+        "id": "master",
+        "picture": null,
+        "aliases": []
+      },
+      {
+        "name": "Great Room 4k",
+        "id": "great_room_4k",
+        "picture": null,
+        "aliases": []
+      },
+      {
+        "name": "Family Room",
+        "id": "family_room",
+        "picture": null,
+        "aliases": []
+      },
+      {
+        "name": "Upstairs",
+        "id": "upstairs",
+        "picture": null,
+        "aliases": []
+      },
+      {
+        "name": "Austin’s Bedroom",
+        "id": "austins_bedroom",
+        "picture": null,
+        "aliases": []
+      },
+      {
+        "name": "Austin’s Room",
+        "id": "austins_room",
+        "picture": null,
+        "aliases": []
+      },
+      {
+        "name": "Lilys",
+        "id": "lilys",
+        "picture": null,
+        "aliases": []
+      },
+      {
+        "name": "Lily’s Room",
+        "id": "lilys_room",
+        "picture": null,
+        "aliases": []
+      },
+      {
+        "name": "Great Room",
+        "id": "great_room",
+        "picture": null,
+        "aliases": []
+      },
+      {
+        "name": "Dads Room",
+        "id": "dads_room",
+        "picture": null,
+        "aliases": []
+      }
+    ]
+  }
 }

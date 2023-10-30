@@ -1,9 +1,16 @@
 {
-    "data": {
-        "core": {
-            "showAdvanced": true
-        }
+  "version": 1,
+  "minor_version": 1,
+  "key": "frontend.user_data_e209297cdec44455856b6aab46832759",
+  "data": {
+    "core": {
+      "showAdvanced": true
     },
-    "key": "frontend.user_data_e209297cdec44455856b6aab46832759",
-    "version": 1
+    "language": {
+      "language": "en",
+      "number_format": "language",
+      "time_format": "language",
+      "first_weekday": "language"
+    }
+  }
 }

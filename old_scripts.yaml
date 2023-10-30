@@ -5,6 +5,7 @@ dad_alarm_script:
     service: switch.turn_on
     target:
       entity_id: switch.dads_lamp
+  mode: single
 master_movies_script:
   alias: Master Movies
   sequence:
@@ -12,6 +13,7 @@ master_movies_script:
     data:
       topic: cmnd/MasterTV/POWER
       payload: '2'
+  mode: single
 bedtime_script:
   alias: Bedtime Script
   sequence:
@@ -19,6 +21,7 @@ bedtime_script:
       payload: 'OFF'
       topic: cmnd/AllStandard/POWER
     service: mqtt.publish
+  mode: single
 austins_alarm_script:
   alias: Austin Alarm
   sequence:
@@ -26,6 +29,7 @@ austins_alarm_script:
     service: switch.turn_on
     target:
       entity_id: switch.pet_lights
+  mode: single
 turn_on_exterior_front_lights:
   alias: ExteriorFrontLightsOn
   sequence:
@@ -163,15 +167,23 @@ soundbar_appletv:
       payload: '{"Protocol":"SONY","Bits":20,"Data":"0x08114"}'
       topic: cmnd/MediaRemote/IRSend
     service: mqtt.publish
-all_on_script:
+soundbar_games:
+  alias: SoundBar_Games
+  sequence:
+  - data:
+      payload: '{"Protocol":"SONY","Bits":20,"Data":"0x48114"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+'1612922701814':
   alias: AllOn Script
   sequence:
   - data:
       payload: 'ON'
       topic: cmnd/AllStandard/POWER
     service: mqtt.publish
+  mode: single
 appletv_greatroom_menu:
-  alias: AppleTV GreatRoom Menu
+  alias: AppleTV Menu
   sequence:
   - service: remote.send_command
     data:
@@ -179,112 +191,7 @@ appletv_greatroom_menu:
       - menu
     target:
       entity_id: remote.great_room
+  mode: single
   icon: mdi:menu
-appletv_greatroom_select:
-  alias: AppleTV GreatRoom Select
-  sequence:
-  - service: remote.send_command
-    data:
-      command:
-      - select
-    target:
-      entity_id: remote.great_room
-appletv_greatroom_up:
-  alias: AppleTV GreatRoom Up
-  sequence:
-  - service: remote.send_command
-    data:
-      command:
-      - up
-    target:
-      entity_id: remote.great_room
-appletv_greatroom_down:
-  alias: AppleTV GreatRoom Down
-  sequence:
-  - service: remote.send_command
-    data:
-      command:
-      - down
-    target:
-      entity_id: remote.great_room
-appletv_greatroom_left:
-  alias: AppleTV GreatRoom Left
-  sequence:
-  - service: remote.send_command
-    data:
-      command:
-      - left
-    target:
-      entity_id: remote.great_room
-appletv_greatroom_right:
-  alias: AppleTV GreatRoom Right
-  sequence:
-  - service: remote.send_command
-    data:
-      command:
-      - right
-    target:
-      entity_id: remote.great_room
-appletv_greatroom_control_center:
-  alias: AppleTV GreatRoom Control Center
-  sequence:
-  - service: remote.send_command
-    data:
-      delay_secs: 1
-      command:
-      - home_hold
-    target:
-      entity_id: remote.great_room
-appletv_greatroom_app_controls:
-  alias: AppleTV GreatRoom Application Controls
-  sequence:
-  - service: remote.send_command
-    data:
-      command:
-      - home
-      - home
-      delay_secs: 0.2
-    target:
-      entity_id: remote.great_room
-  mode: single
-soundbar_steam:
-  alias: SoundBar_Steam
-  sequence:
-  - data:
-      payload: '{"Protocol":"SONY","Bits":20,"Data":"0x88114"}'
-      topic: cmnd/MediaRemote/IRSend
-    service: mqtt.publish
-  mode: single
-soundbar_nintendo:
-  alias: SoundBar_Nintendo
-  sequence:
-  - data:
-      payload: '{"Protocol":"SONY","Bits":20,"Data":"0x48114"}'
-      topic: cmnd/MediaRemote/IRSend
-    service: mqtt.publish
-  mode: single
-appletv_greatroom_home:
-  alias: AppleTV GreatRoom Home
-  sequence:
-  - service: remote.send_command
-    data:
-      command:
-      - home
-    target:
-      entity_id: remote.great_room
-  icon: mdi:apple
-  mode: single
-appletv_greatroom_top_menu:
-  alias: AppleTV GreatRoom Top Menu
-  sequence:
-  - service: remote.send_command
-    data:
-      command:
-      - top_menu
-      num_repeats: 1
-      delay_secs: 0.4
-      hold_secs: 0
-    target:
-      entity_id: remote.great_room
-  icon: mdi:apple
-  mode: single
+appletv_greatroom_enter:
+
