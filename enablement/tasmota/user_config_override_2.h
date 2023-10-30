@@ -52,7 +52,7 @@
 #define STA_SSID1         "WIFI2"             // [Ssid1] Wifi SSID
 
 #undef  STA_PASS1
-#define STA_PASS1         "ENTERHERE"     // [Password1] Wifi password
+#define STA_PASS1         "ENTERPASSWORD"     // [Password1] Wifi password
 
 // -- Setup your own MQTT settings  ---------------
 #undef  MQTT_HOST
