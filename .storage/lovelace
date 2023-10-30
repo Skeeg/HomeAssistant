@@ -1,1001 +1,1382 @@
 {
-    "version": 1,
-    "key": "lovelace",
-    "data": {
-        "config": {
-            "title": "Home",
-            "views": [
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace",
+  "data": {
+    "config": {
+      "title": "Home",
+      "views": [
+        {
+          "path": "lighting",
+          "title": "Lighting",
+          "icon": "mdi:ceiling-light-multiple-outline",
+          "badges": [],
+          "cards": [
+            {
+              "entities": [
                 {
-                    "title": "Security",
-                    "path": "security",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "type": "picture-entity",
-                            "entity": "camera.cam_frontdoor_mediaprofile_channel1_mainstream",
-                            "show_name": false,
-                            "show_state": false
-                        },
-                        {
-                            "type": "picture-entity",
-                            "entity": "camera.cam_sidefront_mediaprofile_channel1_mainstream",
-                            "show_state": false,
-                            "show_name": false
-                        },
-                        {
-                            "type": "picture-entity",
-                            "entity": "camera.cam_sideback_mediaprofile_channel1_mainstream",
-                            "show_name": false,
-                            "show_state": false
-                        },
-                        {
-                            "type": "picture-entity",
-                            "entity": "camera.cam_rear_mediaprofile_channel1_mainstream",
-                            "show_name": false,
-                            "show_state": false
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "cover.main_garage"
-                                },
-                                {
-                                    "entity": "cover.3rd_car_garage"
-                                }
-                            ],
-                            "type": "entities",
-                            "state_color": true
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.00000_cell_motion_detection_2"
-                                },
-                                {
-                                    "entity": "binary_sensor.00000_field_detection_3"
-                                },
-                                {
-                                    "entity": "binary_sensor.00000_global_scene_change_2"
-                                },
-                                {
-                                    "entity": "binary_sensor.00000_motion_alarm_2"
-                                },
-                                {
-                                    "entity": "sensor.processor_usage_2"
-                                }
-                            ],
-                            "title": "FrontDoor Camera Stats"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.00000_cell_motion_detection"
-                                },
-                                {
-                                    "entity": "binary_sensor.00000_field_detection_2"
-                                },
-                                {
-                                    "entity": "binary_sensor.00000_global_scene_change"
-                                },
-                                {
-                                    "entity": "binary_sensor.00000_motion_alarm"
-                                },
-                                {
-                                    "entity": "sensor.processor_usage"
-                                }
-                            ],
-                            "title": "SideFront Camera Stats"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                "binary_sensor.00000_cell_motion_detection_3",
-                                "binary_sensor.00000_field_detection",
-                                "binary_sensor.00000_global_scene_change_3",
-                                "binary_sensor.00000_motion_alarm_3",
-                                "sensor.processor_usage_3"
-                            ],
-                            "title": "SideBack Camera Stats"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                "binary_sensor.00000_cell_motion_detection_4",
-                                "binary_sensor.00000_field_detection_4",
-                                "binary_sensor.00000_global_scene_change_4",
-                                "binary_sensor.00000_motion_alarm_4",
-                                "sensor.processor_usage_4"
-                            ],
-                            "title": "Rear Camera Status"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.electric_fence"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Safety",
-                            "type": "entities",
-                            "state_color": true
-                        }
-                    ]
+                  "entity": "switch.entry_chandelier"
                 },
                 {
-                    "title": "LiveView",
-                    "path": "liveview",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "type": "picture-entity",
-                            "entity": "camera.cam_frontdoor_mediaprofile_channel1_substream1",
-                            "show_name": false,
-                            "show_state": false,
-                            "camera_view": "live"
-                        },
-                        {
-                            "type": "picture-entity",
-                            "entity": "camera.cam_sidefront_mediaprofile_channel1_substream1",
-                            "show_state": false,
-                            "show_name": false,
-                            "camera_view": "live"
-                        },
-                        {
-                            "type": "picture-entity",
-                            "entity": "camera.cam_sideback_mediaprofile_channel1_substream1",
-                            "show_name": false,
-                            "show_state": false,
-                            "camera_view": "live"
-                        },
-                        {
-                            "type": "picture-entity",
-                            "entity": "camera.cam_rear_mediaprofile_channel1_substream1",
-                            "show_name": false,
-                            "show_state": false,
-                            "camera_view": "live"
-                        }
-                    ]
+                  "entity": "switch.entry_can_lights"
                 },
                 {
-                    "badges": [
-                        {
-                            "entity": "binary_sensor.updater"
-                        },
-                        {
-                            "entity": "sun.sun"
-                        }
-                    ],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.patio_fountain"
-                                },
-                                {
-                                    "entity": "switch.fireplace"
-                                },
-                                {
-                                    "entity": "switch.blower"
-                                },
-                                {
-                                    "entity": "switch.family_fan"
-                                },
-                                {
-                                    "entity": "switch.main_tv"
-                                },
-                                {
-                                    "entity": "switch.master_tv"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Comfort",
-                            "type": "entities",
-                            "state_color": true
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "switch.austins_fan"
-                                },
-                                {
-                                    "entity": "switch.dads_fan"
-                                },
-                                {
-                                    "entity": "switch.lilys_fan"
-                                }
-                            ],
-                            "title": "Bedroom Fans",
-                            "show_header_toggle": false,
-                            "state_color": true
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.ground_decor"
-                                },
-                                {
-                                    "entity": "switch.christmas_package"
-                                },
-                                {
-                                    "entity": "switch.railing_lights"
-                                },
-                                {
-                                    "entity": "switch.curtain_lights"
-                                },
-                                {
-                                    "entity": "switch.mantle_decor"
-                                },
-                                {
-                                    "entity": "switch.buffet_decor"
-                                },
-                                {
-                                    "entity": "switch.kitchen_table"
-                                },
-                                {
-                                    "entity": "switch.end_table"
-                                },
-                                {
-                                    "entity": "switch.left_mantle"
-                                },
-                                {
-                                    "entity": "switch.entry_decorations"
-                                }
-                            ],
-                            "show_header_toggle": true,
-                            "title": "Decorations",
-                            "type": "entities",
-                            "state_color": true
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.powder_lights"
-                                },
-                                {
-                                    "entity": "switch.powder_fan"
-                                },
-                                {
-                                    "entity": "switch.kids_sink_lights"
-                                },
-                                {
-                                    "entity": "switch.kids_toilet_lights"
-                                },
-                                {
-                                    "entity": "switch.kids_shower_lights"
-                                },
-                                {
-                                    "entity": "switch.kids_bathroom_fan"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Bathrooms",
-                            "type": "entities",
-                            "state_color": true
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "timer.dads_lamp"
-                                },
-                                {
-                                    "entity": "timer.powder_bathroom_fan"
-                                },
-                                {
-                                    "entity": "timer.kids_bathroom_fan"
-                                },
-                                {
-                                    "entity": "timer.outdoor_decorations"
-                                },
-                                {
-                                    "entity": "timer.internet_router_restoration"
-                                }
-                            ],
-                            "title": "Sleep Timers",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "script.1612922701814"
-                                },
-                                {
-                                    "entity": "script.master_movies_script"
-                                },
-                                {
-                                    "entity": "script.bedtime_script"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Scripts",
-                            "type": "entities"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "switch.unused01"
-                                },
-                                {
-                                    "entity": "switch.unused02"
-                                },
-                                {
-                                    "entity": "switch.unused03"
-                                },
-                                {
-                                    "entity": "switch.unused04"
-                                },
-                                {
-                                    "entity": "switch.unused05"
-                                },
-                                {
-                                    "entity": "switch.unused06"
-                                },
-                                {
-                                    "entity": "switch.sonoffspare2"
-                                },
-                                {
-                                    "entity": "switch.sonoffspare3"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "switch.computer_austin"
-                                },
-                                {
-                                    "entity": "switch.computer_lily"
-                                },
-                                {
-                                    "entity": "switch.computer_media"
-                                },
-                                {
-                                    "entity": "switch.computer_mob"
-                                },
-                                {
-                                    "entity": "switch.server_disks"
-                                },
-                                {
-                                    "entity": "switch.dads_workspace"
-                                },
-                                {
-                                    "entity": "switch.electronics_workstation"
-                                },
-                                {
-                                    "entity": "switch.3dprinter"
-                                }
-                            ]
-                        }
-                    ],
-                    "path": "default_view",
-                    "title": "Home"
+                  "entity": "switch.library_lights"
                 },
                 {
-                    "title": "Family TV",
-                    "path": "tv-remote",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.maintv_poweroff"
-                                            },
-                                            "name": "TV Power Off",
-                                            "icon": "mdi:power-off",
-                                            "icon_height": "50px",
-                                            "entity": "script.maintv_poweroff"
-                                        },
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.maintv_poweron"
-                                            },
-                                            "name": "TV Power On",
-                                            "icon": "mdi:power",
-                                            "icon_height": "50px",
-                                            "entity": "script.maintv_poweron"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.soundbar_poweroff"
-                                            },
-                                            "icon_height": "50px",
-                                            "name": "Soundbar Power Off",
-                                            "icon": "mdi:power-off",
-                                            "entity": "script.soundbar_poweroff"
-                                        },
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.soundbar_poweron"
-                                            },
-                                            "icon_height": "50px",
-                                            "name": "Soundbar Power On",
-                                            "icon": "mdi:power",
-                                            "entity": "script.soundbar_poweron"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.maintv_selectsoundbarinput"
-                                            },
-                                            "icon": "mdi:video-input-hdmi",
-                                            "icon_height": "50px",
-                                            "name": "TV Input-Soundbar",
-                                            "entity": "script.maintv_selectsoundbarinput"
-                                        },
-                                        {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.soundbar_appletv"
-                                            },
-                                            "icon": "mdi:apple",
-                                            "icon_height": "50px",
-                                            "name": "Soundbar AppleTV",
-                                            "entity": "script.soundbar_appletv"
-                                        },
-                                        {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.soundbar_games"
-                                            },
-                                            "icon": "mdi:gamepad-variant",
-                                            "icon_height": "50px",
-                                            "name": "Soundbar Games",
-                                            "entity": "script.soundbar_games"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.maintv_voldown"
-                                            },
-                                            "icon": "mdi:volume-minus",
-                                            "name": "TV Volume Down",
-                                            "icon_height": "50px",
-                                            "entity": "script.maintv_voldown"
-                                        },
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.maintv_volup"
-                                            },
-                                            "icon": "mdi:volume-plus",
-                                            "icon_height": "50px",
-                                            "name": "TV Volume Up",
-                                            "entity": "script.maintv_volup"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.soundbar_voldown"
-                                            },
-                                            "icon": "mdi:volume-minus",
-                                            "name": "Soundbar Vol Down",
-                                            "icon_height": "50px",
-                                            "entity": "script.soundbar_voldown"
-                                        },
-                                        {
-                                            "type": "entity-button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "script.soundbar_volup"
-                                            },
-                                            "icon": "mdi:volume-plus",
-                                            "icon_height": "50px",
-                                            "name": "Soundbar Vol Up",
-                                            "entity": "script.soundbar_volup"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                "switch.retro_pi"
-                            ]
-                        },
-                        {
-                            "type": "conditional",
-                            "conditions": [
-                                {
-                                    "entity": "switch.retro_pi",
-                                    "state_not": "off1"
-                                }
-                            ],
-                            "card": {
-                                "type": "vertical-stack",
-                                "cards": [
-                                    {
-                                        "type": "horizontal-stack",
-                                        "cards": [
-                                            {
-                                                "type": "entity-button",
-                                                "tap_action": {
-                                                    "action": "call-service",
-                                                    "service": "script.maintv_menu"
-                                                },
-                                                "name": "TV Menu",
-                                                "icon": "mdi:menu",
-                                                "icon_height": "50px",
-                                                "entity": "script.maintv_menu"
-                                            },
-                                            {
-                                                "type": "entity-button",
-                                                "tap_action": {
-                                                    "action": "call-service",
-                                                    "service": "script.maintv_arrowup"
-                                                },
-                                                "name": "TV Exit",
-                                                "icon": "mdi:arrow-up-bold",
-                                                "entity": "script.maintv_arrowup",
-                                                "icon_height": "50px"
-                                            },
-                                            {
-                                                "type": "entity-button",
-                                                "tap_action": {
-                                                    "action": "call-service",
-                                                    "service": "script.maintv_enter"
-                                                },
-                                                "name": "TV Enter",
-                                                "icon": "mdi:camera-control",
-                                                "entity": "script.maintv_enter",
-                                                "icon_height": "50px"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "type": "horizontal-stack",
-                                        "cards": [
-                                            {
-                                                "type": "entity-button",
-                                                "tap_action": {
-                                                    "action": "call-service",
-                                                    "service": "script.maintv_arrowleft"
-                                                },
-                                                "name": "TV Left",
-                                                "icon": "mdi:arrow-left-bold",
-                                                "entity": "script.maintv_arrowleft",
-                                                "icon_height": "50px"
-                                            },
-                                            {
-                                                "type": "entity-button",
-                                                "tap_action": {
-                                                    "action": "call-service",
-                                                    "service": "script.maintv_arrowdown"
-                                                },
-                                                "name": "TV Down",
-                                                "icon": "mdi:arrow-down-bold",
-                                                "entity": "script.maintv_arrowdown",
-                                                "icon_height": "50px"
-                                            },
-                                            {
-                                                "type": "entity-button",
-                                                "tap_action": {
-                                                    "action": "call-service",
-                                                    "service": "script.maintv_arrowright"
-                                                },
-                                                "name": "TV Right",
-                                                "icon": "mdi:arrow-right-bold",
-                                                "entity": "script.maintv_arrowright",
-                                                "icon_height": "50px"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "type": "horizontal-stack",
-                                        "cards": [
-                                            {
-                                                "type": "entity-button",
-                                                "tap_action": {
-                                                    "action": "call-service",
-                                                    "service": "script.maintv_exit"
-                                                },
-                                                "name": "TV Exit",
-                                                "icon": "mdi:keyboard-esc",
-                                                "entity": "script.maintv_exit",
-                                                "icon_height": "50px"
-                                            },
-                                            {
-                                                "type": "entity-button",
-                                                "tap_action": {
-                                                    "action": "call-service",
-                                                    "service": "script.maintv_mute"
-                                                },
-                                                "name": "TV Mute",
-                                                "icon": "mdi:volume-mute",
-                                                "entity": "script.maintv_mute",
-                                                "icon_height": "50px"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        }
-                    ]
+                  "entity": "switch.study_lights"
                 },
                 {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.basement_lights"
-                                },
-                                {
-                                    "entity": "switch.lava_lamp"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Downstairs Lights",
-                            "type": "entities",
-                            "state_color": true
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.austins_hall_lights"
-                                },
-                                {
-                                    "entity": "switch.lilys_hall_lights"
-                                },
-                                {
-                                    "entity": "light.austins_room"
-                                },
-                                {
-                                    "entity": "switch.pet_lights"
-                                },
-                                {
-                                    "entity": "light.lilys_lights"
-                                },
-                                {
-                                    "entity": "light.lilys_vigil"
-                                },
-                                {
-                                    "entity": "switch.dads_lights"
-                                },
-                                {
-                                    "entity": "switch.dads_lamp"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Upstairs Lights",
-                            "type": "entities",
-                            "state_color": true
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.entry_chandelier"
-                                },
-                                {
-                                    "entity": "switch.entry_can_lights"
-                                },
-                                {
-                                    "entity": "switch.library_lights"
-                                },
-                                {
-                                    "entity": "switch.study_lights"
-                                },
-                                {
-                                    "entity": "light.main_dimmer"
-                                },
-                                {
-                                    "entity": "switch.family_lights"
-                                },
-                                {
-                                    "entity": "switch.family_fan"
-                                },
-                                {
-                                    "entity": "switch.main_hall_lights"
-                                },
-                                {
-                                    "entity": "switch.kitchen_can_lights"
-                                },
-                                {
-                                    "entity": "switch.kitchen_sink_lights"
-                                },
-                                {
-                                    "entity": "switch.dining_lights"
-                                },
-                                {
-                                    "entity": "switch.powder_hall_lights"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "theme": "default",
-                            "title": "Main Floor Lights",
-                            "type": "entities",
-                            "state_color": true
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.porch_lights"
-                                },
-                                {
-                                    "entity": "switch.eve_lights"
-                                },
-                                {
-                                    "entity": "switch.exterior_garage_lights"
-                                },
-                                {
-                                    "entity": "switch.exterior_side_lights"
-                                },
-                                {
-                                    "entity": "switch.patio_lights"
-                                },
-                                {
-                                    "entity": "switch.gazebo_lights"
-                                },
-                                {
-                                    "entity": "switch.hottub_lights"
-                                }
-                            ],
-                            "show_header_toggle": true,
-                            "title": "Exterior Lights",
-                            "type": "entities",
-                            "state_color": true
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.garage_lights"
-                                },
-                                {
-                                    "entity": "switch.garage_lamp"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Garage Lights",
-                            "type": "entities",
-                            "state_color": true
-                        }
-                    ],
-                    "path": "lighting",
-                    "title": "Lighting"
+                  "entity": "light.family_dimmer"
                 },
                 {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.dadstest_bme280_temperature"
-                                },
-                                {
-                                    "entity": "sensor.garagelamp_bme280_temperature"
-                                },
-                                {
-                                    "entity": "sensor.workspacemonitor_bme280_temperature"
-                                },
-                                {
-                                    "entity": "sensor.retropi_bme280_temperature"
-                                },
-                                {
-                                    "entity": "sensor.electricfence_bme280_temperature"
-                                }
-                            ],
-                            "hours_to_show": 24,
-                            "refresh_interval": 0,
-                            "type": "history-graph",
-                            "title": "Temperature"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.dadstest_bme280_humidity"
-                                },
-                                {
-                                    "entity": "sensor.garagelamp_bme280_humidity"
-                                },
-                                {
-                                    "entity": "sensor.retropi_bme280_humidity"
-                                },
-                                {
-                                    "entity": "sensor.workspacemonitor_bme280_humidity"
-                                },
-                                {
-                                    "entity": "sensor.electricfence_bme280_humidity"
-                                }
-                            ],
-                            "hours_to_show": 24,
-                            "refresh_interval": 0,
-                            "type": "history-graph",
-                            "title": "Humidity"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.dadstest_bme280_pressure"
-                                },
-                                {
-                                    "entity": "sensor.garagelamp_bme280_pressure"
-                                },
-                                {
-                                    "entity": "sensor.retropi_bme280_pressure"
-                                },
-                                {
-                                    "entity": "sensor.workspacemonitor_bme280_pressure"
-                                },
-                                {
-                                    "entity": "sensor.electricfence_bme280_pressure"
-                                }
-                            ],
-                            "hours_to_show": 24,
-                            "refresh_interval": 0,
-                            "type": "history-graph",
-                            "title": "Pressure"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.computeraustin_energy_apparentpower"
-                                },
-                                {
-                                    "entity": "sensor.computerlily_energy_apparentpower"
-                                },
-                                {
-                                    "entity": "sensor.computermedia_energy_apparentpower"
-                                },
-                                {
-                                    "entity": "sensor.dadsworkspace_energy_apparentpower"
-                                }
-                            ],
-                            "title": "Active Watts",
-                            "type": "history-graph",
-                            "refresh_interval": 0,
-                            "hours_to_show": 24
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.computeraustin_energy_today"
-                                },
-                                {
-                                    "entity": "sensor.computerlily_energy_today"
-                                },
-                                {
-                                    "entity": "sensor.computermedia_energy_today"
-                                },
-                                {
-                                    "entity": "sensor.dadsworkspace_energy_today"
-                                }
-                            ],
-                            "title": "Power Today",
-                            "type": "history-graph",
-                            "hours_to_show": 24,
-                            "refresh_interval": 0
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "sensor.computeraustin_energy_yesterday"
-                                },
-                                {
-                                    "entity": "sensor.computerlily_energy_yesterday"
-                                },
-                                {
-                                    "entity": "sensor.computermedia_energy_yesterday"
-                                },
-                                {
-                                    "entity": "sensor.dadsworkspace_energy_yesterday"
-                                },
-                                {
-                                    "entity": "sensor.laptopcharger_energy_yesterday"
-                                },
-                                {
-                                    "entity": "sensor.petlights_energy_yesterday"
-                                },
-                                {
-                                    "entity": "sensor.maintv_energy_yesterday"
-                                },
-                                {
-                                    "entity": "sensor.mastertv_energy_yesterday"
-                                },
-                                {
-                                    "entity": "sensor.bottomchristmas_energy_yesterday"
-                                },
-                                {
-                                    "entity": "sensor.topchristmas_energy_yesterday"
-                                },
-                                {
-                                    "entity": "sensor.grounddecor_energy_yesterday"
-                                },
-                                {
-                                    "entity": "sensor.kitchenfridge_energy_yesterday"
-                                },
-                                {
-                                    "entity": "sensor.garagefridge_energy_yesterday"
-                                },
-                                {
-                                    "entity": "sensor.garagefreezer_energy_yesterday"
-                                },
-                                {
-                                    "entity": "sensor.deepfreeze_energy_yesterday"
-                                },
-                                {
-                                    "entity": "sensor.hottub_energy_yesterday"
-                                }
-                            ]
-                        }
-                    ],
-                    "panel": false,
-                    "path": "sensors",
-                    "title": "Sensors"
+                  "entity": "switch.family_lights"
                 },
                 {
-                    "panel": true,
-                    "path": "weather",
-                    "title": "Weather",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entity": "weather.home",
-                            "type": "weather-forecast"
-                        }
-                    ]
+                  "entity": "switch.family_fan"
                 },
                 {
-                    "title": "Test",
-                    "path": "test",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "type": "entities",
-                            "entities": [
-                                "remote.master"
-                            ]
-                        },
-                        {
-                            "type": "media-control",
-                            "entity": "media_player.master"
-                        }
-                    ]
+                  "entity": "switch.main_hall_lights"
+                },
+                {
+                  "entity": "switch.kitchen_can_lights"
+                },
+                {
+                  "entity": "switch.kitchen_sink_lights"
+                },
+                {
+                  "entity": "switch.dining_lights"
+                },
+                {
+                  "entity": "switch.powder_hall_lights"
                 }
-            ]
+              ],
+              "show_header_toggle": false,
+              "theme": "default",
+              "title": "Main Floor Lights",
+              "type": "entities",
+              "state_color": true
+            },
+            {
+              "entities": [
+                {
+                  "entity": "switch.austins_hall_lights"
+                },
+                {
+                  "entity": "switch.lilys_hall_lights"
+                },
+                {
+                  "entity": "light.austins_dimmer"
+                },
+                {
+                  "entity": "switch.pet_lights"
+                },
+                {
+                  "entity": "light.lilys_dimmer"
+                },
+                {
+                  "entity": "light.lilys_vigil"
+                },
+                {
+                  "entity": "switch.dads_lights"
+                },
+                {
+                  "entity": "switch.dads_lamp"
+                }
+              ],
+              "show_header_toggle": false,
+              "title": "Upstairs Lights",
+              "type": "entities",
+              "state_color": true
+            },
+            {
+              "entities": [
+                {
+                  "entity": "switch.porch_lights"
+                },
+                {
+                  "entity": "switch.eve_lights"
+                },
+                {
+                  "entity": "switch.exterior_garage_lights"
+                },
+                {
+                  "entity": "switch.exterior_side_lights"
+                },
+                {
+                  "entity": "switch.patio_lights"
+                },
+                {
+                  "entity": "switch.gazebo_lights"
+                },
+                {
+                  "entity": "switch.hottub_lights"
+                },
+                {
+                  "entity": "switch.animal_shed"
+                }
+              ],
+              "show_header_toggle": true,
+              "title": "Exterior Lights",
+              "type": "entities",
+              "state_color": true
+            },
+            {
+              "entities": [
+                {
+                  "entity": "switch.basement_lights"
+                },
+                {
+                  "entity": "switch.lava_lamp"
+                }
+              ],
+              "show_header_toggle": false,
+              "title": "Downstairs Lights",
+              "type": "entities",
+              "state_color": true
+            },
+            {
+              "entities": [
+                {
+                  "entity": "switch.garage_lights"
+                },
+                {
+                  "entity": "switch.garage_lamp"
+                }
+              ],
+              "show_header_toggle": false,
+              "title": "Garage Lights",
+              "type": "entities",
+              "state_color": true
+            }
+          ]
+        },
+        {
+          "title": "Family TV",
+          "path": "tv-remote",
+          "icon": "mdi:remote-tv",
+          "badges": [],
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.maintv_poweroff"
+                      },
+                      "name": "TV Power Off",
+                      "icon": "mdi:power-off",
+                      "icon_height": "50px",
+                      "entity": "script.maintv_poweroff"
+                    },
+                    {
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.maintv_poweron"
+                      },
+                      "name": "TV Power On",
+                      "icon": "mdi:power",
+                      "icon_height": "50px",
+                      "entity": "script.maintv_poweron"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.soundbar_poweroff"
+                      },
+                      "icon_height": "50px",
+                      "name": "Soundbar Power Off",
+                      "icon": "mdi:power-off",
+                      "entity": "script.soundbar_poweroff"
+                    },
+                    {
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.soundbar_poweron"
+                      },
+                      "icon_height": "50px",
+                      "name": "Soundbar Power On",
+                      "icon": "mdi:power",
+                      "entity": "script.soundbar_poweron"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.maintv_voldown"
+                      },
+                      "icon": "mdi:volume-minus",
+                      "name": "TV Volume Down",
+                      "icon_height": "50px",
+                      "entity": "script.maintv_voldown"
+                    },
+                    {
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.maintv_volup"
+                      },
+                      "icon": "mdi:volume-plus",
+                      "icon_height": "50px",
+                      "name": "TV Volume Up",
+                      "entity": "script.maintv_volup"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.soundbar_voldown"
+                      },
+                      "icon": "mdi:volume-minus",
+                      "name": "Soundbar Vol Down",
+                      "icon_height": "50px",
+                      "entity": "script.soundbar_voldown"
+                    },
+                    {
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.soundbar_volup"
+                      },
+                      "icon": "mdi:volume-plus",
+                      "icon_height": "50px",
+                      "name": "Soundbar Vol Up",
+                      "entity": "script.soundbar_volup"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "title": "Great Room Apple TV",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.appletv_greatroom_app_controls",
+                        "service_data": {},
+                        "target": {}
+                      },
+                      "name": "App Control",
+                      "icon": "mdi:microsoft-xbox-controller-view",
+                      "icon_height": "50px",
+                      "entity": "script.appletv_greatroom_app_controls",
+                      "hold_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.appletv_greatroom_up",
+                        "service_data": {},
+                        "target": {}
+                      },
+                      "name": "Up",
+                      "icon": "mdi:arrow-up-bold",
+                      "entity": "script.appletv_greatroom_up",
+                      "icon_height": "50px",
+                      "hold_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.appletv_greatroom_control_center",
+                        "service_data": {},
+                        "target": {}
+                      },
+                      "name": "Control Center",
+                      "icon": "mdi:cast-audio-variant",
+                      "entity": "script.appletv_greatroom_control_center",
+                      "icon_height": "50px"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.appletv_greatroom_left",
+                        "service_data": {},
+                        "target": {}
+                      },
+                      "name": "Left",
+                      "icon": "mdi:arrow-left-bold",
+                      "entity": "script.appletv_greatroom_left",
+                      "icon_height": "50px",
+                      "hold_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.appletv_greatroom_down",
+                        "service_data": {},
+                        "target": {}
+                      },
+                      "name": "Down",
+                      "icon": "mdi:arrow-down-bold",
+                      "entity": "script.appletv_greatroom_down",
+                      "icon_height": "50px",
+                      "hold_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.appletv_greatroom_right",
+                        "service_data": {},
+                        "target": {}
+                      },
+                      "name": "Right",
+                      "icon": "mdi:arrow-right-bold",
+                      "entity": "script.appletv_greatroom_right",
+                      "icon_height": "50px",
+                      "hold_action": {
+                        "action": "none"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.appletv_greatroom_menu",
+                        "service_data": {},
+                        "target": {}
+                      },
+                      "name": "Menu",
+                      "icon": "mdi:menu",
+                      "entity": "script.appletv_greatroom_menu",
+                      "icon_height": "50px",
+                      "hold_action": {
+                        "action": "none"
+                      },
+                      "show_state": false
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.appletv_greatroom_select",
+                        "service_data": {},
+                        "target": {}
+                      },
+                      "name": "Select",
+                      "icon": "mdi:keyboard-return",
+                      "entity": "script.appletv_greatroom_select",
+                      "icon_height": "50px"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "horizontal-stack",
+              "title": "Input Controls",
+              "cards": [
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "script.maintv_selectsoundbarinput"
+                  },
+                  "icon": "mdi:video-input-hdmi",
+                  "icon_height": "50px",
+                  "name": "TV Input-Soundbar",
+                  "entity": "script.maintv_selectsoundbarinput"
+                },
+                {
+                  "type": "button",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "script.soundbar_appletv"
+                  },
+                  "icon": "mdi:apple",
+                  "icon_height": "50px",
+                  "name": "Soundbar AppleTV",
+                  "entity": "script.soundbar_appletv"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "script.soundbar_steam"
+                  },
+                  "icon": "mdi:steam",
+                  "icon_height": "50px",
+                  "name": "Soundbar Steam Deck",
+                  "entity": "script.soundbar_steam"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "script.soundbar_nintendo"
+                  },
+                  "icon": "mdi:nintendo-switch",
+                  "icon_height": "50px",
+                  "name": "Soundbar Nintendo",
+                  "entity": "script.soundbar_nintendo"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "switch.fireplace"
+                },
+                {
+                  "entity": "switch.blower"
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "title": "Great Room Toshiba TV",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.maintv_menu"
+                      },
+                      "name": "Menu",
+                      "icon": "mdi:menu",
+                      "icon_height": "50px",
+                      "entity": "script.maintv_menu"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.maintv_arrowup"
+                      },
+                      "name": "Up",
+                      "icon": "mdi:arrow-up-bold",
+                      "entity": "script.maintv_arrowup",
+                      "icon_height": "50px"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.maintv_enter"
+                      },
+                      "name": "Enter",
+                      "icon": "mdi:camera-control",
+                      "entity": "script.maintv_enter",
+                      "icon_height": "50px"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.maintv_arrowleft"
+                      },
+                      "name": "Left",
+                      "icon": "mdi:arrow-left-bold",
+                      "entity": "script.maintv_arrowleft",
+                      "icon_height": "50px"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.maintv_arrowdown"
+                      },
+                      "name": "Down",
+                      "icon": "mdi:arrow-down-bold",
+                      "entity": "script.maintv_arrowdown",
+                      "icon_height": "50px"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.maintv_arrowright"
+                      },
+                      "name": "Right",
+                      "icon": "mdi:arrow-right-bold",
+                      "entity": "script.maintv_arrowright",
+                      "icon_height": "50px"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.maintv_exit"
+                      },
+                      "name": "Exit",
+                      "icon": "mdi:keyboard-esc",
+                      "entity": "script.maintv_exit",
+                      "icon_height": "50px"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.maintv_mute"
+                      },
+                      "name": "Mute",
+                      "icon": "mdi:volume-mute",
+                      "entity": "script.maintv_mute",
+                      "icon_height": "50px"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "HotTub",
+          "path": "hottub",
+          "icon": "mdi:hot-tub",
+          "badges": [],
+          "cards": [
+            {
+              "type": "grid",
+              "square": false,
+              "columns": 1,
+              "cards": [
+                {
+                  "type": "thermostat",
+                  "entity": "climate.my_spa_heater"
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    "light.my_spa_lights",
+                    "fan.my_spa_pump_1"
+                  ]
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    "binary_sensor.my_spa_circulating_pump",
+                    "sensor.my_spa_rinse_filter_due",
+                    "sensor.my_spa_clean_filter_due",
+                    "sensor.my_spa_change_water_due",
+                    "sensor.my_spa_check_spa_due",
+                    "binary_sensor.my_spa_filter_status_clean",
+                    "binary_sensor.my_spa_filter_status_purge"
+                  ]
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    "sensor.my_spa_status",
+                    "sensor.my_spa_error_s",
+                    "button.my_spa_reconnect",
+                    "switch.my_spa_economy_mode"
+                  ]
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    "sensor.my_spa_rf_channel",
+                    "sensor.my_spa_rf_signal",
+                    "binary_sensor.my_spa_ozone"
+                  ]
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    "binary_sensor.my_spa_smart_winter_mode_active",
+                    "sensor.my_spa_smart_winter_mode_risk"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "default_view",
+          "title": "Home",
+          "icon": "mdi:home",
+          "badges": [
+            {
+              "entity": "binary_sensor.updater"
+            },
+            {
+              "entity": "sun.sun"
+            }
+          ],
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "button",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "script.bedtime_script",
+                    "service_data": {},
+                    "target": {}
+                  },
+                  "icon": "mdi:flash-off",
+                  "name": "Bedtime",
+                  "icon_height": "50px"
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "button",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.1612922701814",
+                        "service_data": {},
+                        "target": {}
+                      },
+                      "name": "All Lights On",
+                      "icon": "mdi:lightbulb-on-outline",
+                      "icon_height": "50px"
+                    },
+                    {
+                      "type": "button",
+                      "tap_action": {
+                        "action": "toggle"
+                      },
+                      "show_state": false,
+                      "entity": "switch.master_tv",
+                      "icon": "mdi:television-classic",
+                      "icon_height": "50px"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "entities": [
+                {
+                  "entity": "cover.main_garage"
+                },
+                {
+                  "entity": "cover.3rd_car_garage"
+                }
+              ],
+              "type": "entities",
+              "state_color": true
+            },
+            {
+              "entities": [
+                {
+                  "entity": "switch.railing_lights"
+                },
+                {
+                  "entity": "switch.curtain_lights"
+                },
+                {
+                  "entity": "switch.mantle_decor"
+                },
+                {
+                  "entity": "switch.buffet_decor"
+                },
+                {
+                  "entity": "switch.kitchen_counter_decor"
+                },
+                {
+                  "entity": "switch.end_table"
+                },
+                {
+                  "entity": "switch.left_mantle"
+                },
+                {
+                  "entity": "switch.front_tree"
+                },
+                {
+                  "entity": "switch.ground_decor"
+                },
+                {
+                  "entity": "switch.christmas_package"
+                },
+                {
+                  "entity": "switch.holiday_stairs"
+                }
+              ],
+              "show_header_toggle": true,
+              "title": "Decorations",
+              "type": "entities",
+              "state_color": true
+            },
+            {
+              "entities": [
+                {
+                  "entity": "switch.powder_lights"
+                },
+                {
+                  "entity": "switch.powder_fan"
+                },
+                {
+                  "entity": "switch.kids_sink_lights"
+                },
+                {
+                  "entity": "switch.kids_toilet_lights"
+                },
+                {
+                  "entity": "switch.kids_shower_lights"
+                },
+                {
+                  "entity": "switch.kids_bathroom_fan"
+                }
+              ],
+              "show_header_toggle": false,
+              "title": "Bathrooms",
+              "type": "entities",
+              "state_color": true
+            }
+          ]
+        },
+        {
+          "title": "Aux",
+          "path": "aux",
+          "icon": "mdi:fence-electric",
+          "badges": [],
+          "cards": [
+            {
+              "entities": [
+                {
+                  "entity": "switch.electric_fence"
+                }
+              ],
+              "show_header_toggle": false,
+              "title": "Safety",
+              "type": "entities",
+              "state_color": true
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "switch.main_tv"
+                },
+                {
+                  "entity": "switch.master_tv"
+                },
+                {
+                  "entity": "switch.electronics_workstation"
+                },
+                {
+                  "entity": "switch.octo_pi"
+                },
+                {
+                  "entity": "switch.3d_printer"
+                },
+                {
+                  "entity": "switch.printer_lights"
+                },
+                {
+                  "entity": "switch.monochrome_printer"
+                },
+                {
+                  "entity": "switch.upstairs_color_printer"
+                },
+                {
+                  "entity": "switch.internet_router"
+                },
+                {
+                  "entity": "switch.patio_fountain"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "switch.christmas_tree"
+                },
+                {
+                  "entity": "switch.front_tree"
+                }
+              ],
+              "title": "Unused and Update",
+              "show_header_toggle": false
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "switch.austin_fans"
+                },
+                {
+                  "entity": "switch.dads_fan"
+                },
+                {
+                  "entity": "switch.lilys_fan"
+                }
+              ],
+              "title": "Bedroom Fans",
+              "show_header_toggle": false,
+              "state_color": true
+            },
+            {
+              "entities": [
+                {
+                  "entity": "timer.dads_lamp"
+                },
+                {
+                  "entity": "timer.powder_bathroom_fan"
+                },
+                {
+                  "entity": "timer.kids_bathroom_fan"
+                },
+                {
+                  "entity": "timer.outdoor_decorations"
+                }
+              ],
+              "title": "Sleep Timers",
+              "type": "entities"
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.refrigerator_cooler_temperature"
+                },
+                {
+                  "entity": "sensor.refrigerator_freezer_temperature"
+                }
+              ],
+              "title": "Fridge",
+              "hours_to_show": 24
+            }
+          ]
+        },
+        {
+          "path": "sensors",
+          "title": "Sensors",
+          "type": "sidebar",
+          "icon": "mdi:chart-areaspline",
+          "badges": [],
+          "cards": [
+            {
+              "entities": [
+                {
+                  "entity": "sensor.animalshed_bme280_temperature"
+                },
+                {
+                  "entity": "sensor.garagelamp_bme280_temperature"
+                },
+                {
+                  "entity": "sensor.lilysvigil_bme280_temperature"
+                },
+                {
+                  "entity": "sensor.mediaremote_bme280_temperature"
+                },
+                {
+                  "entity": "sensor.printerlights_bme280_temperature"
+                },
+                {
+                  "entity": "sensor.workspacemonitor_bme280_temperature"
+                },
+                {
+                  "entity": "sensor.tasmota_bme280_temperature"
+                }
+              ],
+              "hours_to_show": 72,
+              "refresh_interval": 0,
+              "type": "history-graph",
+              "title": "Temperature"
+            },
+            {
+              "entities": [
+                {
+                  "entity": "sensor.garagelamp_bme280_humidity"
+                },
+                {
+                  "entity": "sensor.lilysvigil_bme280_humidity"
+                },
+                {
+                  "entity": "sensor.workspacemonitor_bme280_humidity"
+                },
+                {
+                  "entity": "sensor.animalshed_bme280_humidity"
+                },
+                {
+                  "entity": "sensor.mediaremote_bme280_humidity"
+                },
+                {
+                  "entity": "sensor.printerlights_bme280_humidity"
+                },
+                {
+                  "entity": "sensor.tasmota_bme280_humidity"
+                }
+              ],
+              "hours_to_show": 72,
+              "refresh_interval": 0,
+              "type": "history-graph",
+              "title": "Humidity"
+            },
+            {
+              "entities": [
+                {
+                  "entity": "sensor.animalshed_bme280_pressure"
+                },
+                {
+                  "entity": "sensor.lilysvigil_bme280_pressure"
+                },
+                {
+                  "entity": "sensor.garagelamp_bme280_pressure"
+                },
+                {
+                  "entity": "sensor.mediaremote_bme280_pressure"
+                },
+                {
+                  "entity": "sensor.printerlights_bme280_pressure"
+                },
+                {
+                  "entity": "sensor.workspacemonitor_bme280_pressure"
+                },
+                {
+                  "entity": "sensor.tasmota_bme280_pressure"
+                }
+              ],
+              "hours_to_show": 72,
+              "refresh_interval": 0,
+              "type": "history-graph",
+              "title": "Pressure"
+            },
+            {
+              "entities": [
+                {
+                  "entity": "sensor.3dprinter_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.hottub_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.basementfridge_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.dadsworkspace_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.deepfreeze_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.douglaslights_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.downstairscolorprinter_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.fronttree_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.garagefreezer_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.garagefridge_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.grounddecor_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.heatblankets_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.jeremylight_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.kitchencounterdecor_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.lilysdecor_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.maintv_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.mastertv_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.monochromeprinter_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.petlights_energy_apparentpower"
+                },
+                {
+                  "entity": "sensor.upstairscolorprinter_energy_apparentpower"
+                }
+              ],
+              "title": "Active Watts",
+              "type": "history-graph",
+              "refresh_interval": 0,
+              "hours_to_show": 72
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.dadsworkspace_energy_yesterday"
+                },
+                {
+                  "entity": "sensor.petlights_energy_yesterday"
+                },
+                {
+                  "entity": "sensor.maintv_energy_yesterday"
+                },
+                {
+                  "entity": "sensor.mastertv_energy_yesterday"
+                },
+                {
+                  "entity": "sensor.basementfridge_energy_yesterday"
+                },
+                {
+                  "entity": "sensor.garagefridge_energy_yesterday"
+                },
+                {
+                  "entity": "sensor.garagefreezer_energy_yesterday"
+                },
+                {
+                  "entity": "sensor.deepfreeze_energy_yesterday"
+                },
+                {
+                  "entity": "sensor.hottub_energy_yesterday"
+                },
+                {
+                  "entity": "sensor.3dprinter_energy_yesterday"
+                },
+                {
+                  "entity": "sensor.hottub_energy_yesterday"
+                }
+              ]
+            },
+            {
+              "entities": [
+                {
+                  "entity": "sensor.3dprinter_energy_current"
+                },
+                {
+                  "entity": "sensor.hottub_energy_current"
+                },
+                {
+                  "entity": "sensor.basementfridge_energy_current"
+                },
+                {
+                  "entity": "sensor.dadsworkspace_energy_current"
+                },
+                {
+                  "entity": "sensor.deepfreeze_energy_current"
+                },
+                {
+                  "entity": "sensor.douglaslights_energy_current"
+                },
+                {
+                  "entity": "sensor.downstairscolorprinter_energy_current"
+                },
+                {
+                  "entity": "sensor.fronttree_energy_current"
+                },
+                {
+                  "entity": "sensor.garagefreezer_energy_current"
+                },
+                {
+                  "entity": "sensor.garagefridge_energy_current"
+                },
+                {
+                  "entity": "sensor.grounddecor_energy_current"
+                },
+                {
+                  "entity": "sensor.heatblankets_energy_current"
+                },
+                {
+                  "entity": "sensor.jeremylight_energy_current"
+                },
+                {
+                  "entity": "sensor.kitchencounterdecor_energy_current"
+                },
+                {
+                  "entity": "sensor.lilysdecor_energy_current"
+                },
+                {
+                  "entity": "sensor.maintv_energy_current"
+                },
+                {
+                  "entity": "sensor.mastertv_energy_current"
+                },
+                {
+                  "entity": "sensor.monochromeprinter_energy_current"
+                },
+                {
+                  "entity": "sensor.petlights_energy_current"
+                },
+                {
+                  "entity": "sensor.upstairscolorprinter_energy_current"
+                }
+              ],
+              "title": "Operating Current",
+              "type": "history-graph",
+              "refresh_interval": 0,
+              "hours_to_show": 72
+            },
+            {
+              "entities": [
+                {
+                  "entity": "sensor.hottub_energy_voltage"
+                },
+                {
+                  "entity": "sensor.basementfridge_energy_voltage"
+                },
+                {
+                  "entity": "sensor.dadsworkspace_energy_voltage"
+                },
+                {
+                  "entity": "sensor.deepfreeze_energy_voltage"
+                },
+                {
+                  "entity": "sensor.downstairscolorprinter_energy_voltage"
+                },
+                {
+                  "entity": "sensor.garagefreezer_energy_voltage"
+                },
+                {
+                  "entity": "sensor.garagefridge_energy_voltage"
+                },
+                {
+                  "entity": "sensor.maintv_energy_voltage"
+                },
+                {
+                  "entity": "sensor.monochromeprinter_energy_voltage"
+                },
+                {
+                  "entity": "sensor.upstairscolorprinter_energy_voltage"
+                }
+              ],
+              "title": "Operating Voltage",
+              "type": "history-graph",
+              "refresh_interval": 0,
+              "hours_to_show": 72
+            },
+            {
+              "entities": [
+                {
+                  "entity": "sensor.hottub_energy_today"
+                },
+                {
+                  "entity": "sensor.basementfridge_energy_today"
+                },
+                {
+                  "entity": "sensor.dadsworkspace_energy_today"
+                },
+                {
+                  "entity": "sensor.deepfreeze_energy_today"
+                },
+                {
+                  "entity": "sensor.downstairscolorprinter_energy_today"
+                },
+                {
+                  "entity": "sensor.garagefreezer_energy_today"
+                },
+                {
+                  "entity": "sensor.garagefridge_energy_today"
+                },
+                {
+                  "entity": "sensor.maintv_energy_today"
+                },
+                {
+                  "entity": "sensor.monochromeprinter_energy_today"
+                },
+                {
+                  "entity": "sensor.upstairscolorprinter_energy_today"
+                }
+              ],
+              "title": "Energy today",
+              "type": "history-graph",
+              "refresh_interval": 0,
+              "hours_to_show": 72
+            }
+          ]
+        },
+        {
+          "title": "HVAC",
+          "path": "hvac",
+          "badges": [],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "climate.family_room"
+                },
+                {
+                  "entity": "sensor.family_room_humidity"
+                },
+                {
+                  "entity": "climate.upstairs"
+                },
+                {
+                  "entity": "sensor.upstairs_humidity"
+                }
+              ]
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.family_room"
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.upstairs"
+            },
+            {
+              "entities": [
+                {
+                  "entity": "switch.fireplace"
+                },
+                {
+                  "entity": "switch.blower"
+                },
+                {
+                  "entity": "switch.family_fan"
+                }
+              ],
+              "show_header_toggle": false,
+              "title": "Comfort",
+              "type": "entities",
+              "state_color": true
+            }
+          ]
+        },
+        {
+          "title": "Test",
+          "path": "test",
+          "visible": [
+            {
+              "user": "e209297cdec44455856b6aab46832759"
+            }
+          ],
+          "badges": [],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                "sensor.animalshed_bme280_temperature"
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                "remote.master"
+              ]
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.master"
+            },
+            {
+              "chart_type": "line",
+              "period": "5minute",
+              "days_to_show": 5,
+              "type": "statistics-graph",
+              "entities": [
+                "sensor.garagefreezer_energy_apparentpower"
+              ],
+              "stat_types": [
+                "mean",
+                "min",
+                "max"
+              ]
+            }
+          ]
         }
+      ]
     }
+  }
 }

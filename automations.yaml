@@ -34,10 +34,12 @@
     to: opening
   condition: []
   action:
-  - entity_id: switch.garagelights_garage_lights
-    service: switch.turn_on
-  - entity_id: switch.garagelamp_garage_lamp
-    service: switch.turn_on
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id:
+      - switch.garage_lights
+      - switch.garage_lamp
 - id: GarageClosing
   alias: GarageClosing
   description: ''
@@ -56,10 +58,12 @@
     to: closed
   condition: []
   action:
-  - entity_id: switch.garagelights_garage_lights
-    service: switch.turn_off
-  - entity_id: switch.garagelamp_garage_lamp
-    service: switch.turn_off
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.garage_lights
+      - switch.garage_lamp
 - id: Sunrise_Trigger_Minus_1_Hour
   alias: Sunrise - 1 hour before
   description: ''
@@ -69,19 +73,15 @@
     platform: sun
   condition: []
   action:
-  - entity_id: switch.railinglights_railing_lights
-    service: switch.turn_on
-  - data: {}
-    entity_id: switch.curtainlights_curtain_lights
-    service: switch.turn_on
+  - service: switch.turn_on
+    data: {}
 - id: Sunset_Trigger_Minus_15_Minutes
   alias: Sunset - 15 Minutes Before
   trigger:
   - event: sunset
     offset: -00:15:00
     platform: sun
-  action:
-  - service: script.holiday_lighting_script
+  action: []
 - id: Weekday_Dad_Good_Morning
   alias: Weekday - Dad Triggers
   description: ''
@@ -124,12 +124,14 @@
   alias: Bedtime - Austin
   description: ''
   trigger:
-  - at: '22:45'
+  - at: '22:45:00'
     platform: time
   condition: []
   action:
-  - entity_id: switch.petlights_pet_lights
-    service: switch.turn_off
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.pet_lights
 - id: Ring_Button_Pushed
   alias: Ring - Button Pushed
   description: ''
@@ -287,14 +289,16 @@
   alias: Timer-Dads-Lamp-Start
   description: ''
   trigger:
-  - entity_id: switch.dadslamp_dads_lamp
+  - entity_id: switch.dads_lamp
     platform: state
     to: 'on'
   condition: []
   action:
-  - data: {}
-    entity_id: timer.dads_lamp
+  - data:
+      duration: '0'
     service: timer.start
+    target:
+      entity_id: timer.dads_lamp
 - id: iOS_Bedtime_Widget
   alias: iOS - Bedtime Widget
   description: ''
@@ -303,6 +307,9 @@
       actionName: Bedtime
     event_type: ios.action_fired
     platform: event
+    context:
+      user_id:
+      - e209297cdec44455856b6aab46832759
   condition: []
   action:
   - data: {}
@@ -425,5 +432,85 @@
   - type: turn_on
     device_id: 90bf7a916978b7f0317108d3d05c82f3
     entity_id: switch.austins_fan
+    domain: switch
+  mode: single
+- id: '1675827528821'
+  alias: iOS - DadsLamp
+  description: ''
+  trigger:
+  - event_data:
+      actionName: BedsideLamp
+    event_type: ios.action_fired
+    platform: event
+    context: {}
+  condition: []
+  action:
+  - type: toggle
+    device_id: 28bf1b0769ae756caf43a82c5620a27c
+    entity_id: switch.dads_lamp
+    domain: switch
+  mode: single
+- id: '1675827568781'
+  alias: iOS - BasementLights
+  description: ''
+  trigger:
+  - event_data:
+      actionName: BasementLights
+    event_type: ios.action_fired
+    platform: event
+    context: {}
+  condition: []
+  action:
+  - type: toggle
+    device_id: a34aa264a168383ba7b338ecec52ae3e
+    entity_id: switch.basement_lights
+    domain: switch
+  mode: single
+- id: '1675828264053'
+  alias: Stop Main TV Playback
+  description: ''
+  trigger:
+  - event_data:
+      actionName: StopPlayback
+    event_type: ios.action_fired
+    platform: event
+    context: {}
+  condition: []
+  action:
+  - service: script.appletv_greatroom_home
+    data: {}
+  - service: script.maintv_poweroff
+    data: {}
+  mode: single
+- id: '1678114883595'
+  alias: PrinterLightsOff
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_off
+    device_id: ddcb81b964b5656f50a4c093cf74bcb8
+    entity_id: switch.3d_printer
+    domain: switch
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 283160ed5a1023ba9a56e8f9ef137e4e
+    entity_id: switch.printer_lights
+    domain: switch
+  mode: single
+- id: '1678114913724'
+  alias: PrinterLightsOn
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: ddcb81b964b5656f50a4c093cf74bcb8
+    entity_id: switch.3d_printer
+    domain: switch
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 283160ed5a1023ba9a56e8f9ef137e4e
+    entity_id: switch.printer_lights
     domain: switch
   mode: single

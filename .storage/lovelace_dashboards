@@ -1,0 +1,34 @@
+{
+    "version": 1,
+    "minor_version": 1,
+    "key": "lovelace_dashboards",
+    "data": {
+        "items": [
+            {
+                "require_admin": false,
+                "show_in_sidebar": true,
+                "title": "Entertainment",
+                "url_path": "lovelace-entertainment",
+                "mode": "storage",
+                "id": "lovelace_entertainment"
+            },
+            {
+                "show_in_sidebar": true,
+                "icon": "mdi:remote",
+                "title": "Remote",
+                "require_admin": false,
+                "mode": "storage",
+                "url_path": "lovelace-remote",
+                "id": "lovelace_remote"
+            },
+            {
+                "show_in_sidebar": true,
+                "title": "All",
+                "require_admin": true,
+                "mode": "storage",
+                "url_path": "lovelace-all",
+                "id": "lovelace_all"
+            }
+        ]
+    }
+}

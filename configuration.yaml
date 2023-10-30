@@ -52,94 +52,31 @@ scene: !include scenes.yaml
 #   still_image_url: http://10.2.3.13/cgi-bin/snapshot.cgi
 #   stream_source: rtsp://stream:homeassistantstream@10.2.3.13:554/cam/realmonitor?channel=1&subtype=1&unicast=true&proto=Onvif
  
-cover:
-  - platform: myq
-    username: !secret myq_username
-    password: !secret myq_password
-
 # Example configuration.yaml entry
-binary_sensor:
-  - platform: workday
-    country: US
-    workdays: [mon, tue, wed, thu, fri]
-    excludes: [sat, sun, holiday]
-    add_holidays:
-      - '2018-12-26'
-      - '2018-12-31'
-      - '2020-07-06'
-      - '2020-07-07'
-      - '2020-07-08'
-      - '2020-07-09'
-      - '2020-07-10'
-      - '2020-12-24'
-      - '2020-12-25'
-      - '2021-01-01'
+# binary_sensor:
+#    - platform: workday
+#      country: US
+#      workdays: [mon, tue, wed, thu, fri]
+#      excludes: [sat, sun, holiday]
+#      add_holidays:
+#        - '2020-12-25'
+#        - '2021-01-01'
 
 # lovelace:
 #   resources:
 #     url: /config/www/lovelace-card-mod/card-mod.js?v=2
 #     type: module
 
-ring:
-  username: !secret ring_username
-  password: !secret ring_password
+# nest:
+#  client_id: !secret nest_client_id
+#  client_secret: !secret nest_client_secret
+#  project_id: !secret nest_project_id
 
 # media_player:
 #   - platform: songpal
 #     name: soundbar
 #     endpoint: http://10.2.3.115:10000/sony
-
-homekit:
-  filter:
-    include_domains:
-      - cover
-      - light
-      - switch
-    exclude_entities:
-      - switch.computer_austin
-      - switch.computer_lily
-      - switch.computer_media
-      - switch.control1_austin_hall
-      - switch.control1_entry_cans
-      - switch.control1_garage_lights
-      - switch.control1_kitchen_cans
-      - switch.control1_kitchen_sink
-      - switch.control1_lily_hall
-      - switch.control1_main_hall
-      - switch.control2_entry_cans
-      - switch.control2_lily_hall
-      - switch.control2_main_hall
-      - switch.hot_tub
-      - switch.internet_router
-      - switch.kitchen_fridge
-      - switch.garage_fridge
-      - switch.garage_freezer
-      - switch.network_equipment
-      - switch.deep_freeze
-      - switch.laptop_charger
-      - switch.study_fan
-      # - light.austins_room
-      # - light.lilys_lights
-      # - light.main_dimmer
-
-mqtt:
-  broker: 10.2.2.4
-  port: 1883
-  client_id: skg-home-assistant
-  keepalive: 60
-  username: admin
-  password: admin
-  protocol: 3.1
-  birth_message:
-    topic: "homeassistant/tele/hass1/LWT"
-    payload: "Online"
-    qos: 1
-    retain: true
-  will_message:
-    topic: "homeassistant/tele/hass1/LWT"
-    payload: "Offline"
-    qos: 1
-    retain: true
+# prometheus:
 
 timer:
   powder_bathroom_fan:

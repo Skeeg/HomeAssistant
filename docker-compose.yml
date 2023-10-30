@@ -1,0 +1,14 @@
+version: "3"
+
+# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: homeassistant/home-assistant:stable
+    environment:
+      TZ: 'America/Denver'
+    volumes:
+      - './:/config'
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
