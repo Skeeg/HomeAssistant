@@ -949,6 +949,17 @@
             {
               "entities": [
                 {
+                  "entity": "climate.my_spa_heater"
+                }
+              ],
+              "hours_to_show": 72,
+              "refresh_interval": 0,
+              "type": "history-graph",
+              "title": "Hot Tub"
+            },
+            {
+              "entities": [
+                {
                   "entity": "sensor.animalshed_bme280_temperature"
                 },
                 {
