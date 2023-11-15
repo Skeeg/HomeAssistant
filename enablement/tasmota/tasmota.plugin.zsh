@@ -12,10 +12,11 @@ udm-login() {
   then
     UDM_COOKIE=$(mktemp)
     UDM_HEADERS=$(mktemp)
-    curl --cookie "${UDM_COOKIE}" --cookie-jar "${UDM_COOKIE}" --insecure -H 'Content-Type: application/json' \
-      -D "${UDM_HEADERS}" --data "{\"username\": \"$2\", \"password\": \"$3\"}" "https://$1/api/auth/login"
+    curl --silent --cookie "${UDM_COOKIE}" --cookie-jar "${UDM_COOKIE}" --insecure -H 'Content-Type: application/json' \
+      -D "${UDM_HEADERS}" --data "{\"username\": \"$2\", \"password\": \"$3\"}" "https://$1/api/auth/login" > /dev/null
     UDM_CSRF="$(awk -v FS=': ' '/^x-csrf-token/{print $2}' "${UDM_HEADERS}" | tr -d '\r')"
     export UDM_COOKIE UDM_HEADERS UDM_CSRF
+    echo "Environment variables set"
   else
     echo $USAGE
   fi
@@ -37,5 +38,12 @@ all-tasmotas() {
     jq -c '.data[] | select (.oui == "Espressif Inc.") | {mac,hostname,_id}'
 }
 
-
-
+get-active-tasmota-json() {
+  echo "[" \
+    $(active-tasmotas | \
+      jq -c ". | [.mac, .ip]" | \
+      sed 's/,/,\"ip\":/' | \
+      sed 's/\[/{\"mac":/' | \
+      sed 's/\]/},/') \
+    "]" | tr '\n' ' ' | sed 's/,[[:space:]]\]/\]/g' | jq '.'
+}
