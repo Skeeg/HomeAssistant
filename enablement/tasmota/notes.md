@@ -28,7 +28,7 @@ USE_EXPRESSION                    // Add support for expression evaluation in ru
 ;   1 "Maxcio Control"         // 1mb-simple or 1mb-three-way-switch
 ;  24 "Sonoff Basic"           // 1mb-simple or 1mb-three-way-switch
 ;   4 "Sonoff+I2C"             // 1mb-sonoff-bme280
-;   6 "Sonoff S31"             // 1mb-smart-plug
+;   6 "Sonoff S31"             // 4mb-smart-plug
 ;  21 "W-US002S"               // 1mb-smart-plug
 ;   1 "NodeMCU"                // 4mb-loaded
 ;   1 "WemoD1Mini"             // 4mb-loaded
