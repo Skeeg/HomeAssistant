@@ -179,8 +179,8 @@
 
 #ifdef FIRMWARE_MINIMAL
 
-  #ifdef USEPROMETHEUS
-    #undef USEPROMETHEUS
+  #ifdef USE_PROMETHEUS
+    #undef USE_PROMETHEUS
   #endif
 
   #ifdef USE_HOME_ASSISTANT
