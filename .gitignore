@@ -1,12 +1,15 @@
-# Created by https://www.gitignore.io/api/homeassistant
-# Edit at https://www.gitignore.io/?templates=homeassistant
+# Created by https://www.toptal.com/developers/gitignore/api/homeassistant
+# Edit at https://www.toptal.com/developers/gitignore?templates=homeassistant
 
 ### HomeAssistant ###
 # Files with personal details
 *.crt
 *.csr
 *.key
+# .cloud
 .google.token
+# .HA_VERSION
+# .storage
 .uuid
 icloud/
 google_calendars.yaml
@@ -15,6 +18,7 @@ home-assistant.db
 home-assistant_v2.db
 home-assistant_v2.db-*
 html5_push_registrations.conf
+image
 ip_bans.yaml
 known_devices.yaml
 phue.conf
@@ -22,6 +26,7 @@ plex.conf
 pyozw.sqlite
 secrets.yaml
 tradfri.conf
+webostv.conf
 
 # Temporary files
 *.db-journal
@@ -31,32 +36,33 @@ tts
 # automatically downloaded dependencies
 deps
 lib
-www
 
 # Log files
 home-assistant.log
+home-assistant.log.*
 ozw_log.txt
 
 # Development files
-custom_components/
+custom_components
 
-# End of https://www.gitignore.io/api/homeassistant
+# End of https://www.toptal.com/developers/gitignore/api/homeassistant
 
-.cloud/
-.storage/auth
-.storage/auth_provider.homeassistant
-.storage/cloud
-.storage/core.config
-.storage/core.config_entries
-.storage/core.device_registry
-.storage/core.entity_registry
-.storage/core.restore_state
-.storage/core.uuid
-.storage/frontend.user_data_e209297cdec44455856b6aab46832759
-.storage/hacs.repositories
-.storage/hacs/*
-.storage/homekit**
-.storage/input_boolean
-.storage/mobile_app
-.storage/onboarding
-.storage/person
+**/.cloud/
+**/.storage/auth
+**/.storage/auth_provider.homeassistant
+**/.storage/cloud
+**/.storage/core.config
+**/.storage/core.config_entries
+**/.storage/core.device_registry
+**/.storage/core.entity_registry
+**/.storage/core.restore_state
+**/.storage/core.uuid
+**/.storage/frontend.user_data_e209297cdec44455856b6aab46832759
+**/.storage/hacs.repositories
+**/.storage/hacs/*
+**/.storage/homekit**
+**/.storage/input_boolean
+**/.storage/mobile_app
+**/.storage/onboarding
+**/.storage/person
+**/.storage/hacs.repositories
