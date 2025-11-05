@@ -8,17 +8,35 @@ dad_alarm_script:
 master_movies_script:
   alias: Master Movies
   sequence:
-  - service: mqtt.publish
-    data:
+  - data:
       topic: cmnd/MasterTV/POWER
       payload: '2'
+    action: mqtt.publish
+    enabled: false
 bedtime_script:
   alias: Bedtime Script
   sequence:
   - data:
       payload: 'OFF'
       topic: cmnd/AllStandard/POWER
-    service: mqtt.publish
+    action: mqtt.publish
+    enabled: false
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.bedtime_light_group
+  - action: switch.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: switch.bedtime_switch_group
+  - data: {}
+    target:
+      entity_id:
+      - cover.main_garage_door
+      - cover.third_car_garage_door
+    action: cover.close_cover
 austins_alarm_script:
   alias: Austin Alarm
   sequence:
@@ -173,12 +191,13 @@ all_on_script:
 appletv_greatroom_menu:
   alias: AppleTV GreatRoom Menu
   sequence:
-  - service: remote.send_command
-    data:
+  - data:
       command:
       - menu
     target:
-      entity_id: remote.great_room
+      entity_id:
+      - remote.great_room
+    action: remote.send_command
   icon: mdi:menu
 appletv_greatroom_select:
   alias: AppleTV GreatRoom Select
@@ -266,10 +285,10 @@ soundbar_nintendo:
 appletv_greatroom_home:
   alias: AppleTV GreatRoom Home
   sequence:
-  - service: remote.send_command
-    data:
+  - data:
       command:
       - home
+    action: remote.send_command
     target:
       entity_id: remote.great_room
   icon: mdi:apple
@@ -288,3 +307,13 @@ appletv_greatroom_top_menu:
       entity_id: remote.great_room
   icon: mdi:apple
   mode: single
+purge_tasmota_energy_entries:
+  sequence:
+  - action: recorder.purge_entities
+    metadata: {}
+    data:
+      keep_days: 0
+      entity_globs: .*_energy_.*
+      domains: sensor
+  alias: Purge Tasmota Energy Entries
+  description: ''

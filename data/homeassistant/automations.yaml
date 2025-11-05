@@ -1,439 +1,90 @@
-- id: WebHook_BedtimeShutdown
-  alias: Webhook - Bedtime Shutdown
-  description: ''
-  trigger:
-  - platform: webhook
-    webhook_id: bedtime_shutdown
-  condition: []
-  action:
-  - service: script.bedtime_script
-- id: WebHook_MasterMovies
-  alias: Webhook - Master Movies
-  description: ''
-  trigger:
-  - platform: webhook
-    webhook_id: master_movies
-  condition: []
-  action:
-  - service: script.master_movies_script
 - id: GarageOpening
   alias: GarageDoorOpening
   description: ''
-  trigger:
-  - entity_id: cover.main_garage
-    platform: state
-    to: open
-  - entity_id: cover.main_garage
-    platform: state
+  triggers:
+  - entity_id:
+    - cover.third_car_garage_door
     to: opening
-  - entity_id: cover.3rd_car_garage
-    platform: state
-    to: open
-  - entity_id: cover.3rd_car_garage
-    platform: state
+    trigger: state
+  - entity_id:
+    - cover.main_garage_door
     to: opening
-  condition: []
-  action:
-  - service: switch.turn_on
-    data: {}
+    trigger: state
+  conditions: []
+  actions:
+  - data: {}
     target:
       entity_id:
-      - switch.garage_lights
-      - switch.garage_lamp
+      - light.main_garage_light
+      - light.third_car_garage_light
+      - light.garage_lamp_garage_lamp
+      - light.garage_lights_garage_lights
+      - light.garage_lights_secondary_control_garage_lights_secondary
+    action: light.turn_on
 - id: GarageClosing
-  alias: GarageClosing
+  alias: GarageDoorClosed
   description: ''
-  trigger:
-  - entity_id: cover.main_garage
-    platform: state
-    to: closing
-  - entity_id: cover.main_garage
-    platform: state
+  triggers:
+  - entity_id:
+    - cover.third_car_garage_door
     to: closed
-  - entity_id: cover.3rd_car_garage
-    platform: state
-    to: closing
-  - entity_id: cover.3rd_car_garage
-    platform: state
-    to: closed
-  condition: []
-  action:
-  - service: switch.turn_off
-    data: {}
-    target:
-      entity_id:
-      - switch.garage_lights
-      - switch.garage_lamp
-- id: Sunrise_Trigger_Minus_1_Hour
-  alias: Sunrise - 1 hour before
-  description: ''
-  trigger:
-  - event: sunrise
-    offset: -01:00:00
-    platform: sun
-  condition: []
-  action:
-  - service: switch.turn_on
-    data: {}
-- id: Sunset_Trigger_Minus_15_Minutes
-  alias: Sunset - 15 Minutes Before
-  trigger:
-  - event: sunset
-    offset: -00:15:00
-    platform: sun
-  action: []
-- id: Weekday_Dad_Good_Morning
-  alias: Weekday - Dad Triggers
-  description: ''
-  trigger:
-  - at: 08:00
-    platform: time
-  condition:
-  - condition: state
-    entity_id: binary_sensor.workday_sensor
-    state: 'on'
-  action:
-  - service: script.dad_alarm_script
-- id: Weekday_Austin_Good_Morning
-  alias: Weekday - Austin Triggers
-  description: ''
-  trigger:
-  - at: 07:00
-    platform: time
-  condition:
-  - condition: state
-    entity_id: binary_sensor.workday_sensor
-    state: 'on'
-  action:
-  - entity_id: switch.03200076dc4f2222957e
-    service: script.austins_alarm_script
-- id: Weekend_Austin_Good_Morning
-  alias: Weekend - Austin Morning Triggers
-  description: ''
-  trigger:
-  - at: '9:30'
-    platform: time
-  condition:
-  - condition: state
-    entity_id: binary_sensor.workday_sensor
-    state: 'off'
-  action:
-  - entity_id: switch.03200076dc4f2222957e
-    service: script.austins_alarm_script
-- id: Austin_Bedtime
-  alias: Bedtime - Austin
-  description: ''
-  trigger:
-  - at: '22:45:00'
-    platform: time
-  condition: []
-  action:
-  - service: switch.turn_off
-    data: {}
-    target:
-      entity_id: switch.pet_lights
-- id: Ring_Button_Pushed
-  alias: Ring - Button Pushed
-  description: ''
-  trigger:
-  - device_id: 2469248b20bf42a48c0e5993d50d668d
-    domain: binary_sensor
-    entity_id: binary_sensor.front_door_ding
     for:
       hours: 0
       minutes: 0
-      seconds: 0
-    platform: device
-    type: occupied
-  condition: []
-  action:
-  - delay: ''
-  mode: single
-- id: timer_bathroomfan_powder-end
-  alias: Timer-BathroomFan-Powder-End
-  description: ''
-  trigger:
-  - entity_id: timer.powder_bathroom_fan
-    platform: state
-    to: finished
-  - entity_id: timer.powder_bathroom_fan
-    platform: state
-    to: idle
-  condition: []
-  action:
+      seconds: 15
+    trigger: state
+  - entity_id:
+    - cover.main_garage_door
+    to: closed
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 15
+    trigger: state
+  conditions: []
+  actions:
   - data: {}
-    entity_id: switch.powder_fan
-    service: switch.turn_off
-  mode: single
-- id: timer_bathroomfan_powder-start
-  alias: Timer-BathroomFan-Powder-Start
-  description: ''
-  trigger:
-  - entity_id: switch.powder_fan
-    platform: state
-    to: 'on'
-  condition: []
-  action:
-  - data: {}
-    entity_id: timer.powder_bathroom_fan
-    service: timer.start
-  mode: single
-- id: timer_internet_router_restoration-start
-  alias: Timer-Internet-Router-Restoration-Start
-  description: ''
-  trigger:
-  - entity_id: switch.internet_router
-    platform: state
-    to: 'off'
-  condition: []
-  action:
-  - data: {}
-    entity_id: timer.internet_router_restoration
-    service: timer.start
-  mode: single
-- id: timer_internet_router_restoration-end
-  alias: Timer-Internet-Router-Restoration-End
-  description: ''
-  trigger:
-  - entity_id: timer.internet_router_restoration
-    platform: state
-    to: finished
-  - entity_id: timer.internet_router_restoration
-    platform: state
-    to: idle
-  condition: []
-  action:
-  - data: {}
-    entity_id: switch.internet_router
-    service: switch.turn_on
-  mode: single
-- id: timer_bathroomfan_kids-end
-  alias: Timer-BathroomFan-Kids-End
-  description: ''
-  trigger:
-  - entity_id: timer.kids_bathroom_fan
-    platform: state
-    to: finished
-  - entity_id: timer.kids_bathroom_fan
-    platform: state
-    to: idle
-  condition: []
-  action:
-  - data: {}
-    entity_id: switch.kids_bathroom_fan
-    service: switch.turn_off
-  mode: single
-- id: timer_bathroomfan_kids-start
-  alias: Timer-BathroomFan-Kids-Start
-  description: ''
-  trigger:
-  - entity_id: switch.kids_bathroom_fan
-    platform: state
-    to: 'on'
-  condition: []
-  action:
-  - data: {}
-    entity_id: timer.kids_bathroom_fan
-    service: timer.start
-  mode: single
-- id: timer_outdoor-decorations-end
-  alias: Timer-Outdoor-Decorations-End
-  description: ''
-  trigger:
-  - entity_id: timer.outdoor_decorations
-    platform: state
-    to: finished
-  - entity_id: timer.outdoor_decorations
-    platform: state
-    to: idle
-  condition: []
-  action:
-  - data: {}
-    service: switch.turn_off
     target:
       entity_id:
-      - switch.ground_decor
-      - switch.christmas_package
-  mode: single
-- id: timer_outdoor-lights-start
-  alias: Timer-Outdoor-Decorations-Start
-  description: ''
-  trigger:
-  - entity_id: switch.ground_decor
-    platform: state
-    to: 'on'
-  condition: []
-  action:
-  - data:
-      duration: '0'
-    service: timer.start
-    target:
-      entity_id: timer.outdoor_decorations
-  mode: single
-- id: timer_dadslamp-end
-  alias: Timer-Dads-Lamp-End
-  description: ''
-  trigger:
-  - entity_id: timer.dads_lamp
-    platform: state
-    to: finished
-  - entity_id: timer.dads_lamp
-    platform: state
-    to: idle
-  condition: []
-  action:
-  - data: {}
-    entity_id: switch.dadslamp_dads_lamp
-    service: switch.turn_off
-- id: timer_dadslamp-start
-  alias: Timer-Dads-Lamp-Start
-  description: ''
-  trigger:
-  - entity_id: switch.dads_lamp
-    platform: state
-    to: 'on'
-  condition: []
-  action:
-  - data:
-      duration: '0'
-    service: timer.start
-    target:
-      entity_id: timer.dads_lamp
+      - light.main_garage_light
+      - light.third_car_garage_light
+      - light.garage_lamp_garage_lamp
+      - light.garage_lights_garage_lights
+      - light.garage_lights_secondary_control_garage_lights_secondary
+    action: light.turn_off
 - id: iOS_Bedtime_Widget
   alias: iOS - Bedtime Widget
   description: ''
-  trigger:
+  triggers:
   - event_data:
       actionName: Bedtime
     event_type: ios.action_fired
-    platform: event
     context:
       user_id:
       - e209297cdec44455856b6aab46832759
-  condition: []
-  action:
+    trigger: event
+  conditions: []
+  actions:
   - data: {}
-    service: script.bedtime_script
+    action: script.bedtime_script
 - id: iOS_MasterMovies_Widget
   alias: iOS - Master Movies Widget
   description: ''
-  trigger:
+  triggers:
   - event_data:
       actionName: Master Movies
     event_type: ios.action_fired
-    platform: event
-  condition: []
-  action:
+    trigger: event
+  conditions: []
+  actions:
   - data: {}
-    service: script.master_movies_script
-- id: iOS_FrontLights_Widget
-  alias: iOS - Front Lights Widget
-  description: ''
-  trigger:
-  - event_data:
-      actionName: Exterior Front Lights
-    event_type: ios.action_fired
-    platform: event
-  condition: []
-  action:
-  - data: {}
-    service: script.turn_on_exterior_front_lights
-- id: iOS_GarageClose_Widget
-  alias: iOS - Garage Close Widget
-  description: ''
-  trigger:
-  - event_data:
-      actionName: Close Garages
-    event_type: ios.action_fired
-    platform: event
-  condition: []
-  action:
-  - data: {}
-    entity_id: cover.main_garage
-    service: cover.close_cover
-  - data: {}
-    entity_id: cover.3rd_car_garage
-    service: cover.close_cover
-- id: iOS_Garage_OpenMain_Widget
-  alias: iOS - Garage Open Main Widget
-  description: ''
-  trigger:
-  - event_data:
-      actionName: Open Main Garage
-    event_type: ios.action_fired
-    platform: event
-  condition: []
-  action:
-  - data: {}
-    entity_id: cover.main_garage
-    service: cover.open_cover
-- id: iOS_Garage_Open3rdCar_Widget
-  alias: iOS - Garage Open 3rd Car Widget
-  description: ''
-  trigger:
-  - event_data:
-      actionName: Open 3rd Car
-    event_type: ios.action_fired
-    platform: event
-  condition: []
-  action:
-  - data: {}
-    entity_id: cover.3rd_car_garage
-    service: cover.open_cover
-- id: '1612882612164'
-  alias: Turn on Lilys Fan
-  description: ''
-  trigger:
-  - platform: time
-    at: '20:00'
-  condition:
-  - condition: device
-    type: is_off
-    device_id: d6fb53d98aac05bd12885660d49179c5
-    entity_id: switch.lilys_fan
-    domain: switch
-  action:
-  - type: turn_on
-    device_id: d6fb53d98aac05bd12885660d49179c5
-    entity_id: switch.lilys_fan
-    domain: switch
-  mode: single
-- id: '1612882830223'
-  alias: Turn on Dads Fan
-  description: ''
-  trigger:
-  - platform: time
-    at: '20:00'
-  condition:
-  - condition: device
-    type: is_off
-    device_id: ac380aff75de62d1abcac9a649815508
-    entity_id: switch.dads_fan
-    domain: switch
-  action:
-  - type: turn_on
-    device_id: ac380aff75de62d1abcac9a649815508
-    entity_id: switch.dads_fan
-    domain: switch
-  mode: single
-- id: '1614963026985'
-  alias: Turn on Austins Fan
-  description: ''
-  trigger:
-  - platform: time
-    at: '20:00'
-  condition:
-  - condition: device
-    type: is_off
-    device_id: 90bf7a916978b7f0317108d3d05c82f3
-    entity_id: switch.austins_fan
-    domain: switch
-  action:
-  - type: turn_on
-    device_id: 90bf7a916978b7f0317108d3d05c82f3
-    entity_id: switch.austins_fan
-    domain: switch
-  mode: single
+    action: script.master_movies_script
+    enabled: false
+  - action: switch.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id: b872165e2222a6f688dc93719c3100ff
 - id: '1675827528821'
   alias: iOS - DadsLamp
   description: ''
@@ -453,18 +104,19 @@
 - id: '1675827568781'
   alias: iOS - BasementLights
   description: ''
-  trigger:
+  triggers:
   - event_data:
       actionName: BasementLights
     event_type: ios.action_fired
-    platform: event
     context: {}
-  condition: []
-  action:
-  - type: toggle
-    device_id: a34aa264a168383ba7b338ecec52ae3e
-    entity_id: switch.basement_lights
-    domain: switch
+    trigger: event
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.all_basement_lights
   mode: single
 - id: '1675828264053'
   alias: Stop Main TV Playback
@@ -482,35 +134,704 @@
   - service: script.maintv_poweroff
     data: {}
   mode: single
-- id: '1678114883595'
-  alias: PrinterLightsOff
+- id: '1703380154084'
+  alias: Close Garages Nightly
   description: ''
-  trigger:
-  - platform: device
-    type: turned_off
-    device_id: ddcb81b964b5656f50a4c093cf74bcb8
-    entity_id: switch.3d_printer
-    domain: switch
-  condition: []
-  action:
-  - type: turn_off
-    device_id: 283160ed5a1023ba9a56e8f9ef137e4e
-    entity_id: switch.printer_lights
-    domain: switch
+  triggers:
+  - at: '21:15:00'
+    trigger: time
+  conditions:
+  - condition: or
+    conditions:
+    - condition: device
+      device_id: 16da64e6860c2010fdd6767cc2d7d8f8
+      domain: cover
+      entity_id: d939c7ad580bc49023b54496d2b679ea
+      type: is_open
+    - condition: device
+      device_id: 7121a87de6e964bbae92e946be2cc6fd
+      domain: cover
+      entity_id: e8aac5f08ec6287a250bca1be723becb
+      type: is_open
+  actions:
+  - device_id: 16da64e6860c2010fdd6767cc2d7d8f8
+    domain: cover
+    entity_id: d939c7ad580bc49023b54496d2b679ea
+    type: close
+  - device_id: 7121a87de6e964bbae92e946be2cc6fd
+    domain: cover
+    entity_id: e8aac5f08ec6287a250bca1be723becb
+    type: close
   mode: single
-- id: '1678114913724'
-  alias: PrinterLightsOn
+- id: '1703398788322'
+  alias: Timer Powder Fan
   description: ''
-  trigger:
-  - platform: device
+  triggers:
+  - trigger: state
+    entity_id:
+    - fan.powder_fan
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 20
+      seconds: 0
+  conditions: []
+  actions:
+  - action: fan.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: fan.powder_fan
+  mode: single
+- id: '1703398856470'
+  alias: Timer Kids Bathroom Fan
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - fan.kids_bathroom_fan
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 20
+      seconds: 0
+  conditions: []
+  actions:
+  - action: fan.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: fan.kids_bathroom_fan
+  mode: single
+- id: '1703426957734'
+  alias: Timer Kids Toilet Lights
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - light.kids_toilet_lights
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 1
+      minutes: 30
+      seconds: 0
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.kids_toilet_lights
+  mode: single
+- id: '1703427025442'
+  alias: Timer Kids Shower Lights
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - light.kids_shower_lights
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 1
+      minutes: 30
+      seconds: 0
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.kids_shower_lights
+  mode: single
+- id: '1703427110691'
+  alias: Timer Kids Sink Lights
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - light.kids_sink_lights
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 1
+      minutes: 0
+      seconds: 0
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.kids_sink_lights
+  mode: single
+- id: '1736056787258'
+  alias: Disable Aux Fan Always
+  description: ''
+  triggers:
+  - type: turned_on
+    device_id: 3925baa13b7f28146c624a5b58c10e8f
+    entity_id: 069e0f1a1936adb9ba813d49ede32c67
+    domain: fan
+    trigger: device
+  conditions: []
+  actions:
+  - action: fan.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - fan.x1c_aux_fan
+  mode: single
+- id: '1738282319511'
+  alias: GreatRoom_Idle_Shutdown_TV
+  description: ''
+  triggers:
+  - device_id: 42b412772b606bcc69738448e01b245a
+    domain: media_player
+    entity_id: 236ce1a4ddff682310b57998109095fb
+    type: idle
+    trigger: device
+    for:
+      hours: 4
+      minutes: 0
+      seconds: 0
+  actions:
+  - action: script.maintv_poweroff
+    metadata: {}
+    data: {}
+  mode: single
+- id: '1738282677904'
+  alias: Great
+  description: ''
+  triggers:
+  - device_id: 42b412772b606bcc69738448e01b245a
+    domain: media_player
+    entity_id: 236ce1a4ddff682310b57998109095fb
+    type: playing
+    trigger: device
+  - device_id: 42b412772b606bcc69738448e01b245a
+    domain: media_player
+    entity_id: 236ce1a4ddff682310b57998109095fb
+    type: buffering
+    trigger: device
+    enabled: false
+  - device_id: 42b412772b606bcc69738448e01b245a
+    domain: media_player
+    entity_id: 236ce1a4ddff682310b57998109095fb
     type: turned_on
-    device_id: ddcb81b964b5656f50a4c093cf74bcb8
-    entity_id: switch.3d_printer
-    domain: switch
-  condition: []
-  action:
-  - type: turn_on
-    device_id: 283160ed5a1023ba9a56e8f9ef137e4e
-    entity_id: switch.printer_lights
-    domain: switch
+    trigger: device
+  - device_id: 42b412772b606bcc69738448e01b245a
+    domain: media_player
+    entity_id: 236ce1a4ddff682310b57998109095fb
+    type: paused
+    trigger: device
+  conditions: []
+  actions:
+  - action: script.maintv_poweron
+    metadata: {}
+    data: {}
+  - action: script.soundbar_poweron
+    metadata: {}
+    data: {}
+  mode: single
+- id: '1742685448955'
+  alias: 3way_kitchen_can_lights_on
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_kitchen_can_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_off
+    device_id: 2e3c959387324ebc76168d98555afe54
+    entity_id: 8d545ce6cfd1400a29a913276cf7c6ea
+    domain: light
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - 2e3c959387324ebc76168d98555afe54
+      - d6cf9fd684ca587988085b9dbb8f3e3a
+  mode: single
+- id: '1742685658062'
+  alias: 3way_kitchen_can_lights_off
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_kitchen_can_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_on
+    device_id: 2e3c959387324ebc76168d98555afe54
+    entity_id: 8d545ce6cfd1400a29a913276cf7c6ea
+    domain: light
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - d6cf9fd684ca587988085b9dbb8f3e3a
+      - 2e3c959387324ebc76168d98555afe54
+  mode: single
+- id: '1742689548117'
+  alias: 3way_kitchen_sink_lights_off
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_kitchen_sink_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_on
+    device_id: 36b7670e23eea6ce48a2464ccff2c897
+    entity_id: 359093a28aaeaaa62974289687ded728
+    domain: light
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - 36b7670e23eea6ce48a2464ccff2c897
+      - 1e4c0a8a27137e168731ccb3691d995d
+  mode: single
+- id: '1742689583693'
+  alias: 3way_kitchen_sink_lights_on
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_kitchen_sink_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_off
+    device_id: 36b7670e23eea6ce48a2464ccff2c897
+    entity_id: 359093a28aaeaaa62974289687ded728
+    domain: light
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - 36b7670e23eea6ce48a2464ccff2c897
+      - 1e4c0a8a27137e168731ccb3691d995d
+  mode: single
+- id: '1742690005793'
+  alias: 3way_main_hall_lights_on
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_main_hall_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_off
+    device_id: 7b6f9259ab86b4e876acea885841c890
+    entity_id: 8c3c4d1e93dbc4b2a20d753e5f52c436
+    domain: light
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - 7b6f9259ab86b4e876acea885841c890
+      - a158b2257155bc9b07a7f8567e7945a4
+      - dfda7660655cfe96683a42b7349932be
+  mode: single
+- id: '1742690044647'
+  alias: 3way_main_hall_lights_off
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_main_hall_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_on
+    device_id: 7b6f9259ab86b4e876acea885841c890
+    entity_id: 8c3c4d1e93dbc4b2a20d753e5f52c436
+    domain: light
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - 7b6f9259ab86b4e876acea885841c890
+      - a158b2257155bc9b07a7f8567e7945a4
+      - dfda7660655cfe96683a42b7349932be
+  mode: single
+- id: 3way_austins_hall_lights_on
+  alias: 3way_austins_hall_lights_on
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_austins_hall_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_off
+    device_id: ebf21f95fe01abb19d73993e0d9e2109
+    entity_id: 7101db77216c3cf6ca2e87fa8748dcfe
+    domain: light
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - ebf21f95fe01abb19d73993e0d9e2109
+      - 6b4acd88a22e41015fabeb11f807fcfc
+  mode: single
+- id: 3way_austins_hall_lights_off
+  alias: 3way_austins_hall_lights_off
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_austins_hall_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_on
+    device_id: ebf21f95fe01abb19d73993e0d9e2109
+    entity_id: 7101db77216c3cf6ca2e87fa8748dcfe
+    domain: light
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - ebf21f95fe01abb19d73993e0d9e2109
+      - 6b4acd88a22e41015fabeb11f807fcfc
+  mode: single
+- id: 3way_entry_can_lights_on
+  alias: 3way_entry_can_lights_on
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_entry_can_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_off
+    device_id: ac4e57605686892633d11c363418bbe6
+    entity_id: 6d1dda218af90a684f569b3424d166b1
+    domain: light
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - ac4e57605686892633d11c363418bbe6
+      - 5db55f6ddb5cbb8bd08bcf54d039871d
+      - f7774838075e2797feeb33d3a4265728
+  mode: single
+- id: 3way_entry_can_lights_off
+  alias: 3way_entry_can_lights_off
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_entry_can_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_on
+    device_id: ac4e57605686892633d11c363418bbe6
+    entity_id: 6d1dda218af90a684f569b3424d166b1
+    domain: light
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - ac4e57605686892633d11c363418bbe6
+      - 5db55f6ddb5cbb8bd08bcf54d039871d
+      - f7774838075e2797feeb33d3a4265728
+  mode: single
+- id: 3way_garage_lights_on
+  alias: 3way_garage_lights_on
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_garage_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_off
+    device_id: ff88f3eff1794934c56fd03b432ffa50
+    entity_id: 8db9a47a9380edb7552f877b2ac9450c
+    domain: light
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - c8cb5778cfffa4c54605a1358f6fcd03
+      - ff88f3eff1794934c56fd03b432ffa50
+      - 7cc4797cc753a45b4787f2153de41fd4
+      entity_id:
+      - light.third_car_garage_light
+      - light.main_garage_light
+  mode: single
+- id: 3way_garage_lights_off
+  alias: 3way_garage_lights_off
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_garage_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_on
+    device_id: ff88f3eff1794934c56fd03b432ffa50
+    entity_id: 8db9a47a9380edb7552f877b2ac9450c
+    domain: light
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - c8cb5778cfffa4c54605a1358f6fcd03
+      - ff88f3eff1794934c56fd03b432ffa50
+      - 7cc4797cc753a45b4787f2153de41fd4
+      entity_id:
+      - light.third_car_garage_light
+      - light.main_garage_light
+  mode: single
+- id: 3way_lilys_hall_lights_on
+  alias: 3way_lilys_hall_lights_on
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_lilys_hall_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_off
+    device_id: 170b362d541a69c421aeaf3829be7018
+    entity_id: b242eb6c1aab6241f7bef3bf7ee89890
+    domain: light
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - 170b362d541a69c421aeaf3829be7018
+      - 441d02e24a28de40ed771c30993256e5
+      - 7d2865d824f05132f07a61af836c22e6
+  mode: single
+- id: 3way_lilys_hall_lights_off
+  alias: 3way_lilys_hall_lights_off
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_lilys_hall_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_on
+    device_id: 170b362d541a69c421aeaf3829be7018
+    entity_id: b242eb6c1aab6241f7bef3bf7ee89890
+    domain: light
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - 170b362d541a69c421aeaf3829be7018
+      - 441d02e24a28de40ed771c30993256e5
+      - 7d2865d824f05132f07a61af836c22e6
+  mode: single
+- id: '1743115493030'
+  alias: X1C Chamber Heat - Engage Bento Box
+  description: Turns on the printer fan when the chamber temperature exceeds 98°F.
+  triggers:
+  - trigger: numeric_state
+    entity_id:
+    - sensor.x1c_chamber_temperature
+    above: 97
+    below: 1000
+  conditions: []
+  actions:
+  - target:
+      entity_id: fan.printer_bento_box_printer_bento_box
+    action: fan.turn_on
+    data: {}
+  - delay: 00:00:15
+  mode: parallel
+  max: 4
+  max_exceeded: info
+- id: '1743115641283'
+  alias: X1C Chamber Heat - Disengage Bento Box
+  description: Turns off the printer fan when the chamber temperature is below 97
+  triggers:
+  - trigger: numeric_state
+    entity_id:
+    - sensor.x1c_chamber_temperature
+    above: -1000
+    below: 97
+  conditions: []
+  actions:
+  - target:
+      entity_id: fan.printer_bento_box_printer_bento_box
+    action: fan.turn_off
+    data: {}
+  - delay: 00:00:15
+  mode: parallel
+  max: 4
+  max_exceeded: info
+- id: '1743213956567'
+  alias: 3way_basement_stair_lights_off
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_basement_stair_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_on
+    device_id: 6324df87bdeeee3d848b1b5234027256
+    entity_id: 3f0ff8aa30d70138409881f19e696744
+    domain: light
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - light.basement_stair_lights_basement_stair_lights
+      - light.basement_stair_lights_secondary_control_basement_stair_lights_secondary
+  mode: single
+- id: '1743214058327'
+  alias: 3way_basement_stair_lights_on
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.3way_basement_stair_lights_button
+    event_data:
+      action: pressed
+  conditions:
+  - condition: device
+    type: is_off
+    device_id: 6324df87bdeeee3d848b1b5234027256
+    entity_id: 3f0ff8aa30d70138409881f19e696744
+    domain: light
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - light.basement_stair_lights_basement_stair_lights
+      - light.basement_stair_lights_secondary_control_basement_stair_lights_secondary
+  mode: single
+- id: '1750254344151'
+  alias: Basement Switch - Single Click
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.switch
+    event_data:
+      device: Basement Light Switch
+      action: click
+      button: '1'
+  conditions: []
+  actions:
+  - action: light.toggle
+    metadata: {}
+    data:
+      color_temp_kelvin: 3499
+    target:
+      entity_id: light.all_basement_lights
+  mode: single
+- id: '1750254403785'
+  alias: Basement Switch - Double Click
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.switch
+    event_data:
+      device: Basement Light Switch
+      action: double_click
+      button: '1'
+  conditions: []
+  actions:
+  - action: light.toggle
+    metadata: {}
+    data:
+      color_temp_kelvin: 3499
+    target:
+      entity_id:
+      - light.office_lights
+  mode: single
+- id: '1750256361441'
+  alias: Basement Switch - Triple Click
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.switch
+    event_data:
+      device: Basement Light Switch
+      action: triple_click
+      button: '1'
+  conditions: []
+  actions:
+  - action: light.toggle
+    metadata: {}
+    data:
+      color_temp_kelvin: 3499
+    target:
+      entity_id: light.gym_light
+  mode: single
+- id: '1750256428282'
+  alias: Basement Switch - Four Clicks
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: esphome.switch
+    event_data:
+      device: Basement Light Switch
+      action: four_clicks
+      button: '1'
+  conditions: []
+  actions:
+  - action: light.toggle
+    metadata: {}
+    data:
+      color_temp_kelvin: 3499
+    target:
+      entity_id: light.basement_lights
   mode: single

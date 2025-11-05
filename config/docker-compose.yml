@@ -8,7 +8,20 @@ services:
     environment:
       TZ: 'America/Denver'
     volumes:
-      - './:/config'
+      - '../data/homeassistant:/config'
     restart: unless-stopped
     privileged: true
+    network_mode: host
+
+  matter:
+    image: ghcr.io/home-assistant-libs/python-matter-server:stable
+    container_name: matter
+    volumes:
+      - ../data/matter:/data
+      # Required for Bluetooth via D-Bus
+      - /run/dbus:/run/dbus:ro
+    security_opt:
+      # Needed for Bluetooth via dbus
+      - apparmor:unconfined
+    restart: always
     network_mode: host

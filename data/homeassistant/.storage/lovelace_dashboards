@@ -1,34 +1,71 @@
 {
-    "version": 1,
-    "minor_version": 1,
-    "key": "lovelace_dashboards",
-    "data": {
-        "items": [
-            {
-                "require_admin": false,
-                "show_in_sidebar": true,
-                "title": "Entertainment",
-                "url_path": "lovelace-entertainment",
-                "mode": "storage",
-                "id": "lovelace_entertainment"
-            },
-            {
-                "show_in_sidebar": true,
-                "icon": "mdi:remote",
-                "title": "Remote",
-                "require_admin": false,
-                "mode": "storage",
-                "url_path": "lovelace-remote",
-                "id": "lovelace_remote"
-            },
-            {
-                "show_in_sidebar": true,
-                "title": "All",
-                "require_admin": true,
-                "mode": "storage",
-                "url_path": "lovelace-all",
-                "id": "lovelace_all"
-            }
-        ]
-    }
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_dashboards",
+  "data": {
+    "items": [
+      {
+        "id": "map",
+        "icon": "mdi:map",
+        "title": "Map",
+        "url_path": "map",
+        "require_admin": false,
+        "mode": "storage",
+        "show_in_sidebar": true
+      },
+      {
+        "id": "3d_printer",
+        "show_in_sidebar": true,
+        "icon": "mdi:printer-3d",
+        "title": "3d Printer",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "3d-printer"
+      },
+      {
+        "id": "dashboard_default",
+        "show_in_sidebar": false,
+        "title": "Default",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "dashboard-default"
+      },
+      {
+        "id": "archive_backup",
+        "show_in_sidebar": false,
+        "icon": "mdi:archive",
+        "title": "Archive Backup",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "archive-backup"
+      },
+      {
+        "id": "dashboard_home",
+        "show_in_sidebar": true,
+        "icon": "mdi:home",
+        "title": "Home",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-home"
+      },
+      {
+        "id": "dashboard_esphome",
+        "show_in_sidebar": true,
+        "icon": "mdi:chip",
+        "title": "ESPHome",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "dashboard-esphome"
+      },
+      {
+        "id": "dashboard_toggles",
+        "show_in_sidebar": true,
+        "icon": "mdi:toggle-switch-off-outline",
+        "title": "_Toggles",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-toggles"
+      }
+    ]
+  }
 }
