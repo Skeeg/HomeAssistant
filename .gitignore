@@ -6,10 +6,10 @@
 *.crt
 *.csr
 *.key
-# .cloud
+.cloud
 .google.token
-# .HA_VERSION
-# .storage
+.HA_VERSION
+.storage
 .uuid
 icloud/
 google_calendars.yaml
@@ -47,22 +47,14 @@ custom_components
 
 # End of https://www.toptal.com/developers/gitignore/api/homeassistant
 
-**/.cloud/
-**/.storage/auth
-**/.storage/auth_provider.homeassistant
-**/.storage/cloud
-**/.storage/core.config
-**/.storage/core.config_entries
-**/.storage/core.device_registry
-**/.storage/core.entity_registry
-**/.storage/core.restore_state
-**/.storage/core.uuid
-**/.storage/frontend.user_data_e209297cdec44455856b6aab46832759
-**/.storage/hacs.repositories
-**/.storage/hacs/*
-**/.storage/homekit**
-**/.storage/input_boolean
-**/.storage/mobile_app
-**/.storage/onboarding
-**/.storage/person
-**/.storage/hacs.repositories
+# Matter integration ignores
+data/matter/credentials/*
+data/matter/**
+!data/matter/README.md
+
+# Extra Home Assistant ignores
+data/homeassistant/www/media/ha-bambulab/*/prints/cache/*
+data/homeassistant/www/media/ha-bambulab/*/timelapse/*
+data/homeassistant/backups/*
+data/homeassistant/.ha_run.lock
+!**/.storage/lovelace.*

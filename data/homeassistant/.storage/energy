@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "energy",
+  "data": {
+    "energy_sources": [],
+    "device_consumption": [
+      {
+        "stat_consumption": "sensor.3dprinter_energy"
+      },
+      {
+        "stat_consumption": "sensor.austins_gaming_computer_energy"
+      },
+      {
+        "stat_consumption": "sensor.deep_freeze_energy"
+      },
+      {
+        "stat_consumption": "sensor.deep_freeze_2_energy"
+      },
+      {
+        "stat_consumption": "sensor.dishwasher_energy"
+      },
+      {
+        "stat_consumption": "sensor.douglas_lights_energy"
+      },
+      {
+        "stat_consumption": "sensor.fountain_energy"
+      },
+      {
+        "stat_consumption": "sensor.front_tree_energy"
+      },
+      {
+        "stat_consumption": "sensor.garage_freezer_energy"
+      },
+      {
+        "stat_consumption": "sensor.garage_fridge_energy"
+      },
+      {
+        "stat_consumption": "sensor.greenhouse_fan_energy"
+      },
+      {
+        "stat_consumption": "sensor.ground_decor_energy"
+      },
+      {
+        "stat_consumption": "sensor.heat_blankets_energy"
+      },
+      {
+        "stat_consumption": "sensor.laundry_room_appliances_energy"
+      },
+      {
+        "stat_consumption": "sensor.lily_bathroom_plug_energy"
+      },
+      {
+        "stat_consumption": "sensor.main_tv_energy"
+      },
+      {
+        "stat_consumption": "sensor.master_tv_energy"
+      },
+      {
+        "stat_consumption": "sensor.moms_bathroom_plug_energy"
+      },
+      {
+        "stat_consumption": "sensor.monochrome_printer_energy"
+      },
+      {
+        "stat_consumption": "sensor.office_desk_energy"
+      },
+      {
+        "stat_consumption": "sensor.pet_lights_energy"
+      },
+      {
+        "stat_consumption": "sensor.pool_pump_energy"
+      },
+      {
+        "stat_consumption": "sensor.refrigerator_energy"
+      },
+      {
+        "stat_consumption": "sensor.sprinkler_controller_energy"
+      },
+      {
+        "stat_consumption": "sensor.study_desk_energy"
+      },
+      {
+        "stat_consumption": "sensor.washing_machine_energy"
+      }
+    ]
+  }
+}
