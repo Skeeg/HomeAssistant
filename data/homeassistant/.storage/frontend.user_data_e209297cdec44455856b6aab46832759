@@ -4,12 +4,15 @@
   "key": "frontend.user_data_e209297cdec44455856b6aab46832759",
   "data": {
     "core": {
-      "showAdvanced": true
+      "showAdvanced": true,
+      "showEntityIdPicker": true
     },
     "language": {
       "language": "en",
       "number_format": "language",
       "time_format": "language",
+      "date_format": "language",
+      "time_zone": "local",
       "first_weekday": "language"
     }
   }

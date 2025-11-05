@@ -1,13 +1,14 @@
 {
-    "data": {
-        "items": [
-            {
-                "id": "8123327dbdce4e1e9f961cd7707a7ac6",
-                "type": "module",
-                "url": "/hacsfiles/config-template-card/config-template-card.js"
-            }
-        ]
-    },
-    "key": "lovelace_resources",
-    "version": 1
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_resources",
+  "data": {
+    "items": [
+      {
+        "id": "44234b54c95c49dfafb2415ea25bd6f3",
+        "url": "/bambu_lab/ha-bambulab-cards.js?v=0.6.21",
+        "type": "module"
+      }
+    ]
+  }
 }
