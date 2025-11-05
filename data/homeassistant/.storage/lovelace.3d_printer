@@ -1,0 +1,643 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.3d_printer",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "show_state": false,
+                  "show_name": false,
+                  "camera_view": "auto",
+                  "fit_mode": "cover",
+                  "type": "picture-entity",
+                  "entity": "camera.x1c_camera",
+                  "image": "https://demo.home-assistant.io/stub_config/bedroom.png"
+                },
+                {
+                  "type": "custom:ha-bambulab-print_status-card",
+                  "printer": "3925baa13b7f28146c624a5b58c10e8f",
+                  "custom_temperature": "sensor.x1c_chamber_temperature",
+                  "custom_power": "switch.3dprinter_3d_printer",
+                  "custom_light": "light.x1c_chamber_light",
+                  "style": "graphic",
+                  "custom_humidity": "sensor.printer_air_sensor_sht41_relative_humidity"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "tile",
+                  "entity": "sensor.x1c_active_tray",
+                  "features_position": "bottom",
+                  "vertical": false,
+                  "name": "Active Tray"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.x1c_active_tray",
+                  "features_position": "bottom",
+                  "vertical": false,
+                  "name": "Active Material"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.x1c_current_layer",
+                  "features_position": "bottom",
+                  "vertical": false,
+                  "name": "Current Layer"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.x1c_total_layer_count",
+                  "features_position": "bottom",
+                  "vertical": false,
+                  "name": "Last Layer"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.x1c_speed_profile",
+                  "features_position": "bottom",
+                  "vertical": false
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.x1c_end_time"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.x1c_aux_fan_speed",
+                  "features_position": "bottom",
+                  "vertical": false
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.x1c_cooling_fan_speed",
+                  "features_position": "bottom",
+                  "vertical": false
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.x1c_chamber_fan_speed",
+                  "features_position": "bottom",
+                  "vertical": false
+                },
+                {
+                  "type": "tile",
+                  "entity": "fan.printer_bento_box_printer_bento_box"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.x1c_hms_errors",
+                  "features_position": "bottom",
+                  "vertical": false,
+                  "state_content": [
+                    "state",
+                    "1-Error"
+                  ],
+                  "grid_options": {
+                    "columns": "full"
+                  }
+                },
+                {
+                  "type": "history-graph",
+                  "entities": [
+                    {
+                      "entity": "sensor.x1c_chamber_temperature"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:ha-bambulab-ams-card",
+                  "entity": "",
+                  "header": "",
+                  "subtitle": "AMS_1",
+                  "style": "vector",
+                  "ams": "bb6c7f02eadea754032cb70569b61d98",
+                  "show_type": true,
+                  "show_info_bar": true
+                },
+                {
+                  "type": "custom:ha-bambulab-ams-card",
+                  "entity": "",
+                  "header": "",
+                  "subtitle": "AMS_2",
+                  "style": "vector",
+                  "ams": "ad53edbfaaf9560a69386de23a4c305f",
+                  "show_info_bar": true,
+                  "show_type": true
+                },
+                {
+                  "type": "custom:ha-bambulab-ams-card",
+                  "entity": "",
+                  "header": "",
+                  "subtitle": "AMS_3",
+                  "style": "vector",
+                  "ams": "7dca2905b536dd35efcd7f8859750974",
+                  "show_type": true,
+                  "show_info_bar": true
+                },
+                {
+                  "type": "custom:ha-bambulab-ams-card",
+                  "entity": "",
+                  "header": "",
+                  "subtitle": "AMS_HT",
+                  "style": "vector",
+                  "ams": "98973e84fb339baca3faaa15df62ba51",
+                  "show_type": true,
+                  "show_info_bar": true
+                }
+              ]
+            }
+          ],
+          "badges": [],
+          "cards": [],
+          "type": "sections",
+          "max_columns": 3,
+          "icon": "mdi:printer-3d",
+          "visible": [
+            {
+              "user": "e209297cdec44455856b6aab46832759"
+            }
+          ]
+        },
+        {
+          "type": "sections",
+          "max_columns": 3,
+          "title": "Full",
+          "path": "full",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "fan.x1c_aux_fan",
+                      "name": "Aux fan"
+                    },
+                    {
+                      "entity": "number.x1c_bed_target_temperature",
+                      "name": "Bed target temperature"
+                    },
+                    {
+                      "entity": "fan.x1c_chamber_fan",
+                      "name": "Chamber fan"
+                    },
+                    {
+                      "entity": "light.x1c_chamber_light",
+                      "name": "Chamber light"
+                    },
+                    {
+                      "entity": "fan.x1c_cooling_fan",
+                      "name": "Cooling fan"
+                    },
+                    {
+                      "entity": "number.x1c_nozzle_target_temperature",
+                      "name": "Nozzle target temperature"
+                    },
+                    {
+                      "entity": "select.x1c_printing_speed",
+                      "name": "Printing speed"
+                    }
+                  ],
+                  "title": "X1C",
+                  "show_header_toggle": false
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "button.x1c_force_refresh_data",
+                      "name": "Force refresh data"
+                    },
+                    {
+                      "entity": "binary_sensor.x1c_enclosure_door",
+                      "name": "Enclosure door"
+                    },
+                    {
+                      "entity": "binary_sensor.x1c_firmware_update",
+                      "name": "Firmware update"
+                    },
+                    {
+                      "entity": "binary_sensor.x1c_hms_errors",
+                      "name": "HMS errors"
+                    },
+                    {
+                      "entity": "sensor.x1c_ip_address",
+                      "name": "IP address"
+                    },
+                    {
+                      "entity": "sensor.x1c_mqtt_connection_mode",
+                      "name": "MQTT connection mode"
+                    },
+                    {
+                      "entity": "binary_sensor.x1c_online",
+                      "name": "Online"
+                    },
+                    {
+                      "entity": "binary_sensor.x1c_print_error",
+                      "name": "Print error"
+                    },
+                    {
+                      "entity": "sensor.x1c_total_usage",
+                      "name": "Total usage"
+                    },
+                    {
+                      "entity": "sensor.x1c_wi_fi_signal",
+                      "name": "Wi-Fi signal"
+                    }
+                  ],
+                  "title": "X1C",
+                  "show_header_toggle": false
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "AMS_Status",
+                  "heading_style": "subtitle"
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.ams_1_humidity"
+                    },
+                    {
+                      "entity": "sensor.ams_2_humidity_2"
+                    },
+                    {
+                      "entity": "sensor.ams_3_humidity"
+                    },
+                    {
+                      "entity": "sensor.ams_ht_humidity"
+                    },
+                    {
+                      "entity": "sensor.ams_1_humidity_index"
+                    },
+                    {
+                      "entity": "sensor.ams_2_humidity_index_2"
+                    },
+                    {
+                      "entity": "sensor.ams_3_humidity_index"
+                    },
+                    {
+                      "entity": "sensor.ams_ht_humidity_index"
+                    },
+                    {
+                      "entity": "sensor.ams_1_ams_temperature"
+                    },
+                    {
+                      "entity": "sensor.ams_2_temperature_2"
+                    },
+                    {
+                      "entity": "sensor.ams_3_temperature"
+                    },
+                    {
+                      "entity": "sensor.ams_ht_temperature"
+                    },
+                    {
+                      "entity": "sensor.ams_3_remaining_drying_time"
+                    },
+                    {
+                      "entity": "sensor.ams_ht_remaining_drying_time"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "square": false,
+                  "type": "grid",
+                  "columns": 1,
+                  "cards": [
+                    {
+                      "type": "entities",
+                      "entities": [
+                        {
+                          "entity": "sensor.x1c_active_tray",
+                          "name": "Active tray"
+                        },
+                        {
+                          "entity": "sensor.x1c_active_tray_index",
+                          "name": "Active tray index"
+                        },
+                        {
+                          "entity": "sensor.x1c_aux_fan_speed",
+                          "name": "Aux fan speed"
+                        },
+                        {
+                          "entity": "sensor.x1c_bed_target_temperature",
+                          "name": "Bed target temperature"
+                        },
+                        {
+                          "entity": "sensor.x1c_bed_temperature",
+                          "name": "Bed temperature"
+                        },
+                        {
+                          "entity": "sensor.x1c_chamber_fan_speed",
+                          "name": "Chamber fan speed"
+                        },
+                        {
+                          "entity": "sensor.x1c_chamber_temperature",
+                          "name": "Chamber temperature"
+                        },
+                        {
+                          "entity": "sensor.x1c_cooling_fan_speed",
+                          "name": "Cooling fan speed"
+                        },
+                        {
+                          "entity": "sensor.x1c_current_layer",
+                          "name": "Current layer"
+                        },
+                        {
+                          "entity": "sensor.x1c_current_stage",
+                          "name": "Current stage"
+                        },
+                        {
+                          "entity": "sensor.x1c_end_time",
+                          "name": "End time"
+                        },
+                        {
+                          "entity": "sensor.x1c_gcode_file_downloaded",
+                          "name": "Gcode file downloaded"
+                        },
+                        {
+                          "entity": "sensor.x1c_gcode_filename",
+                          "name": "Gcode filename"
+                        },
+                        {
+                          "entity": "sensor.x1c_heatbreak_fan_speed",
+                          "name": "Heatbreak fan speed"
+                        },
+                        {
+                          "entity": "sensor.x1c_nozzle_size",
+                          "name": "Nozzle size"
+                        },
+                        {
+                          "entity": "sensor.x1c_nozzle_target_temperature",
+                          "name": "Nozzle target temperature"
+                        },
+                        {
+                          "entity": "sensor.x1c_nozzle_temperature",
+                          "name": "Nozzle temperature"
+                        },
+                        {
+                          "entity": "sensor.x1c_nozzle_type",
+                          "name": "Nozzle type"
+                        },
+                        {
+                          "entity": "sensor.x1c_print_bed_type",
+                          "name": "Print bed type"
+                        },
+                        {
+                          "entity": "sensor.x1c_print_length",
+                          "name": "Print length"
+                        },
+                        {
+                          "entity": "sensor.x1c_print_progress",
+                          "name": "Print progress"
+                        },
+                        {
+                          "entity": "sensor.x1c_print_status",
+                          "name": "Print status"
+                        },
+                        {
+                          "entity": "sensor.x1c_print_type",
+                          "name": "Print type"
+                        },
+                        {
+                          "entity": "sensor.x1c_print_weight",
+                          "name": "Print weight"
+                        },
+                        {
+                          "entity": "sensor.x1c_printable_objects",
+                          "name": "Printable objects"
+                        },
+                        {
+                          "entity": "sensor.x1c_printer_name",
+                          "name": "Printer name"
+                        },
+                        {
+                          "entity": "binary_sensor.x1c_recording_timelapse",
+                          "name": "Recording timelapse"
+                        },
+                        {
+                          "entity": "sensor.x1c_remaining_time",
+                          "name": "Remaining time"
+                        },
+                        {
+                          "entity": "sensor.x1c_skipped_objects",
+                          "name": "Skipped objects"
+                        },
+                        {
+                          "entity": "sensor.x1c_speed_profile",
+                          "name": "Speed profile"
+                        },
+                        {
+                          "entity": "sensor.x1c_start_time",
+                          "name": "Start time"
+                        },
+                        {
+                          "entity": "sensor.x1c_task_name",
+                          "name": "Task name"
+                        },
+                        {
+                          "entity": "sensor.x1c_total_layer_count",
+                          "name": "Total layer count"
+                        }
+                      ],
+                      "title": "X1C",
+                      "show_header_toggle": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "AMS_Filament",
+                  "heading_style": "subtitle"
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.ams_1_tray_1"
+                    },
+                    {
+                      "entity": "sensor.ams_1_tray_1_remain"
+                    },
+                    {
+                      "entity": "sensor.ams_1_tray_2"
+                    },
+                    {
+                      "entity": "sensor.ams_1_tray_2_remain"
+                    },
+                    {
+                      "entity": "sensor.ams_1_tray_3"
+                    },
+                    {
+                      "entity": "sensor.ams_1_tray_3_remain"
+                    },
+                    {
+                      "entity": "sensor.ams_1_tray_4"
+                    },
+                    {
+                      "entity": "sensor.ams_1_tray_4_remain"
+                    },
+                    {
+                      "entity": "sensor.ams_2_tray_1_2"
+                    },
+                    {
+                      "entity": "sensor.ams_2_tray_1_remain"
+                    },
+                    {
+                      "entity": "sensor.ams_2_tray_2"
+                    },
+                    {
+                      "entity": "sensor.ams_2_tray_2_remain"
+                    },
+                    {
+                      "entity": "sensor.ams_2_tray_3"
+                    },
+                    {
+                      "entity": "sensor.ams_2_tray_3_remain"
+                    },
+                    {
+                      "entity": "sensor.ams_2_tray_4"
+                    },
+                    {
+                      "entity": "sensor.ams_2_tray_4_remain"
+                    },
+                    {
+                      "entity": "sensor.ams_3_tray_1"
+                    },
+                    {
+                      "entity": "sensor.ams_3_tray_1_remain"
+                    },
+                    {
+                      "entity": "sensor.ams_3_tray_2"
+                    },
+                    {
+                      "entity": "sensor.ams_3_tray_2_remain"
+                    },
+                    {
+                      "entity": "sensor.ams_3_tray_3"
+                    },
+                    {
+                      "entity": "sensor.ams_3_tray_3_remain"
+                    },
+                    {
+                      "entity": "sensor.ams_3_tray_4"
+                    },
+                    {
+                      "entity": "sensor.ams_3_tray_4_remain"
+                    },
+                    {
+                      "entity": "sensor.ams_ht_tray_1"
+                    },
+                    {
+                      "entity": "sensor.ams_ht_tray_remaining"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "New section"
+                },
+                {
+                  "type": "custom:ha-bambulab-print_control-card",
+                  "printer": "3925baa13b7f28146c624a5b58c10e8f"
+                }
+              ]
+            }
+          ],
+          "visible": [
+            {
+              "user": "e209297cdec44455856b6aab46832759"
+            }
+          ],
+          "cards": []
+        },
+        {
+          "type": "sections",
+          "max_columns": 4,
+          "title": "Basic",
+          "path": "basic",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "New section"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.x1c_current_layer"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.x1c_end_time"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.x1c_hms_errors"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "path": "live-view",
+          "title": "Live-View",
+          "cards": [
+            {
+              "show_state": false,
+              "show_name": false,
+              "camera_view": "live",
+              "fit_mode": "contain",
+              "type": "picture-entity",
+              "entity": "camera.x1c_camera"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

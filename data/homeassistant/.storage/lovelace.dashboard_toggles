@@ -1,0 +1,330 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_toggles",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Home",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.all_basement_lights"
+                    },
+                    {
+                      "entity": "light.animal_shed"
+                    },
+                    {
+                      "entity": "light.austins_dimmer"
+                    },
+                    {
+                      "entity": "light.austins_hall_lights"
+                    },
+                    {
+                      "entity": "light.basement_center_light"
+                    },
+                    {
+                      "entity": "light.basement_light_switch"
+                    },
+                    {
+                      "entity": "light.basement_lights"
+                    },
+                    {
+                      "entity": "light.basement_north_light"
+                    },
+                    {
+                      "entity": "light.basement_south_light"
+                    },
+                    {
+                      "entity": "light.basement_stair_lights"
+                    },
+                    {
+                      "entity": "light.buffet_decor"
+                    },
+                    {
+                      "entity": "light.christmas_package"
+                    },
+                    {
+                      "entity": "light.cold_storage_light"
+                    },
+                    {
+                      "entity": "light.austins_hall_lights_secondary_control_austins_hall_lights_secondary"
+                    },
+                    {
+                      "entity": "light.basement_stair_lights_secondary_control_basement_stair_lights_secondary"
+                    },
+                    {
+                      "entity": "light.entry_can_lights_secondary_control_entry_can_lights_secondary"
+                    },
+                    {
+                      "entity": "light.entry_can_lights_tertiary_control_entry_can_lights_tertiary"
+                    },
+                    {
+                      "entity": "light.garage_lights_secondary_control_garage_lights_secondary"
+                    },
+                    {
+                      "entity": "light.kitchen_can_lights_secondary_control_kitchen_can_lights_secondary"
+                    },
+                    {
+                      "entity": "light.kitchen_sink_lights_secondary_control_kitchen_sink_lights_secondary"
+                    },
+                    {
+                      "entity": "light.lilys_hall_lights_secondary_control_lilys_hall_lights_secondary"
+                    },
+                    {
+                      "entity": "light.lilys_hall_lights_tertiary_control_lilys_hall_lights_tertiary"
+                    },
+                    {
+                      "entity": "light.main_hall_secondary_control_main_hall_secondary"
+                    },
+                    {
+                      "entity": "light.main_hall_tertiary_control_main_hall_tertiary"
+                    },
+                    {
+                      "entity": "light.curtain_lights"
+                    },
+                    {
+                      "entity": "light.dads_air_sensor_display_backlight"
+                    },
+                    {
+                      "entity": "light.dads_lamp"
+                    },
+                    {
+                      "entity": "light.dads_lights"
+                    },
+                    {
+                      "entity": "light.dining_lights"
+                    },
+                    {
+                      "entity": "light.end_table"
+                    },
+                    {
+                      "entity": "light.entry_can_lights"
+                    },
+                    {
+                      "entity": "light.entry_chandelier"
+                    },
+                    {
+                      "entity": "light.entry_decor"
+                    },
+                    {
+                      "entity": "light.eve_lights"
+                    },
+                    {
+                      "entity": "light.exterior_garage_lights"
+                    },
+                    {
+                      "entity": "light.exterior_side_lights"
+                    },
+                    {
+                      "entity": "light.family_dimmer"
+                    },
+                    {
+                      "entity": "light.family_light"
+                    },
+                    {
+                      "entity": "light.garage_air_sensor_display_backlight"
+                    },
+                    {
+                      "entity": "light.garage_lamp"
+                    },
+                    {
+                      "entity": "light.garage_lights"
+                    },
+                    {
+                      "entity": "light.gazebo_lights"
+                    },
+                    {
+                      "entity": "light.gym_light"
+                    },
+                    {
+                      "entity": "light.holiday_stairs"
+                    },
+                    {
+                      "entity": "light.kids_shower_lights"
+                    },
+                    {
+                      "entity": "light.kids_sink_lights"
+                    },
+                    {
+                      "entity": "light.kids_toilet_lights"
+                    },
+                    {
+                      "entity": "light.kitchen_can_lights"
+                    },
+                    {
+                      "entity": "light.kitchen_range_hood"
+                    },
+                    {
+                      "entity": "light.kitchen_sink_lights"
+                    },
+                    {
+                      "entity": "light.laundry_room_lights"
+                    },
+                    {
+                      "entity": "light.left_mantle"
+                    },
+                    {
+                      "entity": "light.library_lights"
+                    },
+                    {
+                      "entity": "light.lilys_dimmer"
+                    },
+                    {
+                      "entity": "light.lilys_hall_lights"
+                    },
+                    {
+                      "entity": "light.main_garage_light"
+                    },
+                    {
+                      "entity": "light.main_hall_lights"
+                    },
+                    {
+                      "entity": "light.mantle_decor"
+                    },
+                    {
+                      "entity": "light.mud_room_lights"
+                    },
+                    {
+                      "entity": "light.office_light_1"
+                    },
+                    {
+                      "entity": "light.office_light_2"
+                    },
+                    {
+                      "entity": "light.office_lights"
+                    },
+                    {
+                      "entity": "light.patio_lights"
+                    },
+                    {
+                      "entity": "light.porch_lights"
+                    },
+                    {
+                      "entity": "light.powder_hall_lights"
+                    },
+                    {
+                      "entity": "light.powder_lights"
+                    },
+                    {
+                      "entity": "light.printer_air_sensor_display_backlight"
+                    },
+                    {
+                      "entity": "light.railing_lights"
+                    },
+                    {
+                      "entity": "light.right_mantle"
+                    },
+                    {
+                      "entity": "light.storage_room_light"
+                    },
+                    {
+                      "entity": "light.study_air_sensor_display_backlight"
+                    },
+                    {
+                      "entity": "light.study_lights"
+                    },
+                    {
+                      "entity": "light.third_car_garage_light"
+                    },
+                    {
+                      "entity": "light.utility_light"
+                    },
+                    {
+                      "entity": "light.x1c_chamber_light"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "switch.deep_freeze"
+                    },
+                    {
+                      "entity": "switch.deep_freeze_2"
+                    },
+                    {
+                      "entity": "switch.douglas_lights"
+                    },
+                    {
+                      "entity": "switch.electric_fence"
+                    },
+                    {
+                      "entity": "switch.fireplace"
+                    },
+                    {
+                      "entity": "switch.fountain"
+                    },
+                    {
+                      "entity": "switch.front_tree"
+                    },
+                    {
+                      "entity": "switch.garage_freezer"
+                    },
+                    {
+                      "entity": "switch.garage_fridge"
+                    },
+                    {
+                      "entity": "switch.greenhouse_fan"
+                    },
+                    {
+                      "entity": "switch.ground_decor"
+                    },
+                    {
+                      "entity": "switch.heat_blankets"
+                    },
+                    {
+                      "entity": "switch.laundry_room_appliances"
+                    },
+                    {
+                      "entity": "switch.lava_lamp"
+                    },
+                    {
+                      "entity": "switch.lily_bathroom_plug"
+                    },
+                    {
+                      "entity": "switch.main_tv"
+                    },
+                    {
+                      "entity": "switch.master_tv"
+                    },
+                    {
+                      "entity": "switch.moms_bathroom_plug"
+                    },
+                    {
+                      "entity": "switch.monochrome_printer"
+                    },
+                    {
+                      "entity": "switch.d828c98966ee_oim_power"
+                    },
+                    {
+                      "entity": "switch.pet_lights"
+                    },
+                    {
+                      "entity": "switch.pool_pump"
+                    },
+                    {
+                      "entity": "switch.washing_machine"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
