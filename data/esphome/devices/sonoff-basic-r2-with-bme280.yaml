@@ -1,0 +1,122 @@
+# Basic Config
+---
+substitutions:
+  esp8266_board: esp01_1m
+  physical_button_pin: GPIO0
+  relay_pin: GPIO12
+  status_led_pin: GPIO13
+  device_class: light
+  mdi_icon: mdi:lightbulb
+  button_as_internal: "true"
+  i2c_scl: GPIO1
+  i2c_sda: GPIO3
+  logger_baud_rate: "0"
+  device_restore_mode: "ALWAYS_OFF"
+
+packages:
+  api: !include ../common/api.yaml
+  common-elements: !include ../common/common-elements.yaml
+  common-esp8266: !include ../common/common-esp8266.yaml
+  esphome: !include ../common/esphome.yaml
+  logger: !include ../common/logger.yaml
+  ota: !include ../common/ota.yaml
+  time: !include ../common/time.yaml
+  web: !include ../common/web-server.yaml
+  wifi: !include ../common/wifi.yaml
+
+${device_class}:
+  - platform: binary
+    id: ${device_class}_1
+    name: None
+    on_turn_off:
+      - light.turn_off: blue_led
+    on_turn_on:
+      - light.turn_on: blue_led
+    output: relay_1
+    restore_mode: ${device_restore_mode}
+
+binary_sensor:
+  - platform: gpio
+    id: button_1
+    name: "Button"
+    pin:
+      number: ${physical_button_pin}
+      mode: INPUT_PULLUP
+      inverted: True
+    internal: ${button_as_internal}
+    on_press:
+      - ${device_class}.toggle: ${device_class}_1
+
+i2c:
+  - scl: ${i2c_scl}
+    sda: ${i2c_sda}
+    scan: true
+    id: i2c_main
+
+light:
+  - platform: status_led
+    disabled_by_default: true
+    id: blue_led
+    icon: ${mdi_icon}
+    internal: true
+    name: "Status LED"
+    pin:
+      inverted: true
+      number: ${status_led_pin}
+
+output:
+  # The relay switches on the red side of the LED when active.
+  - platform: gpio
+    pin: ${relay_pin}
+    id: relay_1
+
+sensor:
+  - platform: bme280_i2c
+    address: 0x76
+    i2c_id: i2c_main
+    temperature:
+      name: "Temperature"
+      id: bme280_temperature_c
+      oversampling: 16x
+      unit_of_measurement: °C
+      icon: 'mdi:thermometer'
+    pressure:
+      name: "Pressure"
+      id: bme280_pressure
+      icon: "mdi:gauge"
+    humidity: 
+      name: "Humidity"
+      id: bme280_humidity
+      icon: "mdi:water-percent"
+    update_interval: 15s
+  - platform: template
+    name: Temperature_F
+    id: bme280_temperature_f
+    internal: True
+    unit_of_measurement: °F
+    icon: 'mdi:thermometer'
+    lambda: return id(bme280_temperature_c).state * 9/5+32;
+    update_interval: 15s
+  - platform: template
+    name: "Equivalent Sea Level Pressure"
+    lambda: |-
+      const float STANDARD_ALTITUDE = 1386; // in meters, see note
+      return id(bme280_pressure).state / powf(1 - ((0.0065 * STANDARD_ALTITUDE) /
+        (id(bme280_temperature_c).state + (0.0065 * STANDARD_ALTITUDE) + 273.15)), 5.257); // in hPa
+    update_interval: 15s
+    unit_of_measurement: 'hPa'
+    icon: "mdi:gauge-full"
+  - platform: absolute_humidity
+    name: "Absolute Humidity"
+    temperature: bme280_temperature_c
+    humidity: bme280_humidity
+  - platform: template
+    name: "Dew Point"
+    lambda: |-
+      return (243.5*(log(id(bme280_humidity).state/100)+((17.67*id(bme280_temperature_c).state)/
+      (243.5+id(bme280_temperature_c).state)))/(17.67-log(id(bme280_humidity).state/100)-
+      ((17.67*id(bme280_temperature_c).state)/(243.5+id(bme280_temperature_c).state))));
+    # filters:
+    #   - lambda: return x * (9.0/5.0) + 32.0;
+    unit_of_measurement: °C
+    icon: "mdi:water-percent-alert"

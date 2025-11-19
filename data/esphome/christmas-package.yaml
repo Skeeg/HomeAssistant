@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: christmas-package
+  friendly_name: Christmas Package
+  ip_address: 10.3.2.101
+  mdi_icon: mdi:string-lights
+
+packages:
+  light: !include devices/maxcio-light-switch.yaml
+
+esphome:
+  area: 'Outside'

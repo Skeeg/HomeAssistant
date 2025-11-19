@@ -1,0 +1,17 @@
+---
+substitutions:
+  name: garage-fridge
+  friendly_name: Garage Fridge
+  ip_address: 10.3.2.66
+  voltage_divider: "2069.986759838176" #Calibrated on 2025-03-16
+  current_resistor: "0.002372161940866017" #New values via calculator at https://esphome.io/components/sensor/hlw8012.html
+  current_multiply: "1.007049880556328"
+  device_restore_mode: "ALWAYS_ON"
+  mdi_icon: 'mdi:fridge-variant'
+
+packages:
+  power-monitor: !include devices/w-us002s-power-monitor.yaml
+  cron-on: !include common/timers/cron-eventing-on-timer.yaml
+
+esphome:
+  area: 'Garage'

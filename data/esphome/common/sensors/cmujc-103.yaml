@@ -1,0 +1,47 @@
+---
+sensor:
+  - platform: adc
+    name: "Angle Sensing Potentiometer"
+    id: analog_input
+    pin: A0
+    raw: true
+    update_interval: 1s
+
+text_sensor:
+  - platform: template
+    name: "Direction"
+    lambda: |-
+      if (id(analog_input).state <= 64) {
+        return {"North"};
+      } else if (id(analog_input).state <= 128) {
+        return {"NorthEast"};
+      } else if (id(analog_input).state <= 192) {
+        return {"EastNorthEast"};
+      } else if (id(analog_input).state <= 256) {
+        return {"East"};
+      } else if (id(analog_input).state <= 320) {
+        return {"EastSouthEast"};
+      } else if (id(analog_input).state <= 384) {
+        return {"SouthEast"};
+      } else if (id(analog_input).state <= 448) {
+        return {"SouthSouthEast"};
+      } else if (id(analog_input).state <= 512) {
+        return {"South"};
+      } else if (id(analog_input).state <= 576) {
+        return {"SouthSouthWest"};
+      } else if (id(analog_input).state <= 640) {
+        return {"SouthWest"};
+      } else if (id(analog_input).state <= 704) {
+        return {"WestSouthWest"};
+      } else if (id(analog_input).state <= 768) {
+        return {"West"};
+      } else if (id(analog_input).state <= 832) {
+        return {"WestNorthWest"};
+      } else if (id(analog_input).state <= 896) {
+        return {"NorthWest"};
+      } else if (id(analog_input).state <= 960) {
+        return {"NorthNorthWest"};
+      } else {
+        return {"North"};
+      }
+    update_interval: 1s

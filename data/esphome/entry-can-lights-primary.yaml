@@ -1,0 +1,13 @@
+---
+substitutions:
+  name: entry-can-lights
+  friendly_name: Entry Can Lights
+  ip_address: 10.3.2.132
+  hass_event_name: esphome.3way_entry_can_lights_button
+  mdi_icon: 'mdi:light-recessed'
+
+packages:
+  switch: !include devices/3way-gosund-ks-602s-light-switch.yaml
+
+esphome:
+  area: 'Entry'

@@ -1,0 +1,8 @@
+---
+substitutions:
+  api_reboot_timeout: 15min
+
+api:
+  reboot_timeout: ${api_reboot_timeout}
+  encryption:
+    key: !secret new_encryption_key

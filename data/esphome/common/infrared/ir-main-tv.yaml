@@ -1,0 +1,82 @@
+button:
+  - platform: template
+    name: "Main TV: Volume Up"
+    icon: "mdi:volume-plus"
+    on_press:
+      - remote_transmitter.transmit_pioneer:
+          rc_code_1: 0x021A
+  - platform: template
+    name: "Main TV: Volume Down"
+    icon: "mdi:volume-minus"
+    on_press:
+      - remote_transmitter.transmit_pioneer:
+          rc_code_1: 0x021E
+  - platform: template
+    name: "Main TV: Power On"
+    icon: "mdi:power"
+    on_press:
+      - remote_transmitter.transmit_pioneer:
+          rc_code_1: 0x027E
+  - platform: template
+    name: "Main TV: Power Off"
+    icon: "mdi:power-off"
+    on_press:
+      - remote_transmitter.transmit_pioneer:
+          rc_code_1: 0x027F
+  - platform: template
+    name: "Main TV: Menu"
+    icon: "mdi:menu"
+    on_press:
+      - remote_transmitter.transmit_pioneer:
+          rc_code_1: 0x0280
+  - platform: template
+    name: "Main TV: Arrow Up"
+    icon: "mdi:arrow-up-bold"
+    on_press:
+      - remote_transmitter.transmit_pioneer:
+          rc_code_1: 0x0282
+  - platform: template
+    name: "Main TV: Arrow Left"
+    icon: "mdi:arrow-left-bold"
+    on_press:
+      - remote_transmitter.transmit_pioneer:
+          rc_code_1: 0x021D
+  - platform: template
+    name: "Main TV: Arrow Right"
+    icon: "mdi:arrow-right-bold"
+    on_press:
+      - remote_transmitter.transmit_pioneer:
+          rc_code_1: 0x0219
+  - platform: template
+    name: "Main TV: Arrow Down"
+    icon: "mdi:arrow-down-bold"
+    on_press:
+      - remote_transmitter.transmit_pioneer:
+          rc_code_1: 0x0283
+  - platform: template
+    name: "Main TV: Enter"
+    icon: "mdi:gesture-tap-button"
+    on_press:
+      - remote_transmitter.transmit_pioneer:
+          rc_code_1: 0x0289
+  - platform: template
+    name: "Main TV: Exit"
+    icon: "mdi:keyboard-esc"
+    on_press:
+      - remote_transmitter.transmit_pioneer:
+          rc_code_1: 0x0258
+  - platform: template
+    name: "Main TV: Mute"
+    icon: "mdi:volume-mute"
+    on_press:
+      - remote_transmitter.transmit_pioneer:
+          rc_code_1: 0x0210
+  - platform: template
+    name: "Main TV: SelectSoundBarInput"
+    icon: "mdi:video-input-hdmi"
+    on_press:
+      - remote_transmitter.transmit_pioneer:
+          rc_code_1: 0x020F
+      - delay: 0.5s
+      - remote_transmitter.transmit_pioneer:
+          rc_code_1: 0x0203

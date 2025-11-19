@@ -1,0 +1,13 @@
+---
+substitutions:
+  name: austins-hall-lights
+  friendly_name: Austins Hall Lights
+  ip_address: 10.3.2.130
+  hass_event_name: esphome.3way_austins_hall_lights_button
+  mdi_icon: 'mdi:globe-light-outline'
+
+packages:
+  switch: !include devices/3way-gosund-ks-602s-light-switch.yaml
+
+esphome:
+  area: 'Upstairs Hallway'

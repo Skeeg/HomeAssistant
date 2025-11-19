@@ -1,0 +1,13 @@
+---
+substitutions:
+  name: kids-sink-lights
+  friendly_name: Kids Sink Lights
+  ip_address: 10.3.2.127
+  status_led_on_turn_off_action: "light.turn_on"
+  mdi_icon: 'mdi:light-recessed'
+
+packages:
+  light: !include devices/gosund-ks-602s-light-switch.yaml
+
+esphome:
+  area: 'Kids Bathroom'

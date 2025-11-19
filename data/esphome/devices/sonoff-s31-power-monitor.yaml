@@ -1,0 +1,99 @@
+---
+substitutions:
+  esp8266_board: esp12e
+  physical_button_pin: GPIO0
+  relay_pin: GPIO12
+  status_led_pin: GPIO13
+  device_restore_mode: "ALWAYS_ON" # Powering the relay may cause damage or instability when the programmer is supplying Vcc.
+  logger_baud_rate: "0" # disable serial logging by setting baud_rate to 0 because baud_rate/serial connection is used by cse7766
+  global_logging_level: INFO # VERBOSE will spamming the cse7766 sensor
+  sensor_logging_level: INFO # VERBOSE will spamming the cse7766 sensor
+  button_as_internal: "true"
+  mdi_icon: "mdi:power-socket-us"
+
+packages:
+  api: !include ../common/api.yaml
+  common-elements: !include ../common/common-elements.yaml
+  common-esp8266: !include ../common/common-esp8266.yaml
+  esphome: !include ../common/esphome.yaml
+  logger: !include ../common/logger.yaml
+  ota: !include ../common/ota.yaml
+  time: !include ../common/time.yaml
+  web: !include ../common/web-server.yaml
+  wifi: !include ../common/wifi.yaml
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: ${physical_button_pin}
+      mode: INPUT_PULLUP
+      inverted: True
+    internal: ${button_as_internal}
+    name: Button
+    on_press:
+      - switch.toggle: relay_1
+
+preferences:
+  flash_write_interval: 5min
+
+sensor:
+  - platform: cse7766
+    current:
+      name: "Current"
+      accuracy_decimals: 2
+      filters:
+        - throttle_average: 60s
+    voltage:
+      name: "Voltage"
+      accuracy_decimals: 2
+      filters:
+        - throttle_average: 60s
+    power:
+      name: "Power"
+      accuracy_decimals: 2
+      id: my_power
+      filters:
+        - throttle_average: 60s
+    energy:
+      name: "Energy"
+      accuracy_decimals: 2
+      filters:
+        - throttle: 60s
+    apparent_power: #(only available with version 2024.3.0 or greater)
+      name: "Apparent Power"
+      filters:
+        - throttle_average: 60s
+    power_factor: #(only available with version 2024.3.0 or greater)
+      name: "Power Factor"
+      accuracy_decimals: 2
+      filters:
+        - throttle_average: 60s
+
+  - platform: integration
+    name: 'Total Energy'
+    sensor: my_power
+    time_unit: h
+    restore: true
+    state_class: total_increasing
+    device_class: energy
+    filters:
+      - multiply: 0.001
+    unit_of_measurement: kWh
+
+status_led:
+  pin:
+    number: ${status_led_pin}
+    inverted: True
+
+switch:
+  - platform: gpio
+    name: None
+    pin: ${relay_pin}
+    icon: ${mdi_icon}
+    id: relay_1
+    restore_mode: ${device_restore_mode} 
+
+uart:
+  rx_pin: RX
+  baud_rate: 4800
+  parity: EVEN

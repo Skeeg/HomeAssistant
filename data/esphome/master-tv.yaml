@@ -1,0 +1,20 @@
+---
+substitutions:
+  name: master-tv
+  friendly_name: Master TV
+  ip_address: 10.3.2.51
+  voltage_divider: "2069.986759838176" #Calibrated on 2025-03-16
+  current_resistor: "0.002372161940866017" #New values via calculator at https://esphome.io/components/sensor/hlw8012.html
+  current_multiply: "1.007049880556328"
+  on_timer_seconds: "0"
+  on_timer_minutes: "0"
+  on_timer_hours: "11"
+  mdi_icon: 'mdi:television-classic'
+  device_restore_mode: "ALWAYS_OFF"
+
+packages:
+  power-monitor: !include devices/w-us002s-power-monitor.yaml
+  cron-on: !include common/timers/cron-eventing-on-timer.yaml
+
+esphome:
+  area: 'Master'

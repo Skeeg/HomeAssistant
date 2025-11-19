@@ -1,0 +1,11 @@
+---
+substitutions:
+  name: unused-gosund-ls-55
+  friendly_name: 55
+  ip_address: 10.3.2.146
+
+packages:
+  switch: !include devices/gosund-ks-602s-light-switch.yaml
+
+# esphome:
+#   area: ''

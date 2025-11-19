@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: fireplace
+  friendly_name: Fireplace
+  ip_address: 10.3.2.20
+  mdi_icon: mdi:fire
+
+packages:
+  switch: !include devices/sonoff-basic-r2-as-switch.yaml
+
+esphome:
+  area: 'Family'

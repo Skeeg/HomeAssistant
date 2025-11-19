@@ -1,0 +1,51 @@
+---
+substitutions:
+  name: rftest
+  friendly_name: NodeMCU-RFTest
+  ip_address: 10.3.2.157
+  esp8266_board: nodemcu
+  
+packages:
+  api: !include common/api.yaml
+  # common-elements: !include common/common-elements.yaml
+  common-esp8266: !include common/common-esp8266.yaml
+  esphome: !include common/esphome.yaml
+  logger: !include common/logger.yaml
+  ota: !include common/ota.yaml
+  time: !include common/time.yaml
+  web: !include common/web-server.yaml
+  wifi: !include common/wifi.yaml
+  # windvane: !include common/sensors/cmujc-103.yaml
+  # anemometer: !include common/sensors/si7021.yaml
+  # maintv: !include common/infrared/ir-main-tv.yaml
+  # soundbar: !include common/infrared/ir-sony-soundbar.yaml
+
+# sensor:
+#   - platform: pulse_meter
+#     pin: D1
+#     name: "Pulse Meter"
+#     total:
+#       name: "Total Pulses"
+
+remote_receiver:
+  - id: RF_RCV
+    pin: 
+      number: D1
+    tolerance: 60%
+    filter: 350us
+    idle: 4ms
+    buffer_size: 2kb
+
+remote_transmitter:
+  pin: D2
+  carrier_duty_percent: 50%
+  id: rf_transmitter
+
+# esphome:
+#   area: 'Office'
+
+logger:
+  level: VERBOSE
+
+wifi:
+  use_address: 10.3.2.156

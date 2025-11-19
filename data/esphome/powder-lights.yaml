@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: powder-lights
+  friendly_name: Powder Lights
+  ip_address: 10.3.2.147
+  mdi_icon: 'mdi:vanity-light'
+
+packages:
+  switch: !include devices/gosund-ks-602s-light-switch.yaml
+
+esphome:
+  area: 'Powder'

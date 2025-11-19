@@ -1,0 +1,9 @@
+---
+substitutions:
+  node_status_as_internal: "true"
+
+binary_sensor:
+  - platform: status
+    name: "Node Status"
+    id: system_status
+    internal: ${node_status_as_internal}

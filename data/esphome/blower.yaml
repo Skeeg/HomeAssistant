@@ -1,0 +1,13 @@
+---
+substitutions:
+  name: blower
+  friendly_name: Blower
+  ip_address: 10.3.2.19
+  device_class: fan
+  mdi_icon: 'mdi:fan'
+
+packages:
+  fan: !include devices/sonoff-basic-r2.yaml
+
+esphome:
+  area: 'Family'

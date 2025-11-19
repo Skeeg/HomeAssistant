@@ -1,0 +1,11 @@
+---
+substitutions:
+  name: unused-df
+  friendly_name: Unused DF
+  ip_address: 10.3.2.44
+
+packages:
+  power-monitor: !include devices/sonoff-s31-power-monitor.yaml
+
+# esphome:
+#   area: 'Office'

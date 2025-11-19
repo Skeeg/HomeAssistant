@@ -1,0 +1,16 @@
+---
+# Don't actually even have a fan installed here, so I just use both switches to activate the lights.
+substitutions:
+  name: study-fan
+  friendly_name: Study Fan
+  ip_address: 10.3.2.100
+  device_class: fan
+  hass_event_name: esphome.3way_study_lights_button
+  relay_pin: GPIO4 # Black hole, this is just a control switch.  Don't need the relay "clicking" on.
+  mdi_icon: 'mdi:ceiling-fan'
+
+packages:
+  light: !include devices/3way-maxcio-light-switch.yaml
+
+esphome:
+  area: 'Study'

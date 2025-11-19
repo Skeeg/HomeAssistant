@@ -1,0 +1,604 @@
+---
+# Based on Source https://www.printables.com/model/1079858-3d-printer-emission-sensor-array-sensorbox-v2
+# Sensorbox v2 config for PCB SBR1
+# config r2 (20241130)
+# https://go.toms3d.org/sbr1
+substitutions:
+  esp32_variant: esp32s2
+  backlight_pin: GPIO15
+  physical_button_pin: GPIO13
+  i2c_main_sda_pin: GPIO11
+  i2c_main_scl_pin: GPIO12
+  i2c_main_id: i2c_main
+  i2c_2_sda_pin: GPIO17
+  i2c_2_scl_pin: GPIO18
+  i2c_2_id: i2c_2
+  display_cs_pin: GPIO03
+  display_dc_pin: GPIO04
+  display_reset_pin: GPIO06
+  uart_tx_pin: GPIO10
+  uart_rx_pin: GPIO09
+  uart_pms_tx_pin: GPIO08
+  uart_pms_rx_pin: GPIO07
+  spi_clk_pin: GPIO01
+  spi_mosi_pin: GPIO02
+  spi_miso_pin: GPIO16
+  display_heading_1: "Particles"
+  display_heading_2: "CO2"
+  display_heading_3: "VOC"
+  display_data_rate: 80MHz
+  button_as_internal: "true"
+  device_restore_mode: "ALWAYS_ON"
+
+packages:
+  api: !include ../common/api.yaml
+  common-elements: !include ../common/common-elements.yaml
+  common-esp32: !include ../common/common-esp32.yaml
+  esphome: !include ../common/esphome.yaml
+  logger: !include ../common/logger.yaml
+  ota: !include ../common/ota.yaml
+  time: !include ../common/time.yaml
+  web: !include ../common/web-server.yaml
+  wifi: !include ../common/wifi.yaml
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: ${physical_button_pin}
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    id: top_btn
+    internal: ${button_as_internal}
+    filters:
+      - delayed_on: 10ms
+      - delayed_off: 500ms
+    on_press: 
+      then:
+        - lambda: |-
+            switch(id(dbright)){
+            case 0: id(dbright) = 3; id(back_light).turn_on().set_brightness(1.00).perform(); return;
+            case 1: id(dbright) = 0; id(back_light).turn_off().perform();                     return;
+            case 2: id(dbright) = 1; id(back_light).turn_on().set_brightness(0.05).perform(); return;
+            case 3: id(dbright) = 2; id(back_light).turn_on().set_brightness(0.33).perform(); return;
+            }
+
+color:
+  - id: white
+    hex: FFFFFF
+  - id: grey
+    hex: AAAAAA
+  - id: light_grey
+    hex: CCCCCC
+  - id: yellow
+    hex: FFFA72
+  - id: orange
+    hex: FF9C32
+  - id: red
+    hex: FF1616
+  - id: purple
+    hex: FF16e0
+
+dashboard_import:
+  package_import_url: github://esphome/firmware/esphome-web/esp32s2.yaml@main
+  import_full_config: true
+
+debug:
+  update_interval: 5s
+
+display:
+  - platform: ili9xxx    
+    model: ILI9341
+    update_interval: 5s
+    data_rate: ${display_data_rate} #Reduces delay in display updates, component still taking ~90ms. 
+    cs_pin: ${display_cs_pin}
+    dc_pin: ${display_dc_pin}
+    reset_pin: ${display_reset_pin}
+    #data_rate: 10MHz
+    transform:
+      #mirror_x: true
+      mirror_y: true
+    #show_test_card: true
+    color_order: bgr # CHANGE THIS if your screen has colors mapped wrong
+    color_palette: "8BIT"
+    invert_colors: false
+    lambda: |-
+      it.fill(Color::BLACK);
+      // Please forgive me. I know this is horrible spaghetti code, but for now it gets the job done. Will eventually move all this to LVGL. 
+      ;
+      auto cy = 0; // current Y position
+      auto ix = 0; // current X grid position
+      auto fv30 = id(font_value_30);
+      auto fh36 = id(font_heading_36);
+      auto fl14 = id(font_label_14);
+      ;
+      auto w = it.get_width();
+      auto h = it.get_height();
+      ;
+      auto col = id(white);
+      ;
+      auto co2 = id(co2_scd40).state;
+      auto e_co2 = id(eco2_ens160).state;
+      auto s_co2 = id(eco2_sgp30).state;
+      auto e_voc = id(tvoc_ens160).state;
+      auto s_voc = id(tvoc_sgp30).state;
+      auto pm1 = id(pm1_pms).state;
+      auto pm25 = id(pm25_pms).state;
+      auto pm10 = id(pm10_pms).state;
+      ;
+      ;
+      ;
+      // SET COLOR FOR EACH READING
+      ;
+      col = id(white);
+      if (co2 > 800){col = id(yellow);}
+      if (co2 > 1200){col = id(orange);}
+      if (co2 > 1500){col = id(red);}
+      if (co2 > 1800){col = id(purple);}
+      auto co2_c = col;
+      ;
+      col = id(white);
+      if (e_co2 > 800){col = id(yellow);}
+      if (e_co2 > 1200){col = id(orange);}
+      if (e_co2 > 1500){col = id(red);}
+      if (e_co2 > 1800){col = id(purple);}
+      auto e_co2_c = col;
+      ;
+      col = id(white);
+      if (s_co2 > 800){col = id(yellow);}
+      if (s_co2 > 1200){col = id(orange);}
+      if (s_co2 > 1500){col = id(red);}
+      if (s_co2 > 1800){col = id(purple);}
+      auto s_co2_c = col;
+      ;
+      col = id(white);
+      if (e_voc > 400){col = id(yellow);}
+      if (e_voc > 800){col = id(orange);}
+      if (e_voc > 1400){col = id(red);}
+      if (e_voc > 2000){col = id(purple);}
+      auto e_voc_c = col;
+      ;
+      col = id(white);
+      if (s_voc > 300){col = id(yellow);}
+      if (s_voc > 600){col = id(orange);}
+      if (s_voc > 1000){col = id(red);}
+      if (s_voc > 1500){col = id(purple);}
+      auto s_voc_c = col;
+      ;
+      col = id(white);
+      if (pm1 > 5){col = id(yellow);}
+      if (pm1 > 10){col = id(orange);}
+      if (pm1 > 15){col = id(red);}
+      if (pm1 > 25){col = id(purple);}
+      auto pm1_c = col;
+      ;
+      col = id(white);
+      if (pm25 > 5){col = id(yellow);}
+      if (pm25 > 10){col = id(orange);}
+      if (pm25 > 15){col = id(red);}
+      if (pm25 > 25){col = id(purple);}
+      auto pm25_c = col;
+      ;
+      col = id(white);
+      if (pm10 > 15){col = id(yellow);}
+      if (pm10 > 45){col = id(orange);}
+      if (pm10 > 60){col = id(red);}
+      if (pm10 > 80){col = id(purple);}
+      auto pm10_c = col;
+      ;
+      ;
+      // SELECT BEST AVAILABLE TEMPERATURE SENSOR
+      float temps[5] = {id(temp_sht41_f).state, id(temp_aht20_f).state, id(temp_scd40_f).state, id(temp_aht20_ens_f).state, id(temp_bmp280_f).state};
+      float hums[4] = {id(hum_sht41).state, id(hum_aht20).state, id(hum_scd40).state, id(hum_aht20_ens).state};
+      float temp = 0;
+      float hum = 0;
+      for(int i = 0; i < 5; i++){
+      if(!isnan(temps[i])){temp = temps[i]; break;}
+      }
+      for(int i = 0; i < 4; i++){
+      if(!isnan(hums[i])){hum = hums[i]; break;}
+      }
+      ;
+      // DRAW HUMITEMP
+      it.printf(90, 30, fl14, id(grey), TextAlign::BOTTOM_LEFT, "°F");
+      it.printf(90, 34, fv30, white, display::TextAlign::BOTTOM_RIGHT, "%.1f", temp);
+      it.printf(197, 18, fl14, id(grey), TextAlign::BOTTOM_LEFT, "RH");
+      it.print(197, 30, fl14, id(grey), TextAlign::BOTTOM_LEFT, "\%");
+      it.printf(197, 34, fv30, white, display::TextAlign::BOTTOM_RIGHT, "%.1f", hum);
+      ;
+      ;
+      // PREPARE VARIABLES
+      auto title = "";
+      auto unit = "";
+      const char *names[3];
+      float values[3];
+      int var_count = 3;
+      esphome::Color colors[3];
+      int count = 0;
+      ;
+      ;
+      // PREPARE PARTICLES
+      cy = 30;
+      ;
+      if (!isnan(pm1)){
+      count = 0;
+      var_count = 3;
+      title = "${display_heading_1}";
+      unit = "µg/m³";
+      names[0] = "PM1";
+      names[1] = "PM2.5";
+      names[2] = "PM10";
+      values[0] = pm1;
+      values[1] = pm25;
+      values[2] = pm10;
+      colors[0] = pm1_c;
+      colors[1] = pm25_c;
+      colors[2] = pm10_c;
+      ;
+      ;
+      // START REUSABLE
+      it.line(0,cy,w,cy,id(white));
+      it.print(2, cy + 22, fh36, id(light_grey), TextAlign::CENTER_LEFT, title);
+      it.print(w-2, cy + 31, fl14, id(grey), TextAlign::CENTER_RIGHT, unit);
+      ix = 0;
+      for (int i = 0; i < var_count; i++){
+      if(isnan(values[i])){continue;}
+      it.printf(w/6*(1+ix*2), cy + 58, fl14, id(grey), TextAlign::BOTTOM_CENTER, "%s", names[i]);
+      it.printf(w/6*(1+ix*2), cy + 50, fv30, colors[i], display::TextAlign::TOP_CENTER, "%.0f", values[i]);
+      ix++;
+      }
+      // END REUSABLE
+      ;
+      cy += 88;
+      }
+      ;
+      // END PARTICLES
+      ;
+      // PREPARE CO2
+      ;
+      if (!isnan(co2) or !isnan(e_co2) or !isnan(s_co2)){
+      count = 0;
+      var_count = 3;
+      title = "${display_heading_2}";
+      unit = "ppm";
+      names[0] = "SCD40";
+      names[1] = "ENS160 est.";
+      names[2] = "SGP30 est.";
+      values[0] = co2;
+      values[1] = e_co2;
+      values[2] = s_co2;
+      colors[0] = co2_c;
+      colors[1] = e_co2_c;
+      colors[2] = s_co2_c;
+      ;
+      ;
+      // START REUSABLE
+      it.line(0,cy,w,cy,id(white));
+      it.print(2, cy + 22, fh36, id(light_grey), TextAlign::CENTER_LEFT, title);
+      it.print(w-2, cy + 31, fl14, id(grey), TextAlign::CENTER_RIGHT, unit);
+      ix = 0;
+      for (int i = 0; i < var_count; i++){
+      if(isnan(values[i])){continue;}
+      it.printf(w/6*(1+ix*2), cy + 58, fl14, id(grey), TextAlign::BOTTOM_CENTER, "%s", names[i]);
+      it.printf(w/6*(1+ix*2), cy + 50, fv30, colors[i], display::TextAlign::TOP_CENTER, "%.0f", values[i]);
+      ix++;
+      }
+      // END REUSABLE
+      ;
+      ;
+      cy += 88;
+      }
+      ;
+      // END CO2
+      ;
+      // PREPARE VOC
+      ;
+      bool draw_general_voc = (!isnan(e_voc) or !isnan(s_voc));
+      // bool draw_sgp4x = (!isnan(aqi_voc) or !isnan(aqi_nox));
+      // if (draw_general_voc or draw_sgp4x){
+      if (draw_general_voc){
+      count = 0;
+      var_count = 2;
+      title = "${display_heading_3}";
+      unit = "ppb";
+      names[0] = "SGP30";
+      names[1] = "ENS160";
+      values[0] = s_voc;
+      values[1] = e_voc;
+      colors[0] = s_voc_c;
+      colors[1] = e_voc_c;
+      ;
+      ;
+      // START REUSABLE | UNIT CONDITION ADDED
+      it.line(0,cy,w,cy,id(white));
+      it.print(2, cy + 22, fh36, id(light_grey), TextAlign::CENTER_LEFT, title);
+      if (draw_general_voc){it.print(w-2, cy + 31, fl14, id(grey), TextAlign::CENTER_RIGHT, unit);}
+      ix = 0;
+      for (int i = 0; i < var_count; i++){
+      if(isnan(values[i])){continue;}
+      it.printf(w/6*(1+ix*2), cy + 58, fl14, id(grey), TextAlign::BOTTOM_CENTER, "%s", names[i]);
+      it.printf(w/6*(1+ix*2), cy + 50, fv30, colors[i], display::TextAlign::TOP_CENTER, "%.0f", values[i]);
+      ix++;
+      }
+      // END REUSABLE
+      ;
+      ;
+      if (draw_general_voc){cy += 88;}
+      else {cy += 46;}
+      }
+      // START SGP4x
+      // cy+=2;
+      // if (isnan(aqi_nox)){sgp4x = "SGP40";}
+      // if(!isnan(aqi_voc)){
+      // col = id(white);
+      // it.printf(2, cy, fl14, id(grey), TextAlign::CENTER_LEFT, "%s VOC Index", sgp4x);
+      // it.printf(180, cy, fl14, id(grey), TextAlign::CENTER_LEFT, "(1 ... 500)");
+      // it.printf(180, cy, fl14, col, TextAlign::CENTER_RIGHT, "%.0f ", aqi_voc);
+      // cy+=15;
+      // }
+      // ;
+      // if(!isnan(aqi_nox)){
+      // col = id(white);
+      // it.printf(2, cy, fl14, id(grey), TextAlign::CENTER_LEFT, "%s NOx Index", sgp4x);
+      // it.printf(180, cy, fl14, id(grey), TextAlign::CENTER_LEFT, "(1 ... 500)");
+      // it.printf(180, cy, fl14, col, TextAlign::CENTER_RIGHT, "%.0f ", aqi_nox);
+      // }
+      // ;
+      // END VOC & SGP4x
+      ;
+      ;
+      ;
+    dimensions:
+      height: 320
+      width: 240
+
+esp32:
+  variant: ${esp32_variant}
+  framework:
+    type: esp-idf
+    version: latest
+
+esphome:
+  name: ${name}
+  friendly_name: ${friendly_name}
+  min_version: 2025.2.0
+  name_add_mac_suffix: false
+  platformio_options:
+    board_build.flash_mode: dio
+  project:
+    name: esphome.web
+    version: dev
+
+font:
+  - file: "gfonts://Rubik@300"
+    id: font_label_14
+    size: 14
+    bpp: 4
+    glyphs: [
+      "0","1","2","3","4","5","6","7","8","9", "µ", "³",  "/", "°", "%", ",", ".", "(", ")", "-", "_", A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z," ",a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z
+      ]
+  - file: "gfonts://Rubik@400"
+    id: font_value_30
+    size: 30
+    bpp: 4
+    glyphs: [
+      "0","1","2","3","4","5","6","7","8","9", "."
+      ]
+  - file: "gfonts://Orbitron"
+    id: font_heading_36
+    size: 36
+    bpp: 4
+    glyphs: [
+      "2",C,O,F,V,P,a,c,e,i,l,r,s,t
+      ]
+
+globals:
+  - id: dbright
+    type: int
+    restore_value: no
+    initial_value: '0'
+
+i2c:
+  - sda: ${i2c_main_sda_pin}
+    scl: ${i2c_main_scl_pin}
+    scan: true
+    id: ${i2c_main_id}
+
+  - sda: ${i2c_2_sda_pin}
+    scl: ${i2c_2_scl_pin}
+    scan: true
+    id: ${i2c_2_id}
+
+light:
+  - platform: monochromatic
+    output: backlight_pwm
+    name: "Display Backlight"
+    id: back_light
+    restore_mode: ${device_restore_mode}
+
+# Mask the component delay log messages that the display takes too long.  Of course it does, it's a slow display and a slow microcontroller with a large lambda.
+logger:
+  logs:
+    component: ERROR
+
+output:
+  - platform: ledc
+    pin: ${backlight_pin}
+    id: backlight_pwm
+
+preferences:
+  flash_write_interval: 5min
+
+sensor:
+  - platform: aht10
+    #address: 0x38
+    i2c_id: i2c_main
+    variant: AHT20
+    temperature:
+      name: "AHT20 Temperature"
+      id: temp_aht20_c
+    humidity:
+      name: "AHT20 Humidity"
+      id: hum_aht20
+    update_interval: 10s
+
+  - platform: template
+    name: AHT20 Temperature_F
+    id: temp_aht20_f
+    internal: True
+    lambda: return id(temp_aht20_c).state * 9/5+32;
+    update_interval: 10s
+
+  - platform: bmp280_i2c
+    address: 0x77
+    i2c_id: i2c_main
+    temperature:
+      name: "BMP280 Temperature"
+      id: temp_bmp280_c
+      oversampling: 16x
+    pressure:
+      name: "BMP280 Pressure"
+      id: pres_bmp280
+    update_interval: 10s
+
+  - platform: template
+    name: BMP280 Temperature_F
+    id: temp_bmp280_f
+    lambda: return id(temp_bmp280_c).state * 9/5+32;
+    internal: True
+    update_interval: 10s
+
+  - platform: scd4x
+    #address: 0x62
+    i2c_id: i2c_main
+    co2:
+      name: "SCD40 CO2"
+      id: co2_scd40
+    temperature:
+      name: "SCD40 Temperature"
+      id: temp_scd40_c
+    humidity:
+      name: "SCD40 Humidity"
+      id: hum_scd40
+    update_interval: 30s
+
+  - platform: template
+    name: SCD40 Temperature_F
+    id: temp_scd40_f
+    lambda: return id(temp_scd40_c).state * 9/5+32;
+    internal: True
+    update_interval: 30s
+
+  - platform: sht4x
+    #addr 0x44
+    i2c_id: i2c_main
+    temperature:
+      name: "SHT41 Temperature"
+      id: temp_sht41_c
+    humidity:
+      name: "SHT41 Relative Humidity"
+      id: hum_sht41
+    update_interval: 10s
+
+  - platform: template
+    name: SHT41 Temperature_F
+    id: temp_sht41_f
+    lambda: return id(temp_sht41_f).state * 9/5+32;
+    internal: True
+    update_interval: 10s
+
+  - platform: ens160_i2c
+    address: 0x53
+    i2c_id: i2c_2
+    eco2:
+      name: "ENS160 eCO2"
+      id: eco2_ens160
+    tvoc:
+      name: "ENS160 TVOC"
+      id: tvoc_ens160
+      filters: 
+        - exponential_moving_average: 
+            send_every: 1
+            alpha: 0.5
+    aqi:
+      name: "ENS160 Air Quality Index"
+      id: aqi_ens160
+    update_interval: 10s
+    compensation:
+      temperature: temp_aht20_ens_c
+      humidity: hum_aht20_ens
+
+  - platform: aht10
+    #address: 0x38
+    i2c_id: i2c_2
+    variant: AHT20
+    temperature:
+      name: "AHT20/ENS160 Temperature"
+      id: temp_aht20_ens_c
+      disabled_by_default: True
+    humidity:
+      name: "AHT20/ENS160 Humidity"
+      id: hum_aht20_ens
+      disabled_by_default: True
+    update_interval: 10s
+
+  - platform: template
+    name: AHT20/ENS160 Temperature_F
+    id: temp_aht20_ens_f
+    lambda: return id(temp_aht20_ens_f).state * 9/5+32;
+    internal: True
+    update_interval: 10s
+
+  - platform: sgp30
+    i2c_id: i2c_main
+    address: 0x58
+    eco2:
+      name: "SGP30 eCO2"
+      id: eco2_sgp30
+      accuracy_decimals: 0
+      filters: 
+        - exponential_moving_average: 
+            send_every: 1
+            alpha: 0.2
+    tvoc:
+      name: "SGP30 TVOC"
+      id: tvoc_sgp30
+      accuracy_decimals: 1
+      filters: 
+        - exponential_moving_average: 
+            send_every: 1
+            alpha: 0.2
+    store_baseline: yes
+    update_interval: 5s
+    compensation: 
+      humidity_source: hum_aht20
+      temperature_source: temp_aht20_c
+
+  - platform: pmsx003
+    type: PMSX003
+    update_interval: 120s
+    uart_id: uart_pms
+    pm_1_0:
+      name: "PMS Particulate Matter <1.0µm Concentration"
+      id: pm1_pms
+    pm_2_5:
+      name: "PMS Particulate Matter <2.5µm Concentration"
+      id: pm25_pms
+    pm_10_0:
+      name: "PMS Particulate Matter <10.0µm Concentration"
+      id: pm10_pms
+
+spi:
+  clk_pin: ${spi_clk_pin}
+  mosi_pin: ${spi_mosi_pin}
+  # miso_pin: ${spi_miso_pin} # http://esphome.io/components/display/ili9xxx.html#configuration-variables Not needed if spi is not used for reading data
+
+uart:
+  - tx_pin: ${uart_pms_tx_pin}
+    rx_pin: ${uart_pms_rx_pin}
+    baud_rate: 9600
+    id: uart_pms
+
+wifi:
+  output_power : 18

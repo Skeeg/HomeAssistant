@@ -1,0 +1,34 @@
+---
+substitutions:
+  name: test
+  friendly_name: NodeMCU
+  ip_address: 10.3.2.156
+  esp8266_board: nodemcu
+  
+packages:
+  api: !include common/api.yaml
+  # common-elements: !include common/common-elements.yaml
+  common-esp8266: !include common/common-esp8266.yaml
+  esphome: !include common/esphome.yaml
+  logger: !include common/logger.yaml
+  ota: !include common/ota.yaml
+  time: !include common/time.yaml
+  web: !include common/web-server.yaml
+  wifi: !include common/wifi.yaml
+  # windvane: !include common/sensors/cmujc-103.yaml
+  # anemometer: !include common/sensors/si7021.yaml
+  # maintv: !include common/infrared/ir-main-tv.yaml
+  # soundbar: !include common/infrared/ir-sony-soundbar.yaml
+
+sensor:
+  - platform: pulse_meter
+    pin: D1
+    name: "Pulse Meter"
+    total:
+      name: "Total Pulses"
+
+# esphome:
+#   area: 'Office'
+
+logger:
+  level: VERBOSE

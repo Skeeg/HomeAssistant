@@ -1,0 +1,11 @@
+---
+substitutions:
+  name: unused-db
+  friendly_name: Unused DB
+  ip_address: 10.3.2.89
+
+packages:
+  switch: !include devices/sonoff-basic-r2-as-switch.yaml
+
+# esphome:
+#   area: 'Office'

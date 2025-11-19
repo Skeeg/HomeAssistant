@@ -1,0 +1,14 @@
+---
+substitutions:
+  name: entry-can-lights-tertiary
+  friendly_name: Control Entry Can Lights Tertiary
+  ip_address: 10.3.2.134
+  hass_event_name: esphome.3way_entry_can_lights_button
+  relay_pin: GPIO4 # Black hole, this is just a control switch.  Don't need the relay "clicking" on.
+  mdi_icon: 'mdi:light-recessed'
+
+packages:
+  switch: !include devices/3way-gosund-ks-602s-light-switch.yaml
+
+esphome:
+  area: 'Entry'

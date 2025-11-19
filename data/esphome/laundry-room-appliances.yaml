@@ -1,0 +1,11 @@
+---
+substitutions:
+  name: laundry-room-appliances
+  friendly_name: Laundry Room Appliances
+  ip_address: 10.3.2.80
+
+packages:
+  power-monitor: !include devices/sonoff-s31-power-monitor.yaml
+
+esphome:
+  area: 'Laundry Room'

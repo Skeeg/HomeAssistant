@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: eve-lights
+  friendly_name: Eve Lights
+  ip_address: 10.3.2.103
+  mdi_icon: 'mdi:light-recessed'
+
+packages:
+  light: !include devices/maxcio-light-switch.yaml
+
+esphome:
+  area: 'Outside'

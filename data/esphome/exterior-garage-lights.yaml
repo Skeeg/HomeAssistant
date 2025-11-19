@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: exterior-garage-lights
+  friendly_name: Exterior Garage Lights
+  ip_address: 10.3.2.104
+  mdi_icon: 'mdi:outdoor-lamp'
+
+packages:
+  light: !include devices/maxcio-light-switch.yaml
+
+esphome:
+  area: 'Outside'

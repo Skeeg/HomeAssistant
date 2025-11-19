@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: austins-gaming-computer
+  friendly_name: Austins Gaming Computer
+  ip_address: 10.3.2.82
+  mdi_icon: 'mdi:desktop-tower-monitor'
+
+packages:
+  power-monitor: !include devices/sonoff-s31-power-monitor.yaml
+
+esphome:
+  area: 'Basement'

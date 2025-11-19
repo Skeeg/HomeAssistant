@@ -1,0 +1,63 @@
+---
+substitutions:
+  esp8266_board: esp01_1m
+  physical_button_pin: GPIO00
+  relay_pin: GPIO12
+  status_led_pin: GPIO13
+  status_led_on_turn_off_action: "light.turn_off" #substitute light.turn_on if you always want the status led to always be on
+  status_led_on_turn_on_action: "light.turn_on" #substitute light.turn_off if you always want the status led to always be off
+  device_class: light
+  button_as_internal: "true"
+  button_on_press_action: toggle
+  device_restore_mode: "ALWAYS_OFF"
+  mdi_icon: "mdi:lightbulb"
+
+packages:
+  api: !include ../common/api.yaml
+  common-elements: !include ../common/common-elements.yaml
+  common-esp8266: !include ../common/common-esp8266.yaml
+  esphome: !include ../common/esphome.yaml
+  logger: !include ../common/logger.yaml
+  ota: !include ../common/ota.yaml
+  time: !include ../common/time.yaml
+  web: !include ../common/web-server.yaml
+  wifi: !include ../common/wifi.yaml
+
+binary_sensor:
+  - platform: gpio
+    filters:
+      - delayed_off: 10ms
+      - invert:
+    id: button_1
+    internal: ${button_as_internal}
+    name: Button
+    on_press:
+      - ${device_class}.${button_on_press_action}: ${device_class}_1
+    pin: ${physical_button_pin}
+
+${device_class}:
+  - platform: binary
+    icon: ${mdi_icon}
+    id: ${device_class}_1
+    name: None
+    on_turn_off:
+      - ${status_led_on_turn_off_action}: status_1
+    on_turn_on:
+      - ${status_led_on_turn_on_action}: status_1
+    output: relay_1
+    restore_mode: ${device_restore_mode}
+
+light:
+  - platform: status_led
+    disabled_by_default: true
+    id: status_1
+    internal: true
+    name: "Status LED"
+    pin:
+      inverted: true
+      number: ${status_led_pin}
+
+output:
+  - platform: gpio
+    id: relay_1
+    pin: ${relay_pin}

@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: sprinkler-controller
+  friendly_name: Sprinkler Controller
+  ip_address: 10.3.2.64
+  mdi_icon: 'mdi:sprinkler-variant'
+
+packages:
+  power-monitor: !include devices/sonoff-s31-power-monitor.yaml
+
+esphome:
+  area: 'Utility'

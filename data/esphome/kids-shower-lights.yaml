@@ -1,0 +1,13 @@
+---
+substitutions:
+  name: kids-shower-lights
+  friendly_name: Kids Shower Lights
+  ip_address: 10.3.2.106
+  status_led_on_turn_off_action: "light.turn_on"
+  mdi_icon: 'mdi:light-recessed'
+
+packages:
+  light: !include devices/maxcio-light-switch.yaml
+
+esphome:
+  area: 'Kids Bathroom'

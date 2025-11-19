@@ -1,0 +1,11 @@
+---
+substitutions:
+  web_server_version: "3"
+
+web_server:
+  include_internal: true
+  port: 80
+  version: ${web_server_version}
+  auth:
+    username: !secret web_username
+    password: !secret web_password

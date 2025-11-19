@@ -1,0 +1,91 @@
+---
+substitutions:
+  bk72xx_board: generic-bk7231t-qfn32-tuya
+  uart_tx_pin: TX1
+  uart_rx_pin: RX1
+  mdi_icon: 'mdi:lightbulb'
+
+packages:
+  api: !include ../common/api.yaml
+  common-elements: !include ../common/common-elements.yaml
+  esphome: !include ../common/esphome.yaml
+  logger: !include ../common/logger.yaml
+  ota: !include ../common/ota.yaml
+  time: !include ../common/time.yaml
+  web: !include ../common/web-server.yaml
+  wifi: !include ../common/wifi.yaml
+
+bk72xx:
+  board: ${bk72xx_board}
+
+number:
+  - platform: tuya
+    number_datapoint: 2
+    name: Bright Value 1
+    min_value: 10
+    max_value: 1000
+    step: 1
+  - platform: tuya
+    number_datapoint: 3
+    name: Brightness Min 1
+    min_value: 10
+    max_value: 1000
+    step: 1
+  - platform: tuya
+    number_datapoint: 5
+    name: Brightness Max
+    min_value: 10
+    max_value: 2000
+    step: 1
+  - platform: tuya
+    number_datapoint: 6
+    name: Countdown
+    unit_of_measurement: s
+    min_value: 0
+    max_value: 86400
+    step: 1
+
+select:
+  - platform: tuya
+    enum_datapoint: 4
+    name: Led Type 1
+    optimistic: true
+    options:
+      0: Led
+      1: Incandescent
+      2: Halogen
+  - platform: tuya
+    enum_datapoint: 101
+    name: Led Bright 1
+    optimistic: true
+    options:
+      0: "Off"
+      1: Low
+      2: High
+  - platform: tuya
+    enum_datapoint: 102
+    name:  On Control
+    optimistic: true
+    options:
+      0: Gradual
+      1: Instant
+      2: Switch
+
+switch:
+  - platform: tuya
+    switch_datapoint: 1
+    name: Switch Led 1
+    icon: ${mdi_icon}
+
+text_sensor:
+  - platform: libretiny
+    version:
+      name: LibreTiny Version
+
+tuya:
+  # DPIDs processed from schema model: 000002i7su
+
+uart:
+  rx_pin: ${uart_rx_pin}
+  tx_pin: ${uart_tx_pin}
+  baud_rate: 9600

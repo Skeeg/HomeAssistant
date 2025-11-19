@@ -1,0 +1,85 @@
+---
+substitutions:
+  esp8266_board: esp01_1m
+  #GPIO1 is Green Light
+  #GPIO16 is Red Light
+  # led_link_pin: GPIO16 #Recommended from ESPHome documentation.
+  # status_led_pin: GPIO1  #Recommended from ESPHome documentation.
+  physical_button_pin: GPIO00
+  led_link_pin: GPIO1 #Preferred for me.
+  relay_pin: GPIO14
+  status_led_pin: GPIO16 #Preferred for me.
+  status_led_transition_length: 0ms
+  hass_event_name: esphome.${name}_button_pressed
+  device_class: light
+  button_as_internal: "true"
+  device_restore_mode: "ALWAYS_OFF"
+  mdi_icon: "mdi:lightbulb"
+
+packages:
+  api: !include ../common/api.yaml
+  common-elements: !include ../common/common-elements.yaml
+  common-esp8266: !include ../common/common-esp8266.yaml
+  esphome: !include ../common/esphome.yaml
+  logger: !include ../common/logger.yaml
+  ota: !include ../common/ota.yaml
+  time: !include ../common/time.yaml
+  web: !include ../common/web-server.yaml
+  wifi: !include ../common/wifi.yaml
+
+binary_sensor:
+  - platform: gpio
+    filters:
+      - delayed_off: 10ms
+      - invert:
+    id: button_1
+    internal: ${button_as_internal}
+    name: Button
+    on_press:
+      - if:
+          condition:
+            api.connected:
+          then:
+            - homeassistant.event:
+                event: ${hass_event_name}
+                data:
+                  action: pressed
+          else:
+            ${device_class}.toggle: ${device_class}_1
+    pin: ${physical_button_pin}
+
+light:
+  - platform: monochromatic
+    output: state_led
+    id: status_1
+    name: Status LED
+    default_transition_length: ${status_led_transition_length}
+    internal: true
+    disabled_by_default: true
+
+${device_class}:
+  - platform: binary
+    icon: ${mdi_icon}
+    id: ${device_class}_1
+    name: None
+    on_turn_on:
+      - light.turn_on: status_1
+    on_turn_off:
+      - light.turn_off: status_1
+    output: relay_1
+    restore_mode: ${device_restore_mode}
+
+output:
+  - platform: gpio
+    id: relay_1
+    pin: ${relay_pin}
+  - platform: esp8266_pwm
+    id: state_led
+    pin:
+      number: ${led_link_pin}
+      inverted: true
+
+status_led:
+  pin:
+    number: ${status_led_pin}
+    inverted: true

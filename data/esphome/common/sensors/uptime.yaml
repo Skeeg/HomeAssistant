@@ -1,0 +1,12 @@
+---
+substitutions:
+  uptime_update_interval: "30s"
+  uptime_unit_of_measurement: "s"
+
+sensor:
+  - platform: uptime
+    name: "Uptime"
+    id: uptime_sensor
+    update_interval: ${uptime_update_interval}
+    unit_of_measurement: ${uptime_unit_of_measurement}
+    # disabled_by_default: True

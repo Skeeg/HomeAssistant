@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: pool-pump
+  friendly_name: Pool Pump
+  ip_address: 10.3.2.47
+  mdi_icon: mdi:pump
+
+packages:
+  power-monitor: !include devices/sonoff-s31-power-monitor.yaml
+
+esphome:
+  area: 'Outside'

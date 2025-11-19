@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: dads-lamp
+  friendly_name: Dads Lamp
+  ip_address: 10.3.2.111
+  mdi_icon: 'mdi:lamp'
+
+packages:
+  switch: !include devices/sonoff-basic-r2.yaml
+
+esphome:
+  area: 'Dads'

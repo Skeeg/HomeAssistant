@@ -1,0 +1,11 @@
+---
+substitutions:
+  name: workspace-monitor
+  friendly_name: Workspace Monitor
+  ip_address: 10.3.2.32
+  
+packages:
+  climate-sensor: !include devices/wemod1-bme280.yaml
+
+esphome:
+  area: 'Office'

@@ -1,0 +1,60 @@
+substitutions:
+  esp32_variant: esp32
+  button_as_internal: "true"
+  device_restore_mode: "ALWAYS_ON"
+  name: esp32-bluetooth-proxy
+  friendly_name: Bluetooth Proxy
+  ip_address: 10.3.2.158
+  mdi_icon: 'mdi:bluetooth'
+
+packages:
+  api: !include ./common/api.yaml
+  common-elements: !include ./common/common-elements.yaml
+  common-esp32: !include ./common/common-esp32.yaml
+  esphome: !include ./common/esphome.yaml
+  logger: !include ./common/logger.yaml
+  ota: !include ./common/ota.yaml
+  time: !include ./common/time.yaml
+  web: !include ./common/web-server.yaml
+  wifi: !include ./common/wifi.yaml
+
+esphome:
+  name: esp32-bluetooth-proxy
+  friendly_name: Bluetooth Proxy
+  min_version: 2025.8.0
+  # platform: esp32
+  # name_add_mac_suffix: true
+
+esp32:
+  variant: esp32
+  framework:
+    type: esp-idf
+
+# # wifi:
+# #   ap:
+
+# # api:
+# # logger:
+
+# ota:
+#   - platform: esphome
+#     id: ota_esphome
+
+esp32_ble_tracker:
+  scan_parameters:
+    # We currently use the defaults to ensure Bluetooth
+    # can co-exist with WiFi In the future we may be able to
+    # enable the built-in coexistence logic in ESP-IDF
+    active: true
+
+bluetooth_proxy:
+  active: true
+
+button:
+  # - platform: safe_mode
+  #   id: button_safe_mode
+  #   name: Safe Mode Boot
+
+  - platform: factory_reset
+    id: factory_reset_btn
+    name: Factory reset

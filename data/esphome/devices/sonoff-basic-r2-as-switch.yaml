@@ -1,0 +1,64 @@
+# Basic Config
+---
+substitutions:
+  esp8266_board: sonoff_basic
+  physical_button_pin: GPIO0
+  relay_pin: GPIO12
+  status_led_pin: GPIO13
+  button_as_internal: "true"
+  device_restore_mode: "ALWAYS_OFF"
+  mdi_icon: "mdi:power-socket-us"
+
+packages:
+  api: !include ../common/api.yaml
+  common-elements: !include ../common/common-elements.yaml
+  common-esp8266: !include ../common/common-esp8266.yaml
+  esphome: !include ../common/esphome.yaml
+  logger: !include ../common/logger.yaml
+  ota: !include ../common/ota.yaml
+  time: !include ../common/time.yaml
+  web: !include ../common/web-server.yaml
+  wifi: !include ../common/wifi.yaml
+
+# Device Specific Config
+binary_sensor:
+  - platform: gpio
+    id: button_1
+    name: "Button"
+    pin:
+      number: ${physical_button_pin}
+      mode: INPUT_PULLUP
+      inverted: True
+    internal: ${button_as_internal}
+    on_press:
+      # Prevents unintended LED lit states.
+      if:
+        condition:
+          - switch.is_off: relay_1
+        then:
+          - light.turn_on: blue_led
+          - switch.turn_on: relay_1
+        else:
+          - switch.turn_off: relay_1
+
+light:
+  - platform: status_led
+    id: blue_led
+    internal: True
+    name: Status LED
+    pin:
+      number: ${status_led_pin}
+      inverted: True
+
+switch:
+  # The relay switches on the red side of the LED when active.
+  - platform: gpio
+    name: None
+    pin: ${relay_pin}
+    icon: ${mdi_icon}
+    id: relay_1
+    on_turn_off:
+      - light.turn_off: blue_led
+    on_turn_on:
+      - light.turn_on: blue_led
+    restore_mode: ${device_restore_mode}

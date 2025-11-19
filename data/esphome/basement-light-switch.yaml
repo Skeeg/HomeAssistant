@@ -1,0 +1,14 @@
+---
+substitutions:
+  name: basement-light-switch
+  friendly_name: Basement Light Switch
+  ip_address: 10.3.2.75
+  mdi_icon: 'mdi:switch'
+  button_on_press_action: turn_on
+  device_restore_mode: "ALWAYS_ON"
+
+packages:
+  light: !include devices/maxcio-light-switch-multiclick.yaml
+
+esphome:
+  area: 'Basement'

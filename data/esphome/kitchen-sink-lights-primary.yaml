@@ -1,0 +1,13 @@
+---
+substitutions:
+  name: kitchen-sink-lights
+  friendly_name: Kitchen Sink Lights
+  ip_address: 10.3.2.92
+  hass_event_name: esphome.3way_kitchen_sink_lights_button
+  mdi_icon: 'mdi:ceiling-light-multiple-outline'
+
+packages:
+  switch: !include devices/3way-gosund-ks-602s-light-switch.yaml
+
+esphome:
+  area: 'Kitchen'

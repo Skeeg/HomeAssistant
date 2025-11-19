@@ -1,0 +1,73 @@
+---
+substitutions:
+  esp8266_board: d1_mini
+  i2c_scl_pin: D1
+  i2c_sda_pin: D2
+
+packages:
+  api: !include ../common/api.yaml
+  common-elements: !include ../common/common-elements.yaml
+  common-esp8266: !include ../common/common-esp8266.yaml
+  esphome: !include ../common/esphome.yaml
+  logger: !include ../common/logger.yaml
+  ota: !include ../common/ota.yaml
+  time: !include ../common/time.yaml
+  web: !include ../common/web-server.yaml
+  wifi: !include ../common/wifi.yaml
+
+i2c:
+  - scl: ${i2c_scl_pin}
+    sda: ${i2c_sda_pin}
+    scan: true
+    id: i2c_main
+
+sensor:
+  - platform: bme280_i2c
+    address: 0x76
+    i2c_id: i2c_main
+    temperature:
+      name: "Temperature"
+      id: bme280_temperature_c
+      oversampling: 16x
+      unit_of_measurement: °C
+      icon: 'mdi:thermometer'
+    pressure:
+      name: "Pressure"
+      id: bme280_pressure
+      icon: "mdi:gauge"
+    humidity: 
+      name: "Humidity"
+      id: bme280_humidity
+      icon: "mdi:water-percent"
+    update_interval: 15s
+  - platform: template
+    name: Temperature_F
+    id: bme280_temperature_f
+    internal: True
+    unit_of_measurement: °F
+    icon: 'mdi:thermometer'
+    lambda: return id(bme280_temperature_c).state * 9/5+32;
+    update_interval: 15s
+  - platform: template
+    name: "Equivalent Sea Level Pressure"
+    lambda: |-
+      const float STANDARD_ALTITUDE = 1386; // in meters, see note
+      return id(bme280_pressure).state / powf(1 - ((0.0065 * STANDARD_ALTITUDE) /
+        (id(bme280_temperature_c).state + (0.0065 * STANDARD_ALTITUDE) + 273.15)), 5.257); // in hPa
+    update_interval: 15s
+    unit_of_measurement: 'hPa'
+    icon: "mdi:gauge-full"
+  - platform: absolute_humidity
+    name: "Absolute Humidity"
+    temperature: bme280_temperature_c
+    humidity: bme280_humidity
+  - platform: template
+    name: "Dew Point"
+    lambda: |-
+      return (243.5*(log(id(bme280_humidity).state/100)+((17.67*id(bme280_temperature_c).state)/
+      (243.5+id(bme280_temperature_c).state)))/(17.67-log(id(bme280_humidity).state/100)-
+      ((17.67*id(bme280_temperature_c).state)/(243.5+id(bme280_temperature_c).state))));
+    # filters:
+    #   - lambda: return x * (9.0/5.0) + 32.0;
+    unit_of_measurement: °C
+    icon: "mdi:water-percent-alert"

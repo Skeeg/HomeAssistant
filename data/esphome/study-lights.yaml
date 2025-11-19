@@ -1,0 +1,13 @@
+---
+substitutions:
+  name: study-lights
+  friendly_name: Study Lights
+  ip_address: 10.3.2.36
+  hass_event_name: esphome.3way_study_lights_button
+  mdi_icon: 'mdi:dome-light'
+
+packages:
+  light: !include devices/3way-maxcio-light-switch.yaml
+
+esphome:
+  area: 'Study'

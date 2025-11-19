@@ -1,0 +1,13 @@
+---
+substitutions:
+  name: printer-bento-box
+  friendly_name: Printer Bento Box
+  ip_address: 10.3.2.94
+  device_class: 'fan'
+  mdi_icon: 'mdi:fan'
+
+packages:
+  switch: !include devices/sonoff-basic-r2.yaml
+
+esphome:
+  area: 'Office'

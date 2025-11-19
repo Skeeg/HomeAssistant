@@ -1,6 +1,3 @@
-version: "3"
-
-# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
 services:
   homeassistant:
     container_name: homeassistant
@@ -25,3 +22,16 @@ services:
       - apparmor:unconfined
     restart: always
     network_mode: host
+
+  esphome:
+    container_name: esphome
+    image: esphome/esphome
+    volumes:
+      - ../data/esphome:/config:rw
+      - /etc/localtime:/etc/localtime:ro
+    restart: no
+    network_mode: bridge
+    environment:
+      - ESPHOME_DASHBOARD_USE_PING=true
+    ports:
+      - 6052:6052

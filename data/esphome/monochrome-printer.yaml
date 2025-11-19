@@ -1,0 +1,17 @@
+---
+substitutions:
+  name: monochrome-printer
+  friendly_name: Monochrome Printer
+  ip_address: 10.3.2.39
+  current_multiply: "1.0"
+  current_resistor: "0.001"
+  voltage_divider: "2351"
+  # global_logging_level: DEBUG # VERBOSE will spamming the cse7766 sensor
+  # sensor_logging_level: DEBUG # VERBOSE will spamming the cse7766 sensor
+  mdi_icon: 'mdi:printer'
+
+packages:
+  power-monitor: !include devices/sonoff-s31-power-monitor.yaml
+
+esphome:
+  area: 'Study'

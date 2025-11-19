@@ -1,0 +1,11 @@
+---
+substitutions:
+  name: lily-bathroom-plug
+  friendly_name: Lily Bathroom Plug
+  ip_address: 10.3.2.62
+
+packages:
+  power-monitor: !include devices/sonoff-s31-power-monitor.yaml
+
+esphome:
+  area: 'Kids Bathroom'
