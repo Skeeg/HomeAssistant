@@ -1,0 +1,123 @@
+---
+substitutions:
+  esp8266_board: esp01_1m
+  physical_button_pin: GPIO00
+  relay_pin: GPIO12
+  status_led_pin: GPIO13
+  status_led_on_turn_off_action: "light.turn_off" #substitute light.turn_on if you always want the status led to always be on
+  status_led_on_turn_on_action: "light.turn_on" #substitute light.turn_off if you always want the status led to always be off
+  device_class: light
+  button_as_internal: "true"
+  button_on_press_action: toggle
+  device_restore_mode: "ALWAYS_OFF"
+  mdi_icon: "mdi:lightbulb"
+  multiclick_delay_on_time: 0.2s
+  multiclick_delay_off_time: 0.5s
+  multiclick_delay_final_wait_time: 0.5s
+
+packages:
+  api: !include ../common/api.yaml
+  common-elements: !include ../common/common-elements.yaml
+  common-esp8266: !include ../common/common-esp8266.yaml
+  esphome: !include ../common/esphome.yaml
+  logger: !include ../common/logger.yaml
+  ota: !include ../common/ota.yaml
+  time: !include ../common/time.yaml
+  web: !include ../common/web-server.yaml
+  wifi: !include ../common/wifi.yaml
+
+binary_sensor:
+  - platform: gpio
+    filters:
+      - delayed_off: 10ms
+      - invert:
+    id: button_1
+    internal: ${button_as_internal}
+    name: Button
+    pin: ${physical_button_pin}
+    on_multi_click:
+      - timing:
+          - ON for at most ${multiclick_delay_on_time}
+          - OFF for at least ${multiclick_delay_final_wait_time}
+        then:
+          - homeassistant.event:
+              event: esphome.switch
+              data:
+                device: ${friendly_name}
+                action: click
+                button: "1"
+          - ${device_class}.${button_on_press_action}: ${device_class}_1
+      - timing:
+          - ON for at most ${multiclick_delay_on_time}
+          - OFF for at most ${multiclick_delay_off_time}
+          - ON for at most ${multiclick_delay_on_time}
+          - OFF for at least ${multiclick_delay_final_wait_time}
+        then:
+          - homeassistant.event:
+              event: esphome.switch
+              data:
+                device: ${friendly_name}
+                action: double_click
+                button: "1"
+      - timing:
+          - ON for at most ${multiclick_delay_on_time}
+          - OFF for at most ${multiclick_delay_off_time}
+          - ON for at most ${multiclick_delay_on_time}
+          - OFF for at most ${multiclick_delay_off_time}
+          - ON for at most ${multiclick_delay_on_time}
+          - OFF for at least ${multiclick_delay_final_wait_time}
+        then:
+          - homeassistant.event:
+              event: esphome.switch
+              data:
+                device: ${friendly_name}
+                action: triple_click
+                button: "1"
+      - timing:
+          - ON for at most ${multiclick_delay_on_time}
+          - OFF for at most ${multiclick_delay_off_time}
+          - ON for at most ${multiclick_delay_on_time}
+          - OFF for at most ${multiclick_delay_off_time}
+          - ON for at most ${multiclick_delay_on_time}
+          - OFF for at most ${multiclick_delay_off_time}
+          - ON for at most ${multiclick_delay_on_time}
+          - OFF for at least ${multiclick_delay_final_wait_time}
+        then:
+          - homeassistant.event:
+              event: esphome.switch
+              data:
+                device: ${friendly_name}
+                action: four_clicks
+                button: "1"
+      - timing:
+          - ON for at least 10s
+        then:
+          - button.press: restart_button
+
+
+${device_class}:
+  - platform: binary
+    icon: ${mdi_icon}
+    id: ${device_class}_1
+    name: None
+    on_turn_off:
+      - ${status_led_on_turn_off_action}: status_1
+    on_turn_on:
+      - ${status_led_on_turn_on_action}: status_1
+    output: relay_1
+    restore_mode: ${device_restore_mode}
+
+light:
+  - platform: status_led
+    disabled_by_default: true
+    id: status_1
+    internal: true
+    name: "Status LED"
+    pin:
+      inverted: true
+      number: ${status_led_pin}
+
+output:
+  - platform: gpio
+    id: relay_1
+    pin: ${relay_pin}

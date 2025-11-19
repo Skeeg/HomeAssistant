@@ -1,0 +1,14 @@
+---
+substitutions:
+  name: deep-freeze-2
+  friendly_name: Deep Freeze 2
+  ip_address: 10.3.2.81
+  device_restore_mode: "ALWAYS_ON"
+  mdi_icon: 'mdi:fridge-industrial'
+
+packages:
+  power-monitor: !include devices/sonoff-s31-power-monitor.yaml
+  cron-on: !include common/timers/cron-eventing-on-timer.yaml
+
+esphome:
+  area: 'Garage'

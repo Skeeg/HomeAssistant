@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: patio-lights
+  friendly_name: Patio Lights
+  ip_address: 10.3.2.108
+  mdi_icon: 'mdi:outdoor-lamp'
+
+packages:
+  light: !include devices/maxcio-light-switch.yaml
+
+esphome:
+  area: 'Outside'

@@ -1,0 +1,7 @@
+substitutions:
+  ip_address: 10.3.2.26
+  name: feit-dimmer-beken
+  friendly_name: feit_dimmer_beken
+
+packages:
+  feit_dimmer_esp8266: !include devices/feit-dimmer-bk7231t.yaml

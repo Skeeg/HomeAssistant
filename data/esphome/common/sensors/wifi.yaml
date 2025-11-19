@@ -1,0 +1,19 @@
+---
+substitutions:
+  ip_address_as_internal: "False"
+  mac_address_as_internal: "False"
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: IP
+      internal: ${ip_address_as_internal}
+    mac_address: 
+      name: MAC
+      internal: ${mac_address_as_internal}
+
+sensor:
+  - platform: wifi_signal
+    name: "WiFi Signal"
+    update_interval: 60s
+    id: wifi_signal_sensor

@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: dads-lights
+  friendly_name: Dads Lights
+  ip_address: 10.3.2.126
+  mdi_icon: 'mdi:dome-light'
+
+packages:
+  light: !include devices/gosund-ks-602s-light-switch.yaml
+
+esphome:
+  area: 'Dads'

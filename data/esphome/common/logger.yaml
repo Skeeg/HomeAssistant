@@ -1,0 +1,11 @@
+---
+substitutions:
+  logger_baud_rate: "9600" # (UART logging can interfere with sensors in some cases)
+  global_logging_level: INFO
+  sensor_logging_level: INFO
+
+logger:
+  baud_rate: ${logger_baud_rate}
+  level: ${global_logging_level}
+  logs:
+    sensor: ${sensor_logging_level}

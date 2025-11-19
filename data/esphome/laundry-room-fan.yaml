@@ -1,0 +1,13 @@
+---
+substitutions:
+  name: laundry-room-fan
+  friendly_name: Laundry Room Fan
+  ip_address: 10.3.2.143
+  device_class: fan
+  mdi_icon: 'mdi:fan'
+
+packages:
+  switch: !include devices/gosund-ks-602s-light-switch.yaml
+
+esphome:
+  area: 'Laundry Room'

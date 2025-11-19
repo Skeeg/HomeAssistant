@@ -1,0 +1,18 @@
+---
+substitutions:
+  name: study-air-sensor
+  friendly_name: Study Air Sensor
+  ip_address: 10.3.2.23
+  display_heading_1: "Farticles"
+  display_data_rate: 20Mhz #This hardware is having issues at 80Mhz
+  off_timer_scope: light
+  off_timer_device: back_light
+  off_timer_seconds: "0"
+  off_timer_minutes: "/15"
+
+packages:
+  air_sensor: !include devices/air-sensor-v2-pms5003.yaml
+  cron-off: !include common/timers/cron-eventing-off-timer.yaml
+
+esphome:
+  area: 'Study'

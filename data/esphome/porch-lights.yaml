@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: porch-lights
+  friendly_name: Porch Lights
+  ip_address: 10.3.2.128
+  mdi_icon: 'mdi:light-recessed'
+
+packages:
+  light: !include devices/gosund-ks-602s-light-switch.yaml
+
+esphome:
+  area: 'Outside'

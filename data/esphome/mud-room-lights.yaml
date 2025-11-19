@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: mud-room-lights
+  friendly_name: Mud Room Lights
+  ip_address: 10.3.2.153
+  mdi_icon: 'mdi:dome-light'
+
+packages:
+  switch: !include devices/gosund-ks-602s-light-switch.yaml
+
+esphome:
+  area: 'Mud Room'

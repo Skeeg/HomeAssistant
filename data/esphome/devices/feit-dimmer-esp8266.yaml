@@ -1,0 +1,81 @@
+---
+substitutions:
+  esp8266_board: esp01_1m
+  logger_baud_rate: "0" # disable serial logging by setting baud_rate to 0 because baud_rate/serial connection is used by tuyamcu
+  uart_tx_pin: GPIO1
+  uart_rx_pin: GPIO3
+  mdi_icon: 'mdi:lightbulb'
+
+packages:
+  api: !include ../common/api.yaml
+  common-elements: !include ../common/common-elements.yaml
+  common-esp8266: !include ../common/common-esp8266.yaml
+  esphome: !include ../common/esphome.yaml
+  logger: !include ../common/logger.yaml
+  ota: !include ../common/ota.yaml
+  time: !include ../common/time.yaml
+  web: !include ../common/web-server.yaml
+  wifi: !include ../common/wifi.yaml
+
+light:
+  - platform: "tuya"
+    icon: ${mdi_icon}
+    name: None
+    dimmer_datapoint: 2
+    switch_datapoint: 1
+    min_value: 10
+    max_value: 1000
+
+number:
+  - platform: tuya
+    number_datapoint: 3
+    name: Brightness Min 1
+    min_value: 10
+    max_value: 1000
+    step: 1
+  - platform: tuya
+    number_datapoint: 5
+    name: Brightness Max
+    min_value: 10
+    max_value: 2000
+    step: 1
+  - platform: tuya
+    number_datapoint: 6
+    name: Countdown
+    unit_of_measurement: s
+    min_value: 0
+    max_value: 86400
+    step: 1
+
+select:
+  - platform: tuya
+    enum_datapoint: 4
+    name: Led Type 1
+    optimistic: true
+    options:
+      0: Led
+      1: Incandescent
+      2: Halogen
+  - platform: tuya
+    enum_datapoint: 101
+    name: Led Bright 1
+    optimistic: true
+    options:
+      0: "Off"
+      1: Low
+      2: High
+  - platform: tuya
+    enum_datapoint: 102
+    name:  On Control
+    optimistic: true
+    options:
+      0: Gradual
+      1: Instant
+      2: Switch
+
+tuya:
+
+uart:
+  rx_pin: ${uart_rx_pin}
+  tx_pin: ${uart_tx_pin}
+  baud_rate: 9600

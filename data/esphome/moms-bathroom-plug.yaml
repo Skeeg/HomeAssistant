@@ -1,0 +1,11 @@
+---
+substitutions:
+  name: moms-bathroom-plug
+  friendly_name: Moms Bathroom Plug
+  ip_address: 10.3.2.63
+
+packages:
+  power-monitor: !include devices/sonoff-s31-power-monitor.yaml
+
+esphome:
+  area: 'Master Bathroom'

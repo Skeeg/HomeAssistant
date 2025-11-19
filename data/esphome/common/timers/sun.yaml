@@ -1,0 +1,29 @@
+substitutions:
+  sun_timer_scope: switch
+  sun_timer_device: relay_1
+  sun_timer_sunrise_action: turn_on
+  sun_timer_sunset_action: turn_off
+
+sun:
+  latitude: !secret latitude
+  longitude: !secret longitude
+
+  on_sunrise:
+    - then:
+        - ${sun_timer_scope}.${sun_timer_sunrise_action}: ${sun_timer_device}
+    # Custom elevation, will be called shortly after the trigger above.
+    # - elevation: 5°
+    #   then:
+    #     - logger.log: Good morning 2!
+
+  on_sunset:
+    - then:
+        - ${sun_timer_scope}.${sun_timer_sunset_action}: ${sun_timer_device}
+
+text_sensor:
+  - platform: sun
+    name: Next Sunrise
+    type: sunrise
+  - platform: sun
+    name: Next Sunset
+    type: sunset

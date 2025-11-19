@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: animal-shed
+  friendly_name: Animal Shed
+  ip_address: 10.3.2.83
+  mdi_icon: 'mdi:string-lights'
+
+packages:
+  switch: !include devices/sonoff-basic-r2-with-bme280.yaml
+
+esphome:
+  area: 'Outside'

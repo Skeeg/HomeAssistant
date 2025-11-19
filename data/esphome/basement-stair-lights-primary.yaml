@@ -1,0 +1,13 @@
+---
+substitutions:
+  name: basement-stair-lights
+  friendly_name: Basement Stair Lights
+  ip_address: 10.3.2.145
+  hass_event_name: esphome.3way_basement_stair_lights_button
+  mdi_icon: 'mdi:candle'
+
+packages:
+  switch: !include devices/3way-gosund-ks-602s-light-switch.yaml
+
+esphome:
+  area: 'Basement'

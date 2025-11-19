@@ -1,0 +1,11 @@
+---
+substitutions:
+  name: greenhouse
+  friendly_name: Greenhouse Monitor
+  ip_address: 10.3.2.34
+
+packages:
+  climate-sensor: !include devices/wemod1-bme280.yaml
+
+esphome:
+  area: 'Outside'

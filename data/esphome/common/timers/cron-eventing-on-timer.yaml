@@ -1,0 +1,21 @@
+substitutions:
+  on_timer_scope: switch
+  on_timer_device: relay_1
+  on_timer_seconds: "0"
+  on_timer_minutes: "/1"
+  on_timer_hours: "*"
+
+time:
+  - platform: sntp
+    timezone: !secret time_zone
+    on_time:
+      - seconds: ${on_timer_seconds}
+        minutes: ${on_timer_minutes}
+        hours: ${on_timer_hours}
+        then:
+          - ${on_timer_scope}.turn_on: ${on_timer_device}
+
+      # # Cron syntax
+      # - cron: '${on_timer_seconds} ${on_timer_minutes} * * * *'
+      #   then:
+      #     - ${on_timer_scope}.turn_on: ${on_timer_device}

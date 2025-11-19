@@ -1,0 +1,14 @@
+---
+substitutions:
+  name: kids-bathroom-fan
+  friendly_name: Kids Bathroom Fan
+  device_class: fan
+  ip_address: 10.3.2.105
+  status_led_on_turn_off_action: "light.turn_on"
+  mdi_icon: 'mdi:fan'
+
+packages:
+  light: !include devices/maxcio-light-switch.yaml
+
+esphome:
+  area: 'Kids Bathroom'

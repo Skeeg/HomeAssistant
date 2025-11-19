@@ -1,0 +1,17 @@
+---
+substitutions:
+  name: printer-air-sensor
+  friendly_name: Printer Air Sensor
+  ip_address: 10.3.2.22
+  display_heading_1: "Farticles"
+  off_timer_scope: light
+  off_timer_device: back_light
+  off_timer_seconds: "0"
+  off_timer_minutes: "/15"
+
+packages:
+  advanced_air_sensor: !include devices/air-sensor-v2-pms5003s.yaml #Formaldehyde sensor
+  cron-off: !include common/timers/cron-eventing-off-timer.yaml
+
+esphome:
+  area: 'Office'

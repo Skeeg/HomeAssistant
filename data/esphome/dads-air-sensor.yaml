@@ -1,0 +1,16 @@
+---
+substitutions:
+  name: dads-air-sensor
+  friendly_name: Dads Air Sensor
+  ip_address: 10.3.2.77
+  display_heading_1: "Farticles"
+  display_data_rate: 40Mhz #This hardware has artifacts at 80Mhz
+  daily_timer_scope: light
+  daily_timer_device: back_light
+
+packages:
+  air_sensor: !include devices/air-sensor-v2-pms5003.yaml
+  daily-timer: !include common/timers/daily-timer.yaml
+
+esphome:
+  area: 'Dads'

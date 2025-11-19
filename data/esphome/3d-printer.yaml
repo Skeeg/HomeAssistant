@@ -1,0 +1,15 @@
+---
+substitutions:
+  name: 3dprinter
+  friendly_name: 3d Printer
+  ip_address: 10.3.2.17
+  voltage_divider: "2169.857693408987" #Calibrated on 2025-03-16
+  current_resistor:	"0.0024378180665200282"
+  current_multiply:	"1.3568987351385062"
+  mdi_icon: "mdi:printer-3d"
+
+packages:
+  power-monitor: !include devices/w-us002s-power-monitor.yaml
+
+esphome:
+  area: 'Office'

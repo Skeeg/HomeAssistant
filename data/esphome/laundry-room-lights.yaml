@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: laundry-room-lights
+  friendly_name: Laundry Room Lights
+  ip_address: 10.3.2.141
+  mdi_icon: 'mdi:dome-light'
+
+packages:
+  switch: !include devices/gosund-ks-602s-light-switch.yaml
+
+esphome:
+  area: 'Laundry Room'

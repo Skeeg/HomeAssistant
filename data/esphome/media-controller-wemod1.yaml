@@ -1,0 +1,43 @@
+---
+substitutions:
+  name: media-controller-wemod1
+  friendly_name: Media Controller WemoD1
+  ip_address: 10.3.2.155
+  esp8266_board: d1_mini
+
+packages:
+  api: !include common/api.yaml
+  common-elements: !include common/common-elements.yaml
+  common-esp8266: !include common/common-esp8266.yaml
+  esphome: !include common/esphome.yaml
+  logger: !include common/logger.yaml
+  ota: !include common/ota.yaml
+  time: !include common/time.yaml
+  web: !include common/web-server.yaml
+  wifi: !include common/wifi.yaml
+  maintv: !include common/infrared/ir-main-tv.yaml
+  soundbar: !include common/infrared/ir-sony-soundbar.yaml
+
+esphome:
+  area: 'Family'
+
+# remote_receiver:
+#   pin:
+#     number: D5
+#     inverted: true
+#   dump: all
+
+remote_transmitter:
+  pin: D7
+  carrier_duty_percent: 50%
+  id: ir_transmitter
+
+# logger:
+#   level: INFO
+
+# on_boot:
+#   then:
+#     - logger.set_level: INFO
+#     - logger.set_level:
+#         level: DEBUG
+#         tag: mqtt.client

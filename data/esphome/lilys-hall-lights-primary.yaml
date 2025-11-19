@@ -1,0 +1,13 @@
+---
+substitutions:
+  name: lilys-hall-lights
+  friendly_name: Lilys Hall Lights
+  ip_address: 10.3.2.137
+  hass_event_name: esphome.3way_lilys_hall_lights_button
+  mdi_icon: 'mdi:dome-light'
+
+packages:
+  switch: !include devices/3way-gosund-ks-602s-light-switch.yaml
+
+esphome:
+  area: 'Upstairs Hallway'

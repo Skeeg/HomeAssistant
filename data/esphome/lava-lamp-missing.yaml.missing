@@ -1,0 +1,16 @@
+#Not sure if this device actually exists.  Might be a duplicate or displaced, but not finding it.
+---
+substitutions:
+  name: lava-lamp-missing
+  friendly_name: Lava Lamp Missing
+  ip_address: 10.3.2.115
+  daily_timer_on_hour: "7"
+  daily_timer_off_hour: "17"
+  mdi_icon: 'mdi:lava-lamp'
+
+packages:
+  switch: !include devices/sonoff-basic-r2-switch.yaml
+  daily-timer: !include common/timers/daily-timer.yaml
+
+esphome:
+  area: 'Office'

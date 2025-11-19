@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: powder-hall-lights
+  friendly_name: Powder Hall Lights
+  ip_address: 10.3.2.129
+  mdi_icon: 'mdi:dome-light'
+
+packages:
+  light: !include devices/gosund-ks-602s-light-switch.yaml
+
+esphome:
+  area: 'Family'

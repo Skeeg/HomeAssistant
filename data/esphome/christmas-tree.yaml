@@ -1,0 +1,15 @@
+---
+substitutions:
+  name: christmas-tree
+  friendly_name: Christmas Tree
+  ip_address: 10.3.2.159
+  daily_timer_scope: light
+  daily_timer_device: light_1
+  mdi_icon: 'mdi:pine-tree'
+
+packages:
+  switch: !include devices/sonoff-basic-r2.yaml
+  daily-timer: !include common/timers/daily-timer.yaml
+
+esphome:
+  area: 'Family'

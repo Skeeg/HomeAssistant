@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: family-light
+  friendly_name: Family Light
+  ip_address: 10.3.2.21
+  mdi_icon: 'mdi:ceiling-fan-light'
+
+packages:
+  light: !include devices/maxcio-light-switch.yaml
+
+esphome:
+  area: 'Family'

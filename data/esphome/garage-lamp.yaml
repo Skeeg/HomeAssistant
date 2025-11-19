@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: garage-lamp
+  friendly_name: Garage Lamp
+  ip_address: 10.3.2.84
+  mdi_icon: 'mdi:outdoor-lamp'
+
+packages:
+  switch: !include devices/sonoff-basic-r2-with-bme280.yaml
+
+esphome:
+  area: 'Garage'

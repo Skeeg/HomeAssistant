@@ -1,0 +1,9 @@
+---
+packages:
+  binary-sensor-status: !include binary_sensors/status.yaml
+  # button-factory-reset: !include buttons/factory-reset.yaml
+  button-restart: !include buttons/restart.yaml
+  button-safe-mode: !include buttons/safe-mode.yaml
+  sensors-uptime: !include sensors/uptime.yaml
+  sensors-version: !include sensors/version.yaml
+  sensors-wifi: !include sensors/wifi.yaml

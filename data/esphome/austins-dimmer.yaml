@@ -1,0 +1,11 @@
+substitutions:
+  ip_address: 10.3.2.121
+  name: austins-dimmer
+  friendly_name: Austins Dimmer
+  mdi_icon: 'mdi:dome-light'
+
+packages:
+  feit_dimmer_esp8266: !include devices/feit-dimmer-esp8266.yaml
+
+esphome:
+  area: 'Austins'

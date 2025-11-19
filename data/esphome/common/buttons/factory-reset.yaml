@@ -1,0 +1,6 @@
+---
+button:
+  - platform: factory_reset
+    name: Restart with Factory Default Settings
+    id: factory_reset_button
+    disabled_by_default: True

@@ -1,0 +1,15 @@
+---
+substitutions:
+  name: electric-fence
+  friendly_name: Electric Fence
+  ip_address: 10.3.2.99
+  on_timer_minutes: "/30"
+  device_restore_mode: "ALWAYS_ON"
+  mdi_icon: mdi:fence-electric
+
+packages:
+  switch: !include devices/sonoff-basic-r2-as-switch.yaml
+  cron-on: !include common/timers/cron-eventing-on-timer.yaml
+
+esphome:
+  area: 'Outside'

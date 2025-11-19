@@ -1,0 +1,7 @@
+---
+substitutions:
+
+packages:
+  sensors-debug: !include sensors/debug-esp32.yaml
+
+# psram:

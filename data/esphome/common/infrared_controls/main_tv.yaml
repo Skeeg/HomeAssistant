@@ -1,0 +1,147 @@
+maintv_volup:
+  alias: MainTV_VolumeUp
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD58A7"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_voldown:
+  alias: MainTV_VolumeDown
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD7887"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_poweron:
+  alias: MainTV_PowerOn
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD7E81"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_poweroff:
+  alias: MainTV_PowerOff
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FDFE01"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_menu:
+  alias: MainTV_Menu
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD01FE"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_arrowup:
+  alias: MainTV_ArrowUp
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD41BE"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_arrowleft:
+  alias: MainTV_ArrowLeft
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FDB847"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_arrowright:
+  alias: MainTV_ArrowRight
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD9867"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_arrowdown:
+  alias: MainTV_ArrowDown
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FDC13E"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_enter:
+  alias: MainTV_Enter
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD916E"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_exit:
+  alias: MainTV_Exit
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD1AE5"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_mute:
+  alias: MainTV_Mute
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FD08F7"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+maintv_selectsoundbarinput:
+  alias: MainTV_SelectSoundBarInput
+  sequence:
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FDF00F"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+  - data:
+      payload: '{"Protocol":"NEC","Bits":32,"Data":"0x02FDC03F"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+soundbar_poweron:
+  alias: SoundBar_PowerOn
+  sequence:
+  - data:
+      payload: '{"Protocol":"SONY","Bits":15,"Data":"0x3A0C"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+soundbar_poweroff:
+  alias: SoundBar_PowerOff
+  sequence:
+  - data:
+      payload: '{"Protocol":"SONY","Bits":15,"Data":"0x7A0C"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+soundbar_volup:
+  alias: SoundBar_VolumeUp
+  sequence:
+  - data:
+      payload: '{"Protocol":"SONY","Bits":15,"Data":"0x240C"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+soundbar_voldown:
+  alias: SoundBar_VolumeDown
+  sequence:
+  - data:
+      payload: '{"Protocol":"SONY","Bits":15,"Data":"0x640C"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+soundbar_appletv:
+  alias: SoundBar_AppleTV
+  sequence:
+  - data:
+      payload: '{"Protocol":"SONY","Bits":20,"Data":"0x08114"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+
+soundbar_steam:
+  alias: SoundBar_Steam
+  sequence:
+  - data:
+      payload: '{"Protocol":"SONY","Bits":20,"Data":"0x88114"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+  mode: single
+soundbar_nintendo:
+  alias: SoundBar_Nintendo
+  sequence:
+  - data:
+      payload: '{"Protocol":"SONY","Bits":20,"Data":"0x48114"}'
+      topic: cmnd/MediaRemote/IRSend
+    service: mqtt.publish
+  mode: single

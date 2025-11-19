@@ -1,0 +1,14 @@
+---
+substitutions:
+  name: pi-hole
+  friendly_name: Pi-Hole
+  ip_address: 10.3.2.86
+  device_restore_mode: "ALWAYS_ON"
+  mdi_icon: 'mdi:shield-home'
+
+packages:
+  switch: !include devices/sonoff-basic-r2-as-switch-with-bme280.yaml
+  cron-on: !include common/timers/cron-eventing-on-timer.yaml
+
+esphome:
+  area: 'Utility'

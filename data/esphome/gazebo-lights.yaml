@@ -1,0 +1,13 @@
+---
+substitutions:
+  name: gazebo-lights
+  friendly_name: Gazebo Lights
+  ip_address: 10.3.2.88
+  device_class: light
+  mdi_icon: mdi:string-lights
+
+packages:
+  switch: !include devices/sonoff-basic-r2.yaml
+
+esphome:
+  area: 'Outside'

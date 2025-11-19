@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: spare-air-sensor
+  friendly_name: Spare Air Sensor
+  ip_address: 10.3.2.78
+  display_heading_1: "Farticles"
+
+packages:
+  air_sensor: !include devices/air-sensor-v2-pms5003.yaml
+
+esphome:
+  area: 'Study'

@@ -1,0 +1,13 @@
+---
+substitutions:
+  name: garage-lights
+  friendly_name: Garage Lights
+  ip_address: 10.3.2.135
+  hass_event_name: esphome.3way_garage_lights_button
+  mdi_icon: 'mdi:spotlight'
+
+packages:
+  switch: !include devices/3way-gosund-ks-602s-light-switch.yaml
+
+esphome:
+  area: 'Garage'

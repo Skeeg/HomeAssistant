@@ -1,0 +1,18 @@
+---
+substitutions:
+  name: austins-fan
+  friendly_name: Austins Fan
+  ip_address: 10.3.2.96
+  device_class: fan
+  on_timer_scope: fan
+  on_timer_device: fan_1
+  on_timer_minutes: "/30"
+  device_restore_mode: "ALWAYS_ON"
+  mdi_icon: 'mdi:fan'
+
+packages:
+  switch: !include devices/sonoff-basic-r2.yaml
+  cron-on: !include common/timers/cron-eventing-on-timer.yaml
+
+esphome:
+  area: 'Austins'

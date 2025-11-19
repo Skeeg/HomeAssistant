@@ -1,0 +1,64 @@
+button:  
+  - platform: template
+    name: "SoundBar: Power On"
+    icon: 'mdi:power'
+    on_press:
+      - remote_transmitter.transmit_sony:
+          data: 0x3A0C  
+          nbits: 15
+          repeat:
+            times: 3
+  - platform: template
+    name: "SoundBar: Power Off"
+    icon: 'mdi:power-off'
+    on_press:
+      - remote_transmitter.transmit_sony:
+          data: 0x7A0C  
+          nbits: 15
+          repeat:
+            times: 3
+  - platform: template
+    name: "SoundBar: Volume Up"
+    icon: 'mdi:volume-plus'
+    on_press:
+      - remote_transmitter.transmit_sony:
+          data: 0x240C  
+          nbits: 15
+          repeat:
+            times: 3
+  - platform: template
+    name: "SoundBar: Volume Down"
+    icon: 'mdi:volume-minus'
+    on_press:
+      - remote_transmitter.transmit_sony:
+          data: 0x640C  
+          nbits: 15
+          repeat:
+            times: 3
+  - platform: template
+    name: "SoundBar: Apple TV"
+    icon: "mdi:apple"
+    on_press:
+      - remote_transmitter.transmit_sony:
+          data: 0x08114  
+          nbits: 20
+          repeat:
+            times: 3
+  - platform: template
+    name: "SoundBar: Steam"
+    icon: "mdi:steam"
+    on_press:
+      - remote_transmitter.transmit_sony:
+          data: 0x88114  
+          nbits: 20
+          repeat:
+            times: 3
+  - platform: template
+    name: "SoundBar: Nintendo"
+    icon: 'mdi:nintendo-switch'
+    on_press:
+      - remote_transmitter.transmit_sony:
+          data: 0x48114
+          nbits: 20
+          repeat:
+            times: 3

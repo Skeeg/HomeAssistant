@@ -1,0 +1,14 @@
+---
+substitutions:
+  name: internet-router
+  friendly_name: Internet Router
+  ip_address: 10.3.2.85
+  device_restore_mode: "ALWAYS_ON"
+  mdi_icon: 'mdi:router-network'
+
+packages:
+  switch: !include devices/sonoff-basic-r2-as-switch-with-bme280.yaml
+  cron-on: !include common/timers/cron-eventing-on-timer.yaml
+
+esphome:
+  area: 'Utility'

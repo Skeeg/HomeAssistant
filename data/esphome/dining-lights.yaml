@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: dining-lights
+  friendly_name: Dining Lights
+  ip_address: 10.3.2.102
+  mdi_icon: 'mdi:chandelier'
+
+packages:
+  light: !include devices/maxcio-light-switch.yaml
+
+esphome:
+  area: 'Dining'

@@ -1,0 +1,7 @@
+---
+time:
+  - platform: sntp
+    # id: sntp_time
+    timezone: !secret time_zone
+    # servers:
+    #   - !secret sntp_server

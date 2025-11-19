@@ -1,0 +1,12 @@
+---
+substitutions:
+  name: third-car-garage
+  friendly_name: Third Car Garage
+  ip_address: 10.3.2.24
+  id_prefix: third_car_gdo
+
+packages:
+  ratgdo: !include devices/ratgdo-25i.yaml
+
+esphome:
+  area: 'Garage'
