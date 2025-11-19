@@ -37,6 +37,93 @@ bedtime_script:
       - cover.main_garage_door
       - cover.third_car_garage_door
     action: cover.close_cover
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - light.animal_shed
+      - light.austins_hall_lights
+      - light.austins_hall_lights_secondary
+      - light.basement_center_light
+      - light.basement_lights
+      - light.basement_north_light
+      - light.basement_south_light
+      - light.basement_stair_lights
+      - light.basement_stair_lights_secondary
+      - light.buffet_decor
+      - light.christmas_package
+      - light.cold_storage_light
+      - light.curtain_lights
+      - light.dads_air_sensor_display_backlight
+      - light.dads_lamp
+      - light.dads_lights
+      - light.dining_lights
+      - light.end_table
+      - light.entry_can_lights
+      - light.entry_can_lights_secondary
+      - light.entry_can_lights_tertiary
+      - light.entry_chandelier
+      - light.entry_decor
+      - light.eve_lights
+      - light.exterior_garage_lights
+      - light.exterior_side_lights
+      - light.family_dimmer
+      - light.family_light
+      - light.garage_air_sensor_display_backlight
+      - light.garage_lamp
+      - light.garage_lights
+      - light.garage_lights_secondary
+      - light.gazebo_lights
+      - light.gym_light
+      - light.holiday_stairs
+      - light.kids_sink_lights
+      - light.kitchen_can_lights
+      - light.kitchen_can_lights_secondary
+      - light.kitchen_sink_lights
+      - light.kitchen_sink_lights_secondary
+      - light.laundry_room_lights
+      - light.left_mantle
+      - light.library_lights
+      - light.lilys_hall_lights
+      - light.lilys_hall_lights_secondary
+      - light.lilys_hall_lights_tertiary
+      - light.main_garage_light
+      - light.main_hall_lights
+      - light.main_hall_secondary
+      - light.main_hall_tertiary
+      - light.mantle_decor
+      - light.mud_room_lights
+      - light.office_light_1
+      - light.office_light_2
+      - light.patio_lights
+      - light.porch_lights
+      - light.powder_hall_lights
+      - light.powder_lights
+      - light.printer_air_sensor_display_backlight
+      - light.railing_lights
+      - light.right_mantle
+      - light.storage_room_light
+      - light.study_air_sensor_display_backlight
+      - light.study_lights
+      - light.third_car_garage_light
+      - light.utility_light
+      - light.christmas_tree
+  - action: switch.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - switch.douglas_lights
+      - switch.fireplace
+      - switch.fountain
+      - switch.front_tree
+      - switch.ground_decor
+      - switch.heat_blankets
+      - switch.lava_lamp
+      - switch.lily_bathroom_plug
+      - switch.master_tv
+      - switch.moms_bathroom_plug
 austins_alarm_script:
   alias: Austin Alarm
   sequence:
