@@ -6,6 +6,8 @@ services:
       TZ: 'America/Denver'
     volumes:
       - '../data/homeassistant:/config'
+      # Required for Bluetooth via D-Bus
+      - /run/dbus:/run/dbus:ro
     restart: unless-stopped
     privileged: true
     network_mode: host
