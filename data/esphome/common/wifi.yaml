@@ -13,6 +13,7 @@ wifi:
     subnet: !secret subnet
     dns1: !secret dns1
     dns2: !secret dns2
+  min_auth_mode: WPA2
   reboot_timeout: ${wifi_reboot_timeout}
 
 captive_portal:
