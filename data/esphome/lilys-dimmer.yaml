@@ -2,7 +2,7 @@ substitutions:
   ip_address: 10.3.2.123
   name: lilys-dimmer
   friendly_name: Lilys Dimmer
-  mdi_icon: 'mdi:dome-light'
+  mdi_icon: 'mdi:cat'
 
 packages:
   feit_dimmer_esp8266: !include devices/feit-dimmer-esp8266.yaml
