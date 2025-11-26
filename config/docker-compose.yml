@@ -31,9 +31,27 @@ services:
     volumes:
       - ../data/esphome:/config:rw
       - /etc/localtime:/etc/localtime:ro
-    restart: no
+    restart: unless-stopped
     network_mode: bridge
     environment:
+      # - PUID=1000
+      # - PGID=1000
+      # - TZ=Etc/UTC
       - ESPHOME_DASHBOARD_USE_PING=true
     ports:
       - 6052:6052
+
+  # samba:
+  #   container_name: samba
+  #   image: dperson/samba
+  #   restart: unless-stopped
+  #   environment:
+  #     - USERID=1000
+  #     - GROUPID=1000
+  #     - TZ=America/Denver
+  #   ports:
+  #     - "139:139"
+  #     - "445:445"
+  #   volumes:
+  #     - /mnt/m2usb:/share
+  #   command: '-s "m2usb;/share;yes;no;no;all;none" -u "user;password" -p'

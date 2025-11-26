@@ -352,18 +352,23 @@
                 },
                 {
                   "type": "tile",
-                  "entity": "fan.dads_fan",
-                  "features_position": "bottom",
-                  "vertical": false
-                },
-                {
-                  "type": "tile",
-                  "entity": "light.dads_lights",
-                  "features_position": "bottom",
+                  "entity": "light.dads_dimmer",
+                  "features_position": "inline",
                   "vertical": false,
                   "tap_action": {
                     "action": "toggle"
-                  }
+                  },
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "fan.dads_fan",
+                  "features_position": "bottom",
+                  "vertical": false
                 },
                 {
                   "type": "tile",
@@ -1532,7 +1537,11 @@
                 },
                 {
                   "type": "tile",
-                  "entity": "switch.ground_decor",
+                  "entity": "light.christmas_tree"
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.front_tree",
                   "features_position": "bottom",
                   "vertical": false,
                   "tap_action": {
@@ -1541,7 +1550,7 @@
                 },
                 {
                   "type": "tile",
-                  "entity": "switch.front_tree",
+                  "entity": "switch.ground_decor",
                   "features_position": "bottom",
                   "vertical": false,
                   "tap_action": {
@@ -1568,18 +1577,6 @@
                   },
                   "icon": "mdi:bed-clock",
                   "show_entity_picture": false,
-                  "grid_options": {
-                    "columns": 6,
-                    "rows": 2
-                  },
-                  "hide_state": true
-                },
-                {
-                  "type": "tile",
-                  "entity": "light.bedtime_light_group",
-                  "features_position": "bottom",
-                  "vertical": false,
-                  "name": "Toggle All Lights",
                   "grid_options": {
                     "columns": 6,
                     "rows": 2
@@ -1762,6 +1759,7 @@
                       "show_state": true,
                       "show_name": true,
                       "camera_view": "live",
+                      "fit_mode": "cover",
                       "type": "picture-entity",
                       "entity": "camera.frontdoor_sub"
                     }
@@ -1789,6 +1787,7 @@
                       "show_state": true,
                       "show_name": true,
                       "camera_view": "live",
+                      "fit_mode": "cover",
                       "type": "picture-entity",
                       "entity": "camera.frontside_sub"
                     }
@@ -1816,6 +1815,7 @@
                       "show_state": true,
                       "show_name": true,
                       "camera_view": "live",
+                      "fit_mode": "cover",
                       "type": "picture-entity",
                       "entity": "camera.backentry_sub"
                     }
@@ -1843,6 +1843,7 @@
                       "show_state": true,
                       "show_name": true,
                       "camera_view": "live",
+                      "fit_mode": "cover",
                       "type": "picture-entity",
                       "entity": "camera.backside_sub"
                     }
@@ -1860,6 +1861,411 @@
             "layout": "responsive",
             "badges_position": "bottom"
           }
+        },
+        {
+          "type": "sections",
+          "max_columns": 4,
+          "icon": "mdi:power-plug",
+          "path": "",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "tile",
+                  "entity": "switch.3dprinter",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.austins_gaming_computer",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.deep_freeze",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.deep_freeze_2",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.douglas_lights",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.electric_fence",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.fireplace",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.front_tree",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.garage_freezer",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.garden_fountain",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.ground_decor",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.internet_router",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.laundry_room_appliances",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.lava_lamp",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.lily_bathroom_plug",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.main_tv",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.master_tv",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.mister_pi",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.moms_bathroom_plug",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.monochrome_printer",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.office_desk",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.d828c98966ee_oim_power",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.pet_lights",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.pi_hole",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.pool_pump",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.sprinkler_controller",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.study_desk",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.washing_machine",
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "icon_tap_action": {
+                    "action": "none"
+                  },
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }

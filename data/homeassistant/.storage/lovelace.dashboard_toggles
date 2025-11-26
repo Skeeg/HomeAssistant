@@ -30,9 +30,6 @@
                       "entity": "light.basement_center_light"
                     },
                     {
-                      "entity": "light.basement_light_switch"
-                    },
-                    {
                       "entity": "light.basement_lights"
                     },
                     {
@@ -54,37 +51,37 @@
                       "entity": "light.cold_storage_light"
                     },
                     {
-                      "entity": "light.austins_hall_lights_secondary_control_austins_hall_lights_secondary"
+                      "entity": "light.austins_hall_lights_secondary"
                     },
                     {
-                      "entity": "light.basement_stair_lights_secondary_control_basement_stair_lights_secondary"
+                      "entity": "light.basement_stair_lights_secondary"
                     },
                     {
-                      "entity": "light.entry_can_lights_secondary_control_entry_can_lights_secondary"
+                      "entity": "light.entry_can_lights_secondary"
                     },
                     {
-                      "entity": "light.entry_can_lights_tertiary_control_entry_can_lights_tertiary"
+                      "entity": "light.entry_can_lights_tertiary"
                     },
                     {
-                      "entity": "light.garage_lights_secondary_control_garage_lights_secondary"
+                      "entity": "light.garage_lights_secondary"
                     },
                     {
-                      "entity": "light.kitchen_can_lights_secondary_control_kitchen_can_lights_secondary"
+                      "entity": "light.kitchen_can_lights_secondary"
                     },
                     {
-                      "entity": "light.kitchen_sink_lights_secondary_control_kitchen_sink_lights_secondary"
+                      "entity": "light.kitchen_sink_lights_secondary"
                     },
                     {
-                      "entity": "light.lilys_hall_lights_secondary_control_lilys_hall_lights_secondary"
+                      "entity": "light.lilys_hall_lights_secondary"
                     },
                     {
-                      "entity": "light.lilys_hall_lights_tertiary_control_lilys_hall_lights_tertiary"
+                      "entity": "light.lilys_hall_lights_tertiary"
                     },
                     {
-                      "entity": "light.main_hall_secondary_control_main_hall_secondary"
+                      "entity": "light.main_hall_secondary"
                     },
                     {
-                      "entity": "light.main_hall_tertiary_control_main_hall_tertiary"
+                      "entity": "light.main_hall_tertiary"
                     },
                     {
                       "entity": "light.curtain_lights"
