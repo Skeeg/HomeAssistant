@@ -21,12 +21,11 @@
                 },
                 {
                   "type": "custom:ha-bambulab-print_status-card",
-                  "printer": "3925baa13b7f28146c624a5b58c10e8f",
+                  "printer": "616c4fadc10067027c19c72c728e5f21",
                   "custom_temperature": "sensor.x1c_chamber_temperature",
-                  "custom_power": "switch.3dprinter_3d_printer",
+                  "custom_power": "switch.3dprinter",
                   "custom_light": "light.x1c_chamber_light",
-                  "style": "graphic",
-                  "custom_humidity": "sensor.printer_air_sensor_sht41_relative_humidity"
+                  "style": "graphic"
                 }
               ]
             },
@@ -91,7 +90,9 @@
                 },
                 {
                   "type": "tile",
-                  "entity": "fan.printer_bento_box_printer_bento_box"
+                  "entity": "fan.printer_bento_box",
+                  "vertical": false,
+                  "features_position": "bottom"
                 },
                 {
                   "type": "tile",
@@ -123,11 +124,11 @@
                   "type": "custom:ha-bambulab-ams-card",
                   "entity": "",
                   "header": "",
-                  "subtitle": "AMS_1",
                   "style": "vector",
                   "ams": "bb6c7f02eadea754032cb70569b61d98",
                   "show_type": true,
-                  "show_info_bar": true
+                  "show_info_bar": true,
+                  "subtitle": "AMS_1"
                 },
                 {
                   "type": "custom:ha-bambulab-ams-card",

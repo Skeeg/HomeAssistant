@@ -53,8 +53,13 @@ data/matter/**
 !data/matter/README.md
 
 # Extra Home Assistant ignores
-data/homeassistant/www/media/ha-bambulab/*/prints/cache/*
+data/homeassistant/www/media/ha-bambulab/*/prints/*
 data/homeassistant/www/media/ha-bambulab/*/timelapse/*
 data/homeassistant/backups/*
 data/homeassistant/.ha_run.lock
 !**/.storage/lovelace.*
+
+
+# VSCode Web ignores
+.openvscode-server
+.cache/Microsoft/DeveloperTools/deviceid

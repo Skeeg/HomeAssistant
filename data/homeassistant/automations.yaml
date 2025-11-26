@@ -286,52 +286,107 @@
   alias: GreatRoom_Idle_Shutdown_TV
   description: ''
   triggers:
-  - device_id: 97b58a6b0a9c14ef5ce86d29fcc62f58
-    domain: media_player
-    entity_id: 287eeb2a3a9106f0c69f607afae943b0
-    type: idle
-    trigger: device
+  - trigger: state
+    entity_id:
+    - media_player.great_room
+    to: 'off'
+  - trigger: state
+    entity_id:
+    - media_player.great_room
+    to: idle
     for:
-      hours: 2
-      minutes: 0
+      hours: 0
+      minutes: 15
       seconds: 0
   actions:
-  - action: script.maintv_poweroff
+  - action: button.press
     metadata: {}
     data: {}
+    target:
+      entity_id:
+      - button.media_controller_wemod1_main_tv_power_off
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 500
+  - action: button.press
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - button.media_controller_wemod1_main_tv_power_off
+  - action: media_player.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: media_player.great_room
   mode: single
 - id: GreatRoom_TV_Turn_on_For_Activity
-  alias: Great Room TV Turn on For Activity
+  alias: GreatRoom_Turn_On_TV
   description: ''
   triggers:
-  - device_id: 97b58a6b0a9c14ef5ce86d29fcc62f58
-    domain: media_player
-    entity_id: 287eeb2a3a9106f0c69f607afae943b0
-    type: playing
-    trigger: device
-  - device_id: 97b58a6b0a9c14ef5ce86d29fcc62f58
-    domain: media_player
-    entity_id: 287eeb2a3a9106f0c69f607afae943b0
-    type: buffering
-    trigger: device
-  - device_id: 97b58a6b0a9c14ef5ce86d29fcc62f58
-    domain: media_player
-    entity_id: 287eeb2a3a9106f0c69f607afae943b0
-    type: turned_on
-    trigger: device
-  - device_id: 97b58a6b0a9c14ef5ce86d29fcc62f58
-    domain: media_player
-    entity_id: 287eeb2a3a9106f0c69f607afae943b0
-    type: paused
-    trigger: device
+  - trigger: state
+    entity_id:
+    - media_player.great_room
+    to: 'on'
+  - trigger: state
+    entity_id:
+    - media_player.great_room
+    to: paused
+  - trigger: state
+    entity_id:
+    - media_player.great_room
+    to: buffering
+  - trigger: state
+    entity_id:
+    - media_player.great_room
+    to: playing
   conditions: []
   actions:
-  - action: script.maintv_poweron
+  - action: button.press
     metadata: {}
     data: {}
-  - action: script.soundbar_poweron
+    target:
+      entity_id:
+      - button.media_controller_wemod1_main_tv_power_on
+    enabled: true
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 500
+  - action: button.press
     metadata: {}
     data: {}
+    target:
+      entity_id:
+      - button.media_controller_wemod1_soundbar_power_on
+    enabled: true
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 500
+  - action: button.press
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - button.media_controller_wemod1_main_tv_power_on
+    enabled: true
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 500
+  - action: button.press
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - button.media_controller_wemod1_soundbar_power_on
+    enabled: true
   mode: single
 - id: 3way_kitchen_can_lights_on
   alias: 3way_kitchen_can_lights_on
@@ -651,7 +706,8 @@
   conditions: []
   actions:
   - target:
-      entity_id: fan.printer_bento_box_printer_bento_box
+      entity_id:
+      - fan.printer_bento_box
     action: fan.turn_on
     data: {}
   - delay: 00:00:15
@@ -670,7 +726,8 @@
   conditions: []
   actions:
   - target:
-      entity_id: fan.printer_bento_box_printer_bento_box
+      entity_id:
+      - fan.printer_bento_box
     action: fan.turn_off
     data: {}
   - delay: 00:00:15
@@ -795,4 +852,36 @@
       color_temp_kelvin: 3499
     target:
       entity_id: light.basement_lights
+  mode: single
+- id: Patio_Lights_Trigger_Gazebo_On
+  alias: patio_lights_trigger_gazebo_on
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - light.patio_lights
+    to: 'on'
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.gazebo_lights
+  mode: single
+- id: Patio_Lights_Trigger_Gazebo_Off
+  alias: patio_lights_trigger_gazebo_off
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - light.patio_lights
+    to: 'off'
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.gazebo_lights
   mode: single
