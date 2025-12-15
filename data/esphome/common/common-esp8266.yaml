@@ -4,8 +4,8 @@ substitutions:
   esp8266_early_pin_init: "False"
   esp8266_store_log_strings_in_flash: "true"
 
-packages:
-  sensors-debug: !include sensors/debug-esp8266.yaml
+# packages:
+#   sensors-debug: !include sensors/debug-esp8266.yaml
 
 esp8266:
   board: ${esp8266_board} #Required, not defaulting.
