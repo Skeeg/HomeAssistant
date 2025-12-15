@@ -1,0 +1,16 @@
+---
+substitutions:
+  name: dead-heat-blankets
+  friendly_name: Dead Device - Heat Blankets
+  ip_address: 10.3.2.55
+  voltage_divider: "2069.986759838176" #Calibrated on 2025-03-16
+  current_resistor: "0.002372161940866017" #New values via calculator at https://esphome.io/components/sensor/hlw8012.html
+  current_multiply: "1.007049880556328"
+  mdi_icon: 'mdi:heating-coil'
+
+packages:
+  power-monitor: !include devices/w-us002s-power-monitor.yaml
+  daily-timer: !include common/timers/daily-timer.yaml
+
+esphome:
+  area: 'Family'
