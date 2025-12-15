@@ -13,15 +13,15 @@ text_sensor:
     lambda: |-
       return { ESPHOME_VERSION };
 
-  - platform: template
-    name: "ESPHome Project Version Detailed"
-    id: esphome_project_version_text_detailed
-    icon: "mdi:information-box"
-    entity_category: "diagnostic"
-    update_interval: 600s
-    lambda: |-
-      return { ESPHOME_VERSION " " + App.get_compilation_time() };
-    internal: true
+  # - platform: template
+  #   name: "ESPHome Project Version Detailed"
+  #   id: esphome_project_version_text_detailed
+  #   icon: "mdi:information-box"
+  #   entity_category: "diagnostic"
+  #   update_interval: 600s
+  #   lambda: |-
+  #     return { ESPHOME_VERSION " " + App.get_compilation_time() };
+  #   internal: true
 
   # - platform: template
   #   name: "ESPHome Project Name"
