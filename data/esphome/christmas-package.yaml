@@ -4,9 +4,14 @@ substitutions:
   friendly_name: Christmas Package
   ip_address: 10.3.2.101
   mdi_icon: mdi:string-lights
+  daily_timer_on_hour: "17"
+  daily_timer_off_hour: "23"
+  daily_timer_device: light_1
+  daily_timer_scope: light
 
 packages:
   light: !include devices/maxcio-light-switch.yaml
+  daily-timer: !include common/timers/daily-timer.yaml
 
 esphome:
   area: 'Outside'

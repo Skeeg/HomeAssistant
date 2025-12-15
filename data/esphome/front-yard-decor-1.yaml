@@ -1,14 +1,18 @@
 ---
 substitutions:
-  name: unused-ae
-  friendly_name: Unused AE
-  ip_address: 10.3.2.59
+  name: front-yard-decor-1
+  friendly_name: Front Yard Decor 1
+  ip_address: 10.3.2.68
   voltage_divider: "2069.986759838176" #Calibrated on 2025-03-16
   current_resistor: "0.002372161940866017" #New values via calculator at https://esphome.io/components/sensor/hlw8012.html
   current_multiply: "1.007049880556328"
+  daily_timer_on_hour: "17"
+  daily_timer_off_hour: "23"
+  device_restore_mode: "ALWAYS_OFF"
 
 packages:
   power-monitor: !include devices/w-us002s-power-monitor.yaml
+  daily-timer: !include common/timers/daily-timer.yaml
 
-# esphome:
-#   area: 'Office'
+esphome:
+  area: 'Outside'

@@ -2,14 +2,11 @@
 substitutions:
   name: main-tv
   friendly_name: Main TV
-  ip_address: 10.3.2.72
-  voltage_divider: "2069.986759838176" #Calibrated on 2025-03-16
-  current_resistor: "0.002372161940866017" #New values via calculator at https://esphome.io/components/sensor/hlw8012.html
-  current_multiply: "1.007049880556328"
+  ip_address: 10.3.2.43
   mdi_icon: 'mdi:television-classic'
-
-packages:
-  power-monitor: !include devices/w-us002s-power-monitor.yaml
 
 esphome:
   area: 'Family'
+
+packages:
+  power-monitor: !include devices/sonoff-s31-power-monitor.yaml
