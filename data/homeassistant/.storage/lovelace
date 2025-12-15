@@ -353,16 +353,13 @@
                 {
                   "type": "tile",
                   "entity": "light.dads_dimmer",
-                  "features_position": "inline",
                   "vertical": false,
-                  "tap_action": {
-                    "action": "toggle"
-                  },
                   "features": [
                     {
                       "type": "light-brightness"
                     }
-                  ]
+                  ],
+                  "features_position": "inline"
                 },
                 {
                   "type": "tile",
@@ -387,16 +384,13 @@
                 {
                   "type": "tile",
                   "entity": "light.lilys_dimmer",
-                  "features_position": "inline",
                   "vertical": false,
-                  "tap_action": {
-                    "action": "toggle"
-                  },
                   "features": [
                     {
                       "type": "light-brightness"
                     }
-                  ]
+                  ],
+                  "features_position": "inline"
                 },
                 {
                   "type": "tile",
@@ -410,18 +404,15 @@
                   "heading_style": "subtitle"
                 },
                 {
+                  "type": "tile",
+                  "entity": "light.austins_dimmer",
+                  "vertical": false,
                   "features": [
                     {
                       "type": "light-brightness"
                     }
                   ],
-                  "type": "tile",
-                  "entity": "light.austins_dimmer",
-                  "features_position": "inline",
-                  "vertical": false,
-                  "tap_action": {
-                    "action": "toggle"
-                  }
+                  "features_position": "inline"
                 },
                 {
                   "type": "tile",
@@ -488,7 +479,10 @@
                 },
                 {
                   "type": "tile",
-                  "entity": "light.all_basement_lights"
+                  "entity": "light.all_basement_lights",
+                  "tap_action": {
+                    "action": "toggle"
+                  }
                 },
                 {
                   "type": "heading",
@@ -519,12 +513,17 @@
                 },
                 {
                   "type": "tile",
+                  "entity": "light.office_light_1"
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.office_light_2"
+                },
+                {
+                  "type": "tile",
                   "entity": "switch.lava_lamp",
                   "features_position": "bottom",
-                  "vertical": false,
-                  "tap_action": {
-                    "action": "toggle"
-                  }
+                  "vertical": false
                 },
                 {
                   "type": "heading",
@@ -1211,6 +1210,25 @@
                   "grid_options": {
                     "columns": "full"
                   }
+                },
+                {
+                  "type": "tile",
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": 1
+                  },
+                  "entity": "lock.garage",
+                  "show_entity_picture": false,
+                  "hide_state": false,
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ],
+                  "vertical": false,
+                  "icon_tap_action": {
+                    "action": "toggle"
+                  },
+                  "features_position": "bottom"
                 }
               ]
             },
@@ -1550,7 +1568,16 @@
                 },
                 {
                   "type": "tile",
-                  "entity": "switch.ground_decor",
+                  "entity": "switch.front_yard_decor_1",
+                  "features_position": "bottom",
+                  "vertical": false,
+                  "tap_action": {
+                    "action": "toggle"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.front_yard_decor_2",
                   "features_position": "bottom",
                   "vertical": false,
                   "tap_action": {
@@ -1985,6 +2012,14 @@
                 },
                 {
                   "type": "tile",
+                  "entity": "switch.front_yard_decor_1"
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.front_yard_decor_2"
+                },
+                {
+                  "type": "tile",
                   "entity": "switch.garage_freezer",
                   "tap_action": {
                     "action": "none"
@@ -2013,17 +2048,9 @@
                 },
                 {
                   "type": "tile",
-                  "entity": "switch.ground_decor",
-                  "tap_action": {
-                    "action": "none"
-                  },
-                  "icon_tap_action": {
-                    "action": "none"
-                  },
-                  "state_content": [
-                    "state",
-                    "last_changed"
-                  ]
+                  "entity": "switch.heat_blankets",
+                  "vertical": false,
+                  "features_position": "bottom"
                 },
                 {
                   "type": "tile",
@@ -2167,17 +2194,19 @@
                 },
                 {
                   "type": "tile",
-                  "entity": "switch.d828c98966ee_oim_power",
+                  "entity": "switch.opal_ice_maker",
+                  "state_content": [
+                    "state",
+                    "last_changed"
+                  ],
+                  "vertical": false,
                   "tap_action": {
                     "action": "none"
                   },
                   "icon_tap_action": {
                     "action": "none"
                   },
-                  "state_content": [
-                    "state",
-                    "last_changed"
-                  ]
+                  "features_position": "bottom"
                 },
                 {
                   "type": "tile",
@@ -2262,6 +2291,118 @@
                     "state",
                     "last_changed"
                   ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "TP972S-1",
+                  "heading_style": "subtitle"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_1_probe_1_ambient_temperature"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_1_probe_2_ambient_temperature"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_1_probe_1_internal_end_temperature"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_1_probe_2_internal_end_temperature"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_1_probe_1_internal_center_temperature"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_1_probe_2_internal_center_temperature"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_1_probe_1_internal_tip_temperature"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_1_probe_2_internal_tip_temperature"
+                },
+                {
+                  "type": "heading",
+                  "heading": "TP972S-2",
+                  "heading_style": "subtitle"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_2_probe_1_ambient_temperature"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_2_probe_2_ambient_temperature"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_2_probe_1_internal_end_temperature"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_2_probe_2_internal_end_temperature"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_2_probe_1_internal_center_temperature"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_2_probe_2_internal_center_temperature"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_2_probe_1_internal_tip_temperature"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_2_probe_2_internal_tip_temperature"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "TP972S-1"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_1_probe_1_battery"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_1_probe_2_battery"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_2_probe_1_battery"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_2_probe_2_battery"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_1_signal_strength"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.tp972s_2_signal_strength"
                 }
               ]
             }

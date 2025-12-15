@@ -85,56 +85,6 @@
     data: {}
     target:
       device_id: b872165e2222a6f688dc93719c3100ff
-- id: iOS_DadsLamp_Widget
-  alias: iOS - DadsLamp
-  description: ''
-  triggers:
-  - event_data:
-      actionName: BedsideLamp
-    event_type: ios.action_fired
-    context: {}
-    trigger: event
-  conditions: []
-  actions:
-  - action: light.toggle
-    metadata: {}
-    data: {}
-    target:
-      entity_id: light.dads_lamp
-  mode: single
-- id: iOS_BasementLights_Widget
-  alias: iOS - BasementLights
-  description: ''
-  triggers:
-  - event_data:
-      actionName: BasementLights
-    event_type: ios.action_fired
-    context: {}
-    trigger: event
-  conditions: []
-  actions:
-  - action: light.turn_off
-    metadata: {}
-    data: {}
-    target:
-      entity_id: light.all_basement_lights
-  mode: single
-- id: iOS_StopMainTVPlayback_Widget
-  alias: Stop Main TV Playback
-  description: ''
-  trigger:
-  - event_data:
-      actionName: StopPlayback
-    event_type: ios.action_fired
-    platform: event
-    context: {}
-  condition: []
-  action:
-  - service: script.appletv_greatroom_home
-    data: {}
-  - service: script.maintv_poweroff
-    data: {}
-  mode: single
 - id: Close_Garages_Nightly
   alias: Close Garages Nightly
   description: ''
@@ -263,24 +213,6 @@
     data: {}
     target:
       entity_id: light.kids_sink_lights
-  mode: single
-- id: Disable_Aux_Fan_Always
-  alias: Disable Aux Fan Always
-  description: ''
-  triggers:
-  - trigger: state
-    entity_id:
-    - fan.x1c_aux_fan
-    from:
-    to: 'on'
-  conditions: []
-  actions:
-  - action: fan.turn_off
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - fan.x1c_aux_fan
   mode: single
 - id: GreatRoom_Idle_Shutdown_TV
   alias: GreatRoom_Idle_Shutdown_TV
@@ -884,4 +816,110 @@
     data: {}
     target:
       entity_id: light.gazebo_lights
+  mode: single
+- id: Dads_Dimmer_Gradual_Turn_On
+  alias: Dads Dimmer Gradual Turn On
+  description: ''
+  triggers:
+  - trigger: time
+    at: 06:10:00
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sun
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    target:
+      entity_id: light.dads_dimmer
+    data:
+      brightness: 1
+  - repeat:
+      until:
+      - condition: template
+        value_template: '{{ state_attr(''light.dads_dimmer'', ''brightness'') | int(0)
+          >= 255 or is_state(''light.dads_dimmer'', ''off'') }}'
+      sequence:
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 15
+          milliseconds: 0
+      - action: light.turn_on
+        target:
+          entity_id: light.dads_dimmer
+        data:
+          brightness_step: 1
+    enabled: true
+  mode: single
+- id: Lilys_Dimmer_Gradual_Turn_On
+  alias: Lilys Dimmer Gradual Turn On
+  description: ''
+  triggers:
+  - trigger: time
+    at: 06:03:00
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    target:
+      entity_id:
+      - light.lilys_dimmer
+    data:
+      brightness: 1
+  - repeat:
+      until:
+      - condition: template
+        value_template: '{{ state_attr(''light.lilys_dimmer'', ''brightness'') | int(0)
+          >= 255 or is_state(''light.lilys_dimmer'', ''off'') }}'
+      sequence:
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 5
+          milliseconds: 0
+      - action: light.turn_on
+        target:
+          entity_id: light.lilys_dimmer
+        data:
+          brightness_step: 1
+    enabled: true
+  mode: single
+- id: Morning_Appliance_Routine
+  alias: Morning Appliance Routine
+  description: ''
+  triggers:
+  - trigger: time
+    at: 06:00:00
+    weekday:
+    - sun
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+  conditions: []
+  actions:
+  - action: switch.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: switch.opal_ice_maker
+  - action: select.select_option
+    metadata: {}
+    target:
+      entity_id: select.opal_ice_maker_light_level
+    data:
+      option: Dim
   mode: single
