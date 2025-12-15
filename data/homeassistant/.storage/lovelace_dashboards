@@ -65,6 +65,15 @@
         "require_admin": false,
         "mode": "storage",
         "url_path": "dashboard-toggles"
+      },
+      {
+        "id": "git_workspace",
+        "show_in_sidebar": true,
+        "icon": "mdi:git",
+        "title": "Git Workspace",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "git-workspace"
       }
     ]
   }

@@ -62,4 +62,5 @@ data/homeassistant/.ha_run.lock
 
 # VSCode Web ignores
 .openvscode-server
-.cache/Microsoft/DeveloperTools/deviceid
+**/.cache/Microsoft/DeveloperTools/deviceid
+config/.bash_history

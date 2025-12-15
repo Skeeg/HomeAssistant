@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "minor_version": 1,
+  "minor_version": 2,
   "key": "energy",
   "data": {
     "energy_sources": [],
@@ -83,6 +83,7 @@
       {
         "stat_consumption": "sensor.washing_machine_energy"
       }
-    ]
+    ],
+    "device_consumption_water": []
   }
 }

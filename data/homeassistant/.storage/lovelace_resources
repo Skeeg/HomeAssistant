@@ -6,7 +6,7 @@
     "items": [
       {
         "id": "44234b54c95c49dfafb2415ea25bd6f3",
-        "url": "/bambu_lab/ha-bambulab-cards.js?v=0.6.36",
+        "url": "/bambu_lab/ha-bambulab-cards.js?v=0.6.39",
         "type": "module"
       }
     ]
