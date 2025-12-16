@@ -1,7 +1,7 @@
 ---
 substitutions:
-  name: douglas-lights
-  friendly_name: Douglas Lights
+  name: dead-douglas-lights
+  friendly_name: Dead Douglas Lights
   ip_address: 10.3.2.58
   voltage_divider: "2069.986759838176" #Calibrated on 2025-03-16
   current_resistor: "0.002372161940866017" #New values via calculator at https://esphome.io/components/sensor/hlw8012.html
