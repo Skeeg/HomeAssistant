@@ -74,6 +74,15 @@
         "require_admin": true,
         "mode": "storage",
         "url_path": "git-workspace"
+      },
+      {
+        "id": "cooking_status",
+        "show_in_sidebar": true,
+        "icon": "mdi:stove",
+        "title": "Cooking Status",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "cooking-status"
       }
     ]
   }

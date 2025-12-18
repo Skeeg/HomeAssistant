@@ -1591,24 +1591,24 @@
               "cards": [
                 {
                   "type": "tile",
-                  "entity": "script.bedtime_script",
-                  "features_position": "bottom",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 2
+                  },
+                  "entity": "script.bedtime_actions",
+                  "icon": "mdi:bed-clock",
+                  "show_entity_picture": false,
+                  "hide_state": true,
                   "vertical": false,
                   "tap_action": {
                     "action": "more-info"
                   },
                   "icon_tap_action": {
                     "action": "perform-action",
-                    "perform_action": "script.bedtime_script",
+                    "perform_action": "script.bedtime_actions",
                     "target": {}
                   },
-                  "icon": "mdi:bed-clock",
-                  "show_entity_picture": false,
-                  "grid_options": {
-                    "columns": 6,
-                    "rows": 2
-                  },
-                  "hide_state": true
+                  "features_position": "bottom"
                 }
               ]
             }
@@ -2291,118 +2291,6 @@
                     "state",
                     "last_changed"
                   ]
-                }
-              ]
-            },
-            {
-              "type": "grid",
-              "cards": [
-                {
-                  "type": "heading",
-                  "heading": "TP972S-1",
-                  "heading_style": "subtitle"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_1_probe_1_ambient_temperature"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_1_probe_2_ambient_temperature"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_1_probe_1_internal_end_temperature"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_1_probe_2_internal_end_temperature"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_1_probe_1_internal_center_temperature"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_1_probe_2_internal_center_temperature"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_1_probe_1_internal_tip_temperature"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_1_probe_2_internal_tip_temperature"
-                },
-                {
-                  "type": "heading",
-                  "heading": "TP972S-2",
-                  "heading_style": "subtitle"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_2_probe_1_ambient_temperature"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_2_probe_2_ambient_temperature"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_2_probe_1_internal_end_temperature"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_2_probe_2_internal_end_temperature"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_2_probe_1_internal_center_temperature"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_2_probe_2_internal_center_temperature"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_2_probe_1_internal_tip_temperature"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_2_probe_2_internal_tip_temperature"
-                }
-              ]
-            },
-            {
-              "type": "grid",
-              "cards": [
-                {
-                  "type": "heading",
-                  "heading": "TP972S-1"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_1_probe_1_battery"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_1_probe_2_battery"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_2_probe_1_battery"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_2_probe_2_battery"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_1_signal_strength"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.tp972s_2_signal_strength"
                 }
               ]
             }
