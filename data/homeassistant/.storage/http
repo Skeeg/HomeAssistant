@@ -7,13 +7,13 @@
     "trusted_proxies": [
       "10.2.2.2"
     ],
-    "login_attempts_threshold": -1,
-    "server_port": 8123,
     "cors_allowed_origins": [
       "https://cast.home-assistant.io"
     ],
+    "server_port": 8123,
     "ip_ban_enabled": true,
     "ssl_profile": "modern",
-    "use_x_frame_options": true
+    "use_x_frame_options": true,
+    "login_attempts_threshold": -1
   }
 }
