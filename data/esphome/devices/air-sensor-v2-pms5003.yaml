@@ -534,17 +534,17 @@ sensor:
     i2c_id: i2c_2
     variant: AHT20
     temperature:
-      name: "AHT20/ENS160 Temperature"
+      name: "AHT20-ENS160 Temperature"
       id: temp_aht20_ens_c
       disabled_by_default: True
     humidity:
-      name: "AHT20/ENS160 Humidity"
+      name: "AHT20-ENS160 Humidity"
       id: hum_aht20_ens
       disabled_by_default: True
     update_interval: 10s
 
   - platform: template
-    name: AHT20/ENS160 Temperature_F
+    name: AHT20-ENS160 Temperature_F
     id: temp_aht20_ens_f
     lambda: return id(temp_aht20_ens_f).state * 9/5+32;
     internal: True
