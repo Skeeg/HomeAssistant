@@ -1,0 +1,103 @@
+---
+substitutions:
+  name: rf-controller
+  friendly_name: RF Controller
+  ip_address: 10.3.2.160
+  esp8266_board: esp01_1m
+  logger_baud_rate: 0
+
+packages:
+  api: !include common/api.yaml
+  common-elements: !include common/common-elements.yaml
+  common-esp8266: !include common/common-esp8266.yaml
+  esphome: !include common/esphome.yaml
+  logger: !include common/logger.yaml
+  ota: !include common/ota.yaml
+  time: !include common/time.yaml
+  web: !include common/web-server.yaml
+  wifi: !include common/wifi.yaml
+
+esphome:
+  area: 'Family'
+
+# remote_receiver:
+#   pin:
+#     number: D5
+#     inverted: true
+#   dump: all
+
+# remote_transmitter:
+#   pin: D7
+#   carrier_duty_percent: 50%
+#   id: ir_transmitter
+
+# logger:
+#   level: INFO
+
+# on_boot:
+#   then:
+#     - logger.set_level: INFO
+#     - logger.set_level:
+#         level: DEBUG
+#         tag: mqtt.client
+
+uart:
+  tx_pin: 1
+  rx_pin: 3
+  baud_rate: 19200
+
+light:
+  - platform: status_led
+    name: "Switch state"
+    pin: GPIO13
+
+api:
+  services:
+    - service: send_rf_code
+      variables:
+        sync: int
+        low: int
+        high: int
+        code: int
+      then:
+        - rf_bridge.send_code:
+            sync: !lambda 'return sync;'
+            low: !lambda 'return low;'
+            high: !lambda 'return high;'
+            code: !lambda 'return code;'
+    - service: learn
+      then:
+        - rf_bridge.learn
+rf_bridge:
+  on_code_received:
+    then:
+      - homeassistant.event:
+          event: esphome.rf_code_received
+          data:
+            sync: !lambda 'return format_hex(data.sync);'
+            low: !lambda 'return format_hex(data.low);'
+            high: !lambda 'return format_hex(data.high);'
+            code: !lambda 'return format_hex(data.code);'
+            
+button:
+  - platform: template
+    name: "Turn On Lamp"
+    # icon: "mdi:volume-plus"
+    on_press:
+      - rf_bridge.send_code:
+          sync: 0x2770 
+          low: 0x016E 
+          high: 0x044A 
+          code: 0x505500
+  - platform: template
+    name: "Turn Off Lamp"
+    # icon: "mdi:volume-plus"
+    on_press:
+      - rf_bridge.send_code:
+          sync: 0x278C  
+          low: 0x017C  
+          high: 0x043C  
+          code: 0x505500
+
+debug:
+  # level: debug
