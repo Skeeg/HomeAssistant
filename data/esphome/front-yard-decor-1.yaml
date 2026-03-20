@@ -9,7 +9,7 @@ substitutions:
 
 packages:
   power-monitor: !include devices/sonoff-s31-power-monitor.yaml
-  daily-timer: !include common/timers/daily-timer.yaml
+  # daily-timer: !include common/timers/daily-timer.yaml
 
 esphome:
   area: 'Outside'
