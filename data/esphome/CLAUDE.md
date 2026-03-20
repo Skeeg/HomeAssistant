@@ -9,10 +9,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 esphome config <device>.yaml
 
 # Compile firmware for a device
-esphome compile <device>.yaml
+docker exec esphome esphome compile /config/<device>.yaml
 
-# Upload firmware OTA
-esphome run <device>.yaml
+# Upload firmware OTA (always separate from compile — never use `run`, it holds an open connection)
+docker exec esphome esphome upload /config/<device>.yaml
 
 # Upload via serial
 esphome upload <device>.yaml --device /dev/ttyUSB0
@@ -64,22 +64,34 @@ To update ESPHome to a new release: pull the new image and recreate the containe
 
 ## Rolling Compile & Upload
 
-When asked to do a rolling compile+upload — after a config change, adding a new device, or refreshing after a container update — run each device **individually and sequentially** through the container, tracking results per file. Do not use a single shell loop that ignores failures.
+When asked to do a full rolling compile+upload — after a config change, adding a new device, or refreshing after a container update — use **two parallel background agents** with an even/odd device split to cut the total time roughly in half.
 
 **Procedure:**
 
-For each `*.yaml` file in `data/esphome/` whose name starts with a lowercase letter (excludes `secrets.yaml`, `CLAUDE.md`, files in subdirectories):
+1. Get the full numbered device list (excluding `secrets`):
+   ```bash
+   ls ./data/esphome/*.yaml | xargs -I{} basename {} .yaml | grep -v '^secrets$' | sort | nl -ba
+   ```
 
-1. Run compile: `docker exec esphome /usr/local/bin/esphome compile <device>.yaml`
-2. If compile succeeds, run upload: `docker exec esphome /usr/local/bin/esphome upload <device>.yaml`
-3. Record the outcome (compiled ok / upload ok / compile failed / upload failed / timed out) for each device.
+2. Split by line number: odd-numbered devices → Agent A, even-numbered devices → Agent B.
 
-After all devices are processed, provide a summary report:
-- Total attempted, succeeded (both compile+upload), compile failures, upload failures
-- List each failed device with the failure stage and any notable error output
-- List any devices that were skipped or timed out
+3. Launch both agents with `run_in_background: true` and `model: "haiku"` (cost-effective for mechanical compile/upload work). Each agent iterates its device list and for each device:
+   ```bash
+   docker exec esphome esphome compile /config/<device>.yaml
+   docker exec esphome esphome upload /config/<device>.yaml
+   ```
+   - Continue on upload failure (device may be offline/seasonal) — do not abort
+   - Do not skip compile failures — report them and continue
 
-This intentional per-file approach surfaces failures clearly rather than silently continuing past broken devices.
+4. When both agents complete, report a combined summary:
+   - Total attempted, successful uploads, compile failures, upload failures
+   - List each failed device with the failure stage and notable error output
+
+**Notes:**
+- Never use `esphome run` — it holds an open connection for the full duration. Always `compile` then `upload` as separate commands.
+- Each device builds to its own directory under `/config/.esphome/build/<device>/` so parallel compiles do not conflict.
+- Upload failures for seasonal/unplugged devices (christmas, holiday, front-yard-decor, etc.) are expected and non-fatal.
+- Before kicking off a full update, ask the user if any devices need config changes first (e.g. disabling timers on seasonal devices).
 
 ## Secrets
 

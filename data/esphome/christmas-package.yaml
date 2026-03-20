@@ -11,7 +11,7 @@ substitutions:
 
 packages:
   light: !include devices/maxcio-light-switch.yaml
-  daily-timer: !include common/timers/daily-timer.yaml
+  # daily-timer: !include common/timers/daily-timer.yaml
 
 esphome:
   area: 'Outside'
