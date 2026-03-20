@@ -1,0 +1,16 @@
+---
+substitutions:
+  name: grow-lights
+  friendly_name: Grow Lights
+  ip_address: 10.3.2.44
+  daily_timer_scope: switch
+  daily_timer_device: relay_1
+  daily_timer_off_hour: "22"
+  mdi_icon: 'mdi:sprout'
+
+packages:
+  power-monitor: !include devices/sonoff-s31-power-monitor.yaml
+  daily-timer: !include common/timers/daily-timer.yaml
+
+esphome:
+  area: 'Dining'
