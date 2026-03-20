@@ -41,17 +41,32 @@ services:
     ports:
       - 6052:6052
 
-  # samba:
-  #   container_name: samba
-  #   image: dperson/samba
-  #   restart: unless-stopped
-  #   environment:
-  #     - USERID=1000
-  #     - GROUPID=1000
-  #     - TZ=America/Denver
-  #   ports:
-  #     - "139:139"
-  #     - "445:445"
-  #   volumes:
-  #     - /mnt/m2usb:/share
-  #   command: '-s "m2usb;/share;yes;no;no;all;none" -u "user;password" -p'
+  samba:
+    container_name: samba
+    image: dperson/samba
+    restart: unless-stopped
+    environment:
+      - USERID=1000
+      - GROUPID=1000
+      - TZ=America/Denver
+    ports:
+      - "139:139"
+      - "445:445"
+    volumes:
+      - /mnt/m2usb:/share
+      - /mnt/ssdusb:/share2
+    command: '-s "m2usb;/share;yes;no;no;all;none" -s "ssdusb;/share2;yes;no;no;all;none" -u "user;password" -p'
+
+  gitpod:
+    image: gitpod/openvscode-server
+    ports:
+      - "3030:3000"
+    environment:
+      - OPENVSCODE_SERVER_ROOT=/app/openvscode-server
+    volumes:
+      - "..:/home/workspace:cached"
+    # entrypoint: ["/bin/sh", "-c", "exec /home/.openvscode-server/bin/openvscode-server --host 0.0.0.0 --connection-token test1234 \"$${@}\"", "--"]
+    entrypoint: ["/bin/sh", "-c", "exec /home/.openvscode-server/bin/openvscode-server --host 0.0.0.0 --without-connection-token \"$${@}\"", "--"]
+    restart: unless-stopped
+    container_name: gitpod
+

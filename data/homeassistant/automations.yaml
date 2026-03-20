@@ -916,6 +916,11 @@
     data: {}
     target:
       entity_id: switch.opal_ice_maker
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 15
+      milliseconds: 0
   - action: select.select_option
     metadata: {}
     target:

@@ -1,0 +1,61 @@
+---
+substitutions:
+  esp32_variant: esp32
+  button_as_internal: "true"
+  device_restore_mode: "ALWAYS_ON"
+  name: infrared-controller-scanner
+  friendly_name: Infrared Controller Scanner
+  ip_address: 10.3.2.161
+  mdi_icon: 'mdi:remote'
+
+packages:
+  api: !include common/api.yaml
+  common-elements: !include common/common-elements.yaml
+  # common-esp8266: !include common/common-esp8266.yaml
+  common-esp32: !include common/common-esp32.yaml
+  esphome: !include common/esphome.yaml
+  logger: !include common/logger.yaml
+  ota: !include common/ota.yaml
+  time: !include common/time.yaml
+  web: !include common/web-server.yaml
+  wifi: !include common/wifi.yaml
+  # maintv: !include common/infrared/ir-main-tv.yaml
+  # soundbar: !include common/infrared/ir-sony-soundbar.yaml
+
+
+# esphome:
+#   name: esp32-bluetooth-proxy
+#   friendly_name: Bluetooth Proxy
+#   min_version: 2025.8.0
+#   # platform: esp32
+#   # name_add_mac_suffix: true
+
+esp32:
+  variant: esp32
+  framework:
+    type: esp-idf
+
+
+# esphome:
+#   area: 'Family'
+
+remote_receiver:
+  pin:
+    number: GPIO26
+    inverted: true
+  dump: all
+
+remote_transmitter:
+  pin: GPIO25
+  carrier_duty_percent: 50%
+  id: ir_transmitter
+
+# logger:
+#   level: INFO
+
+# on_boot:
+#   then:
+#     - logger.set_level: INFO
+#     - logger.set_level:
+#         level: DEBUG
+#         tag: mqtt.client
