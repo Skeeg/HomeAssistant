@@ -1,0 +1,37 @@
+name: homeassistant
+
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: homeassistant/home-assistant:stable
+    restart: unless-stopped
+    environment:
+      TZ: America/Denver
+    volumes:
+      - ../data/homeassistant:/config
+      - /run/dbus:/run/dbus:rw
+    privileged: true
+    network_mode: host
+
+  matter:
+    container_name: matter
+    image: ghcr.io/home-assistant-libs/python-matter-server:stable
+    restart: unless-stopped
+    volumes:
+      - ../data/matter:/data
+      - /run/dbus:/run/dbus:ro
+    security_opt:
+      - apparmor:unconfined
+    network_mode: host
+
+  esphome:
+    container_name: esphome
+    image: esphome/esphome
+    restart: unless-stopped
+    environment:
+      ESPHOME_DASHBOARD_USE_PING: "true"
+    volumes:
+      - ../data/esphome:/config
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 6052:6052
