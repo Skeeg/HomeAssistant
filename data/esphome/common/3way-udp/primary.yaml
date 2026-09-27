@@ -9,14 +9,18 @@
 # Flash wear: ZERO. No rolling code (it forces a flash sector erase+write on
 # every boot — packet_transport.cpp:210-217). Encryption is RAM-only.
 # Requires the including hardware package to define light id `light_1`.
+# Air-time: sends on change + a 2-packet retry burst (+1s, +3s) after each
+# relay change, then only a 5-minute heartbeat (the heartbeat re-syncs peers
+# after reboots). Every publish triggers a send (packet_transport.cpp:225-237).
 substitutions:
-  udp_update_interval: 30s
+  udp_heartbeat_interval: 5min
 
 udp:
 
 packet_transport:
   platform: udp
-  update_interval: ${udp_update_interval}
+  id: udp_3way
+  update_interval: ${udp_heartbeat_interval}
   encryption: !secret udp_3way_key
   binary_sensors:
     - relay_state
@@ -26,3 +30,16 @@ binary_sensor:
     id: relay_state
     internal: true
     lambda: return id(light_1).current_values.is_on();
+    on_state:
+      - script.execute: udp_3way_burst
+
+script:
+  # Re-send everything twice after a change so a dropped packet is recovered
+  # in ~3 s without a fast periodic heartbeat. restart: a new change re-arms it.
+  - id: udp_3way_burst
+    mode: restart
+    then:
+      - delay: 1s
+      - component.update: udp_3way
+      - delay: 2s
+      - component.update: udp_3way

@@ -44,6 +44,7 @@ binary_sensor:
     on_press:
       - lambda: id(press_seq_value) += 1;
       - component.update: press_seq
+      - script.execute: udp_3way_burst
     pin: ${physical_button_pin}
 
 light:

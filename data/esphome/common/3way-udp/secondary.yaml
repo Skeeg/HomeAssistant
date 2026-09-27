@@ -1,7 +1,8 @@
 ---
 # UDP 3-way link — SECONDARY side (hardware-agnostic).
-# udp_update_interval 10s: the periodic re-send is what recovers a press whose
-# packet was dropped, so keep it short (tiny packets, no flash cost).
+# Air-time: a press sends immediately + a 2-packet retry burst (+1s, +3s);
+# otherwise only a 5-minute heartbeat. press_seq is published ONLY on press and
+# twice after boot (every publish triggers a send, packet_transport.cpp:225-237).
 #
 # A press (hardware package calls `lambda: id(press_seq_value) += 1;` then
 # `component.update: press_seq`) publishes press_seq to the primary, which
@@ -15,7 +16,22 @@
 #
 # Required substitutions: udp_peer_ip, udp_peer_name (primary's node name).
 substitutions:
-  udp_update_interval: 10s
+  udp_heartbeat_interval: 5min
+
+esphome:
+  on_boot:
+    # Announce our (new random) sequence so the primary resyncs; twice, in case
+    # the primary is booting at the same time (power cut).
+    priority: -100
+    then:
+      - wait_until:
+          condition:
+            wifi.connected:
+          timeout: 60s
+      - delay: 15s
+      - component.update: press_seq
+      - delay: 45s
+      - component.update: press_seq
 
 globals:
   - id: press_seq_value
@@ -29,7 +45,8 @@ udp:
 
 packet_transport:
   platform: udp
-  update_interval: ${udp_update_interval}
+  id: udp_3way
+  update_interval: ${udp_heartbeat_interval}
   encryption: !secret udp_3way_key
   providers:
     - name: ${udp_peer_name}
@@ -42,8 +59,19 @@ sensor:
     id: press_seq
     internal: true
     accuracy_decimals: 0
-    update_interval: 60s
+    update_interval: never # published only on press / boot
     lambda: return id(press_seq_value);
+
+script:
+  # Called by the hardware package after each press: retry the send twice so a
+  # dropped packet is recovered in ~3 s. restart: a new press re-arms it.
+  - id: udp_3way_burst
+    mode: restart
+    then:
+      - delay: 1s
+      - component.update: udp_3way
+      - delay: 2s
+      - component.update: udp_3way
 
 binary_sensor:
   - platform: packet_transport
