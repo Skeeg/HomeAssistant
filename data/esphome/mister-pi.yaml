@@ -11,5 +11,5 @@ substitutions:
 packages:
   power-monitor: !include devices/w-us002s-power-monitor.yaml
 
-# esphome:
-#   area: 'Office'
+esphome:
+  area: 'Office'

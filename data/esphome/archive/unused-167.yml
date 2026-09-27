@@ -1,9 +1,9 @@
 ---
 substitutions:
-  name: study-desk
-  friendly_name: Study Desk #DD
-  ip_address: 10.3.2.54
-  mdi_icon: 'mdi:desktop-tower-monitor'
+  name: unused-167
+  friendly_name: Unused 167
+  ip_address: 10.3.2.167
+  mdi_icon: 'mdi:power-socket-us'
 
 packages:
   power-monitor: !include devices/sonoff-s31-power-monitor.yaml

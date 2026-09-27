@@ -6,6 +6,12 @@ substitutions:
   on_timer_minutes: "/30"
   device_restore_mode: "ALWAYS_ON"
   mdi_icon: mdi:fence-electric
+  # Outdoor device on a marginal link — WiFi stability overrides (see session
+  # log 2026-08-28). BSSID lock deferred pending AP-candidate evaluation.
+  wifi_output_power: "20"        # ESP8266 default; "15" tried 2026-08-28, cost ~2 dB AP-side (-83.6 -> -86), reverted
+  wifi_power_save_mode: "NONE"   # keep radio fully awake (already ESP8266 default)
+  wifi_fast_connect: "true"      # skip pre-connect scan on weak signal
+  wifi_reboot_timeout: 1h        # avoid reboot-loop on a flaky link (was 15min)
 
 packages:
   switch: !include devices/sonoff-basic-r2-as-switch.yaml

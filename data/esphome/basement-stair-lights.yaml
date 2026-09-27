@@ -1,0 +1,14 @@
+---
+substitutions:
+  name: basement-stair-lights
+  friendly_name: Basement Stair Lights
+  ip_address: 10.3.2.18
+  hass_event_name: esphome.3way_basement_stair_lights_button
+  device_class: light
+  mdi_icon: 'mdi:candle'
+
+packages:
+  light: !include devices/3way-maxcio-light-switch.yaml
+
+esphome:
+  area: 'Basement'

@@ -12,3 +12,4 @@ packages:
 
 esphome:
   area: 'Utility'
+  name_add_mac_suffix: false

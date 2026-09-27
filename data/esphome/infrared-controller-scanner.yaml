@@ -7,6 +7,9 @@ substitutions:
   friendly_name: Infrared Controller Scanner
   ip_address: 10.3.2.161
   mdi_icon: 'mdi:remote'
+  # Pin ESP32 platform WiFi defaults (common/wifi.yaml defaults to ESP8266 values)
+  wifi_output_power: "20.5"
+  wifi_power_save_mode: "LIGHT"
 
 packages:
   api: !include common/api.yaml
@@ -36,8 +39,8 @@ esp32:
     type: esp-idf
 
 
-# esphome:
-#   area: 'Family'
+esphome:
+  area: 'Family'
 
 remote_receiver:
   pin:

@@ -6,6 +6,9 @@ substitutions:
   friendly_name: Bluetooth Proxy
   ip_address: 10.3.2.158
   mdi_icon: 'mdi:bluetooth'
+  # Pin ESP32 platform WiFi defaults (common/wifi.yaml defaults to ESP8266 values)
+  wifi_output_power: "20.5"
+  wifi_power_save_mode: "LIGHT"
 
 packages:
   api: !include ./common/api.yaml

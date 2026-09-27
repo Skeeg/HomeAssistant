@@ -7,6 +7,7 @@ substitutions:
   daily_timer_device: relay_1
   daily_timer_off_hour: "22"
   mdi_icon: 'mdi:sprout'
+  device_restore_mode: "ALWAYS_OFF"
 
 packages:
   power-monitor: !include devices/sonoff-s31-power-monitor.yaml

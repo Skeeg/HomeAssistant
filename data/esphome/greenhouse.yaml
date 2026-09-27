@@ -3,6 +3,13 @@ substitutions:
   name: greenhouse
   friendly_name: Greenhouse Monitor
   ip_address: 10.3.2.34
+  # Outdoor device ~co-located with electric-fence on a marginal link — WiFi
+  # stability overrides (see session log 2026-08-28). BSSID lock deferred
+  # pending AP-candidate evaluation.
+  wifi_output_power: "20"        # ESP8266 default; "15" tried 2026-08-28, ~1 dB worse AP-side, reverted
+  wifi_power_save_mode: "NONE"   # keep radio fully awake (already ESP8266 default)
+  wifi_fast_connect: "true"      # skip pre-connect scan on weak signal
+  wifi_reboot_timeout: 1h        # avoid reboot-loop on a flaky link (was 15min)
 
 packages:
   climate-sensor: !include devices/wemod1-bme280.yaml

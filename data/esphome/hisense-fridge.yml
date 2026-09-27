@@ -1,13 +1,13 @@
 ---
 substitutions:
-  name: office-desk
-  friendly_name: Office Desk
-  mdi_icon: 'mdi:desktop-tower-monitor'
-  ip_address: 10.3.2.66
+  name: hisense-fridge
+  friendly_name: Hisense Fridge
+  ip_address: 10.3.2.163
   device_restore_mode: "ALWAYS_ON"
+  mdi_icon: 'mdi:fridge-variant'
 
 packages:
   power-monitor: !include devices/sonoff-s31-power-monitor.yaml
 
 esphome:
-  area: 'Office'
+  area: 'Garage'

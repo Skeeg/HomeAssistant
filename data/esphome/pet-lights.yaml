@@ -3,11 +3,13 @@ substitutions:
   name: pet-lights
   friendly_name: Pet Lights
   ip_address: 10.3.2.41
+  daily_timer_on_hour: "6"
+  daily_timer_off_hour: "19"
   mdi_icon: 'mdi:wall-sconce-flat'
 
 packages:
   power-monitor: !include devices/sonoff-s31-power-monitor.yaml
-  sun-timer: !include common/timers/sun.yaml
+  daily-timer: !include common/timers/daily-timer.yaml
 
 esphome:
   area: 'Austins'
