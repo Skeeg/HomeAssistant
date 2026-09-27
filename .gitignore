@@ -64,3 +64,37 @@ data/homeassistant/.ha_run.lock
 .openvscode-server
 **/.cache/Microsoft/DeveloperTools/deviceid
 config/.bash_history
+
+# --- 2026-09-26 hardening (post Pi5→server migration reattach) ---
+# Never track HA credential/runtime state even if the .storage allowlist grows
+**/.storage/auth
+**/.storage/auth_provider.*
+**/.storage/core.config_entries
+**/.storage/core.config
+**/.storage/core.restore_state
+**/.storage/core.device_registry
+**/.storage/core.entity_registry
+**/.storage/mobile_app
+**/.storage/person
+**/.storage/application_credentials
+**/.storage/homekit.*
+**/.storage/alexa*
+**/.storage/cloud
+.cloud/
+nest/
+.vscode/
+.cache/
+**/.DS_Store
+data/homeassistant/home-assistant.log.fault
+data/homeassistant/www/
+# ESPHome Device Builder runtime state (peer-link key, pairing, prefs)
+data/esphome/.device-builder*
+data/esphome/.offloader_pairings.json
+data/esphome/.receiver_peers.json
+data/esphome/.git.device-builder-*/
+data/esphome/.esphome/
+# Container-level secrets
+secrets/
+config/*.env
+*.env
+**/.storage/http
