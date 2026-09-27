@@ -1,14 +1,21 @@
 ---
+# Garage 3-way SECONDARY — UDP peer-link PILOT (2026-09-27).
+# Presses go straight to garage-lights (primary) over UDP; status LED mirrors
+# the primary's relay (devices/3way-gosund-udp-secondary.yaml). Works with HA down.
+# PILOT: DEBUG logging (UART off) to count flash "Saving" events — revert
+# global_logging_level/logger_baud_rate once the measurement is done.
 substitutions:
   name: garage-lights-secondary
   friendly_name: Control Garage Lights Secondary
   ip_address: 10.3.2.136
-  hass_event_name: esphome.3way_garage_lights_button
-  relay_pin: GPIO4 # Black hole, this is just a control switch.  Don't need the relay "clicking" on.
   mdi_icon: 'mdi:spotlight'
+  udp_peer_ip: 10.3.2.135
+  udp_peer_name: garage-lights
+  global_logging_level: DEBUG
+  logger_baud_rate: "0"
 
 packages:
-  switch: !include devices/3way-gosund-ks-602s-light-switch.yaml
+  switch: !include devices/3way-gosund-udp-secondary.yaml
 
 esphome:
   area: 'Garage'

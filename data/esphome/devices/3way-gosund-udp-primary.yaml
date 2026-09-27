@@ -1,0 +1,159 @@
+---
+# 3-way PRIMARY (load-carrying) — HA-independent peer link over UDP.
+#
+# Variant of 3way-gosund-ks-602s-light-switch.yaml for pairs that must keep
+# working while Home Assistant is down. The secondary publishes a press
+# sequence number (press_seq) via packet_transport; this node toggles its
+# relay on every odd change in that number and publishes its own relay state
+# (relay_state) back so the secondary's status LED can mirror it.
+#
+# Flash-wear budget: ZERO added writes. packet_transport only touches flash
+# for rolling codes (1 sector erase per boot) — rolling_code_enable is left
+# off. Encryption (shared key, RAM-only) is ON: security without flash cost.
+# All state below is RAM-only (restore_value: no); esp8266 restore_from_flash
+# stays False fleet-wide, so nothing else here persists either.
+#
+# HA side: blueprint skeeg/three_way_switch.yaml with
+# primary_toggles_locally: true (this node always toggles locally).
+#
+# Required substitutions: udp_peer_ip, udp_peer_name (secondary's node name).
+# device_class must stay "light" (the on_value lambda uses the LightState API).
+substitutions:
+  esp8266_board: esp01_1m
+  physical_button_pin: GPIO00
+  led_link_pin: GPIO1
+  relay_pin: GPIO14
+  status_led_pin: GPIO16
+  status_led_transition_length: 0ms
+  hass_event_name: esphome.${name}_button_pressed
+  device_class: light
+  button_as_internal: "true"
+  device_restore_mode: "ALWAYS_OFF"
+  mdi_icon: "mdi:lightbulb"
+  udp_update_interval: 30s
+
+packages:
+  api: !include ../common/api.yaml
+  common-elements: !include ../common/common-elements.yaml
+  common-esp8266: !include ../common/common-esp8266.yaml
+  esphome: !include ../common/esphome.yaml
+  logger: !include ../common/logger.yaml
+  ota: !include ../common/ota.yaml
+  time: !include ../common/time.yaml
+  web: !include ../common/web-server.yaml
+  wifi: !include ../common/wifi.yaml
+
+globals:
+  - id: last_peer_seq
+    type: float
+    restore_value: no # RAM only — no flash writes
+    initial_value: "-1"
+
+udp:
+  addresses:
+    - ${udp_peer_ip}
+
+packet_transport:
+  platform: udp
+  update_interval: ${udp_update_interval}
+  # Encrypted (shared key, RAM-only — no flash cost). rolling_code_enable is
+  # deliberately OFF: it persists a counter to flash on every boot.
+  encryption: !secret udp_3way_key
+  providers:
+    - name: ${udp_peer_name}
+      encryption: !secret udp_3way_key
+  binary_sensors:
+    - relay_state
+
+binary_sensor:
+  - platform: gpio
+    filters:
+      # Debounce: physical button must read stable for 50 ms in either
+      # direction. Cheap momentary buttons on these switches chatter and
+      # register a single press as 4-5 toggles without this.
+      - delayed_on_off: 50ms
+      - invert:
+    id: button_1
+    internal: ${button_as_internal}
+    name: Button
+    on_press:
+      # Always toggle locally (works with HA down). The event is kept for the
+      # HA logbook; the blueprint ignores the primary's own press.
+      - light.toggle: light_1
+      - if:
+          condition:
+            api.connected:
+          then:
+            - homeassistant.event:
+                event: ${hass_event_name}
+                data:
+                  action: pressed
+    pin: ${physical_button_pin}
+
+  # Published to the secondary so its status LED mirrors the load.
+  - platform: template
+    id: relay_state
+    internal: true
+    lambda: return id(light_1).current_values.is_on();
+
+sensor:
+  # Secondary's press sequence. The secondary starts from a random base each
+  # boot, so: first value after OUR boot = sync only; a jump backwards or of
+  # more than 50 = peer rebooted, resync only; otherwise toggle once per odd
+  # delta (two presses merged by a dropped packet correctly cancel out).
+  - platform: packet_transport
+    id: peer_press_seq
+    provider: ${udp_peer_name}
+    remote_id: press_seq
+    internal: true
+    on_value:
+      - lambda: |-
+          if (std::isnan(x)) return;
+          float last = id(last_peer_seq);
+          id(last_peer_seq) = x;
+          if (last < 0) return;
+          float d = x - last;
+          if (d < 0 || d > 50) {
+            ESP_LOGI("3way", "peer seq resync %.0f -> %.0f", last, x);
+            return;
+          }
+          if (((int) d) % 2 == 1) {
+            ESP_LOGI("3way", "peer press (seq %.0f) -> toggle", x);
+            auto call = id(light_1).toggle();
+            call.perform();
+          }
+
+light:
+  - platform: monochromatic
+    output: state_led
+    id: status_1
+    name: Status LED
+    default_transition_length: ${status_led_transition_length}
+    internal: true
+    disabled_by_default: true
+
+  - platform: binary
+    icon: ${mdi_icon}
+    id: light_1
+    name: None
+    on_turn_on:
+      - light.turn_on: status_1
+    on_turn_off:
+      - light.turn_off: status_1
+    output: relay_1
+    restore_mode: ${device_restore_mode}
+
+output:
+  - platform: gpio
+    id: relay_1
+    pin: ${relay_pin}
+  - platform: esp8266_pwm
+    id: state_led
+    pin:
+      number: ${led_link_pin}
+      inverted: true
+
+status_led:
+  pin:
+    number: ${status_led_pin}
+    inverted: true

@@ -386,6 +386,7 @@
       - light.third_car_garage_light
       - light.main_garage_light
       - light.garage_lamp
+      primary_toggles_locally: true
 - id: 3way_lilys_hall_lights
   alias: 3-way - Lilys Hall Lights
   description: ''

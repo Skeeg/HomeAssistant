@@ -36,7 +36,10 @@ blueprint:
           multiple: true
     extra_targets:
       name: Extra lights switched on press
-      description: Turned on/off with the primary on a button press only.
+      description: >-
+        Turned on/off with the primary on a wall-switch press (HA press event,
+        or a physical/UDP-peer change of a locally-toggling primary). Not on
+        app/voice changes of the primary.
       default: []
       selector:
         entity:
@@ -90,3 +93,18 @@ actions:
           - action: "homeassistant.turn_{{ trigger.to_state.state }}"
             target:
               entity_id: "{{ secondaries }}"
+          # Extras follow the primary when it changed PHYSICALLY (local press,
+          # or a UDP peer press) — i.e. no user (app/voice) and no parent
+          # (automation) in the state's context. App/voice on the primary alone
+          # still switches just the primary. Needed for locally-toggling
+          # primaries, whose presses never reach the press branch above.
+          - if:
+              - condition: template
+                value_template: >-
+                  {{ extras | count > 0
+                     and trigger.to_state.context.user_id is none
+                     and trigger.to_state.context.parent_id is none }}
+            then:
+              - action: "light.turn_{{ trigger.to_state.state }}"
+                target:
+                  entity_id: "{{ extras }}"
