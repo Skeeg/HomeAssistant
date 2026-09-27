@@ -1,11 +1,11 @@
-
 # Loads default set of integrations. Do not remove.
 default_config:
 
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    - 10.2.2.2
+    - 172.18.0.0/16
+    - 127.0.0.1
 
 # Load frontend themes from the themes folder
 frontend:
@@ -14,3 +14,12 @@ frontend:
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+template: !include_dir_merge_list templates/
+
+prometheus:
+
+logger:
+  default: warning
+  logs:
+    thermopro_ble.parser: debug

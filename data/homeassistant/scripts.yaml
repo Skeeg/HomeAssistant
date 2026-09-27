@@ -22,27 +22,21 @@ bedtime_script:
       - cover.main_garage_door
       - cover.third_car_garage_door
     action: cover.close_cover
+    continue_on_error: true
   - action: light.turn_off
     metadata: {}
     data: {}
     target:
       entity_id:
-      - light.animal_shed
       - light.austins_hall_lights
       - light.austins_hall_lights_secondary
-      - light.basement_center_light
-      - light.basement_lights
-      - light.basement_north_light
-      - light.basement_south_light
       - light.basement_stair_lights
       - light.basement_stair_lights_secondary
       - light.buffet_decor
       - light.christmas_package
       - light.cold_storage_light
       - light.curtain_lights
-      - light.dads_air_sensor_display_backlight
       - light.dads_lamp
-      - light.dads_lights
       - light.dining_lights
       - light.end_table
       - light.entry_can_lights
@@ -60,7 +54,6 @@ bedtime_script:
       - light.garage_lights
       - light.garage_lights_secondary
       - light.gazebo_lights
-      - light.gym_light
       - light.holiday_stairs
       - light.kids_sink_lights
       - light.kitchen_can_lights
@@ -79,21 +72,16 @@ bedtime_script:
       - light.main_hall_tertiary
       - light.mantle_decor
       - light.mud_room_lights
-      - light.office_light_1
-      - light.office_light_2
       - light.patio_lights
       - light.porch_lights
       - light.powder_hall_lights
       - light.powder_lights
-      - light.printer_air_sensor_display_backlight
       - light.railing_lights
       - light.right_mantle
-      - light.storage_room_light
-      - light.study_air_sensor_display_backlight
       - light.study_lights
       - light.third_car_garage_light
-      - light.utility_light
       - light.christmas_tree
+    continue_on_error: true
   - action: switch.turn_off
     metadata: {}
     data: {}
@@ -101,32 +89,99 @@ bedtime_script:
       entity_id:
       - switch.douglas_lights
       - switch.fireplace
-      - switch.fountain
       - switch.front_tree
-      - switch.ground_decor
       - switch.heat_blankets
       - switch.lava_lamp
       - switch.lily_bathroom_plug
       - switch.master_tv
       - switch.moms_bathroom_plug
       - switch.mister_pi
-      - switch.garden_fountain
       - switch.opal_ice_maker
       - switch.front_yard_decor_1
       - switch.front_yard_decor_2
-      - switch.front_yard_decor_3
-      - switch.front_yard_decor_4
+    continue_on_error: true
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - light.basement_center_light
+    continue_on_error: true
+    alias: Basement Lights
+  - alias: Basement Lights
+    action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - light.basement_north_light
+    continue_on_error: true
+  - alias: Basement Lights
+    action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - light.basement_south_light
+    continue_on_error: true
+  - alias: Basement Lights
+    action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - light.gym_light
+    continue_on_error: true
+  - alias: Basement Lights
+    action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - light.office_light_1
+    continue_on_error: true
+  - alias: Basement Lights
+    action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - light.office_light_2
+    continue_on_error: true
+  - alias: Basement Lights
+    action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - light.storage_room_light
+    continue_on_error: true
+  - alias: Basement Lights
+    action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - light.utility_light
+    continue_on_error: true
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
   - action: select.select_option
     metadata: {}
     target:
       entity_id: select.opal_ice_maker_light_level
     data:
       option: 'Off'
+    continue_on_error: true
   - action: lock.lock
     metadata: {}
     target:
       entity_id: lock.garage
     data: {}
+    continue_on_error: true
   description: ''
 austins_alarm_script:
   alias: Austin Alarm
@@ -294,4 +349,14 @@ wake_up_actions:
       entity_id: switch.opal_ice_maker
     data: {}
   alias: Wake Up Actions
+  description: ''
+in_bed_dad:
+  sequence:
+  - action: light.turn_off
+    metadata: {}
+    target:
+      entity_id: light.dads_dimmer
+      device_id: d357eadc6c0308ae5efe9a737820a7c9
+    data: {}
+  alias: In Bed - Dad
   description: ''

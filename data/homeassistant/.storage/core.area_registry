@@ -6,19 +6,6 @@
     "areas": [
       {
         "aliases": [],
-        "floor_id": null,
-        "humidity_entity_id": null,
-        "icon": null,
-        "id": "austin_2",
-        "labels": [],
-        "name": "Austin",
-        "picture": null,
-        "temperature_entity_id": null,
-        "created_at": "2025-11-04T05:18:44.647507+00:00",
-        "modified_at": "2025-11-04T05:18:44.647511+00:00"
-      },
-      {
-        "aliases": [],
         "floor_id": "upstairs",
         "humidity_entity_id": null,
         "icon": null,
@@ -94,19 +81,6 @@
         "temperature_entity_id": null,
         "created_at": "2025-03-16T14:20:41.251139+00:00",
         "modified_at": "2025-05-07T21:34:42.845729+00:00"
-      },
-      {
-        "aliases": [],
-        "floor_id": null,
-        "humidity_entity_id": null,
-        "icon": null,
-        "id": "family_room",
-        "labels": [],
-        "name": "Family Room",
-        "picture": null,
-        "temperature_entity_id": null,
-        "created_at": "2025-11-04T05:18:47.802307+00:00",
-        "modified_at": "2025-11-04T05:18:47.802309+00:00"
       },
       {
         "aliases": [],
@@ -211,19 +185,6 @@
         "temperature_entity_id": null,
         "created_at": "2025-03-15T04:05:42.379886+00:00",
         "modified_at": "2025-05-07T21:36:46.869103+00:00"
-      },
-      {
-        "aliases": [],
-        "floor_id": null,
-        "humidity_entity_id": null,
-        "icon": null,
-        "id": "lily_2",
-        "labels": [],
-        "name": "Lily",
-        "picture": null,
-        "temperature_entity_id": null,
-        "created_at": "2025-11-04T05:18:39.575472+00:00",
-        "modified_at": "2025-11-04T05:18:39.575476+00:00"
       },
       {
         "aliases": [],

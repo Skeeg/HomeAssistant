@@ -12,13 +12,89 @@
               "type": "grid",
               "cards": [
                 {
+                  "type": "tile",
+                  "grid_options": {
+                    "columns": "full"
+                  },
+                  "entity": "script.bedtime_actions",
+                  "vertical": false,
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "script.bedtime_script",
+                    "target": {}
+                  },
+                  "features_position": "bottom"
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.pi_hole1"
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.pi_hole2"
+                },
+                {
+                  "type": "heading",
+                  "icon": "mdi:fire-alert",
+                  "heading": "Danger Zone",
+                  "heading_style": "title",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "heading",
+                  "icon": "mdi:fire-alert",
+                  "heading": "Danger Zone",
+                  "heading_style": "title",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.internet_router",
+                  "vertical": false,
+                  "icon_tap_action": {
+                    "action": "more-info"
+                  },
+                  "features_position": "bottom",
+                  "grid_options": {
+                    "columns": "full"
+                  }
+                },
+                {
+                  "type": "heading",
+                  "icon": "mdi:fire-alert",
+                  "heading": "Danger Zone",
+                  "heading_style": "title",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "heading",
+                  "icon": "mdi:fire-alert",
+                  "heading": "Danger Zone",
+                  "heading_style": "title",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
                   "type": "entities",
                   "entities": [
                     {
                       "entity": "light.all_basement_lights"
-                    },
-                    {
-                      "entity": "light.animal_shed"
                     },
                     {
                       "entity": "light.austins_dimmer"
@@ -87,13 +163,7 @@
                       "entity": "light.curtain_lights"
                     },
                     {
-                      "entity": "light.dads_air_sensor_display_backlight"
-                    },
-                    {
                       "entity": "light.dads_lamp"
-                    },
-                    {
-                      "entity": "light.dads_lights"
                     },
                     {
                       "entity": "light.dining_lights"
@@ -124,9 +194,6 @@
                     },
                     {
                       "entity": "light.family_light"
-                    },
-                    {
-                      "entity": "light.garage_air_sensor_display_backlight"
                     },
                     {
                       "entity": "light.garage_lamp"
@@ -210,9 +277,6 @@
                       "entity": "light.powder_lights"
                     },
                     {
-                      "entity": "light.printer_air_sensor_display_backlight"
-                    },
-                    {
                       "entity": "light.railing_lights"
                     },
                     {
@@ -220,9 +284,6 @@
                     },
                     {
                       "entity": "light.storage_room_light"
-                    },
-                    {
-                      "entity": "light.study_air_sensor_display_backlight"
                     },
                     {
                       "entity": "light.study_lights"
@@ -274,12 +335,6 @@
                       "entity": "switch.garage_fridge"
                     },
                     {
-                      "entity": "switch.greenhouse_fan"
-                    },
-                    {
-                      "entity": "switch.ground_decor"
-                    },
-                    {
                       "entity": "switch.heat_blankets"
                     },
                     {
@@ -304,9 +359,6 @@
                       "entity": "switch.monochrome_printer"
                     },
                     {
-                      "entity": "switch.d828c98966ee_oim_power"
-                    },
-                    {
                       "entity": "switch.pet_lights"
                     },
                     {
@@ -314,6 +366,9 @@
                     },
                     {
                       "entity": "switch.washing_machine"
+                    },
+                    {
+                      "entity": "switch.mister_pi"
                     }
                   ]
                 }

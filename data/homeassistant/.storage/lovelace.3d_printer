@@ -170,7 +170,7 @@
           "icon": "mdi:printer-3d",
           "visible": [
             {
-              "user": "e209297cdec44455856b6aab46832759"
+              "user": "ff21f21955164765bbcdbd8cd94b85ce"
             }
           ]
         },
@@ -187,15 +187,18 @@
                   "type": "entities",
                   "entities": [
                     {
-                      "entity": "fan.x1c_aux_fan",
+                      "entity": "sensor.x1c_aux_fan_speed",
                       "name": "Aux fan"
                     },
                     {
-                      "entity": "number.x1c_bed_target_temperature",
+                      "entity": "sensor.x1c_bed_target_temperature",
                       "name": "Bed target temperature"
                     },
                     {
-                      "entity": "fan.x1c_chamber_fan",
+                      "entity": "sensor.x1c_bed_temperature"
+                    },
+                    {
+                      "entity": "sensor.x1c_chamber_fan_speed",
                       "name": "Chamber fan"
                     },
                     {
@@ -203,15 +206,15 @@
                       "name": "Chamber light"
                     },
                     {
-                      "entity": "fan.x1c_cooling_fan",
+                      "entity": "sensor.x1c_cooling_fan_speed",
                       "name": "Cooling fan"
                     },
                     {
-                      "entity": "number.x1c_nozzle_target_temperature",
+                      "entity": "sensor.x1c_nozzle_temperature",
                       "name": "Nozzle target temperature"
                     },
                     {
-                      "entity": "select.x1c_printing_speed",
+                      "entity": "sensor.x1c_speed_profile",
                       "name": "Printing speed"
                     }
                   ],
@@ -226,10 +229,6 @@
                 {
                   "type": "entities",
                   "entities": [
-                    {
-                      "entity": "button.x1c_force_refresh_data",
-                      "name": "Force refresh data"
-                    },
                     {
                       "entity": "binary_sensor.x1c_enclosure_door",
                       "name": "Enclosure door"
@@ -287,7 +286,7 @@
                       "entity": "sensor.ams_1_humidity"
                     },
                     {
-                      "entity": "sensor.ams_2_humidity_2"
+                      "entity": "sensor.ams_2_humidity"
                     },
                     {
                       "entity": "sensor.ams_3_humidity"
@@ -299,7 +298,7 @@
                       "entity": "sensor.ams_1_humidity_index"
                     },
                     {
-                      "entity": "sensor.ams_2_humidity_index_2"
+                      "entity": "sensor.ams_2_humidity_index"
                     },
                     {
                       "entity": "sensor.ams_3_humidity_index"
@@ -308,10 +307,10 @@
                       "entity": "sensor.ams_ht_humidity_index"
                     },
                     {
-                      "entity": "sensor.ams_1_ams_temperature"
+                      "entity": "sensor.ams_1_temperature"
                     },
                     {
-                      "entity": "sensor.ams_2_temperature_2"
+                      "entity": "sensor.ams_2_temperature"
                     },
                     {
                       "entity": "sensor.ams_3_temperature"
@@ -343,10 +342,6 @@
                         {
                           "entity": "sensor.x1c_active_tray",
                           "name": "Active tray"
-                        },
-                        {
-                          "entity": "sensor.x1c_active_tray_index",
-                          "name": "Active tray index"
                         },
                         {
                           "entity": "sensor.x1c_aux_fan_speed",
@@ -516,7 +511,7 @@
                       "entity": "sensor.ams_1_tray_4_remain"
                     },
                     {
-                      "entity": "sensor.ams_2_tray_1_2"
+                      "entity": "sensor.ams_2_tray_1"
                     },
                     {
                       "entity": "sensor.ams_2_tray_1_remain"
@@ -565,31 +560,15 @@
                     },
                     {
                       "entity": "sensor.ams_ht_tray_1"
-                    },
-                    {
-                      "entity": "sensor.ams_ht_tray_remaining"
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "type": "grid",
-              "cards": [
-                {
-                  "type": "heading",
-                  "heading": "New section"
-                },
-                {
-                  "type": "custom:ha-bambulab-print_control-card",
-                  "printer": "3925baa13b7f28146c624a5b58c10e8f"
                 }
               ]
             }
           ],
           "visible": [
             {
-              "user": "e209297cdec44455856b6aab46832759"
+              "user": "ff21f21955164765bbcdbd8cd94b85ce"
             }
           ],
           "cards": []

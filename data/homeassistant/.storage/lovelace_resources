@@ -5,8 +5,8 @@
   "data": {
     "items": [
       {
-        "id": "44234b54c95c49dfafb2415ea25bd6f3",
-        "url": "/bambu_lab/ha-bambulab-cards.js?v=0.6.47",
+        "id": "b0f6e906f4c74d32899077c47e5f36ee",
+        "url": "/bambu_lab/ha-bambulab-cards.js?v=0.6.53",
         "type": "module"
       }
     ]

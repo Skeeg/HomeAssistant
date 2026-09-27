@@ -1,0 +1,5 @@
+- binary_sensor:
+    - name: "Opal Ice Maker Needs Water"
+      unique_id: opal_ice_maker_needs_water
+      state: "{{ states('sensor.opal_ice_maker_status') == 'Add Water' }}"
+      device_class: problem
