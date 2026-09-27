@@ -1,20 +1,16 @@
 ---
-# 3-way PRIMARY (load-carrying) — Gosund KS-602S, HA-independent UDP peer link.
+# 3-way PRIMARY (load-carrying) — Maxcio, HA-independent UDP peer link.
 #
-# Always toggles its relay locally on press (works with HA down); secondaries
-# reach it directly over UDP (common/3way-udp/). Add one
-# common/3way-udp/primary-peer.yaml include per secondary in the device file.
-# The HA event is still fired for the logbook; the blueprint instance must set
-# primary_toggles_locally: true so HA ignores the primary's own press.
-#
-# Flash wear: ZERO added writes (see common/3way-udp/primary.yaml).
+# Same behaviour as 3way-gosund-udp-primary.yaml on Maxcio hardware: always
+# toggles locally, fires the HA event for the logbook only (blueprint instance
+# sets primary_toggles_locally: true), and accepts secondaries over UDP via one
+# common/3way-udp/primary-peer.yaml include per peer.
+# Flash wear: ZERO added writes.
 substitutions:
   esp8266_board: esp01_1m
   physical_button_pin: GPIO00
-  led_link_pin: GPIO1
-  relay_pin: GPIO14
-  status_led_pin: GPIO16
-  status_led_transition_length: 0ms
+  relay_pin: GPIO12
+  status_led_pin: GPIO13
   hass_event_name: esphome.${name}_button_pressed
   device_class: light # must stay light (UDP toggle uses the LightState API)
   button_as_internal: "true"
@@ -57,22 +53,23 @@ binary_sensor:
     pin: ${physical_button_pin}
 
 light:
-  - platform: monochromatic
-    output: state_led
-    id: status_1
-    name: Status LED
-    default_transition_length: ${status_led_transition_length}
-    internal: true
+  - platform: status_led
     disabled_by_default: true
+    id: status_1
+    internal: true
+    name: "Status LED"
+    pin:
+      inverted: true
+      number: ${status_led_pin}
 
   - platform: binary
     icon: ${mdi_icon}
     id: light_1
     name: None
-    on_turn_on:
-      - light.turn_on: status_1
     on_turn_off:
       - light.turn_off: status_1
+    on_turn_on:
+      - light.turn_on: status_1
     output: relay_1
     restore_mode: ${device_restore_mode}
 
@@ -80,13 +77,3 @@ output:
   - platform: gpio
     id: relay_1
     pin: ${relay_pin}
-  - platform: esp8266_pwm
-    id: state_led
-    pin:
-      number: ${led_link_pin}
-      inverted: true
-
-status_led:
-  pin:
-    number: ${status_led_pin}
-    inverted: true

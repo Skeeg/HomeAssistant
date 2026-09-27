@@ -7,7 +7,19 @@ substitutions:
   mdi_icon: 'mdi:dome-light'
 
 packages:
-  switch: !include devices/3way-gosund-ks-602s-light-switch.yaml
+  switch: !include devices/3way-gosund-udp-primary.yaml
+  peer_lilys_hall_lights_secondary: !include
+    file: common/3way-udp/primary-peer.yaml
+    vars:
+      peer: lilys-hall-lights-secondary
+      peer_id: lilys_hall_lights_secondary
+      peer_ip: 10.3.2.138
+  peer_lilys_hall_lights_tertiary: !include
+    file: common/3way-udp/primary-peer.yaml
+    vars:
+      peer: lilys-hall-lights-tertiary
+      peer_id: lilys_hall_lights_tertiary
+      peer_ip: 10.3.2.139
 
 esphome:
   area: 'Upstairs Hallway'

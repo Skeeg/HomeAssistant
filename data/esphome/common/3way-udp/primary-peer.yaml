@@ -1,0 +1,49 @@
+---
+# UDP 3-way link — one SECONDARY peer of a primary. Include once per peer:
+#
+#   packages:
+#     peer_x: !include
+#       file: common/3way-udp/primary-peer.yaml
+#       vars: {peer: <node-name>, peer_id: <c_identifier>, peer_ip: <ip>}
+#
+# The secondary publishes press_seq (random RAM base per boot). First value
+# after OUR boot = sync only; a backward jump or one > 50 = peer rebooted,
+# resync only; otherwise toggle once per odd delta, so two presses merged by a
+# dropped packet correctly cancel out. All state RAM-only (no flash writes).
+udp:
+  addresses:
+    - ${peer_ip}
+
+packet_transport:
+  providers:
+    - name: ${peer}
+      encryption: !secret udp_3way_key
+
+globals:
+  - id: last_seq_${peer_id}
+    type: float
+    restore_value: no
+    initial_value: "-1"
+
+sensor:
+  - platform: packet_transport
+    id: seq_${peer_id}
+    provider: ${peer}
+    remote_id: press_seq
+    internal: true
+    on_value:
+      - lambda: |-
+          if (std::isnan(x)) return;
+          float last = id(last_seq_${peer_id});
+          id(last_seq_${peer_id}) = x;
+          if (last < 0) return;
+          float d = x - last;
+          if (d < 0 || d > 50) {
+            ESP_LOGI("3way", "${peer} seq resync %.0f -> %.0f", last, x);
+            return;
+          }
+          if (((int) d) % 2 == 1) {
+            ESP_LOGI("3way", "${peer} press (seq %.0f) -> toggle", x);
+            auto call = id(light_1).toggle();
+            call.perform();
+          }

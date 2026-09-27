@@ -4,20 +4,20 @@
 # repurposed as the second switch for the study light. The name/device_class
 # (study-fan / fan) are historical and kept to avoid churning the HA entity_id
 # (fan.study_fan). relay_pin is a GPIO "black hole" so the unused relay never clicks.
-# The press fires esphome.3way_study_lights_button; the HA "3-way - Study Lights"
-# automation (blueprint skeeg/three_way_switch.yaml) toggles light.study_lights and
-# syncs this switch's status LED to match. Primary: study-lights.yaml.
+# A press goes straight to study-lights over the UDP 3-way link (works with HA
+# down); this switch's status LED mirrors the light. Primary: study-lights.yaml.
 substitutions:
   name: study-fan
   friendly_name: Study Fan
   ip_address: 10.3.2.100
+  udp_peer_ip: 10.3.2.36
+  udp_peer_name: study-lights
   device_class: fan
-  hass_event_name: esphome.3way_study_lights_button
   relay_pin: GPIO4 # Black hole, this is just a control switch.  Don't need the relay "clicking" on.
   mdi_icon: 'mdi:ceiling-fan'
 
 packages:
-  light: !include devices/3way-maxcio-light-switch.yaml
+  switch: !include devices/3way-maxcio-udp-secondary.yaml
 
 esphome:
   area: 'Study'

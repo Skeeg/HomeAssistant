@@ -1,0 +1,61 @@
+---
+# UDP 3-way link — SECONDARY side (hardware-agnostic).
+# udp_update_interval 10s: the periodic re-send is what recovers a press whose
+# packet was dropped, so keep it short (tiny packets, no flash cost).
+#
+# A press (hardware package calls `lambda: id(press_seq_value) += 1;` then
+# `component.update: press_seq`) publishes press_seq to the primary, which
+# toggles the load. The primary's relay_state drives this node's own
+# `${device_class}_1` entity (status LED / black-hole relay). No HA event is
+# fired — HA would otherwise toggle the primary a second time.
+#
+# press_seq starts at a random base each boot (RAM only) so the primary can
+# tell "secondary rebooted" from "button pressed".
+# Flash wear: ZERO (no rolling code; RAM-only globals; encryption is RAM-only).
+#
+# Required substitutions: udp_peer_ip, udp_peer_name (primary's node name).
+substitutions:
+  udp_update_interval: 10s
+
+globals:
+  - id: press_seq_value
+    type: float
+    restore_value: no
+    initial_value: "(float) (1000 + (esphome::random_uint32() % 1000000))"
+
+udp:
+  addresses:
+    - ${udp_peer_ip}
+
+packet_transport:
+  platform: udp
+  update_interval: ${udp_update_interval}
+  encryption: !secret udp_3way_key
+  providers:
+    - name: ${udp_peer_name}
+      encryption: !secret udp_3way_key
+  sensors:
+    - press_seq
+
+sensor:
+  - platform: template
+    id: press_seq
+    internal: true
+    accuracy_decimals: 0
+    update_interval: 60s
+    lambda: return id(press_seq_value);
+
+binary_sensor:
+  - platform: packet_transport
+    id: primary_relay
+    provider: ${udp_peer_name}
+    remote_id: relay_state
+    internal: true
+    on_state:
+      - if:
+          condition:
+            lambda: return x;
+          then:
+            - ${device_class}.turn_on: ${device_class}_1
+          else:
+            - ${device_class}.turn_off: ${device_class}_1

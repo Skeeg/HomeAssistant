@@ -7,7 +7,19 @@ substitutions:
   mdi_icon: 'mdi:light-recessed'
 
 packages:
-  switch: !include devices/3way-gosund-ks-602s-light-switch.yaml
+  switch: !include devices/3way-gosund-udp-primary.yaml
+  peer_main_hall_secondary: !include
+    file: common/3way-udp/primary-peer.yaml
+    vars:
+      peer: main-hall-secondary
+      peer_id: main_hall_secondary
+      peer_ip: 10.3.2.35
+  peer_main_hall_tertiary: !include
+    file: common/3way-udp/primary-peer.yaml
+    vars:
+      peer: main-hall-tertiary
+      peer_id: main_hall_tertiary
+      peer_ip: 10.3.2.40
 
 esphome:
   area: 'Family'

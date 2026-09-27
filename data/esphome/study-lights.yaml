@@ -1,8 +1,8 @@
 ---
 # Study 3-way — PRIMARY (load-carrying) switch. The second switch in the room is
 # study-fan.yaml (fan box with no fan installed, repurposed as a control switch).
-# The Maxcio 3-way package toggles this relay locally on press, so the HA
-# blueprint instance sets primary_toggles_locally: true and only syncs study-fan.
+# Toggles locally on press and accepts study-fan presses over the UDP 3-way link
+# (works with HA down). HA blueprint instance: primary_toggles_locally: true.
 substitutions:
   name: study-lights
   friendly_name: Study Lights
@@ -11,7 +11,13 @@ substitutions:
   mdi_icon: 'mdi:dome-light'
 
 packages:
-  light: !include devices/3way-maxcio-light-switch.yaml
+  switch: !include devices/3way-maxcio-udp-primary.yaml
+  peer_study_fan: !include
+    file: common/3way-udp/primary-peer.yaml
+    vars:
+      peer: study-fan
+      peer_id: study_fan
+      peer_ip: 10.3.2.100
 
 esphome:
   area: 'Study'

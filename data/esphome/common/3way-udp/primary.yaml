@@ -1,0 +1,28 @@
+---
+# UDP 3-way link — PRIMARY side (hardware-agnostic).
+#
+# Publishes relay_state (the load) to every secondary so their status LEDs
+# mirror it. Each secondary is added with one include of primary-peer.yaml,
+# which appends its address, encrypted provider entry and press listener
+# (ESPHome package merge concatenates lists — config_helpers.merge_config).
+#
+# Flash wear: ZERO. No rolling code (it forces a flash sector erase+write on
+# every boot — packet_transport.cpp:210-217). Encryption is RAM-only.
+# Requires the including hardware package to define light id `light_1`.
+substitutions:
+  udp_update_interval: 30s
+
+udp:
+
+packet_transport:
+  platform: udp
+  update_interval: ${udp_update_interval}
+  encryption: !secret udp_3way_key
+  binary_sensors:
+    - relay_state
+
+binary_sensor:
+  - platform: template
+    id: relay_state
+    internal: true
+    lambda: return id(light_1).current_values.is_on();

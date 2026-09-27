@@ -12,13 +12,17 @@ substitutions:
   ip_address: 10.3.2.135
   hass_event_name: esphome.3way_garage_lights_button
   mdi_icon: 'mdi:spotlight'
-  udp_peer_ip: 10.3.2.136
-  udp_peer_name: garage-lights-secondary
   global_logging_level: DEBUG
   logger_baud_rate: "0"
 
 packages:
   switch: !include devices/3way-gosund-udp-primary.yaml
+  peer_garage_lights_secondary: !include
+    file: common/3way-udp/primary-peer.yaml
+    vars:
+      peer: garage-lights-secondary
+      peer_id: garage_lights_secondary
+      peer_ip: 10.3.2.136
 
 esphome:
   area: 'Garage'

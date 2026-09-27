@@ -8,7 +8,13 @@ substitutions:
   mdi_icon: 'mdi:candle'
 
 packages:
-  light: !include devices/3way-maxcio-light-switch.yaml
+  switch: !include devices/3way-maxcio-udp-primary.yaml
+  peer_basement_stair_lights_secondary: !include
+    file: common/3way-udp/primary-peer.yaml
+    vars:
+      peer: basement-stair-lights-secondary
+      peer_id: basement_stair_lights_secondary
+      peer_ip: 10.3.2.151
 
 esphome:
   area: 'Basement'

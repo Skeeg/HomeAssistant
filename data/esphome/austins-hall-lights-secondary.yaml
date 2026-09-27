@@ -3,12 +3,13 @@ substitutions:
   name: austins-hall-lights-secondary
   friendly_name: Control Austins Hall Lights Secondary
   ip_address: 10.3.2.131
-  hass_event_name: esphome.3way_austins_hall_lights_button
+  udp_peer_ip: 10.3.2.130
+  udp_peer_name: austins-hall-lights
   relay_pin: GPIO4 # Black hole, this is just a control switch.  Don't need the relay "clicking" on.
   mdi_icon: 'mdi:globe-light-outline'
 
 packages:
-  switch: !include devices/3way-gosund-ks-602s-light-switch.yaml
+  switch: !include devices/3way-gosund-udp-secondary.yaml
 
 esphome:
   area: 'Upstairs Hallway'

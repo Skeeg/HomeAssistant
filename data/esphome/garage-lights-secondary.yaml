@@ -8,9 +8,9 @@ substitutions:
   name: garage-lights-secondary
   friendly_name: Control Garage Lights Secondary
   ip_address: 10.3.2.136
-  mdi_icon: 'mdi:spotlight'
   udp_peer_ip: 10.3.2.135
   udp_peer_name: garage-lights
+  mdi_icon: 'mdi:spotlight'
   global_logging_level: DEBUG
   logger_baud_rate: "0"
 
