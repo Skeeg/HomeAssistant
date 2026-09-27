@@ -1,0 +1,92 @@
+blueprint:
+  name: Three-way switch (ESPHome button event)
+  description: >-
+    Virtual 3-way for ESPHome wall switches that fire a shared
+    `homeassistant.event` (`action: pressed`) on button press.
+
+    - A press from any member toggles the primary (plus any extra targets).
+    - Whenever the primary changes state — from a press, the app, voice, or a
+      schedule — every secondary is synced to match (status LEDs follow).
+
+    For primaries that toggle their own relay locally before firing the event
+    (Maxcio `devices/3way-maxcio-light-switch.yaml`), set "Primary toggles
+    locally" so the primary's own press is ignored here and only the state sync
+    runs. HA stamps each ESPHome event with the sender's `device_id`, which is
+    how the primary's press is recognised.
+  domain: automation
+  input:
+    button_event:
+      name: Button event type
+      description: e.g. esphome.3way_kitchen_can_lights_button
+      selector:
+        text:
+    primary:
+      name: Primary (load-carrying) light
+      selector:
+        entity:
+          domain: light
+    secondaries:
+      name: Secondary switch entities
+      description: Control-only switches whose state mirrors the primary.
+      selector:
+        entity:
+          domain:
+            - light
+            - fan
+          multiple: true
+    extra_targets:
+      name: Extra lights switched on press
+      description: Turned on/off with the primary on a button press only.
+      default: []
+      selector:
+        entity:
+          domain: light
+          multiple: true
+    primary_toggles_locally:
+      name: Primary toggles locally
+      default: false
+      selector:
+        boolean:
+
+mode: queued
+max: 10
+max_exceeded: silent
+
+triggers:
+  - trigger: event
+    event_type: !input button_event
+    event_data:
+      action: pressed
+    id: press
+  - trigger: state
+    entity_id: !input primary
+    to:
+      - "on"
+      - "off"
+    id: primary_changed
+
+variables:
+  primary: !input primary
+  secondaries: !input secondaries
+  extras: !input extra_targets
+  primary_local: !input primary_toggles_locally
+
+actions:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id: press
+        sequence:
+          - condition: template
+            value_template: >-
+              {{ not (primary_local and trigger.event.data.device_id == device_id(primary)) }}
+          - action: "light.turn_{{ 'off' if is_state(primary, 'on') else 'on' }}"
+            target:
+              entity_id: "{{ [primary] + extras }}"
+      - conditions:
+          - condition: trigger
+            id: primary_changed
+        sequence:
+          - action: "homeassistant.turn_{{ trigger.to_state.state }}"
+            target:
+              entity_id: "{{ secondaries }}"

@@ -1,4 +1,8 @@
 ---
+# Study 3-way — PRIMARY (load-carrying) switch. The second switch in the room is
+# study-fan.yaml (fan box with no fan installed, repurposed as a control switch).
+# The Maxcio 3-way package toggles this relay locally on press, so the HA
+# blueprint instance sets primary_toggles_locally: true and only syncs study-fan.
 substitutions:
   name: study-lights
   friendly_name: Study Lights

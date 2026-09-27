@@ -1,5 +1,12 @@
 ---
-# Don't actually even have a fan installed here, so I just use both switches to activate the lights.
+# Study 3-way — SECONDARY (control-only) switch.
+# The box is wired for a ceiling fan, but no fan is installed, so this switch is
+# repurposed as the second switch for the study light. The name/device_class
+# (study-fan / fan) are historical and kept to avoid churning the HA entity_id
+# (fan.study_fan). relay_pin is a GPIO "black hole" so the unused relay never clicks.
+# The press fires esphome.3way_study_lights_button; the HA "3-way - Study Lights"
+# automation (blueprint skeeg/three_way_switch.yaml) toggles light.study_lights and
+# syncs this switch's status LED to match. Primary: study-lights.yaml.
 substitutions:
   name: study-fan
   friendly_name: Study Fan

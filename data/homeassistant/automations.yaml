@@ -320,312 +320,105 @@
       - button.media_controller_wemod1_soundbar_power_on
     enabled: true
   mode: single
-- id: 3way_kitchen_can_lights_on
-  alias: 3way_kitchen_can_lights_on
+- id: 3way_kitchen_can_lights
+  alias: 3-way - Kitchen Can Lights
   description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_kitchen_can_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.kitchen_can_lights
-    state: 'off'
-  actions:
-  - action: light.turn_on
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - light.kitchen_can_lights
+  use_blueprint:
+    path: skeeg/three_way_switch.yaml
+    input:
+      button_event: esphome.3way_kitchen_can_lights_button
+      primary: light.kitchen_can_lights
+      secondaries:
       - light.kitchen_can_lights_secondary
-  mode: single
-- id: 3way_kitchen_can_lights_off
-  alias: 3way_kitchen_can_lights_off
+- id: 3way_kitchen_sink_lights
+  alias: 3-way - Kitchen Sink Lights
   description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_kitchen_can_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.kitchen_can_lights
-    state: 'on'
-  actions:
-  - action: light.turn_off
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - light.kitchen_can_lights
-      - light.kitchen_can_lights_secondary
-  mode: single
-- id: 3way_kitchen_sink_lights_off
-  alias: 3way_kitchen_sink_lights_off
-  description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_kitchen_sink_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.kitchen_sink_lights
-    state: 'on'
-  actions:
-  - action: light.turn_off
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - light.kitchen_sink_lights
+  use_blueprint:
+    path: skeeg/three_way_switch.yaml
+    input:
+      button_event: esphome.3way_kitchen_sink_lights_button
+      primary: light.kitchen_sink_lights
+      secondaries:
       - light.kitchen_sink_lights_secondary
-  mode: single
-- id: 3way_kitchen_sink_lights_on
-  alias: 3way_kitchen_sink_lights_on
+- id: 3way_main_hall_lights
+  alias: 3-way - Main Hall Lights
   description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_kitchen_sink_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.kitchen_sink_lights
-    state: 'off'
-  actions:
-  - action: light.turn_on
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - light.kitchen_sink_lights
-      - light.kitchen_sink_lights_secondary
-  mode: single
-- id: 3way_main_hall_lights_on
-  alias: 3way_main_hall_lights_on
-  description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_main_hall_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.main_hall_lights
-    state: 'off'
-  actions:
-  - action: light.turn_on
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - light.main_hall_lights
+  use_blueprint:
+    path: skeeg/three_way_switch.yaml
+    input:
+      button_event: esphome.3way_main_hall_lights_button
+      primary: light.main_hall_lights
+      secondaries:
       - light.main_hall_secondary
       - light.main_hall_tertiary
-  mode: single
-- id: 3way_main_hall_lights_off
-  alias: 3way_main_hall_lights_off
+- id: 3way_austins_hall_lights
+  alias: 3-way - Austins Hall Lights
   description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_main_hall_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.main_hall_lights
-    state: 'on'
-  actions:
-  - action: light.turn_off
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - light.main_hall_lights
-      - light.main_hall_secondary
-      - light.main_hall_tertiary
-  mode: single
-- id: 3way_austins_hall_lights_on
-  alias: 3way_austins_hall_lights_on
-  description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_austins_hall_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.austins_hall_lights
-    state: 'off'
-  actions:
-  - action: light.turn_on
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - light.austins_hall_lights
+  use_blueprint:
+    path: skeeg/three_way_switch.yaml
+    input:
+      button_event: esphome.3way_austins_hall_lights_button
+      primary: light.austins_hall_lights
+      secondaries:
       - light.austins_hall_lights_secondary
-  mode: single
-- id: 3way_austins_hall_lights_off
-  alias: 3way_austins_hall_lights_off
+- id: 3way_entry_can_lights
+  alias: 3-way - Entry Can Lights
   description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_austins_hall_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.austins_hall_lights
-    state: 'on'
-  actions:
-  - action: light.turn_off
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - light.austins_hall_lights
-      - light.austins_hall_lights_secondary
-  mode: single
-- id: 3way_entry_can_lights_on
-  alias: 3way_entry_can_lights_on
-  description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_entry_can_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.entry_can_lights
-    state: 'off'
-  actions:
-  - action: light.turn_on
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - light.entry_can_lights
+  use_blueprint:
+    path: skeeg/three_way_switch.yaml
+    input:
+      button_event: esphome.3way_entry_can_lights_button
+      primary: light.entry_can_lights
+      secondaries:
       - light.entry_can_lights_secondary
       - light.entry_can_lights_tertiary
-  mode: single
-- id: 3way_entry_can_lights_off
-  alias: 3way_entry_can_lights_off
+- id: 3way_garage_lights
+  alias: 3-way - Garage Lights
   description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_entry_can_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.entry_can_lights
-    state: 'on'
-  actions:
-  - action: light.turn_off
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - light.entry_can_lights
-      - light.entry_can_lights_secondary
-      - light.entry_can_lights_tertiary
-  mode: single
-- id: 3way_garage_lights_on
-  alias: 3way_garage_lights_on
-  description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_garage_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.garage_lights
-    state: 'off'
-  actions:
-  - action: light.turn_on
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
+  use_blueprint:
+    path: skeeg/three_way_switch.yaml
+    input:
+      button_event: esphome.3way_garage_lights_button
+      primary: light.garage_lights
+      secondaries:
+      - light.garage_lights_secondary
+      extra_targets:
       - light.third_car_garage_light
       - light.main_garage_light
       - light.garage_lamp
-      - light.garage_lights
-      - light.garage_lights_secondary
-  mode: single
-- id: 3way_garage_lights_off
-  alias: 3way_garage_lights_off
+- id: 3way_lilys_hall_lights
+  alias: 3-way - Lilys Hall Lights
   description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_garage_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.garage_lights
-    state: 'on'
-  actions:
-  - action: light.turn_off
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - light.third_car_garage_light
-      - light.main_garage_light
-      - light.garage_lamp
-      - light.garage_lights
-      - light.garage_lights_secondary
-  mode: single
-- id: 3way_lilys_hall_lights_on
-  alias: 3way_lilys_hall_lights_on
-  description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_lilys_hall_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.lilys_hall_lights
-    state: 'off'
-  actions:
-  - action: light.turn_on
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - light.lilys_hall_lights
+  use_blueprint:
+    path: skeeg/three_way_switch.yaml
+    input:
+      button_event: esphome.3way_lilys_hall_lights_button
+      primary: light.lilys_hall_lights
+      secondaries:
       - light.lilys_hall_lights_secondary
       - light.lilys_hall_lights_tertiary
-  mode: single
-- id: 3way_lilys_hall_lights_off
-  alias: 3way_lilys_hall_lights_off
+- id: 3way_basement_stair_lights
+  alias: 3-way - Basement Stair Lights
   description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_lilys_hall_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.lilys_hall_lights
-    state: 'on'
-  actions:
-  - action: light.turn_off
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - light.lilys_hall_lights
-      - light.lilys_hall_lights_secondary
-      - light.lilys_hall_lights_tertiary
-  mode: single
+  use_blueprint:
+    path: skeeg/three_way_switch.yaml
+    input:
+      button_event: esphome.3way_basement_stair_lights_button
+      primary: light.basement_stair_lights
+      secondaries:
+      - light.basement_stair_lights_secondary
+      primary_toggles_locally: true
+- id: 3way_study_lights
+  alias: 3-way - Study Lights
+  description: ''
+  use_blueprint:
+    path: skeeg/three_way_switch.yaml
+    input:
+      button_event: esphome.3way_study_lights_button
+      primary: light.study_lights
+      secondaries:
+      - fan.study_fan
+      primary_toggles_locally: true
 - id: X1C_Chamber_Heat_-_Engage_Bento_Box
   alias: X1C Chamber Heat - Engage Bento Box
   description: Turns on the printer fan when the chamber temperature exceeds 98°F.
@@ -666,48 +459,6 @@
   mode: parallel
   max: 4
   max_exceeded: info
-- id: 3way_basement_stair_lights_off
-  alias: 3way_basement_stair_lights_off
-  description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_basement_stair_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.basement_stair_lights
-    state: 'on'
-  actions:
-  - action: light.turn_off
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - light.basement_stair_lights
-      - light.basement_stair_lights_secondary
-  mode: single
-- id: 3way_basement_stair_lights_on
-  alias: 3way_basement_stair_lights_on
-  description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.3way_basement_stair_lights_button
-    event_data:
-      action: pressed
-  conditions:
-  - condition: state
-    entity_id: light.basement_stair_lights
-    state: 'off'
-  actions:
-  - action: light.turn_on
-    metadata: {}
-    data: {}
-    target:
-      entity_id:
-      - light.basement_stair_lights
-      - light.basement_stair_lights_secondary
-  mode: single
 - id: Basement_Switch_Single_Click
   alias: Basement Switch - Single Click
   description: ''
