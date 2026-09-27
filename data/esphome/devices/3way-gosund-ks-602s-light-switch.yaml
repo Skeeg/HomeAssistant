@@ -30,7 +30,10 @@ packages:
 binary_sensor:
   - platform: gpio
     filters:
-      - delayed_off: 10ms
+      # Debounce: physical button must read stable for 50 ms in either
+      # direction. Cheap momentary buttons on these switches chatter and
+      # register a single press as 4-5 toggles without this.
+      - delayed_on_off: 50ms
       - invert:
     id: button_1
     internal: ${button_as_internal}
