@@ -459,83 +459,53 @@
   mode: parallel
   max: 4
   max_exceeded: info
-- id: Basement_Switch_Single_Click
-  alias: Basement Switch - Single Click
-  description: ''
+- id: Basement_Switch_Multiclick
+  alias: Basement Switch - Multiclick
+  description: >-
+    basement-light-switch native event entity (single/double/triple/quad).
+    Replaces the four esphome.switch friendly-name automations.
   triggers:
-  - trigger: event
-    event_type: esphome.switch
-    event_data:
-      device: Basement Light Switch
-      action: click
-      button: '1'
-  conditions: []
+  - trigger: state
+    entity_id: event.basement_light_switch_button
+    not_from:
+    - unavailable
+    not_to:
+    - unavailable
+    - unknown
+  variables:
+    click: "{{ trigger.to_state.attributes.event_type }}"
   actions:
-  - action: light.toggle
-    metadata: {}
-    data:
-      color_temp_kelvin: 3499
-    target:
-      entity_id: light.all_basement_lights
-  mode: single
-- id: Basement_Switch_Double_Click
-  alias: Basement Switch - Double Click
-  description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.switch
-    event_data:
-      device: Basement Light Switch
-      action: double_click
-      button: '1'
-  conditions: []
-  actions:
-  - action: light.toggle
-    metadata: {}
-    data:
-      color_temp_kelvin: 3499
-    target:
-      entity_id:
-      - light.office_lights
-  mode: single
-- id: Basement_Switch_Triple_Click
-  alias: Basement Switch - Triple Click
-  description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.switch
-    event_data:
-      device: Basement Light Switch
-      action: triple_click
-      button: '1'
-  conditions: []
-  actions:
-  - action: light.toggle
-    metadata: {}
-    data:
-      color_temp_kelvin: 3499
-    target:
-      entity_id: light.gym_light
-  mode: single
-- id: Basement_Switch_Four_Clicks
-  alias: Basement Switch - Four Clicks
-  description: ''
-  triggers:
-  - trigger: event
-    event_type: esphome.switch
-    event_data:
-      device: Basement Light Switch
-      action: four_clicks
-      button: '1'
-  conditions: []
-  actions:
-  - action: light.toggle
-    metadata: {}
-    data:
-      color_temp_kelvin: 3499
-    target:
-      entity_id: light.basement_lights
-  mode: single
+  - choose:
+    - conditions: "{{ click == 'single' }}"
+      sequence:
+      - action: light.toggle
+        data:
+          color_temp_kelvin: 3499
+        target:
+          entity_id: light.all_basement_lights
+    - conditions: "{{ click == 'double' }}"
+      sequence:
+      - action: light.toggle
+        data:
+          color_temp_kelvin: 3499
+        target:
+          entity_id: light.office_lights
+    - conditions: "{{ click == 'triple' }}"
+      sequence:
+      - action: light.toggle
+        data:
+          color_temp_kelvin: 3499
+        target:
+          entity_id: light.gym_light
+    - conditions: "{{ click == 'quad' }}"
+      sequence:
+      - action: light.toggle
+        data:
+          color_temp_kelvin: 3499
+        target:
+          entity_id: light.basement_lights
+  mode: queued
+  max: 5
 - id: Patio_Lights_Trigger_Gazebo_On
   alias: patio_lights_trigger_gazebo_on
   description: ''

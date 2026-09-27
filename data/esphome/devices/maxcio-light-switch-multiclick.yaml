@@ -43,12 +43,9 @@ binary_sensor:
           - ON for at most ${multiclick_delay_on_time}
           - OFF for at least ${multiclick_delay_final_wait_time}
         then:
-          - homeassistant.event:
-              event: esphome.switch
-              data:
-                device: ${friendly_name}
-                action: click
-                button: "1"
+          - event.trigger:
+              id: button_event
+              event_type: single
           - ${device_class}.${button_on_press_action}: ${device_class}_1
       - timing:
           - ON for at most ${multiclick_delay_on_time}
@@ -56,12 +53,9 @@ binary_sensor:
           - ON for at most ${multiclick_delay_on_time}
           - OFF for at least ${multiclick_delay_final_wait_time}
         then:
-          - homeassistant.event:
-              event: esphome.switch
-              data:
-                device: ${friendly_name}
-                action: double_click
-                button: "1"
+          - event.trigger:
+              id: button_event
+              event_type: double
       - timing:
           - ON for at most ${multiclick_delay_on_time}
           - OFF for at most ${multiclick_delay_off_time}
@@ -70,12 +64,9 @@ binary_sensor:
           - ON for at most ${multiclick_delay_on_time}
           - OFF for at least ${multiclick_delay_final_wait_time}
         then:
-          - homeassistant.event:
-              event: esphome.switch
-              data:
-                device: ${friendly_name}
-                action: triple_click
-                button: "1"
+          - event.trigger:
+              id: button_event
+              event_type: triple
       - timing:
           - ON for at most ${multiclick_delay_on_time}
           - OFF for at most ${multiclick_delay_off_time}
@@ -86,12 +77,9 @@ binary_sensor:
           - ON for at most ${multiclick_delay_on_time}
           - OFF for at least ${multiclick_delay_final_wait_time}
         then:
-          - homeassistant.event:
-              event: esphome.switch
-              data:
-                device: ${friendly_name}
-                action: four_clicks
-                button: "1"
+          - event.trigger:
+              id: button_event
+              event_type: quad
       - timing:
           - ON for at least 10s
         then:
@@ -109,6 +97,22 @@ ${device_class}:
       - ${status_led_on_turn_on_action}: status_1
     output: relay_1
     restore_mode: ${device_restore_mode}
+
+# Native HA event entity (event.<name>_button). Replaces the old
+# homeassistant.event `esphome.switch {device, action, button}` payloads:
+# automations bind to the entity (UI device triggers, logbook history) instead
+# of matching on the friendly_name string, and no "perform HA actions"
+# permission is needed. Single click still also drives the relay locally.
+event:
+  - platform: template
+    id: button_event
+    name: Button
+    device_class: button
+    event_types:
+      - single
+      - double
+      - triple
+      - quad
 
 light:
   - platform: status_led
