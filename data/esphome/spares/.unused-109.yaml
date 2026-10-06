@@ -1,0 +1,14 @@
+# Maxcio light switch, "bad button" in sharpie. Formerly the
+# uninstalled powder-lights unit (old API key, ESPHome 2025.2.2);
+# reflashed on the bench 2026-10-06 onto the 50 ms debounced
+# class. Move to the esphome root and rename when deploying.
+substitutions:
+  name: unused-109
+  friendly_name: Unused 109
+  ip_address: 10.3.2.109
+
+packages:
+  switch: !include devices/maxcio-light-switch.yaml
+
+# esphome:
+#   area: ''

@@ -1,12 +1,14 @@
----
+# Gosund KS-602S. Formerly dads-lights (pulled before the
+# 2026-09-26 debounce fix; reflashed on the bench 2026-10-06
+# onto the 50 ms debounced class). Move to the esphome root
+# and rename when deploying.
 substitutions:
-  name: dads-lights
-  friendly_name: Dads Lights
+  name: unused-126
+  friendly_name: Unused 126
   ip_address: 10.3.2.126
-  mdi_icon: 'mdi:dome-light'
 
 packages:
-  light: !include devices/gosund-ks-602s-light-switch.yaml
+  switch: !include devices/gosund-ks-602s-light-switch.yaml
 
-esphome:
-  area: 'Dads'
+# esphome:
+#   area: ''
