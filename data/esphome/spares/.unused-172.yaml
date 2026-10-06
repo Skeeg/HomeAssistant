@@ -1,0 +1,14 @@
+---
+# Sonoff BASIC R4. Move to the esphome
+# root and rename when deploying.
+substitutions:
+  name: unused-172
+  friendly_name: Unused 172
+  ip_address: 10.3.2.172
+  # bluetooth_proxy: "true"
+
+packages:
+  switch: !include devices/sonoff-basic-r4.yaml
+
+# esphome:
+#   area: ''

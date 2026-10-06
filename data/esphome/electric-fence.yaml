@@ -1,21 +1,26 @@
 ---
+# Sonoff BASIC R4 (ex spare unused-174), replaced the original Basic R1 that
+# died 2026-10. This unit's button is defective, and the fence never needs
+# one, so the button is removed below to rule out phantom presses.
 substitutions:
   name: electric-fence
   friendly_name: Electric Fence
-  ip_address: 10.3.2.99
+  ip_address: 10.3.2.174
   on_timer_minutes: "/30"
   device_restore_mode: "ALWAYS_ON"
   mdi_icon: mdi:fence-electric
-  # Outdoor device on a marginal link — WiFi stability overrides (see session
-  # log 2026-08-28). BSSID lock deferred pending AP-candidate evaluation.
-  wifi_output_power: "20"        # ESP8266 default; "15" tried 2026-08-28, cost ~2 dB AP-side (-83.6 -> -86), reverted
-  wifi_power_save_mode: "NONE"   # keep radio fully awake (already ESP8266 default)
+  # Outdoor device on a marginal link (see session log 2026-08-28).
+  # No BLE on this unit, so the radio can stay fully awake.
+  wifi_power_save_mode: "NONE"
   wifi_fast_connect: "true"      # skip pre-connect scan on weak signal
-  wifi_reboot_timeout: 1h        # avoid reboot-loop on a flaky link (was 15min)
+  wifi_reboot_timeout: 1h        # avoid reboot-loop on a flaky link
 
 packages:
-  switch: !include devices/sonoff-basic-r2-as-switch.yaml
+  switch: !include devices/sonoff-basic-r4.yaml
   cron-on: !include common/timers/cron-eventing-on-timer.yaml
+
+binary_sensor:
+  - id: !remove button_1
 
 esphome:
   area: 'Outside'

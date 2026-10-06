@@ -1,0 +1,3 @@
+---
+# Intentionally empty: selected by `bluetooth_proxy: "false"` (the default).
+{}

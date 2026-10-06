@@ -1,0 +1,12 @@
+---
+# Opt-in BLE proxy, selected by `bluetooth_proxy: "true"` in an ESP32 device
+# class that includes common/bluetooth_proxy/${bluetooth_proxy}.yaml.
+# Scan parameters stay at ESPHome defaults so BLE can co-exist with WiFi
+# (same choice as esp32-bluetooth-proxy.yaml). BLE coexistence also needs
+# WiFi modem sleep, so leave wifi_power_save_mode at LIGHT when enabled.
+esp32_ble_tracker:
+  scan_parameters:
+    active: true
+
+bluetooth_proxy:
+  active: true

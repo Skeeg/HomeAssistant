@@ -1,0 +1,230 @@
+# Sonoff POW Elite 20A (POWR320D), classic ESP32
+# Pinout and logic: devices.esphome.io Sonoff-POW-Elite-20a.
+# First flash is serial. Some units bootloop on 3.3 V bench power only (not
+# on mains); see the workaround link on the reference page if that happens.
+#
+# The relay is bi-stable (latching): GPIO2 pulses it on, GPIO4 pulses it off,
+# and it holds its position through power loss. There is no state pin, so the
+# visible switch derives its state from the CSE7766 voltage reading.
+---
+substitutions:
+  esp32_variant: esp32
+  physical_button_pin: GPIO0
+  relay_on_pin: GPIO2
+  relay_off_pin: GPIO4
+  wifi_led_pin: GPIO5
+  switch_led_pin: GPIO18
+  cse7766_rx_pin: GPIO16
+  tm1621_cs_pin: GPIO25
+  tm1621_data_pin: GPIO14
+  tm1621_read_pin: GPIO26
+  tm1621_write_pin: GPIO27
+  # Throttle for the CSE7766 sensors; the display also reads these values.
+  sensor_update_interval: 10s
+  # Above this many watts the "Load" sensor reads on and the ring LED lights.
+  load_on_watts: "4.0"
+  load_off_watts: "3.0"
+  global_logging_level: INFO # VERBOSE would spam the cse7766 sensor
+  sensor_logging_level: INFO
+  mdi_icon: "mdi:power-socket-us"
+  # Set to "true" in the device config to turn this plug into a BLE proxy.
+  bluetooth_proxy: "false"
+  # Pin ESP32 platform WiFi defaults (common/wifi.yaml defaults to ESP8266 values).
+  # LIGHT modem sleep is also required for BLE/WiFi coexistence.
+  wifi_output_power: "20.5"
+  wifi_power_save_mode: "LIGHT"
+
+packages:
+  api: !include ../common/api.yaml
+  bluetooth-proxy: !include ../common/bluetooth_proxy/${bluetooth_proxy}.yaml
+  common-elements: !include ../common/common-elements.yaml
+  common-esp32: !include ../common/common-esp32.yaml
+  esphome: !include ../common/esphome.yaml
+  logger: !include ../common/logger.yaml
+  ota: !include ../common/ota.yaml
+  time: !include ../common/time.yaml
+  web: !include ../common/web-server.yaml
+  wifi: !include ../common/wifi.yaml
+
+esp32:
+  variant: ${esp32_variant}
+  framework:
+    type: esp-idf
+
+# No on_boot relay sync (the reference config has one): switch.turn_off on the
+# template switch runs turn_off_action and pulses the coil, so a reboot before
+# the CSE7766 reports would cut the load. The template lambda below already
+# derives state from voltage on every update.
+
+preferences:
+  flash_write_interval: 5min
+
+uart:
+  rx_pin: ${cse7766_rx_pin}
+  baud_rate: 4800
+  parity: EVEN
+
+sensor:
+  - platform: cse7766
+    current:
+      name: "Current"
+      id: a_sensor
+      accuracy_decimals: 2
+      filters:
+        - throttle_average: ${sensor_update_interval}
+    voltage:
+      name: "Voltage"
+      id: v_sensor
+      accuracy_decimals: 2
+      filters:
+        - throttle_average: ${sensor_update_interval}
+    power:
+      name: "Power"
+      id: w_sensor
+      accuracy_decimals: 2
+      filters:
+        - throttle_average: ${sensor_update_interval}
+      on_value_range:
+        - above: ${load_on_watts}
+          then:
+            - light.turn_on: switch_led
+        - below: ${load_off_watts}
+          then:
+            - light.turn_off: switch_led
+    energy:
+      name: "Energy"
+      id: wh_sensor
+      accuracy_decimals: 2
+      filters:
+        - throttle: ${sensor_update_interval}
+    apparent_power:
+      name: "Apparent Power"
+      filters:
+        - throttle_average: ${sensor_update_interval}
+    power_factor:
+      name: "Power Factor"
+      accuracy_decimals: 2
+      filters:
+        - throttle_average: ${sensor_update_interval}
+
+  - platform: integration
+    name: 'Total Energy'
+    sensor: w_sensor
+    time_unit: h
+    restore: true
+    state_class: total_increasing
+    device_class: energy
+    filters:
+      - multiply: 0.001
+    unit_of_measurement: kWh
+
+binary_sensor:
+  - platform: gpio
+    id: button_1
+    pin:
+      number: ${physical_button_pin}
+      ignore_strapping_warning: true
+    internal: true
+    filters:
+      - invert:
+      # Debounce, same 50 ms as the light-switch classes.
+      - delayed_on_off: 50ms
+    on_click:
+      - max_length: 350ms # short press toggles the relay
+        then:
+          - switch.toggle: relay_1
+      - min_length: 360ms # long press flips the display page
+        max_length: 3s
+        then:
+          - binary_sensor.template.publish:
+              id: display_page
+              state: !lambda 'return !id(display_page).state;'
+
+  - platform: template # display page selector: off = kWh/W, on = V/A
+    id: display_page
+    trigger_on_initial_state: true
+    internal: true
+
+  - platform: template
+    name: "Load"
+    lambda: |-
+      if (isnan(id(w_sensor).state)) {
+        return {};
+      }
+      return id(w_sensor).state > ${load_on_watts};
+
+display:
+  platform: tm1621
+  id: tm1621_display
+  cs_pin: ${tm1621_cs_pin}
+  data_pin: ${tm1621_data_pin}
+  read_pin: ${tm1621_read_pin}
+  write_pin: ${tm1621_write_pin}
+  lambda: |-
+    if (id(display_page).state) {
+      it.display_voltage(true);
+      it.display_kwh(false);
+      it.printf(0, "%.1f", id(v_sensor).state);
+      it.printf(1, "%.1f", id(a_sensor).state);
+    } else {
+      it.display_voltage(false);
+      it.display_kwh(true);
+      it.printf(0, "%.1f", id(wh_sensor).state / 1000);
+      it.printf(1, "%.1f", id(w_sensor).state);
+    }
+
+output:
+  - platform: ledc
+    id: switch_led_output
+    pin:
+      number: ${switch_led_pin}
+      inverted: True
+
+light:
+  - platform: monochromatic
+    id: switch_led
+    output: switch_led_output
+    internal: True
+  - platform: status_led
+    id: wifi_status_led
+    internal: True
+    pin:
+      number: ${wifi_led_pin}
+      inverted: True
+      ignore_strapping_warning: true
+
+switch:
+  - platform: template
+    name: None
+    icon: ${mdi_icon}
+    id: relay_1
+    lambda: 'return id(v_sensor).state > 90 || (id(v_sensor).state > 10 && id(a_sensor).state > 0.1);'
+    turn_on_action:
+      - switch.turn_on: relay_on
+    turn_off_action:
+      - switch.turn_on: relay_off
+
+  # Coil drivers: pulse 500 ms, then release (latching relay holds position).
+  - platform: gpio
+    id: relay_on
+    internal: true
+    restore_mode: ALWAYS_OFF
+    pin:
+      number: ${relay_on_pin}
+      ignore_strapping_warning: true
+    interlock: [relay_off]
+    on_turn_on:
+      - delay: 500ms
+      - switch.turn_off: relay_on
+      - light.turn_on: switch_led
+
+  - platform: gpio
+    id: relay_off
+    internal: true
+    restore_mode: ALWAYS_OFF
+    pin: ${relay_off_pin}
+    interlock: [relay_on]
+    on_turn_on:
+      - delay: 500ms
+      - switch.turn_off: relay_off
+      - light.turn_off: switch_led

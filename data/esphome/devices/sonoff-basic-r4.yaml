@@ -1,0 +1,78 @@
+# Sonoff BASIC R4 v1.0 (ESP32-C3)
+# Pinout: devices.esphome.io Sonoff-BASIC-R4-v1.0 (from digiblur's wiki).
+# First flash is serial (factory eWeLink firmware); OTA after that.
+# Not used: GPIO5 "magic switch" sense pin (needs ssieb's external component
+# and a wall switch wired to S1/S2).
+---
+substitutions:
+  esp32_variant: esp32c3
+  physical_button_pin: GPIO9
+  relay_pin: GPIO4
+  status_led_pin: GPIO6
+  button_as_internal: "true"
+  device_restore_mode: "ALWAYS_OFF"
+  mdi_icon: "mdi:power-socket-us"
+  # Set to "true" in the device config to turn this relay into a BLE proxy.
+  bluetooth_proxy: "false"
+  # Pin ESP32 platform WiFi defaults (common/wifi.yaml defaults to ESP8266 values).
+  # LIGHT modem sleep is also required for BLE/WiFi coexistence.
+  wifi_output_power: "20.5"
+  wifi_power_save_mode: "LIGHT"
+
+packages:
+  api: !include ../common/api.yaml
+  bluetooth-proxy: !include ../common/bluetooth_proxy/${bluetooth_proxy}.yaml
+  common-elements: !include ../common/common-elements.yaml
+  common-esp32: !include ../common/common-esp32.yaml
+  esphome: !include ../common/esphome.yaml
+  logger: !include ../common/logger.yaml
+  ota: !include ../common/ota.yaml
+  time: !include ../common/time.yaml
+  web: !include ../common/web-server.yaml
+  wifi: !include ../common/wifi.yaml
+
+esp32:
+  variant: ${esp32_variant}
+  framework:
+    type: esp-idf
+
+# Device Specific Config
+binary_sensor:
+  - platform: gpio
+    id: button_1
+    name: "Button"
+    pin:
+      number: ${physical_button_pin}
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+      ignore_strapping_warning: true # GPIO9 is the C3 boot strap; only matters if held at power-on
+    filters:
+      # Debounce: physical button must read stable for 50 ms in either
+      # direction, same as the light-switch classes.
+      - delayed_on_off: 50ms
+    internal: ${button_as_internal}
+    on_press:
+      - switch.toggle: relay_1
+
+light:
+  - platform: status_led
+    id: blue_led
+    internal: True
+    name: Status LED
+    pin:
+      number: ${status_led_pin}
+      inverted: True
+
+switch:
+  - platform: gpio
+    name: None
+    pin: ${relay_pin}
+    icon: ${mdi_icon}
+    id: relay_1
+    on_turn_off:
+      - light.turn_off: blue_led
+    on_turn_on:
+      - light.turn_on: blue_led
+    restore_mode: ${device_restore_mode}
