@@ -9,6 +9,10 @@
 ---
 substitutions:
   esp32_variant: esp32
+  # ALWAYS_ON (like the S31/W-US002S fridge plugs): pulse the ON coil at boot,
+  # so the load comes back after a reboot or power failure. Anything else:
+  # leave the latching relay where it is.
+  device_restore_mode: "ALWAYS_ON"
   physical_button_pin: GPIO0
   relay_on_pin: GPIO2
   relay_off_pin: GPIO4
@@ -51,10 +55,26 @@ esp32:
   framework:
     type: esp-idf
 
-# No on_boot relay sync (the reference config has one): switch.turn_off on the
-# template switch runs turn_off_action and pulses the coil, so a reboot before
-# the CSE7766 reports would cut the load. The template lambda below already
-# derives state from voltage on every update.
+# Power-on after failure. A reboot (OTA or crash) leaves the latching relay
+# OFF (seen 2026-10-06 on two OTA reboots), so with ALWAYS_ON the ON coil is
+# pulsed right after GPIO setup, before Wi-Fi. Never pulse the OFF coil at boot.
+esphome:
+  on_boot:
+    priority: 600
+    then:
+      - if:
+          condition:
+            lambda: 'return std::string("${device_restore_mode}") == "ALWAYS_ON";'
+          then:
+            - switch.turn_on: relay_on
+
+# Last relay command, RAM only. The button toggles this; it never reads
+# voltage or any other device state. Starts ON under ALWAYS_ON (boot pulse).
+globals:
+  - id: relay_cmd
+    type: bool
+    restore_value: no
+    initial_value: 'std::string("${device_restore_mode}") == "ALWAYS_ON"'
 
 preferences:
   flash_write_interval: 5min
@@ -129,12 +149,23 @@ binary_sensor:
       - invert:
       # Debounce, same 50 ms as the light-switch classes.
       - delayed_on_off: 50ms
-    on_click:
-      - max_length: 350ms # short press toggles the relay
+    # Single press does nothing (bump-proof). Short double press toggles at the
+    # start of the second press, from relay_cmd alone. Hold 1 s flips the page.
+    on_multi_click:
+      - timing:
+          - ON for at most 400ms
+          - OFF for at most 400ms
+          - ON for at least 50ms
         then:
-          - switch.toggle: relay_1
-      - min_length: 360ms # long press flips the display page
-        max_length: 3s
+          - if:
+              condition:
+                lambda: 'return id(relay_cmd);'
+              then:
+                - switch.turn_off: relay_1
+              else:
+                - switch.turn_on: relay_1
+      - timing:
+          - ON for at least 1s
         then:
           - binary_sensor.template.publish:
               id: display_page
@@ -200,8 +231,10 @@ switch:
     id: relay_1
     lambda: 'return id(v_sensor).state > 90 || (id(v_sensor).state > 10 && id(a_sensor).state > 0.1);'
     turn_on_action:
+      - globals.set: {id: relay_cmd, value: 'true'}
       - switch.turn_on: relay_on
     turn_off_action:
+      - globals.set: {id: relay_cmd, value: 'false'}
       - switch.turn_on: relay_off
 
   # Coil drivers: pulse 500 ms, then release (latching relay holds position).

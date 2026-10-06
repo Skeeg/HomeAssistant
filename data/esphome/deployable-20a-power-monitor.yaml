@@ -1,0 +1,11 @@
+---
+# Sonoff POWR320D (POW Elite 20A). Portable power monitor: no fixed
+# area, moved to whatever load needs measuring.
+substitutions:
+  name: deployable-20a-power-monitor
+  friendly_name: Deployable 20A Power Monitor
+  ip_address: 10.3.2.169
+  # bluetooth_proxy: "true"
+
+packages:
+  power-monitor: !include devices/sonoff-powr320d-power-monitor.yaml
