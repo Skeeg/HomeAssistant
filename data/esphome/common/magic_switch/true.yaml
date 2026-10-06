@@ -1,0 +1,15 @@
+---
+# Opt-in Sonoff Basic R4 "magic switch": a wall switch wired to S1/S2 toggles
+# the relay. Selected by `magic_switch: "true"` in a device class that includes
+# common/magic_switch/${magic_switch}.yaml. The component is vendored in
+# vendor/ssieb/ (see SOURCE.md) so builds don't need the upstream repo.
+external_components:
+  - source:
+      type: local
+      path: vendor/ssieb
+    components: [magic_switch]
+
+magic_switch:
+  pin: ${magic_switch_pin}
+  on_switch:
+    - switch.toggle: relay_1

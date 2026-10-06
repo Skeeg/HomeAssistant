@@ -1,8 +1,7 @@
 # Sonoff BASIC R4 v1.0 (ESP32-C3)
 # Pinout: devices.esphome.io Sonoff-BASIC-R4-v1.0 (from digiblur's wiki).
 # First flash is serial (factory eWeLink firmware); OTA after that.
-# Not used: GPIO5 "magic switch" sense pin (needs ssieb's external component
-# and a wall switch wired to S1/S2).
+# GPIO5 "magic switch" (wall switch on S1/S2) is opt-in via `magic_switch`.
 ---
 substitutions:
   esp32_variant: esp32c3
@@ -14,6 +13,9 @@ substitutions:
   mdi_icon: "mdi:power-socket-us"
   # Set to "true" in the device config to turn this relay into a BLE proxy.
   bluetooth_proxy: "false"
+  # Set to "true" when a wall switch is wired to S1/S2 (vendored ssieb component).
+  magic_switch: "false"
+  magic_switch_pin: GPIO5
   # Pin ESP32 platform WiFi defaults (common/wifi.yaml defaults to ESP8266 values).
   # LIGHT modem sleep is also required for BLE/WiFi coexistence.
   wifi_output_power: "20.5"
@@ -22,6 +24,7 @@ substitutions:
 packages:
   api: !include ../common/api.yaml
   bluetooth-proxy: !include ../common/bluetooth_proxy/${bluetooth_proxy}.yaml
+  magic-switch: !include ../common/magic_switch/${magic_switch}.yaml
   common-elements: !include ../common/common-elements.yaml
   common-esp32: !include ../common/common-esp32.yaml
   esphome: !include ../common/esphome.yaml
